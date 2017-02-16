@@ -49,3 +49,13 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+// custom global
+@import "typography";
+
+// custom components
+@import "components/navigation-global";
+@import "components/navigation-filter";
+@import "components/cards";
+@import "components/hero";
+
