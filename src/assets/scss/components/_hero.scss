@@ -1,0 +1,19 @@
+.hero {
+  background-color: $light-gray;
+  height: rem-calc(300);
+  display: flex;
+  padding: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  flex-basis: 50%;
+}
+
+.hero-header {
+  font-size: rem-calc(35);
+}
+
+.hero-subheader {
+  font-size: rem-calc(18);
+}
