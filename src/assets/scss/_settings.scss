@@ -59,14 +59,15 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
+$slate-gray: #2c3840;
 $black: #0a0a0a;
-$white: #fefefe;
+$white: #fff;
 $emails-color: #232547;
 $sites-color: #1583cc;
 $twitter-color: #1da1f2;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Proxima Nova', 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -76,6 +77,11 @@ $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: true;
 $print-transparent-backgrounds: true;
+
+// custom global
+$transition-slow: all 0.5s ease-in-out;
+$transition: all 0.25s ease-in-out;
+$transition-fast: all 0.15s ease-in-out;
 
 @include add-foundation-colors;
 
@@ -344,7 +350,7 @@ $dropdown-sizes: (
 // 18. Dropdown Menu
 // -----------------
 
-$dropdownmenu-arrows: true;
+$dropdownmenu-arrows: false;
 $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-arrow-size: 6px;
 $dropdownmenu-min-width: 200px;
