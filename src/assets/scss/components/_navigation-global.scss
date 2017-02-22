@@ -47,7 +47,7 @@ $topbar-hover-color: lighten($topbar-bg, 10%);
       font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 17px;
       line-height: 45px;
-      margin-left: -7px;
+      margin-left: 7px;
     }
 
     &:hover {
@@ -122,4 +122,9 @@ $topbar-hover-color: lighten($topbar-bg, 10%);
       border-right: 1px solid $topbar-border-color;
     }
   }
+}
+
+.menu > li {
+  flex: 1 0 auto;
+  justify-content: center;
 }

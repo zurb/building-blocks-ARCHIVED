@@ -6,15 +6,23 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}} | Foundation 6</title>
+    <title>{{meta-title}} | Foundation 6</title>
+    <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
   <body>
 
-    {{> global-navigation}}
-    {{> hero}}
-    {{> body}}
-    {{> footer}}
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      {{> offcanvas-menulists}}
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      {{> mobile-menubar}}
+      {{> global-navigation}}
+      {{> hero}}
+      {{> body}}
+      {{> footer}}
+    </div>
 
     <script src="{{root}}assets/js/app.js"></script>
   </body>

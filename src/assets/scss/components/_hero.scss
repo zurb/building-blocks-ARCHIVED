@@ -1,13 +1,19 @@
 .hero {
   background-color: $light-gray;
-  height: rem-calc(300);
+  height: rem-calc(360);
   display: flex;
   padding: 3rem;
   align-items: center;
+
+  &.hero-building-blocks {
+    background: url('https://images.pexels.com/photos/15791/dark-toy-detail-lego.jpg?w=1260&h=750&auto=compress&cs=tinysrgb') center right no-repeat;
+    background-size: cover;
+    color: #fff;
+  }
 }
 
 .hero-content {
-  flex-basis: 50%;
+  flex-basis: 40%;
 }
 
 .hero-header {
