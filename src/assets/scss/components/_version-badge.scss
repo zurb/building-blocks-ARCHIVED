@@ -1,0 +1,12 @@
+.version-badge {
+  display: flex;
+  height: rem-calc(26);
+  width: rem-calc(26);
+  background: $primary-color;
+  color: $white;
+  border-radius: 5000px;
+  align-items: center;
+  justify-content: center;
+  font-size: rem-calc(12);
+  font-weight: $global-weight-bold;
+}

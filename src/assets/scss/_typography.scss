@@ -51,8 +51,9 @@
   font-url('OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
 }
 
-.post-date {
-  font-size: 11px;
-  color: $white;
-  letter-spacing: 1px;
+.card-title {
+  color: $dark-blue;
+  font-size: rem-calc(18);
+  font-weight: $global-weight-semibold;
+  text-transform: capitalize;
 }

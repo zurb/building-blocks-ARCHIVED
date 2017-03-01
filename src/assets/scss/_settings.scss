@@ -50,18 +50,21 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: #1d92cf,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$light-gray: #F4F4F4;
+$light-med-gray: #EDEFF2;
+$medium-gray: #D0D0D0;
+$dark-gray: #9B9B9B;
 $slate-gray: #2c3840;
 $black: #0a0a0a;
 $white: #fff;
+$light-blue: rgba(40,102,127,0.06);
+$dark-blue: #074E68;
 $emails-color: #232547;
 $sites-color: #1583cc;
 $twitter-color: #1da1f2;
@@ -71,8 +74,10 @@ $body-font-family: 'Proxima Nova', 'proxima-nova', 'Helvetica Neue', Helvetica, 
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
-$global-weight-normal: normal;
-$global-weight-bold: bold;
+$global-weight-light: 300;
+$global-weight-normal: 400;
+$global-weight-semibold: 600;
+$global-weight-bold: 700;
 $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: true;
@@ -296,12 +301,12 @@ $callout-link-tint: 30%;
 
 $card-background: $white;
 $card-font-color: $body-font-color;
-$card-divider-background: $light-gray;
+$card-divider-background: $card-background;
 $card-border: 1px solid $light-gray;
 $card-shadow: none;
 $card-border-radius: $global-radius;
-$card-padding: $global-padding;
-$card-margin: $global-margin;
+$card-padding: rem-calc(9.5) rem-calc(20);
+$card-margin: 0;
 
 // 15. Close Button
 // ----------------

@@ -9,6 +9,24 @@
     background: url('https://images.pexels.com/photos/15791/dark-toy-detail-lego.jpg?w=1260&h=750&auto=compress&cs=tinysrgb') center right no-repeat;
     background-size: cover;
     color: #fff;
+
+    @include breakpoint(medium down) {
+      background: url('https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?w=940&h=650&auto=compress&cs=tinysrgb') center center no-repeat;
+      background-size: cover;
+      color: #fff;
+    }
+  }
+
+  &.hero-homemain {
+    background: url('https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?w=940&h=650&auto=compress&cs=tinysrgb') center right no-repeat;
+    background-size: cover;
+    color: #fff;
+  }
+
+  &.hero-homeemails {
+    background: url('https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg?h=350&auto=compress&cs=tinysrgb') center right no-repeat;
+    background-size: cover;
+    color: #fff;
   }
 }
 

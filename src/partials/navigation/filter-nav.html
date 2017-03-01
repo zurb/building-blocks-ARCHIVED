@@ -1,13 +1,56 @@
-<div class="row expanded">
-  <div class="column medium-2">
-
-  </div>
+<div class="row expanded fliter-nav">
+  <div class="column medium-2"></div>
   <div class="column medium-8 flex-container align-middle align-spaced">
-    {{#repeat 8}}
-      <img src="http://placehold.it/75" class="" height="" width="" alt="">
-    {{/repeat}}
+    {{#each global.filter-nav}}
+      <button class="filter-nav-button"><img src="{{img}}" class="" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
+    {{/each}}
   </div>
-  <div class="column medium-2">
-    search
+  <div class="column medium-2 flex-container align-right">
+    <button class="filter-nav-button"><img src="http://placehold.it/75" class="" height="" title="Search Building Blocks" width="" alt="Search icon"><span></span></button>
   </div>
 </div>
+
+<div class="row align-center dropdown-filters">
+  <div class="medium-2 columns">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li>
+        <a href="#">All versions</a>
+        <ul class="menu">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+          <li><a href="#">Item 4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="medium-2 columns">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li>
+        <a href="#">Sort by newest</a>
+        <ul class="menu">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+          <li><a href="#">Item 4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

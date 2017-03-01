@@ -1,0 +1,39 @@
+.fliter-nav {
+  align-items: flex-start;
+
+  .filter-nav-button {
+    padding: 1rem;
+
+    img {
+      margin-bottom: 0.5rem;
+    }
+
+    &.active {
+      background: $light-gray;
+    }
+  }
+}
+
+.dropdown-filters {
+
+  .menu > li {
+    flex: 1 0 auto;
+    justify-content: space-between;
+
+    a {
+      background: $light-gray;
+      color: $body-font-color;
+    }
+  }
+
+  .dropdown.menu .is-dropdown-submenu-parent > a {
+    text-transform: capitalize;
+  }
+
+  .dropdown.menu .is-dropdown-submenu-parent > a:after {
+    content: '';
+    @include css-triangle(6px, $body-font-color, down);
+    top: 60%;
+    right: 1rem;
+  }
+}

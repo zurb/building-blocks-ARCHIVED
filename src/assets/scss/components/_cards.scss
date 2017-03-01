@@ -1,0 +1,125 @@
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
+  width: 100%;
+}
+
+.card-building-block {
+  height: rem-calc(347);
+
+  &:hover {
+
+  }
+}
+
+.card-divider {
+  display: flex;
+  align-items: center;
+
+  h1,h2,h3,h4,h5,h6,p,a,.button {
+    margin-bottom: 0;
+  }
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  vertical-align: baseline;
+
+  span {
+    margin-left: 5px;
+    font-size: rem-calc(12);
+    font-weight: $global-weight-bold;
+    color: $medium-gray;
+  }
+
+  .card-views {
+    margin-right: rem-calc(22);
+  }
+}
+
+.card hr {
+  margin: 0;
+}
+
+.card-img {
+  position: relative;
+  flex: 1 0 auto;
+}
+
+// card fonts and text styles
+.card-category {
+  position: absolute;
+  top: rem-calc(12);
+  right: rem-calc(12);
+  text-transform: lowercase;
+  font-size: rem-calc(12);
+  color: $dark-blue;
+  font-weight: $global-weight-semibold;
+}
+
+.card-author {
+  font-size: rem-calc(12);
+  font-weight: $global-weight-semibold;
+  color: $medium-gray;
+  text-transform: capitalize;
+}
+
+@mixin transition($transition) {
+  transition: $transition;
+}
+
+@mixin transition-delay($delay) {
+  transition-delay: $delay;
+}
+
+.image-hover-wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position:relative;
+  letter-spacing: normal;
+  line-height: initial;
+
+  &::before {
+    content: 'See code';
+    text-transform: capitalize;
+    height: rem-calc(90);
+    width: 100%;
+    background-color: $white;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 80;
+    color: $dark-gray;
+    @include transition(opacity 0.2s ease-out);
+    @include transition-delay( 0.25s);
+  }
+
+  &::after {
+    content: 'Preview';
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: rem-calc(257);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 80;
+    color: $dark-blue;
+    opacity: 0;
+    @include transition(opacity 0.2s ease-out);
+    @include transition-delay( 0.25s);
+  }
+
+  &:hover::after,
+  &:hover::before {
+    opacity: 1;
+    @include transition(opacity 0.2s ease-out);
+  }
+}

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{meta-title}} | Foundation 6</title>
     <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
   <body>
@@ -19,9 +20,20 @@
     <div class="off-canvas-content" data-off-canvas-content>
       {{> mobile-menubar}}
       {{> global-navigation}}
-      {{> hero}}
-      {{> body}}
+      {{#if hero}}
+        {{> hero}}
+      {{/if}}
+      {{#if filter-nav}}
+        {{> filter-nav}}
+      {{/if}}
+      <div class="page-container">
+        {{> body}}
+      </div>
       {{> footer}}
+    </div>
+
+    <div class="row">
+      <div class="smedium-4 columns"></div>
     </div>
 
     <script src="{{root}}assets/js/app.js"></script>

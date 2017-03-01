@@ -124,7 +124,10 @@ $topbar-hover-color: lighten($topbar-bg, 10%);
   }
 }
 
-.menu > li {
-  flex: 1 0 auto;
-  justify-content: center;
+
+.menu > .menu-item {
+  flex: 0 0 auto;
+  display: flex;
 }
+
+

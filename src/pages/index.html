@@ -5,9 +5,15 @@ subtitle: These HTML, CSS and JS snippets can be plugged into any Foundation pro
 post-date: 3/11/2019
 cta: Call to action
 hero-class: hero-building-blocks
+hero: true
+filter-nav: true
 ---
 
 <div class="row small-up-2 medium-up-3">
-  {{> building-block-card}}
+  {{#repeat 12}}
+  <div class="column column-block">
+    {{> building-block-card}}
+  </div>
+  {{/repeat}}
 </div>
 

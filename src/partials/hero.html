@@ -7,8 +7,37 @@
   </div>
 </header>
 
-{{#ifpage 'index'}}
-  {{> filter-nav}}
-{{/ifpage}}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+nav:
+  -
+    link: 'http://foo'
+    text: Something
+  -
+    link: 'http://bar'
+    text: Something else
+
+<ul class="menu">
+  {{#each nav}}
+    <li><a href="{{link}}" target="_blank">{{text}}</a></li>
+  {{/each}}
+</ul> -->
