@@ -64,3 +64,9 @@
   font-weight: $global-weight-bold;
   text-transform: uppercase;
 }
+
+.building-block-subtitle {
+  color: $light-gray;
+  font-size: rem-calc(15);
+  font-weight: $global-weight-bold;
+}
