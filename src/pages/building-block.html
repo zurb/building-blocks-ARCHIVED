@@ -1,5 +1,5 @@
 ---
-meta-title: Header Subnav
+meta-title: Header and Subnav
 post-date: 3/12/2019
 title: A library of Foundation UI Components
 subtitle: A great way to link multiple related pages from a landing page. Just move the .is-active class to signify the page the user is currently on.
@@ -7,12 +7,31 @@ cta: Download!
 hero-class: hero-building-blocks
 filter-nav: false
 hero: false
+views: 6
+likes: 6
 ---
 
 <div class="building-block-header">
-  <h1 class="text-center">{{meta-title}}</h1>
-  <p class="lead">A great way to link multiple related pages from a landing page. Just move the .is-active class to signify the page the user is currently on.</p>
-  <p>Use a background color or a background image. The headline will be vertically centered. If you are using Sass, the $header-height variable will allow you to easily change the header height.</p>
+  <div class="row align-middle">
+    <div class="medium-9 columns">
+      <h1 class="building-block-title">{{meta-title}}<small> by Nico Rosberg</small></h1>
+      <img src="http://placehold.it/30x30" alt="">
+      <img src="http://placehold.it/30x30" alt="">
+      <img src="http://placehold.it/30x10" alt="">
+      <a href="#" class="bb-tag">Tag 1</a>
+      <a href="#">Tag 2</a>
+      <a href="#">Tag 3</a>
+    </div>
+    <div class="medium-3 columns" style="background-color:red;">
+      <div class="row align-right">
+        <a href="#"><img src="http://placehold.it/50x50" alt=""></a>
+        <a href="#"><img src="http://placehold.it/50x50" alt=""></a>
+      </div>
+      <div class="row align-right">
+        <span>{{views}} Views	&#8226; {{likes}} Likes</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="building-block-preview">
