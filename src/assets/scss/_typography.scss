@@ -63,10 +63,10 @@
   font-size: rem-calc(27);
   font-weight: $global-weight-bold;
   text-transform: uppercase;
-}
 
-.building-block-subtitle {
-  color: $medium-gray;
-  font-size: rem-calc(15);
-  font-weight: $global-weight-bold;
+  small {
+    color: $medium-gray;
+    font-size: rem-calc(15);
+    text-transform: none;
+  }
 }
