@@ -15,44 +15,21 @@ building-block-description: Aenean lacinia bibendum nulla sed consectetur. Lorem
 
 {{> building-block-header}}
 
-<div class="building-block-preview">
-  <div class="row align-center expanded">
-    <img src="http://placehold.it/500x500" alt="">
-  </div>
-</div>
+{{> building-block-preview}}
 
-<div class="building-block-description">
-  <div class="row align-center">
-    <p>{{building-block-description}}</p>
-  </div>
-</div>
+{{> building-block-description}}
 
-<div class="building-block-code">
-  <!-- Code Menu -->
-  <div class="flex-container align-center">
-    <ul class="code-menu menu">
-      <li class="code-menu-item">
-        <a href="#">HTML</a>
-      </li>
-      <li class="code-menu-item">
-        <a href="#">SCSS</a>
-      </li>
-      <li class="code-menu-item">
-        <a href="#">JS</a>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Code Preview -->
-  <div class="code-preview">
-    <div class="row expanded callout">
-      <div class="small-4 columns callout">HTML goes in here</div>
-      <div class="small-4 columns callout">SCSS goes in here</div>
-      <div class="small-4 columns callout">JS goes in here</div>
-    </div>
-  </div>
-</div>
+{{> building-block-code}}
 
 <div class="building-block-related">
-
+  <div class="row column">
+    <h2 class="bb-related-title">Similar Containers</h2>
+  </div>
+  <div class="row small-up-2 medium-up-3">
+    {{#repeat 3}}
+    <div class="column colum-block">
+      {{> building-block-card}}
+    </div>
+    {{/repeat}}
+  </div>
 </div>
