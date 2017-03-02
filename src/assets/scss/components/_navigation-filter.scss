@@ -3,6 +3,9 @@
 
   .filter-nav-button {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     img {
       margin-bottom: 0.5rem;
