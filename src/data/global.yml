@@ -1,29 +1,29 @@
 filter-nav:
   -
-    img: http://placehold.it/75
+    img: ../assets/img/icons/filter-featured.svg
     title: Featured
     alt: Layout
   -
-    img: http://placehold.it/75
+    img: ../assets/img/icons/filter-navigation.svg
     title: Navigation
     alt: Layout
   -
-    img: http://placehold.it/75
+    img: ../assets/img/icons/filter-status.svg
     title: Status
     alt: Layout
   -
-    img: http://placehold.it/75
+    img: ../assets/img/icons/filter-media.svg
     title: Media
     alt: Layout
   -
-    img: http://placehold.it/75
+    img: ../assets/img/icons/filter-containers.svg
     title: Containers
     alt: Layout
   -
-    img: http://placehold.it/75
+    img: ../assets/img/icons/filter-forms.svg
     title: Forms
     alt: Layout
   -
-    img: http://placehold.it/75
+    img: ../assets/img/icons/filter-control.svg
     title: Control
     alt: Layout

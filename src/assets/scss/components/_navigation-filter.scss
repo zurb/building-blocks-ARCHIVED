@@ -2,17 +2,27 @@
   align-items: flex-start;
 
   .filter-nav-button {
-    padding: 1rem;
+    padding: rem-calc(20);
+    width: rem-calc(120);
     display: flex;
     flex-direction: column;
     align-items: center;
 
     img {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     &.active {
       background: $light-gray;
+    }
+
+    &:hover {
+      background: $light-blue;
+    }
+
+    span {
+      font-size: rem-calc(14);
+      font-weight: $global-weight-semibold;
     }
   }
 }
