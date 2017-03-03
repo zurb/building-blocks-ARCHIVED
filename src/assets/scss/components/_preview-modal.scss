@@ -1,0 +1,44 @@
+.preview-modal {
+
+  
+  &.reveal {
+    
+    padding: 0px;
+    border: none;
+
+    @media print, screen and (min-width: 40em)  {
+      width: 80%;
+    }
+  }
+
+  .preview-widget {
+    width: 100%;
+  }
+  .close-button {
+    
+    font-size: 1rem;
+    text-transform: uppercase;
+    @media only screen and (min-width: 40em) {
+      display: none;
+    }
+  }
+
+  .preview-link {
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background: #1d92cf;
+
+    &:hover {
+      background: #197eb2;
+    }
+
+    @media only screen and (max-width: 639px) {
+      width: 100%;
+    }
+  }
+
+}
