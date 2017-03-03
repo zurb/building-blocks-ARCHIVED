@@ -1,32 +1,48 @@
 ---
-meta-title: Header Subnav
+meta-title: Header and Subnav
 post-date: 3/12/2019
 title: A library of Foundation UI Components
 subtitle: A great way to link multiple related pages from a landing page. Just move the .is-active class to signify the page the user is currently on.
-cta: Download!
-hero-class: hero-building-blocks
-filter-nav: false
-hero: false
+views: 6
+likes: 6
+building-block-description: Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.
+
 ---
 
-<div class="building-block-header">
-  <h1 class="text-center">{{meta-title}}</h1>
-  <p class="lead">A great way to link multiple related pages from a landing page. Just move the .is-active class to signify the page the user is currently on.</p>
-  <p>Use a background color or a background image. The headline will be vertically centered. If you are using Sass, the $header-height variable will allow you to easily change the header height.</p>
+<div class="row columns">
+  {{> breadcrumbs}}
 </div>
 
-<div class="building-block-preview">
+{{> building-block-header}}
 
-</div>
+{{> building-block-preview}}
 
-<div class="building-block-code">
+{{> building-block-description}}
 
-</div>
+{{> building-block-code}}
 
-<div class="building-block-description">
-
+<div class="building-block-related">
+  <div class="row column">
+    <h2 class="bb-related-title">Similar Containers</h2>
+  </div>
+  <div class="row small-up-2 medium-up-3">
+    {{#repeat 3}}
+    <div class="column colum-block">
+      {{> building-block-card}}
+    </div>
+    {{/repeat}}
+  </div>
 </div>
 
 <div class="building-block-related">
-
+  <div class="row column">
+    <h2 class="bb-related-title">Users Also Searched</h2>
+  </div>
+  <div class="row small-up-2 medium-up-3">
+    {{#repeat 3}}
+    <div class="column colum-block">
+      {{> building-block-card}}
+    </div>
+    {{/repeat}}
+  </div>
 </div>

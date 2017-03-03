@@ -1,17 +1,50 @@
-.fliter-nav {
+.filter-nav {
   align-items: flex-start;
+  margin-bottom: $global-margin;
 
   .filter-nav-button {
-    padding: 1rem;
-
-    img {
-      margin-bottom: 0.5rem;
-    }
+    padding: rem-calc(20);
+    width: rem-calc(120);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $dark-gray;
 
     &.active {
-      background: $light-gray;
+      background: $light-blue;
+      color: $dark-blue;
+
+      .bb-filter-icons {
+        * {
+          fill: $dark-blue;
+        }
+      }
+    }
+
+    &:hover {
+      background: $light-blue;
+      color: $dark-blue;
+
+      .bb-filter-icons {
+        * {
+          fill: $dark-blue;
+        }
+      }
+    }
+
+    span {
+      font-size: rem-calc(14);
+      font-weight: $global-weight-semibold;
+    }
+
+    .search-icon {
+      margin-top: $global-margin;
     }
   }
+}
+
+.bb-filter-icons {
+  margin-bottom: 1rem;
 }
 
 .dropdown-filters {
