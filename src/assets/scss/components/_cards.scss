@@ -68,36 +68,12 @@
   transition-delay: $delay;
 }
 
-.image-hover-wrapper {
+.hover-wrapper {
+  flex-direction: column;
   position: relative;
-  margin: 0;
-  padding: 0;
   display: flex;
-  position:relative;
-  letter-spacing: normal;
-  line-height: initial;
 
-  &::before {
-    content: 'See code';
-    text-transform: capitalize;
-    font-weight: $global-weight-bold;
-    font-size: rem-calc(18);
-    color: $dark-gray;
-    height: rem-calc(90);
-    width: 100%;
-    background-color: $white;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    z-index: 80;
-    @include transition(opacity 0.2s ease-out);
-    @include transition-delay( 0.25s);
-  }
-
-  &::after {
+  .card-imghover-overlay::after {
     content: 'Preview';
     text-transform: uppercase;
     font-weight: $global-weight-bold;
@@ -117,9 +93,32 @@
     @include transition-delay( 0.25s);
   }
 
-  &:hover::after,
-  &:hover::before {
+  &:hover .card-imghover-overlay::after {
     opacity: 1;
     @include transition(opacity 0.2s ease-out);
+  }
+
+  &:hover .card-hover-link {
+    opacity: 1;
+    @include transition(opacity 0.2s ease-out);
+  }
+
+  .card-hover-link {
+    text-transform: capitalize;
+    font-weight: $global-weight-bold;
+    font-size: rem-calc(18);
+    color: $dark-gray;
+    height: rem-calc(90);
+    width: 100%;
+    background-color: $white;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 80;
+    @include transition(opacity 0.2s ease-out);
+    @include transition-delay( 0.25s);
   }
 }
