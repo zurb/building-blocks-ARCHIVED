@@ -3,6 +3,7 @@ filter-nav:
     img: ../assets/img/icons/filter-featured.svg
     title: Featured
     alt: Layout
+    classes: active
   -
     img: ../assets/img/icons/filter-navigation.svg
     title: Navigation

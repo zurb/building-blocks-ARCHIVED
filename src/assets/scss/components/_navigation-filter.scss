@@ -10,16 +10,26 @@
     align-items: center;
     color: $dark-gray;
 
-    img {
-      margin-bottom: 1rem;
-    }
-
     &.active {
-      background: $light-gray;
+      background: $light-blue;
+      color: $dark-blue;
+
+      .bb-filter-icons {
+        * {
+          fill: $dark-blue;
+        }
+      }
     }
 
     &:hover {
       background: $light-blue;
+      color: $dark-blue;
+
+      .bb-filter-icons {
+        * {
+          fill: $dark-blue;
+        }
+      }
     }
 
     span {
@@ -31,6 +41,10 @@
       margin-top: $global-margin;
     }
   }
+}
+
+.bb-filter-icons {
+  margin-bottom: 1rem;
 }
 
 .dropdown-filters {
