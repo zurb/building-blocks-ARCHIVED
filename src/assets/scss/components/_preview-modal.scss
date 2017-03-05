@@ -1,12 +1,10 @@
 .preview-modal {
 
-  
   &.reveal {
-    
-    padding: 0px;
+    padding: 0;
     border: none;
 
-    @media print, screen and (min-width: 40em)  {
+    @include breakpoint(medium) {
       width: 80%;
     }
   }
@@ -14,11 +12,11 @@
   .preview-widget {
     width: 100%;
   }
+
   .close-button {
-    
     font-size: 1rem;
     text-transform: uppercase;
-    @media only screen and (min-width: 40em) {
+    @include breakpoint(medium) {
       display: none;
     }
   }
@@ -29,14 +27,14 @@
     width: 100%;
     text-align: center;
     font-weight: bold;
-    color: white;
-    background: #1d92cf;
+    color: $white;
+    background: $primary;
 
     &:hover {
-      background: #197eb2;
+      background: darken($primary, 10%);
     }
 
-    @media only screen and (max-width: 639px) {
+    @include breakpoint(small only) {
       width: 100%;
     }
   }
