@@ -1,0 +1,15 @@
+.building-block-header {
+  margin-bottom: $global-margin;
+}
+
+.building-block-tag {
+  &:last-child {
+    &:after {
+      content: ' ';
+    }
+  }
+
+  &:after {
+    content: ',';
+  }
+}

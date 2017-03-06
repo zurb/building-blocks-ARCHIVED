@@ -1,12 +1,11 @@
 .version-badge {
-  display: flex;
+  display: inline-block;
   height: rem-calc(26);
   width: rem-calc(26);
   background: $primary-color;
   color: $white;
   border-radius: 5000px;
-  align-items: center;
-  justify-content: center;
+  padding: 5px 6px;
   font-size: rem-calc(12);
   font-weight: $global-weight-bold;
 }
