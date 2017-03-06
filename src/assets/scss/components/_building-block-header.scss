@@ -1,5 +1,21 @@
 .building-block-header {
-  margin-bottom: $global-margin;
+  margin-bottom: 2rem;
+
+  .bb-dropdown-pane {
+    border-radius: rem-calc(3);
+    padding: 1rem 1rem 0;
+    width: auto;
+    margin-top: 2rem;
+
+    strong {
+      font-size: rem-calc(14);
+      color: $dark-blue;
+    }
+
+    p {
+      color: $dark-gray;
+    }
+  }
 }
 
 .building-block-tag {
