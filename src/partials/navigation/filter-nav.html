@@ -1,13 +1,17 @@
 <div class="row expanded filter-nav">
   <div class="column medium-2"></div>
-  <div class="column medium-8 flex-container align-middle align-spaced">
+  <div class="column medium-8 flex-container align-middle align-spaced bb-filter-icons-container">
     {{#each global.filter-nav}}
-      <button class="filter-nav-button {{classes}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
+    <button class="filter-nav-button {{classes}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
     {{/each}}
   </div>
   <div class="column medium-2 flex-container align-right">
-    <button class="filter-nav-button"><img src="{{root}}assets/img/icons/filter-search.svg" class="search-icon" height="" title="Search Building Blocks" width="30" alt="Search icon"><span></span></button>
+    <button class="bb-search-button" data-toggle="bb-search-bar"><img src="{{root}}assets/img/icons/filter-search.svg" class="inject-me bb-search-icon" height="" title="Search Building Blocks" width="30" alt="Search icon"><span></span></button>
   </div>
+</div>
+
+<div class="row column bb-search-bar-container input-group" id="bb-search-bar" data-toggler data-animate="fade-in fade-out" data-closable>
+  <input type="search" placeholder="Search for a building block..." class="bb-search-bar input-group-field">
 </div>
 
 <div class="row align-center dropdown-filters">
