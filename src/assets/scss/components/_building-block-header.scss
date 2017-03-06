@@ -3,6 +3,8 @@
 }
 
 .building-block-tag {
+  color: $dark-blue;
+
   &:last-child {
     &:after {
       content: ' ';
@@ -14,10 +16,8 @@
   }
 }
 
-.bb-media-button {
-  * {
-    &:hover {
-      fill: $dark-blue;
-    }
-  }
+.bb-media-stats {
+  font-weight: $global-weight-semibold;
+  color: $dark-gray;
+  font-size: rem-calc(16);
 }
