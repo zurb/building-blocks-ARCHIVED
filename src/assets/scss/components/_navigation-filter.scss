@@ -71,6 +71,12 @@
   padding-top: rem-calc(20);
   background-color: white;
   height: rem-calc(105);
+  position: relative;
+
+  .close-button {
+    top: 2rem;
+    color: $medium-gray;
+  }
 
   .bb-search-bar {
     height: rem-calc(55);
