@@ -13,3 +13,11 @@
     content: ',';
   }
 }
+
+.bb-media-button {
+  * {
+    &:hover {
+      fill: $dark-blue;
+    }
+  }
+}
