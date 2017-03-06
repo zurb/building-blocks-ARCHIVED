@@ -23,7 +23,7 @@
   .bb-filter-icons-container {
     z-index: -1;
 
-    @include breakpoint(large) {
+    @include breakpoint(1800) {
       max-width: rem-calc(1154);
     }
   }
