@@ -1,0 +1,47 @@
+.master-pagination {
+  @extend .pagination;
+  margin-top: 2rem;
+
+  a {
+    color: $dark-blue;
+    font-weight: $global-weight-semibold;
+    
+    &:hover {
+      background: $light-blue;
+    }
+  }
+}
+
+.master-pagination-icon {
+  height: 0.7rem;
+  * {
+    stroke: $dark-blue;
+  }
+}
+
+.master-pagination-current {
+    padding: 0.1875rem 0.625rem;
+    background: $light-blue;
+    cursor: default;
+    color: $dark-blue;
+    font-weight: 700;
+}
+
+.master-pagination-previous {
+  display: inline-block;
+  margin-#{$global-left}: 0.5rem;
+  
+  &.disabled {
+    .master-pagination-icon {
+      * {
+      stroke: $medium-gray;
+      }
+    }
+  }
+
+}
+
+.master-pagination-next {
+  display: inline-block;
+  margin-#{$global-left}: 0.5rem;
+}
