@@ -1,5 +1,5 @@
 .filter-nav-container {
-  @include breakpoint(small only){
+  @include breakpoint(small only) {
     display: none;
   }
 }
@@ -77,12 +77,10 @@
   width: 100%;
   max-width: $global-width;
   height: rem-calc(106);
-
   @include vertical-center;
 
   .close-button {
     color: $medium-gray;
-
     @include vertical-center;
   }
 
@@ -93,8 +91,7 @@
     box-shadow: none;
     font-size: rem-calc(24);
     color: $dark-gray;
-    background-color: white;
-
+    background-color: $white;
     @include vertical-center;
 
     &:focus {
@@ -107,14 +104,14 @@
 
 .filter-nav-dropdown {
   position: relative;
-  z-index: 999;
+  z-index: 1;
 
   .dropdown {
-    border-radius: 2px;
+    border-radius: rem-calc(3);
   }
 
   .menu {
-    border-radius: 2px;
+    border-radius: rem-calc(3);
     border: 1px solid $light-gray;
     width: auto;
   }
@@ -130,7 +127,7 @@
   }
 
   .is-dropdown-submenu {
-    min-width: 170px;
+    min-width: rem-calc(170);
     margin: -1px 0 0 -1px;
     border-top: 1px solid $light-gray;
 

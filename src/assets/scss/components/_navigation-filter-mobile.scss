@@ -4,7 +4,7 @@
   .filter-nav-mobile-button {
     padding: rem-calc(20);
     flex-direction: column;
-    
+
     * {
       fill: $dark-gray;
     }
@@ -16,7 +16,7 @@
     }
   }
 
-  @include breakpoint(medium up){
+  @include breakpoint(medium) {
     display: none;
   }
 }
