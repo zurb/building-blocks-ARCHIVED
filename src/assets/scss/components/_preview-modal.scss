@@ -1,0 +1,42 @@
+.preview-modal {
+
+  &.reveal {
+    padding: 0;
+    border: none;
+
+    @include breakpoint(medium) {
+      width: 80%;
+    }
+  }
+
+  .preview-widget {
+    width: 100%;
+  }
+
+  .close-button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    @include breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  .preview-link {
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: $white;
+    background: $primary-color;
+
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+  }
+
+}
