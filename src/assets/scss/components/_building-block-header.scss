@@ -1,0 +1,38 @@
+.building-block-header {
+  margin-bottom: 2rem;
+
+  .bb-dropdown-pane {
+    padding-bottom: 0;
+    width: auto;
+    margin-top: 2rem;
+
+    strong {
+      font-size: rem-calc(14);
+      color: $dark-blue;
+    }
+
+    p {
+      color: $dark-gray;
+    }
+  }
+}
+
+.building-block-tag {
+  color: $dark-blue;
+
+  &:last-child {
+    &:after {
+      content: ' ';
+    }
+  }
+
+  &:after {
+    content: ',';
+  }
+}
+
+.bb-media-stats {
+  font-weight: $global-weight-semibold;
+  color: $dark-gray;
+  font-size: rem-calc(16);
+}

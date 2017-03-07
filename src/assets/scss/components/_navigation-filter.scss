@@ -1,10 +1,35 @@
+.filter-nav-container {
+  @include breakpoint(small only) {
+    display: none;
+  }
+}
+
 .filter-nav {
   align-items: flex-start;
   margin-bottom: $global-margin;
+  position: relative;
+
+  .bb-search-button {
+    padding: rem-calc(30) 0 rem-calc(30) rem-calc(30);
+    display: flex;
+
+    .bb-search-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      .bb-search-icon {
+        * {
+          fill: $dark-blue;
+        }
+      }
+    }
+  }
 
   .filter-nav-button {
     padding: rem-calc(20);
-    width: rem-calc(120);
+    min-width: rem-calc(100);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,18 +61,60 @@
       font-size: rem-calc(14);
       font-weight: $global-weight-semibold;
     }
-
-    .search-icon {
-      margin-top: $global-margin;
-    }
   }
 }
 
 .bb-filter-icons {
   margin-bottom: 1rem;
+  width: 36px;
+  height: 36px;
 }
 
-.dropdown-filters {
+.bb-search-bar-container {
+  margin: 0 auto;
+  background-color: white;
+  display: none;
+  width: 100%;
+  max-width: $global-width;
+  height: rem-calc(106);
+  @include vertical-center;
+
+  .close-button {
+    color: $medium-gray;
+    @include vertical-center;
+  }
+
+  .bb-search-bar {
+    height: rem-calc(55);
+    border: none;
+    border-bottom: 1px solid $medium-gray;
+    box-shadow: none;
+    font-size: rem-calc(24);
+    color: $dark-gray;
+    background-color: $white;
+    @include vertical-center;
+
+    &:focus {
+      border: none;
+      box-shadow: none;
+      border-bottom: 1px solid $dark-blue;
+    }
+  }
+}
+
+.filter-nav-dropdown {
+  position: relative;
+  z-index: 1;
+
+  .dropdown {
+    border-radius: rem-calc(3);
+  }
+
+  .menu {
+    border-radius: rem-calc(3);
+    border: 1px solid $light-gray;
+    width: auto;
+  }
 
   .menu > li {
     flex: 1 0 auto;
@@ -55,7 +122,21 @@
 
     a {
       background: $light-gray;
-      color: $body-font-color;
+      color: $dark-blue;
+    }
+  }
+
+  .is-dropdown-submenu {
+    min-width: rem-calc(170);
+    margin: -1px 0 0 -1px;
+    border-top: 1px solid $light-gray;
+
+    li > a {
+      color: $dark-blue;
+
+      &:hover {
+        background: $medium-gray;
+      }
     }
   }
 
@@ -65,7 +146,7 @@
 
   .dropdown.menu .is-dropdown-submenu-parent > a:after {
     content: '';
-    @include css-triangle(6px, $body-font-color, down);
+    @include css-triangle(6px, $dark-blue, down);
     top: 60%;
     right: 1rem;
   }
