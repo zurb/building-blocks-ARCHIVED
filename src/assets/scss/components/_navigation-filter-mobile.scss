@@ -1,0 +1,22 @@
+.filter-nav-mobile-container {
+  margin-top: $global-margin;
+
+  .filter-nav-mobile-button {
+    padding: rem-calc(20);
+    flex-direction: column;
+    
+    * {
+      fill: $dark-gray;
+    }
+
+    &:hover {
+      * {
+        fill: $dark-blue;
+      }
+    }
+  }
+
+  @include breakpoint(medium up){
+    display: none;
+  }
+}
