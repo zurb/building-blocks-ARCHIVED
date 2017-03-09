@@ -1,6 +1,10 @@
 .building-block-header {
   margin-bottom: 2rem;
 
+  .bb-divider {
+    color: $medium-gray;
+  }
+
   .bb-dropdown-pane {
     padding-bottom: 0;
     width: auto;

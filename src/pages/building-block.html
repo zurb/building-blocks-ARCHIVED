@@ -10,7 +10,7 @@ building-block-description: Aenean lacinia bibendum nulla sed consectetur. Lorem
 ---
 
 <div class="row columns">
-  {{> breadcrumbs}}
+  {{> bb-breadcrumbs}}
 </div>
 
 {{> building-block-header}}
@@ -22,8 +22,9 @@ building-block-description: Aenean lacinia bibendum nulla sed consectetur. Lorem
 {{> building-block-code}}
 
 <div class="building-block-related">
-  <div class="row column">
+  <div class="row column building-block-related-header">
     <h2 class="bb-related-title">Similar Containers</h2>
+    <a class="bb-related-link" href="#">See More</a>
   </div>
   <div class="row small-up-2 medium-up-3">
     {{#repeat 3}}
@@ -35,8 +36,9 @@ building-block-description: Aenean lacinia bibendum nulla sed consectetur. Lorem
 </div>
 
 <div class="building-block-related">
-  <div class="row column">
+  <div class="row column building-block-related-header">
     <h2 class="bb-related-title">Users Also Searched</h2>
+    <a class="bb-related-link" href="#">See More</a>
   </div>
   <div class="row small-up-2 medium-up-3">
     {{#repeat 3}}
