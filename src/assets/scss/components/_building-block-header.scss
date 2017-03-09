@@ -1,8 +1,15 @@
 .building-block-header {
   margin-bottom: 2rem;
 
+  .version-badge {
+  margin-right: 0.5rem;
+  }
+
   .bb-divider {
-    color: $medium-gray;
+    height: 1rem;
+    * {
+    stroke: $medium-gray;
+  }
   }
 
   .bb-dropdown-pane {
@@ -21,8 +28,14 @@
   }
 }
 
+.header-icon-row {
+  display: flex;
+  align-items: center;
+}
+
 .building-block-tag {
   color: $dark-blue;
+  margin-left: 0.5rem;
 
   &:last-child {
     &:after {
