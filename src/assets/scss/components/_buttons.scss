@@ -7,3 +7,14 @@ button {
   border: 0;
   font-weight: $global-weight-bold;
 }
+
+.button.secondary {
+  box-shadow: none;
+  border: 2px solid $dark-blue;
+  color: $dark-blue;
+  background: none;
+  &:hover {
+    background: $light-blue;
+    color: $dark-blue;
+  }
+}
