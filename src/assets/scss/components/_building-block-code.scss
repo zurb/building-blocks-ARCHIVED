@@ -5,9 +5,10 @@ $code-button-bg: rgba(0,67,91,0.08);
 }
 
 .code-menu-item {
-  padding: rem-calc(15);
-  margin: 10px 5px;
+  padding: 0.5rem;
+  margin: 10px 3px;
   background-color: $code-button-bg;
+  border-radius: 2px;
 
   a {
     color: $dark-blue;
