@@ -18,17 +18,20 @@
   }
 }
 
-.current.bb {
-  background: $light-blue;
-  color: $dark-blue;
-  font-weight: 700;
+.current {
+  &.bb {
+    background: $light-blue;
+    color: $dark-blue;
+    font-weight: 700;
+  }
 }
 
-.pagination-previous.disabled {
-  .pagination-icon {
-
-    * {
-      stroke: $medium-gray;
+.pagination-previous {
+  &.disabled {
+    .pagination-icon {
+      * {
+        stroke: $medium-gray;
+      }
     }
   }
 }

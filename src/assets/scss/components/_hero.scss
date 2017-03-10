@@ -1,9 +1,9 @@
 .hero {
-  background-color: $light-gray;
-  height: rem-calc(360);
-  display: flex;
-  padding: 3rem;
   align-items: center;
+  background-color: $light-gray;
+  display: flex;
+  height: rem-calc(360);
+  padding: 3rem;
 
   &.hero-building-blocks {
     background: url('../img/images/hero-image.png') center right no-repeat;
@@ -16,18 +16,6 @@
       color: $slate-gray;
     }
   }
-
-  &.hero-homemain {
-    background: url('../img/images/hero-image.png') center right no-repeat;
-    background-size: cover;
-    color: $slate-gray;
-  }
-
-  &.hero-homeemails {
-    background: url('../img/images/hero-image.png') center right no-repeat;
-    background-size: cover;
-    color: #fff;
-  }
 }
 
 .hero-content {
@@ -37,8 +25,8 @@
 
 .hero-header {
   font-size: rem-calc(47);
-  line-height: rem-calc(50);
   font-weight: $global-weight-semibold;
+  line-height: rem-calc(50);
 
   @include breakpoint(medium down) {
     font-size: rem-calc(30);
