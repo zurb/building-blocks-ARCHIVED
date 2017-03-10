@@ -53,7 +53,7 @@ function pages() {
       layouts: 'src/layouts/',
       partials: 'src/partials/',
       data: 'src/data/',
-      helpers: 'src/helpers/'
+      helpers: 'src/panini-helpers/'
     }))
     .pipe(gulp.dest(PATHS.dist));
 }

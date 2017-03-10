@@ -31,6 +31,9 @@
       {{/if}}
       <div class="page-container">
         {{> body}}
+        {{#ifpage 'index'}}
+          {{> pagination}}
+        {{/ifpage}}
         {{> preview-modal}}
       </div>
       {{> footer}}

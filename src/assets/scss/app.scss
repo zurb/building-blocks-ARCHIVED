@@ -50,6 +50,9 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+// custom mixins
+@import "mixins/transitions";
+
 // custom global
 @import "typography";
 @import "layout";
@@ -60,15 +63,18 @@
 @import "components/navigation-filter";
 @import "components/navigation-filter-mobile";
 @import "components/buttons";
-@import "components/cards";
+@import "components/cards-bb";
 @import "components/hero";
 @import "components/version-badge";
 @import "components/avatar";
-@import "components/building-block-header";
-@import "components/building-block-preview";
-@import "components/building-block-description";
-@import "components/building-block-code";
-@import "components/building-block-related";
+@import "components/header-bb";
+@import "components/preview-bb";
+@import "components/description-bb";
+@import "components/code";
+@import "components/related-bb";
 @import "components/preview-modal";
-@import "components/bb-breadcrumbs";
+@import "components/breadcrumbs";
 @import "components/pagination";
+
+// custom utils
+@import "utils/card-hover";
