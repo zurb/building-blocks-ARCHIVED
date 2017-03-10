@@ -2,13 +2,13 @@
   margin-bottom: 2rem;
 
   .bb-dropdown-pane {
+    margin-top: 2rem;
     padding-bottom: 0;
     width: auto;
-    margin-top: 2rem;
 
     strong {
-      font-size: rem-calc(14);
       color: $dark-blue;
+      font-size: rem-calc(14);
     }
 
     p {
@@ -21,18 +21,18 @@
   color: $dark-blue;
 
   &:last-child {
-    &:after {
+    &::after {
       content: ' ';
     }
   }
 
-  &:after {
+  &::after {
     content: ',';
   }
 }
 
 .bb-media-stats {
-  font-weight: $global-weight-semibold;
   color: $dark-gray;
   font-size: rem-calc(16);
+  font-weight: $global-weight-semibold;
 }

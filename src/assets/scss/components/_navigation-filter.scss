@@ -10,12 +10,12 @@
   position: relative;
 
   .bb-search-button {
-    padding: rem-calc(30) 0 rem-calc(30) rem-calc(30);
     display: flex;
+    padding: rem-calc(30) 0 rem-calc(30) rem-calc(30);
 
     .bb-search-icon {
-      width: 30px;
       height: 30px;
+      width: 30px;
     }
 
     &:hover {
@@ -28,12 +28,12 @@
   }
 
   .filter-nav-button {
-    padding: rem-calc(20);
-    min-width: rem-calc(100);
-    display: flex;
-    flex-direction: column;
     align-items: center;
     color: $dark-gray;
+    display: flex;
+    flex-direction: column;
+    min-width: rem-calc(100);
+    padding: rem-calc(20);
 
     &.active {
       background: $light-blue;
@@ -65,39 +65,42 @@
 }
 
 .bb-filter-icons {
+  height: 36px;
   margin-bottom: 1rem;
   width: 36px;
-  height: 36px;
 }
 
 .bb-search-bar-container {
-  margin: 0 auto;
-  background-color: white;
-  display: none;
-  width: 100%;
-  max-width: $global-width;
-  height: rem-calc(106);
   @include vertical-center;
 
+  background-color: white;
+  display: none;
+  height: rem-calc(106);
+  margin: 0 auto;
+  max-width: $global-width;
+  width: 100%;
+
   .close-button {
-    color: $medium-gray;
     @include vertical-center;
+
+    color: $medium-gray;
   }
 
   .bb-search-bar {
-    height: rem-calc(55);
-    border: none;
-    border-bottom: 1px solid $medium-gray;
-    box-shadow: none;
-    font-size: rem-calc(24);
-    color: $dark-gray;
-    background-color: $white;
     @include vertical-center;
 
+    background-color: $white;
+    border: 0;
+    border-bottom: 1px solid $medium-gray;
+    box-shadow: none;
+    color: $dark-gray;
+    font-size: rem-calc(24);
+    height: rem-calc(55);
+
     &:focus {
-      border: none;
-      box-shadow: none;
+      border: 0;
       border-bottom: 1px solid $dark-blue;
+      box-shadow: none;
     }
   }
 }
@@ -111,8 +114,8 @@
   }
 
   .menu {
-    border-radius: rem-calc(3);
     border: 1px solid $light-gray;
+    border-radius: rem-calc(3);
     width: auto;
   }
 
@@ -127,9 +130,9 @@
   }
 
   .is-dropdown-submenu {
-    min-width: rem-calc(170);
-    margin: -1px 0 0 -1px;
     border-top: 1px solid $light-gray;
+    margin: -1px 0 0 -1px;
+    min-width: rem-calc(170);
 
     li > a {
       color: $dark-blue;
@@ -145,9 +148,10 @@
   }
 
   .dropdown.menu .is-dropdown-submenu-parent > a:after {
-    content: '';
     @include css-triangle(6px, $dark-blue, down);
-    top: 60%;
+
+    content: '';
     right: 1rem;
+    top: 60%;
   }
 }

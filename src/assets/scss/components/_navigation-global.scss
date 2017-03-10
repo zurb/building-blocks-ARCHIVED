@@ -4,11 +4,11 @@ $topbar-hover-color: lighten($topbar-bg, 10%);
 
 .marketing-topbar {
   background: $topbar-bg !important;
+  display: flex;
   font-size: rem-calc(13);
   font-weight: bold;
-  position: relative;
-  display: flex;
   justify-content: space-between;
+  position: relative;
 
   .dropdown.menu a {
     background: $topbar-bg;
@@ -79,7 +79,7 @@ $topbar-hover-color: lighten($topbar-bg, 10%);
   }
 
   .dropdown.menu > li.opens-right > .is-dropdown-submenu {
-    border: none;
+    border: 0;
   }
 
   // zurb logo
@@ -126,8 +126,6 @@ $topbar-hover-color: lighten($topbar-bg, 10%);
 
 
 .menu > .menu-item {
-  flex: 0 0 auto;
   display: flex;
+  flex: 0 0 auto;
 }
-
-

@@ -2,8 +2,8 @@
   margin-top: $global-margin;
 
   .filter-nav-mobile-button {
-    padding: rem-calc(20);
     flex-direction: column;
+    padding: rem-calc(20);
 
     * {
       fill: $dark-gray;
