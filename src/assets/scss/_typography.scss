@@ -51,24 +51,3 @@
   font-url('OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
 }
 
-.card-title {
-  color: $dark-blue;
-  font-size: rem-calc(18);
-  font-weight: $global-weight-semibold;
-  text-transform: uppercase;
-}
-
-.building-block-title {
-  color: $dark-blue;
-  font-size: rem-calc(27);
-  font-weight: $global-weight-bold;
-  text-transform: uppercase;
-
-  small {
-    color: $medium-gray;
-    font-size: rem-calc(15);
-    text-transform: none;
-  }
-}
-
-

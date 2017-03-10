@@ -1,12 +1,15 @@
 .building-block-header {
   margin-bottom: 2rem;
+  position: relative;
 
-  .version-badge {
-  margin-right: 0.5rem;
+  .version-badge,
+  .version-menu {
+  margin-right: 0.7rem;
   }
 
   .bb-divider {
     height: 2rem;
+    margin-right: 0.5rem;
     * {
     stroke: $medium-gray;
   }
@@ -28,9 +31,28 @@
   }
 }
 
+.building-block-title {
+  color: $dark-blue;
+  font-size: rem-calc(27);
+  font-weight: $global-weight-bold;
+  text-transform: uppercase;
+  display: inline;
+}
+
+.building-block-author {
+    color: $medium-gray;
+    font-size: rem-calc(15);
+    text-transform: none;
+    display: inline;
+    @include breakpoint(small only) {
+      display: block;
+    }
+}
+
 .header-icon-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .building-block-tag {
@@ -48,8 +70,26 @@
   }
 }
 
+.bb-like-button {
+  @include breakpoint(small only) {
+    position: absolute;
+    top: 0;
+    right: 0.625rem;
+
+  }
+}
+
 .bb-media-stats {
   font-weight: $global-weight-semibold;
   color: $dark-gray;
   font-size: rem-calc(16);
+  @include breakpoint(small only) { 
+    display: none;
+  }
+}
+
+.bb-header-social {
+  @include breakpoint(small only) { 
+    display: none;
+  }
 }
