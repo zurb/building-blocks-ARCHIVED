@@ -2,17 +2,20 @@
   margin-top: $global-margin;
 
   .filter-nav-mobile-button {
-    flex-direction: column;
-    padding: rem-calc(20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $dark-blue;
+    padding: $global-padding;
 
-    * {
-      fill: $dark-gray;
+    span {
+      margin-left: $global-margin;
+      color: $white;
     }
 
-    &:hover {
-      * {
-        fill: $dark-blue;
-      }
+    * {
+      fill: $white;
     }
   }
 
