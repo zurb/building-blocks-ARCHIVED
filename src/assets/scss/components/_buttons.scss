@@ -9,10 +9,10 @@ button {
 }
 
 .button.secondary {
-  box-shadow: none;
-  border: 2px solid $dark-blue;
-  color: $dark-blue;
   background: none;
+  border: 2px solid $dark-blue;
+  box-shadow: none;
+  color: $dark-blue;
   
   &:hover {
     background: $light-blue;

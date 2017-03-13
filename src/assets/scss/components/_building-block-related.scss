@@ -1,10 +1,7 @@
-.building-block-related {
-}
-
 .building-block-related-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bb-related-title {
@@ -14,7 +11,7 @@
 }
 
 .bb-related-link {
-  margin-bottom: 0.5rem;
   color: $dark-blue;
   font-weight: $global-weight-bold;
+  margin-bottom: 0.5rem;
 }
