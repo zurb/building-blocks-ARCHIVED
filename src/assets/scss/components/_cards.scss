@@ -16,24 +16,32 @@
 }
 
 .card-divider {
-  display: flex;
   align-items: center;
+  display: flex;
 
-  h1,h2,h3,h4,h5,h6,p,a,.button {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  .button {
     margin-bottom: 0;
   }
 }
 
 .card-actions {
-  display: flex;
   align-items: center;
+  display: flex;
   vertical-align: baseline;
 
   span {
-    margin-left: 5px;
+    color: $medium-gray;
     font-size: rem-calc(12);
     font-weight: $global-weight-bold;
-    color: $medium-gray;
+    margin-left: 5px;
   }
 
   .card-views {
@@ -46,25 +54,25 @@
 }
 
 .card-img {
-  position: relative;
   flex: 1 0 auto;
+  position: relative;
 }
 
 // card fonts and text styles
 .card-category {
+  color: $dark-blue;
+  font-size: rem-calc(12);
+  font-weight: $global-weight-semibold;
   position: absolute;
-  top: rem-calc(12);
   right: rem-calc(12);
   text-transform: lowercase;
-  font-size: rem-calc(12);
-  color: $dark-blue;
-  font-weight: $global-weight-semibold;
+  top: rem-calc(12);
 }
 
 .card-author {
+  color: $medium-gray;
   font-size: rem-calc(12);
   font-weight: $global-weight-semibold;
-  color: $medium-gray;
   text-transform: capitalize;
 }
 
@@ -77,28 +85,29 @@
 }
 
 .hover-wrapper {
+  display: flex;
   flex-direction: column;
   position: relative;
-  display: flex;
 
   .card-imghover-overlay::after {
-    content: 'Preview';
-    text-transform: uppercase;
-    font-weight: $global-weight-bold;
-    font-size: rem-calc(41);
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: rem-calc(257);
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 80;
-    color: $dark-blue;
-    opacity: 0;
     @include transition(opacity 0.2s ease-out);
     @include transition-delay( 0.25s);
+
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $dark-blue;
+    content: 'Preview';
+    display: flex;
+    font-size: rem-calc(41);
+    font-weight: $global-weight-bold;
+    height: rem-calc(257);
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+    z-index: 80;
   }
 
   &:hover .card-imghover-overlay::after {
@@ -112,21 +121,22 @@
   }
 
   .card-hover-link {
-    text-transform: capitalize;
-    font-weight: $global-weight-bold;
-    font-size: rem-calc(18);
-    color: $dark-gray;
-    height: rem-calc(90);
-    width: 100%;
-    background-color: $white;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    z-index: 80;
     @include transition(opacity 0.2s ease-out);
     @include transition-delay( 0.25s);
+
+    align-items: center;
+    background-color: $white;
+    bottom: 0;
+    color: $dark-gray;
+    display: flex;
+    font-size: rem-calc(18);
+    font-weight: $global-weight-bold;
+    height: rem-calc(90);
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    text-transform: capitalize;
+    width: 100%;
+    z-index: 80;
   }
 }

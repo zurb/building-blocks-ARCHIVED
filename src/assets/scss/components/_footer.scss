@@ -59,8 +59,6 @@
   margin-top: 1rem;
 }
 
-
-
 // The ZURB footer.
 
 .zurb-footer-top {
@@ -445,18 +443,18 @@
 
   .zurb-footer-top .global {
     .footer-link-block {
+      clear: both;
+      margin: 0 !important;
       padding-top: 50px;
       text-align: center;
-      margin: 0 !important;
-      clear: both;
 
       span {
-        padding-left: 0px;
+        padding-left: 0;
       }
 
       &.services {
-        border-top: 0;
         background-position: center 15px !important;
+        border-top: 0;
       }
 
       &.foundation {
@@ -464,22 +462,22 @@
       }
 
       &.apps {
-        padding-top: 80px;
         background-position: center 45px !important;
+        padding-top: 80px;
       }
 
       &.expo {
-        padding-top: 80px;
         background-position: center 45px !important;
+        padding-top: 80px;
       }
     }
   }
 
   .zurb-footer-top .property .learn-links {
     background: none;
-    border: none;
-    padding-top: 0;
+    border: 0;
     margin: 0;
+    padding-top: 0;
   }
 }
 
@@ -497,8 +495,8 @@ only screen and (min-device-pixel-ratio: 2) {
     background-size: 50px 600px;
   }
   .zurb-footer-top .global .footer-link-block {
-    font-weight: normal;
     display: block;
+    font-weight: normal;
     margin: 30px 0 0 0;
 
     &.services {
@@ -547,8 +545,8 @@ only screen and (min-device-pixel-ratio: 2) {
   }
 
   .zurb-footer-top .global .footer-link-block {
-    font-weight: normal;
     display: block;
+    font-weight: normal;
     margin: 30px 0 0 0;
 
     &.services {

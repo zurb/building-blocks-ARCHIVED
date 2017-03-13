@@ -1,14 +1,17 @@
-$code-button-bg: rgba(0,67,91,0.08);
+$code-button-bg: rgba(0, 67, 91, 0.08);
 
 .code-menu {
   width: auto;
 }
 
 .code-menu-item {
-  padding: 0.5rem;
-  margin: 10px 3px;
   background-color: $code-button-bg;
   border-radius: 2px;
+  margin: 10px 5px;
+  padding: rem-calc(15);
+  margin: 10px 3px;
+
+
 
   a {
     color: $dark-blue;

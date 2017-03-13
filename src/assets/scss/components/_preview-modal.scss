@@ -1,8 +1,8 @@
 .preview-modal {
 
   &.reveal {
+    border: 0;
     padding: 0;
-    border: none;
 
     @include breakpoint(medium) {
       width: 80%;
@@ -22,13 +22,13 @@
   }
 
   .preview-link {
-    padding: 1rem 0;
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    color: $white;
     background: $primary-color;
+    color: $white;
+    display: block;
+    font-weight: bold;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
 
     &:hover {
       background: darken($primary-color, 10%);
@@ -38,5 +38,4 @@
       width: 100%;
     }
   }
-
 }
