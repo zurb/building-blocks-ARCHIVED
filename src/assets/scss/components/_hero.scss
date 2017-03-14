@@ -19,8 +19,13 @@
 }
 
 .hero-content {
-  flex-basis: 40%;
-  margin-left: $global-margin;
+  text-align: center;
+
+  @include breakpoint (medium up) {
+    flex-basis: 40%;
+    margin-left: $global-margin;
+    text-align: left;
+  }
 }
 
 .hero-header {
