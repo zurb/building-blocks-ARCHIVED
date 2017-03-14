@@ -7,11 +7,9 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 .code-menu-item {
   background-color: $code-button-bg;
   border-radius: 2px;
+  margin: 10px 3px;
   margin: 10px 5px;
   padding: rem-calc(15);
-  margin: 10px 3px;
-
-
 
   a {
     color: $dark-blue;
@@ -19,4 +17,14 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
     font-weight: $global-weight-bold;
     text-transform: uppercase;
   }
+}
+
+.code-box {
+  background-color: #F8F9FA;
+  border-bottom: 1px solid #D1D1D1;
+  border-left: 1px solid #D1D1D1;
+  border-top: 1px solid #D1D1D1;
+  height: 400px;
+  margin-bottom: 2rem;
+  overflow: scroll; 
 }
