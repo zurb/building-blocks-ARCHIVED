@@ -28,3 +28,9 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   margin-bottom: 2rem;
   overflow: scroll; 
 }
+
+.small-collapse {
+  @include breakpoint(small only) {
+    display: none;
+  }
+}
