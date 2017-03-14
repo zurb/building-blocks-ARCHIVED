@@ -38,6 +38,10 @@
   font-size: rem-calc(27);
   font-weight: $global-weight-bold;
   text-transform: uppercase;
+
+  @include breakpoint(small only) { 
+    padding-right: rem-calc(50);
+  }
 }
 
 .building-block-author {
