@@ -2,29 +2,42 @@ filter-nav:
   -
     img: ../assets/img/icons/filter-featured.svg
     title: Featured
+    page: 'index'
     alt: Layout
-    classes: active
+    classes:
   -
     img: ../assets/img/icons/filter-navigation.svg
     title: Navigation
+    page: 'navigation'
     alt: Layout
+    classes:
   -
     img: ../assets/img/icons/filter-status.svg
     title: Status
+    page: 'status'
     alt: Layout
+    classes:
   -
     img: ../assets/img/icons/filter-media.svg
     title: Media
+    page: 'media'
     alt: Layout
+    classes:
   -
     img: ../assets/img/icons/filter-containers.svg
     title: Containers
+    page: 'containers'
     alt: Layout
+    classes:
   -
     img: ../assets/img/icons/filter-forms.svg
     title: Forms
+    page: 'forms'
     alt: Layout
+    classes:
   -
     img: ../assets/img/icons/filter-control.svg
     title: Control
+    page: 'control'
     alt: Layout
+    classes:

@@ -1,0 +1,64 @@
+$card-hover-link-height: rem-calc(90);
+$card-height: rem-calc(347);
+
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
+  width: 100%;
+}
+
+.card-building-block {
+  height: $card-height;
+}
+
+.card-divider {
+  display: flex;
+  align-items: center;
+
+  h1,h2,h3,h4,h5,h6,p,a,.button {
+    margin-bottom: 0;
+  }
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  vertical-align: baseline;
+
+  span {
+    margin-left: 5px;
+    font-size: rem-calc(12);
+    font-weight: $global-weight-bold;
+    color: $medium-gray;
+  }
+
+  .card-views {
+    margin-right: rem-calc(22);
+  }
+}
+
+.card hr {
+  margin: 0;
+}
+
+.card-img {
+  position: relative;
+  flex: 1 0 auto;
+}
+
+// card fonts and text styles
+.card-category {
+  position: absolute;
+  top: rem-calc(12);
+  right: rem-calc(12);
+  text-transform: lowercase;
+  font-size: rem-calc(12);
+  color: $dark-blue;
+  font-weight: $global-weight-semibold;
+}
+
+.card-author {
+  font-size: rem-calc(12);
+  font-weight: $global-weight-semibold;
+  color: $medium-gray;
+  text-transform: capitalize;
+}

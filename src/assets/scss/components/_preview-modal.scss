@@ -16,6 +16,7 @@
   .close-button {
     font-size: 1rem;
     text-transform: uppercase;
+
     @include breakpoint(medium) {
       display: none;
     }
