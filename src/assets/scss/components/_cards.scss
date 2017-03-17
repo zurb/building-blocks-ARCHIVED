@@ -1,8 +1,26 @@
+
+.row.card-container {
+  @include breakpoint(small only) {
+    display: block;
+    width: 100vw;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.column-block.scroll-x {
+  @include breakpoint(small only) {
+    display: inline-block;
+    width: 90%;
+  }
+}
+
 .card {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
   margin-bottom: rem-calc(25);
   width: 100%;
 }
+
 
 .card-title {
   color: $dark-blue;
