@@ -1,10 +1,10 @@
 
-.row.card-container {
+.row.scroll-container {
   @include breakpoint(small only) {
     display: block;
-    width: 100vw;
     overflow-x: auto;
     white-space: nowrap;
+    width: 100vw;
   }
 }
 

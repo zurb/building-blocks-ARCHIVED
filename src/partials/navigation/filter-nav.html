@@ -1,46 +1,19 @@
 <div class="filter-nav-container">
   <div class="row filter-nav align-spaced">
     <div class="column medium-2"></div>
+
     <div class="column medium-8 flex-container align-middle align-spaced">
       {{#each global.filter-nav}}
-      <button class="filter-nav-button {{classes}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
+      <button class="filter-nav-button {{classes}} {{#ifpage page}}active{{/ifpage}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
       {{/each}}
     </div>
+
     <div class="column medium-2 flex-container align-right align-self-center">
       <button class="bb-search-button" data-toggle="bb-search-bar bb-filter-icons-container"><img src="{{root}}assets/img/icons/filter-search.svg" class="inject-me bb-search-icon" height="" title="Search Building Blocks" width="30" alt="Search icon"><span></span></button>
     </div>
     <div class="bb-search-bar-container" id="bb-search-bar" data-toggler=".is-hidden" data-animate="fade-in fade-out" data-closable>
       <input type="search" placeholder="Search for a building block..." class="bb-search-bar">
       <button class="close-button" data-close>&times;</button>
-    </div>
-  </div>
-
-  <div class="row align-center filter-nav-dropdown">
-    <div class="medium-3 columns">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li>
-          <a href="#">All versions</a>
-          <ul class="menu">
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="medium-3 columns">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li>
-          <a href="#">Newest</a>
-          <ul class="menu">
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
-          </ul>
-        </li>
-      </ul>
     </div>
   </div>
 </div>
