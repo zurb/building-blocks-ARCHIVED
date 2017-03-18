@@ -8,3 +8,13 @@ $page-spacing: 3rem;
 .card-container {
   margin-bottom: $page-spacing;
 }
+
+
+.scroll-container {
+  @include breakpoint(small only) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100vw;
+  }
+}

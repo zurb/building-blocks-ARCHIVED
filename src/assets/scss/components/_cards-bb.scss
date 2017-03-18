@@ -1,14 +1,7 @@
 $card-hover-link-height: rem-calc(90);
 $card-height: rem-calc(347);
 
-.row.scroll-container {
-  @include breakpoint(small only) {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100vw;
-  }
-}
+
 
 .column-block.scroll-x {
   @include breakpoint(small only) {

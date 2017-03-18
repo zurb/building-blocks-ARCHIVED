@@ -20,17 +20,11 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 }
 
 .code-box {
-  background-color: #F8F9FA;
-  border-bottom: 1px solid #D1D1D1;
-  border-left: 1px solid #D1D1D1;
-  border-top: 1px solid #D1D1D1;
+  background-color: $pale-blue;
+  border-bottom: 1px solid $medium-gray;
+  border-left: 1px solid $medium-gray;
+  border-top: 1px solid $medium-gray;
   height: 400px;
   margin-bottom: 2rem;
   overflow: scroll; 
-}
-
-.small-collapse {
-  @include breakpoint(small only) {
-    display: none;
-  }
 }
