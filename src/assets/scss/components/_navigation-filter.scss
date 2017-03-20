@@ -32,13 +32,8 @@
     color: $dark-gray;
     display: flex;
     flex-direction: column;
-    width: rem-calc(100);
     padding: rem-calc(20);
-
-    // expands width of buttons in mobile filter
-    @include breakpoint(small){
-      width: 100%;
-    }
+    width: rem-calc(100);
 
     &.active {
       background: $light-blue;
