@@ -1,15 +1,16 @@
 'use strict';
 
-import plugins  from 'gulp-load-plugins';
-import yargs    from 'yargs';
-import browser  from 'browser-sync';
-import gulp     from 'gulp';
-import panini   from 'panini';
-import rimraf   from 'rimraf';
-import sherpa   from 'style-sherpa';
-import yaml     from 'js-yaml';
-import fs       from 'fs';
-import sassLint from 'gulp-sass-lint';
+import plugins    from 'gulp-load-plugins';
+import yargs      from 'yargs';
+import browser    from 'browser-sync';
+import gulp       from 'gulp';
+import panini     from 'panini';
+import rimraf     from 'rimraf';
+import sherpa     from 'style-sherpa';
+import yaml       from 'js-yaml';
+import fs         from 'fs';
+import sassLint   from 'gulp-sass-lint';
+import gulpRename from 'gulp-rename';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -42,7 +43,7 @@ gulp.task('default',
 
 // Create a Building block
 gulp.task('bb',
-  gulp.series(clean, buildingBlock, buildingBlockSass));
+  gulp.series(clean, buildingBlock, buildingBlockSass, pages, sass, images, copy));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -80,7 +81,11 @@ function buildingBlock() {
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
     }))
-    .pipe(gulp.dest(PATHS.dist));
+      .pipe(gulpRename(function (path) {
+        path.basename += "-iframe";
+      }))
+      .pipe(gulp.dest(PATHS.dist)); // ./dist/main/text/ciao/hello-goodbye.md
+    // .pipe(gulp.dest(PATHS.dist + '/building-block/'));
 }
 
 function buildingBlockSass() {
@@ -97,7 +102,7 @@ function buildingBlockSass() {
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/dist/building-block/css'))
+    .pipe(gulp.dest(PATHS.dist ))
     .pipe(browser.reload({ stream: true }));
 }
 
