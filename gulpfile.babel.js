@@ -42,7 +42,7 @@ gulp.task('default',
 
 // Create a Building block
 gulp.task('bb',
-  gulp.series(buildingBlock, buildingBlockSass));
+  gulp.series(clean, buildingBlock, buildingBlockSass));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -84,7 +84,7 @@ function buildingBlock() {
 }
 
 function buildingBlockSass() {
-  return gulp.src('src/building-blocks/app.scss', 'src/building-blocks/active/**/*.scss')
+  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/active/**/*.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
