@@ -40,6 +40,10 @@ gulp.task('build',
 gulp.task('default',
   gulp.series('build', server, watch));
 
+// Create a Building block
+gulp.task('bb',
+  gulp.series(buildingBlock, buildingBlockSass));
+
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
@@ -64,6 +68,37 @@ function pages() {
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulp.dest(PATHS.dist));
+}
+
+// Create a building block
+function buildingBlock() {
+  return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
+    .pipe(panini({
+      root: 'src/building-blocks/active/',
+      layouts: 'src/layouts/building-block.html',
+      partials: 'src/partials/building-block/',
+      data: 'src/data/',
+      helpers: 'src/panini-helpers/'
+    }))
+    .pipe(gulp.dest(PATHS.dist));
+}
+
+function buildingBlockSass() {
+  return gulp.src('src/building-blocks/app.scss', 'src/building-blocks/active/**/*.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    // Comment in the pipe below to run UnCSS in production
+    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+    .pipe($.if(PRODUCTION, $.cssnano()))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/dist/building-block/css'))
+    .pipe(browser.reload({ stream: true }));
 }
 
 // Load updated HTML templates and partials into Panini
