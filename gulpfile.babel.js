@@ -41,9 +41,9 @@ gulp.task('build',
 gulp.task('default',
   gulp.series('build', server, watch));
 
-// Create a Building block
+// Create Building Blocks
 gulp.task('bb',
-  gulp.series(clean, buildingBlock, buildingBlockSass, pages, sass, images, copy));
+  gulp.series(clean, buildingBlockIframe, buildingBlockSass, pages, sass, images, copy));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -72,7 +72,7 @@ function pages() {
 }
 
 // Create a building block
-function buildingBlock() {
+function buildingBlockIframe() {
   return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
     .pipe(panini({
       root: 'src/building-blocks/active/',
@@ -81,11 +81,10 @@ function buildingBlock() {
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
     }))
-      .pipe(gulpRename(function (path) {
-        path.basename += "-iframe";
-      }))
-      .pipe(gulp.dest(PATHS.dist)); // ./dist/main/text/ciao/hello-goodbye.md
-    // .pipe(gulp.dest(PATHS.dist + '/building-block/'));
+    .pipe(gulpRename(function (path) {
+      path.basename += "-iframe";
+    }))
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
 function buildingBlockSass() {
@@ -102,7 +101,7 @@ function buildingBlockSass() {
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist ))
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"))
     .pipe(browser.reload({ stream: true }));
 }
 
