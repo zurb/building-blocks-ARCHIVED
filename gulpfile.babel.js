@@ -75,7 +75,7 @@ function buildingBlock() {
   return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
     .pipe(panini({
       root: 'src/building-blocks/active/',
-      layouts: 'src/layouts/building-block.html',
+      layouts: 'src/layouts/building-blocks/',
       partials: 'src/partials/building-block/',
       data: 'src/data/',
       helpers: 'src/panini-helpers/'

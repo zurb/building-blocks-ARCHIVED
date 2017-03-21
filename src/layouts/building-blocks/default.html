@@ -13,35 +13,7 @@
   </head>
   <body>
 
-    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-      {{> offcanvas-menulists}}
-    </div>
-
-    <div class="off-canvas-content" data-off-canvas-content>
-      {{> mobile-menubar}}
-      {{> global-navigation}}
-      {{#if hero}}
-        {{> hero}}
-      {{/if}}
-      {{#if filter-nav}}
-        {{> filter-nav}}
-      {{/if}}
-      {{#if filter-dropdowns}}
-        {{> filter-dropdowns}}
-      {{/if}}
-      <div class="page-container">
         {{> body}}
-        {{#ifpage 'index'}}
-          {{> pagination}}
-        {{/ifpage}}
-        {{> preview-modal}}
-      </div>
-      {{> footer}}
-    </div>
-
-    <div class="row">
-      <div class="smedium-4 columns"></div>
-    </div>
 
     <script src="{{root}}assets/js/app.js"></script>
   </body>
