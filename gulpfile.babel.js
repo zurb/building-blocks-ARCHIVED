@@ -43,7 +43,7 @@ gulp.task('default',
 
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series(clean, buildingBlockIframe, buildingBlockSass, pages, sass, images, copy));
+  gulp.series(clean, buildingBlockIframe, buildingBlockSass, pages, sass, images, copy ));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -103,6 +103,11 @@ function buildingBlockSass() {
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"))
     .pipe(browser.reload({ stream: true }));
+}
+
+function copyBuildingBlockTemplate() {
+  return gulp.src(PATHS.dist + '/building.block.html')
+    .pipe(gulp.dest(PATHS.dist + '/**/*'));
 }
 
 // Load updated HTML templates and partials into Panini
