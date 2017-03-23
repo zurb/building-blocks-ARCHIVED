@@ -32,8 +32,8 @@
     color: $dark-gray;
     display: flex;
     flex-direction: column;
-    min-width: rem-calc(100);
     padding: rem-calc(20);
+    width: rem-calc(100);
 
     &.active {
       background: $light-blue;

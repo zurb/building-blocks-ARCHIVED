@@ -1,5 +1,30 @@
 <div class="filter-nav-mobile-container">
   <div class="row column">
-    <button class="filter-nav-mobile-button"><img src="{{root}}assets/img/icons/mobile-filter.svg" class="inject-me" height="" title="Filters" width="" alt="Filters"><span>Filters</span></button>
+    <button class="filter-nav-mobile-button" data-toggle="filter-nav-mobile-modal"><img src="{{root}}assets/img/icons/mobile-filter.svg" class="inject-me" height="" title="Filters" width="" alt="Filters"><span>Filters</span></button>
+  </div>
+</div>
+
+<div class="full reveal filter-nav-mobile-modal" id="filter-nav-mobile-modal" data-reveal data-animation-in="slide-in-up" data-animation-out="slide-out-down">
+  <div class="filter-nav-mobile">
+    <div class="row collapse filter-nav-mobile-header">
+      <div class="column">
+        <h2 class="filter-nav-title">Filters</h2>
+      </div>
+      <div class="column flex-container align-right align-self-middle">
+        <a href="#" class="filter-nav-cancel">Cancel</a>
+      </div>
+    </div>
+    <div class="row collapse small-up-2">
+      {{#each global.filter-nav}}
+      <div class="column">
+        <button class="filter-nav-button {{classes}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
+      </div>
+      {{/each}}
+    </div>
+    <div class="row collapse filter-nav-mobile-sort">
+      <div class="column">
+        <h2 class="filter-nav-title">Sort By</h2>
+      </div>
+    </div>
   </div>
 </div>
