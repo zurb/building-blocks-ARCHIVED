@@ -141,7 +141,8 @@
   .is-dropdown-submenu {
     border-top: 1px solid $light-gray;
     margin: -1px 0 0 -1px;
-    min-width: rem-calc(170);
+    width: 100%;
+    //min-width: rem-calc(170);
 
     li > a {
       color: $dark-blue;

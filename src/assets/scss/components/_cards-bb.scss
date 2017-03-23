@@ -61,6 +61,7 @@ $card-height: rem-calc(347);
 .card-img {
   position: relative;
   flex: 1 0 auto;
+  background: pale-blue;
 }
 
 // card fonts and text styles
@@ -68,9 +69,9 @@ $card-height: rem-calc(347);
   position: absolute;
   top: rem-calc(12);
   right: rem-calc(12);
-  text-transform: lowercase;
-  font-size: rem-calc(12);
-  color: $dark-blue;
+  text-transform: uppercase;
+  font-size: rem-calc(14);
+  color: $dark-gray;
   font-weight: $global-weight-semibold;
 }
 
