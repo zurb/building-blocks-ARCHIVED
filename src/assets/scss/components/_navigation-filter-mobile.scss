@@ -1,6 +1,6 @@
 .filter-nav-mobile-container {
-  margin-top: $global-margin;
   background-color: $light-blue;
+  margin-top: $global-margin;
 
   .filter-nav-mobile-button {
     align-items: center;
@@ -26,12 +26,11 @@
 }
 
 .filter-nav-mobile-modal {
-  padding: 0;
   height: 100vh;
+  padding: 0;
 }
 
 .filter-nav-mobile {
-
   .filter-nav-button {
     align-items: center;
     color: $dark-gray;
@@ -41,11 +40,11 @@
     width: rem-calc(100);
 
     // expands width of buttons in mobile filter
-    @include breakpoint(small){
-      width: 100%;
-      border-right: 1px solid $light-gray;
+    @include breakpoint(small) {
       border-bottom: 1px solid $light-gray;
       border-radius: 0;
+      border-right: 1px solid $light-gray;
+      width: 100%;
     }
 
     &.active {
@@ -84,18 +83,21 @@
 
   .cancel-button {
     color: $white;
+    margin-bottom: 0;
   }
 }
 
 .filter-title {
   margin-bottom: 0;
+  font-weight: 600;
 }
 
 .sort-title {
   background-color: $dark-blue;
   color: $white;
-  padding: $global-padding;
   margin-bottom: 0;
+  padding: $global-padding;
+  font-weight: 600;
 }
 
 .sort-menu {
@@ -104,8 +106,8 @@
 
     a {
       color: $dark-gray;
-      padding: 2rem;
       font-weight: 600;
+      padding: 2rem;
     }
 
     .is-active {
