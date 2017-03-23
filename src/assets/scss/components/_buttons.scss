@@ -7,3 +7,15 @@ button {
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
   font-weight: $global-weight-bold;
 }
+
+.button.secondary {
+  background: none;
+  border: 2px solid $dark-blue;
+  box-shadow: none;
+  color: $dark-blue;
+  
+  &:hover {
+    background: $light-blue;
+    color: $dark-blue;
+  }
+}

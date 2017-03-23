@@ -6,6 +6,8 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 
 .code-menu-item {
   background-color: $code-button-bg;
+  border-radius: 2px;
+  margin: 10px 3px;
   margin: 10px 5px;
   padding: rem-calc(15);
 
@@ -15,4 +17,14 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
     font-weight: $global-weight-bold;
     text-transform: uppercase;
   }
+}
+
+.code-box {
+  background-color: $pale-blue;
+  border-bottom: 1px solid $medium-gray;
+  border-left: 1px solid $medium-gray;
+  border-top: 1px solid $medium-gray;
+  height: 400px;
+  margin-bottom: 2rem;
+  overflow: scroll; 
 }
