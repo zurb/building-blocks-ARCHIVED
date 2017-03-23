@@ -20,6 +20,8 @@ $card-height: rem-calc(347);
 
 .card-title {
   font-size: rem-calc(20);
+  font-weight: $global-weight-bold;
+  color: $dark-blue;
 }
 
 .card-building-block {

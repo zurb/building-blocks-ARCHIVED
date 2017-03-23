@@ -8,7 +8,7 @@
     text-transform: uppercase;
     font-weight: $global-weight-bold;
     font-size: rem-calc(41);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(40, 103, 127, .72);
     width: 100%;
     height: calc(100% - #{$card-hover-link-height});
     position: absolute;
@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
     z-index: 80;
-    color: $dark-blue;
+    color: $white;
     opacity: 0;
     @include transition(opacity 0.2s ease-out);
     @include transition-delay( 0.25s);
@@ -31,6 +31,16 @@
   &:hover .card-hover-link {
     opacity: 1;
     @include transition(opacity 0.2s ease-out);
+  }
+
+  &:hover .card-actions span, 
+  &:hover .card-author,
+  &:hover .bb-card-social-icon {
+    color: $dark-gray;
+    
+    * {
+      fill: $dark-gray;
+    }
   }
 
   .card-hover-link {
