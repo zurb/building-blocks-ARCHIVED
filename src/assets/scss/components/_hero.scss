@@ -21,7 +21,7 @@
 .hero-content {
   text-align: center;
 
-  @include breakpoint (medium up) {
+  @include breakpoint (medium) {
     flex-basis: 40%;
     margin-left: $global-margin;
     text-align: left;
