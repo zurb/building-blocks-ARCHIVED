@@ -35,8 +35,9 @@
     color: $dark-blue;
     display: flex;
     flex-direction: column;
-    padding: rem-calc(20);
-    width: rem-calc(100);
+    padding-bottom: rem-calc(20);
+    padding-top: rem-calc(20);
+    flex: 1 0 0px;
 
     .bb-filter-icons {
       height: 36px;
