@@ -1,4 +1,5 @@
 .filter-nav-container {
+  background: $white;
   @include breakpoint(small only) {
     display: none;
   }
