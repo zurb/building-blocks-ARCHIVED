@@ -1,12 +1,10 @@
 $page-spacing: 3rem;
 
 .page-container {
-  margin-bottom: $page-spacing;
   margin-top: $page-spacing;
 }
 
 .card-container {
-  margin-bottom: $page-spacing;
 }
 
 
@@ -17,4 +15,8 @@ $page-spacing: 3rem;
     white-space: nowrap;
     width: 100vw;
   }
+}
+
+.page-background-alt {
+  background: $light-blue;
 }
