@@ -11,7 +11,7 @@ $page-spacing: 3rem;
 
 
 .scroll-container {
-  @include breakpoint(small only) {
+  @include breakpoint(medium down) {
     display: block;
     overflow-x: auto;
     white-space: nowrap;

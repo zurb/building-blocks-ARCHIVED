@@ -6,6 +6,10 @@ $card-height: rem-calc(347);
 }
 
 .column-block.scroll-x {
+  @include breakpoint(medium only) {
+  display: inline-block;
+  width: 46%;
+  }
   @include breakpoint(small only) {
     display: inline-block;
     width: 90%;
