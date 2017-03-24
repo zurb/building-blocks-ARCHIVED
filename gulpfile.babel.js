@@ -1,16 +1,17 @@
 'use strict';
 
-import plugins    from 'gulp-load-plugins';
-import yargs      from 'yargs';
-import browser    from 'browser-sync';
-import gulp       from 'gulp';
-import panini     from 'panini';
-import rimraf     from 'rimraf';
-import sherpa     from 'style-sherpa';
-import yaml       from 'js-yaml';
-import fs         from 'fs';
-import sassLint   from 'gulp-sass-lint';
-import gulpRename from 'gulp-rename';
+import plugins      from 'gulp-load-plugins';
+import yargs        from 'yargs';
+import browser      from 'browser-sync';
+import gulp         from 'gulp';
+import panini       from 'panini';
+import paniniIframe from 'panini';
+import rimraf       from 'rimraf';
+import sherpa       from 'style-sherpa';
+import yaml         from 'js-yaml';
+import fs           from 'fs';
+import sassLint     from 'gulp-sass-lint';
+import gulpRename   from 'gulp-rename';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -72,13 +73,19 @@ function pages() {
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulp.dest(PATHS.dist));
+  }
+
+function getNewPanini(options) {
+  var p = new panini.Panini(options);
+  p.loadBuiltinHelpers();
+  p.refresh();
+  return p.render()
 }
 
 // Create a building block
 function buildingBlockIframe() {
-  panini.refresh();
   return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
-    .pipe(panini({
+    .pipe(getNewPanini({
       root: 'src/',
       layouts: 'src/layouts/building-blocks/iframe/',
       partials: 'src/partials/building-block/',
@@ -110,9 +117,8 @@ function buildingBlockSass() {
 }
 
 function buildingBlockPage() {
-  panini.refresh();
   return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
-    .pipe(panini({
+    .pipe(getNewPanini({
       root: 'src/',
       layouts: 'src/layouts/building-blocks/page/',
       partials: 'src/partials',
