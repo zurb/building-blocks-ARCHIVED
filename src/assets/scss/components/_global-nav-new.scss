@@ -9,6 +9,7 @@ $global-nav-hover-color: lighten($global-nav-bg, 10%);
   font-size: rem-calc(13);
   font-weight: bold;
   position: relative;
+  height: rem-calc(45);
 
   .dropdown {
     width: auto;
@@ -32,41 +33,6 @@ $global-nav-hover-color: lighten($global-nav-bg, 10%);
       background: $global-nav-hover-color;
     }
   }
-
-  .zurb-logo-text {
-    @include vertical-center;
-    margin-left: 5px;
-    padding-top: 4px;
-  }
-
-  .global-nav-title {
-    line-height: 0;
-    padding-left: $global-padding;
-
-    a {
-      font-family: "zurb-logo";
-      font-size: 38px;
-      font-weight: normal;
-      opacity: 0.75;
-      transition: $transition;
-      display: flex;
-      align-items: center;
-      color: $white;
-
-      strong {
-        display: inline;
-        font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 17px;
-        line-height: 45px;
-        margin-left: 7px;
-      }
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-
 
   .menu a {
     color: $light-gray;
@@ -96,12 +62,6 @@ $global-nav-hover-color: lighten($global-nav-bg, 10%);
   }
 
   // zurb logo
-  .zurb-logo img {
-    height: 45px;
-    opacity: 0.9;
-    width: 76px;
-  }
-
   .global-nav-title {
     opacity: 0.9;
     transition: all .25s ease-in-out;
@@ -133,6 +93,35 @@ $global-nav-hover-color: lighten($global-nav-bg, 10%);
   .menu {
     li:not(:last-child) {
       border-right: 1px solid $global-nav-border-color;
+    }
+  }
+}
+
+.global-nav-title {
+  line-height: 0;
+  padding-left: $global-padding;
+
+  a {
+    font-family: "zurb-logo";
+    font-size: 38px;
+    font-weight: normal;
+    opacity: 0.75;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    color: $white;
+
+    strong {
+      display: inline;
+      font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 45px;
+      margin-left: 7px;
+      margin-top: 1px;
+    }
+
+    &:hover {
+      opacity: 1;
     }
   }
 }
