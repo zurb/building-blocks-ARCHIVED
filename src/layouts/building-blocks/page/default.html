@@ -1,0 +1,84 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta-title}} | Foundation 6</title>
+    <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+  </head>
+  <body>
+
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      {{> offcanvas-menulists}}
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      {{> mobile-menubar}}
+      {{> global-navigation}}
+      {{#if hero}}
+        {{> hero}}
+      {{/if}}
+      {{#if filter-nav}}
+        {{> filter-nav}}
+      {{/if}}
+      {{#if filter-dropdowns}}
+        {{> filter-dropdowns}}
+      {{/if}}
+      <div class="page-container">
+        <div class="row columns">
+          {{> bb-breadcrumbs}}
+        </div>
+        
+        {{> building-block-header}}
+        
+        {{> building-block-preview}}
+        
+        {{> building-block-description}}
+        
+        {{> building-block-code}}
+        
+        <div class="building-block-related">
+          <div class="row column">
+            <h2 class="bb-related-title">Similar Containers</h2>
+          </div>
+          <div class="row small-up-2 medium-up-3">
+            {{#repeat 3}}
+            <div class="column colum-block">
+              {{> building-block-card}}
+            </div>
+            {{/repeat}}
+          </div>
+        </div>
+        
+        <div class="building-block-related">
+          <div class="row column">
+            <h2 class="bb-related-title">Users Also Searched</h2>
+          </div>
+          <div class="row small-up-2 medium-up-3">
+            {{#repeat 3}}
+            <div class="column colum-block">
+              {{> building-block-card}}
+            </div>
+            {{/repeat}}
+          </div>
+        </div>
+        {{#ifpage 'index'}}
+          {{> pagination}}
+        {{/ifpage}}
+        {{> preview-modal}}
+      </div>
+      {{> footer}}
+    </div>
+
+    <div class="row">
+      <div class="smedium-4 columns"></div>
+    </div>
+
+    <script src="{{root}}assets/js/app.js"></script>
+  </body>
+</html>

@@ -43,7 +43,10 @@ gulp.task('default',
 
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series(clean, buildingBlockIframe, buildingBlockSass, pages, sass, images, copy ));
+  gulp.series(clean, buildingBlockPage, buildingBlockIframe, buildingBlockSass, pages, sass, images, copy, server, watch ));
+
+gulp.task('bb-iframe',
+  gulp.series(clean,buildingBlockPage, buildingBlockIframe));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -73,10 +76,11 @@ function pages() {
 
 // Create a building block
 function buildingBlockIframe() {
+  panini.refresh();
   return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
     .pipe(panini({
-      root: 'src/building-blocks/active/',
-      layouts: 'src/layouts/building-blocks/',
+      root: 'src/',
+      layouts: 'src/layouts/building-blocks/iframe/',
       partials: 'src/partials/building-block/',
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
@@ -105,9 +109,17 @@ function buildingBlockSass() {
     .pipe(browser.reload({ stream: true }));
 }
 
-function copyBuildingBlockTemplate() {
-  return gulp.src(PATHS.dist + '/building.block.html')
-    .pipe(gulp.dest(PATHS.dist + '/**/*'));
+function buildingBlockPage() {
+  panini.refresh();
+  return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
+    .pipe(panini({
+      root: 'src/',
+      layouts: 'src/layouts/building-blocks/page/',
+      partials: 'src/partials',
+      data: 'src/data/',
+      helpers: 'src/panini-helpers/'
+    }))
+    .pipe(gulp.dest(PATHS.dist + "/building-block-2/"));
 }
 
 // Load updated HTML templates and partials into Panini

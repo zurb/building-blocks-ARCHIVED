@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production",
-    "bb": "gulp bb"
+    "bb": "gulp bb",
+    "bb-i": "gulp bb-iframe"
   },
   "author": "ZURB <foundation@zurb.com>",
   "license": "MIT",
