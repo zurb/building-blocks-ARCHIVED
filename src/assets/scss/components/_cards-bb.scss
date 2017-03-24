@@ -1,7 +1,9 @@
-$card-hover-link-height: rem-calc(90);
+$card-hover-link-height: rem-calc(92);
 $card-height: rem-calc(347);
 
-
+.card-block {
+  margin-bottom: 2rem;
+}
 
 .column-block.scroll-x {
   @include breakpoint(small only) {
@@ -13,8 +15,8 @@ $card-height: rem-calc(347);
 
 .card {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
-  margin-bottom: 2rem;
   width: 100%;
+  border: 0px;
 
 }
 
