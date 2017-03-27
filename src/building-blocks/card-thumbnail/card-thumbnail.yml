@@ -1,0 +1,10 @@
+name: "Card With Thumbnail"
+tags:
+  - card
+  - thumbnail
+category: containers
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: John Cheng
