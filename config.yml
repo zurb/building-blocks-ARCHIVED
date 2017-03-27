@@ -26,6 +26,7 @@ PATHS:
     - "!src/assets/{img,js,scss}/**/*"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
+    - "node_modules/highlight.js/"
     - "bower_components/foundation-sites/scss"
     - "bower_components/motion-ui/src"
   # Paths to JavaScript libraries, which are combined into one file
