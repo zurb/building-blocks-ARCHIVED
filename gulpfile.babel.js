@@ -12,6 +12,7 @@ import yaml         from 'js-yaml';
 import fs           from 'fs';
 import sassLint     from 'gulp-sass-lint';
 import gulpRename   from 'gulp-rename';
+import _            from 'lodash'
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -47,7 +48,7 @@ gulp.task('bb',
   gulp.series(clean, buildingBlockPage, buildingBlockIframe, buildingBlockSass, pages, sass, images, copy, server, watch ));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,buildingBlockPage, buildingBlockIframe));
+  gulp.series(clean,buildingBlockPage, buildingBlockIframe, buildingBlockMeta));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -125,7 +126,23 @@ function buildingBlockPage() {
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
     }))
-    .pipe(gulp.dest(PATHS.dist + "/building-block-2/"));
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
+}
+
+
+function buildingBlockMeta() {
+  return gulp.src('src/building-blocks/active/**/*.{yml,yaml}')
+    .pipe($.yaml())
+    .pipe($.jsoncombine('index.json', function(files) {
+      var output = {};
+      _.each(files, (value, key) => {
+        key = key.split('/')[0];
+        output[key] = value;
+      })
+
+      return new Buffer(JSON.stringify(output));
+    }))
+    .pipe(gulp.dest(PATHS.dist));
 }
 
 // Load updated HTML templates and partials into Panini
