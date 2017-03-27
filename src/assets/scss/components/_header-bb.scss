@@ -1,5 +1,20 @@
 .building-block-header {
   margin-bottom: 2rem;
+  position: relative;
+
+  .version-badge,
+  .version-menu {
+    margin-right: 0.7rem;
+  }
+
+  .bb-divider {
+    height: 2rem;
+    margin-right: 0.5rem;
+
+    * {
+      stroke: $medium-gray;
+    }
+  }
 
   .bb-dropdown-pane {
     margin-top: 2rem;
@@ -17,8 +32,38 @@
   }
 }
 
+.building-block-title {
+  color: $dark-blue;
+  display: inline;
+  font-size: rem-calc(27);
+  font-weight: $global-weight-bold;
+  text-transform: uppercase;
+
+  @include breakpoint(small only) { 
+    padding-right: rem-calc(50);
+  }
+}
+
+.building-block-author {
+  color: $medium-gray;
+  display: inline;
+  font-size: rem-calc(15);
+  text-transform: none;
+
+  @include breakpoint(small only) {
+    display: block;
+  }
+}
+
+.header-icon-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .building-block-tag {
   color: $dark-blue;
+  margin-left: 0.5rem;
 
   &:last-child {
     &::after {
@@ -31,8 +76,26 @@
   }
 }
 
+.bb-like-button {
+  @include breakpoint(small only) {
+    position: absolute;
+    right: 0.625rem;
+    top: 0;
+  }
+}
+
 .bb-media-stats {
   color: $dark-gray;
   font-size: rem-calc(16);
   font-weight: $global-weight-semibold;
+
+  @include breakpoint(small only) { 
+    display: none;
+  }
+}
+
+.bb-header-social {
+  @include breakpoint(small only) { 
+    display: none;
+  }
 }

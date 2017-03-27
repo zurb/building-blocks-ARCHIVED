@@ -1,22 +1,122 @@
 .filter-nav-mobile-container {
+  background-color: $light-blue;
   margin-top: $global-margin;
 
   .filter-nav-mobile-button {
-    flex-direction: column;
-    padding: rem-calc(20);
+    align-items: center;
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: center;
+    padding: $global-padding;
+    width: 100%;
 
-    * {
-      fill: $dark-gray;
+    span {
+      color: $white;
+      margin-left: $global-margin;
     }
 
-    &:hover {
-      * {
-        fill: $dark-blue;
-      }
+    * {
+      fill: $white;
     }
   }
 
   @include breakpoint(medium) {
     display: none;
   }
+}
+
+.filter-nav-mobile-modal {
+  height: 100vh;
+  padding: 0;
+}
+
+.filter-nav-mobile {
+  .filter-nav-button {
+    align-items: center;
+    color: $dark-gray;
+    display: flex;
+    flex-direction: column;
+    padding: rem-calc(20);
+    width: rem-calc(100);
+
+    // expands width of buttons in mobile filter
+    @include breakpoint(small) {
+      border-bottom: 1px solid $light-gray;
+      border-radius: 0;
+      border-right: 1px solid $light-gray;
+      width: 100%;
+    }
+
+    &.active {
+      background: $light-blue;
+      color: $dark-blue;
+
+      .bb-filter-icons {
+        * {
+          fill: $dark-blue;
+        }
+      }
+    }
+
+    &:hover {
+      background: $light-blue;
+      color: $dark-blue;
+
+      .bb-filter-icons {
+        * {
+          fill: $dark-blue;
+        }
+      }
+    }
+
+    span {
+      font-size: rem-calc(14);
+      font-weight: $global-weight-semibold;
+    }
+  }
+}
+
+.filter-nav-mobile-header {
+  background-color: $dark-blue;
+  color: $white;
+  padding: $global-padding;
+
+  .cancel-button {
+    color: $white;
+    margin-bottom: 0;
+  }
+}
+
+.filter-title {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.sort-title {
+  background-color: $dark-blue;
+  color: $white;
+  margin-bottom: 0;
+  padding: $global-padding;
+  font-weight: 600;
+}
+
+.sort-menu {
+  li {
+    border-bottom: 1px solid $light-gray;
+
+    a {
+      color: $dark-gray;
+      font-weight: 600;
+      padding: 2rem;
+    }
+
+    .is-active {
+      background-color: $light-blue;
+      color: $dark-blue;
+    }
+  }
+}
+
+.apply-filters-button {
+  margin-top: $global-margin;
 }
