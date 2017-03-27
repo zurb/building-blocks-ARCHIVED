@@ -1,5 +1,7 @@
 index:
-  title: 'Foundation Building Blocks'
+  'meta-title': 'Foundation Building Blocks'
+  title: 'A Library of Foundation UI Components'
+  subtitle: 'These HTML, CSS and JS snippets can be plugged into any Foundation project to build faster. Enjoy!'
   'hero-class': 'hero-building-blocks'
 navigation:
   title: 'Navigation Building Blocks'
