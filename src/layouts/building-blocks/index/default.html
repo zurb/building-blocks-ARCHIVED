@@ -1,0 +1,47 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{#if meta-title}}{{meta-title}}{{else}}{{get-nav-data page 'title' navigation}}{{/if}} | Foundation 6</title>
+    <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+  </head>
+  <body>
+
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      {{> offcanvas-menulists}}
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      {{> mobile-menubar}}
+      {{> global-navigation}}
+      {{> hero}}
+      {{> filter-nav}}
+      {{> filter-dropdowns}}
+      <div class="page-container">
+        <div class="row small-up-2 medium-up-3 card-container">
+          {{#each blocks}}
+            <div class="column column-block">
+              {{> building-block-card this}}
+            </div>
+          {{/each}}
+        </div>
+        {{> pagination}}
+        {{> preview-modal}}
+      </div>
+      {{> footer}}
+    </div>
+
+    <div class="row">
+      <div class="smedium-4 columns"></div>
+    </div>
+
+    <script src="{{root}}assets/js/app.js"></script>
+  </body>
+</html>
+

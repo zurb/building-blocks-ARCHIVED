@@ -5,16 +5,24 @@ import yargs        from 'yargs';
 import browser      from 'browser-sync';
 import gulp         from 'gulp';
 import panini       from 'panini';
-import paniniIframe from 'panini';
 import rimraf       from 'rimraf';
 import sherpa       from 'style-sherpa';
 import yaml         from 'js-yaml';
 import fs           from 'fs';
 import sassLint     from 'gulp-sass-lint';
 import gulpRename   from 'gulp-rename';
+import _            from 'lodash';
+
+import requireDir   from 'require-dir';
+
+
+
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
+
+// load subtasks
+requireDir('./gulp/tasks');
 
 // Check for --production flag
 const PRODUCTION = !!(yargs.argv.production);
@@ -42,17 +50,17 @@ gulp.task('build',
 gulp.task('default',
   gulp.series('build', server, watch));
 
+gulp.task('bb-iframe',
+  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices'));
+
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series(clean, buildingBlockPage, buildingBlockIframe, buildingBlockSass, pages, sass, images, copy, server, watch ));
-
-gulp.task('bb-iframe',
-  gulp.series(clean,buildingBlockPage, buildingBlockIframe));
+  gulp.series(clean, 'bb-iframe', buildingBlockSass, sass, images, copy, server, watch ));
 
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
-  rimraf(PATHS.dist, done);
+  rimraf(PATHS.dist, () => rimraf(PATHS.build, done));
 }
 
 // Copy files out of the assets folder
@@ -127,6 +135,7 @@ function buildingBlockPage() {
     }))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
+
 
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {

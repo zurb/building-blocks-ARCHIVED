@@ -1,17 +1,17 @@
 <div class="hover-wrapper">
-  <a href="#" class="card-imghover-overlay">
+  <a href="{{href}}" class="card-imghover-overlay">
     <div class="card card-building-block">
       <div class="card-img" style="background: url('http://placehold.it/540x300&text=.') center center no-repeat;">
-        <div class="card-category">container</div>
+        <div class="card-category">{{#if category}}{{category}}{{else}}Category{{/if}}</div>
       </div>
       <div class="card-divider align-justify">
-        <h3 class="card-title">Showcase Card</h3>
-        <span class="version-badge">F6</span>
+        <h3 class="card-title">{{#if name}}{{name}}{{else}}Showcase Card{{/if}}</h3>
+        <span class="version-badge">{{#if badge}}{{else}}F6{{/if}}</span>
       </div>
       <div class="card-divider align-justify">
         <div>
           <img src="http://placehold.it/30" class="avatar content-right" height="" width="" alt="">
-          <span class="card-author">by Jack Bauer</span>
+          <span class="card-author">by {{#if author.name}}{{author.name}}{{else}}Jack Bauer{{/if}}</span>
         </div>
         <div class="card-actions">
           <div class="card-views"><img src="{{root}}assets/img/icons/bb-card-view.svg" class="" height="" width="" alt=""><span>98</span></div>
