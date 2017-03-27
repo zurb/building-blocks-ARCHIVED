@@ -16,7 +16,7 @@ function loadConfig() {
 }
 
 function buildingBlockCombineMeta() {
-  return gulp.src('src/building-blocks/active/**/*.{yml,yaml}')
+  return gulp.src('src/building-blocks/**/*.{yml,yaml}')
     .pipe($.yaml())
     .pipe($.jsoncombine('building-blocks.json', function(files) {
       var output = {};

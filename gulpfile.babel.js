@@ -12,11 +12,7 @@ import fs           from 'fs';
 import sassLint     from 'gulp-sass-lint';
 import gulpRename   from 'gulp-rename';
 import _            from 'lodash';
-
 import requireDir   from 'require-dir';
-
-
-
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -35,6 +31,7 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
+// Lint task
 gulp.task('lint', function () {
   return gulp.src('src/assets/scss/**/*.s+(a|c)ss')
   .pipe(sassLint())
@@ -92,7 +89,7 @@ function getNewPanini(options) {
 
 // Create a building block
 function buildingBlockIframe() {
-  return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
+  return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
     .pipe(getNewPanini({
       root: 'src/',
       layouts: 'src/layouts/building-blocks/iframe/',
@@ -107,7 +104,7 @@ function buildingBlockIframe() {
 }
 
 function buildingBlockSass() {
-  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/active/**/*.scss'])
+  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/**/*.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -125,7 +122,7 @@ function buildingBlockSass() {
 }
 
 function buildingBlockPage() {
-  return gulp.src('src/building-blocks/active/**/*.{html,hbs,handlebars}')
+  return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
     .pipe(getNewPanini({
       root: 'src/',
       layouts: 'src/layouts/building-blocks/page/',
