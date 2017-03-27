@@ -125,7 +125,7 @@ function buildingBlockPage() {
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
     }))
-    .pipe(gulp.dest(PATHS.dist + "/building-block-2/"));
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
 // Load updated HTML templates and partials into Panini

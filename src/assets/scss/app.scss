@@ -51,30 +51,32 @@
 @include motion-ui-animations;
 
 // custom mixins
-@import "mixins/transitions";
+@import 'mixins/transitions';
 
 // custom global
-@import "typography";
-@import "layout";
+@import 'colors';
+@import 'typography';
+@import 'layout';
 
 // custom components
-@import "components/navigation-global";
-@import "components/footer";
-@import "components/navigation-filter";
-@import "components/navigation-filter-mobile";
-@import "components/buttons";
-@import "components/cards-bb";
-@import "components/hero";
-@import "components/version-badge";
-@import "components/avatar";
-@import "components/header-bb";
-@import "components/preview-bb";
-@import "components/description-bb";
-@import "components/code";
-@import "components/related-bb";
-@import "components/preview-modal";
-@import "components/breadcrumbs";
-@import "components/pagination";
+@import 'components/avatar';
+@import 'components/breadcrumbs';
+@import 'components/buttons';
+@import 'components/building-block-iframe';
+@import 'components/cards-bb';
+@import 'components/code';
+@import 'components/description-bb';
+@import 'components/footer';
+@import 'components/header-bb';
+@import 'components/hero';
+@import 'components/navigation-filter';
+@import 'components/navigation-filter-mobile';
+@import 'components/navigation-global';
+@import 'components/pagination';
+@import 'components/preview-bb';
+@import 'components/preview-modal';
+@import 'components/related-bb';
+@import 'components/version-badge';
 
 // custom utils
-@import "utils/card-hover";
+@import 'utils/card-hover';
