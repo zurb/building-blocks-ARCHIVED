@@ -4,7 +4,7 @@
 
     <div class="column medium-8 flex-container align-middle align-spaced">
       {{#each global.filter-nav}}
-      <button class="filter-nav-button {{classes}} {{#ifpage page}}active{{/ifpage}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
+      <a href="{{page}}.html" class="filter-nav-button {{classes}} {{#ifpage page}}active{{/ifpage}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></a>
       {{/each}}
     </div>
 

@@ -26,7 +26,7 @@ function stringSrc(categories, cb) {
 }
 
 function buildingBlocksCategoryStarters(cb) {
-  var categories = JSON.parse(fs.readFileSync(PATHS.dist + '/data/categories.json', 'utf8'));
+  var categories = JSON.parse(fs.readFileSync(PATHS.build + '/data/categories.json', 'utf8'));
   fs.mkdir(PATHS.build, () => {stringSrc(categories, cb)})
 }
 

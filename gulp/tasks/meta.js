@@ -21,16 +21,17 @@ function buildingBlockCombineMeta() {
     .pipe($.jsoncombine('building-blocks.json', function(files) {
       var output = {};
       _.each(files, (value, key) => {
-        key = key.split('/')[0];
-        output[key] = value;
+        var name = key.split('/')[0];
+        output[name] = value;
+        output[name].href = '/building-block/' + key + '.html';
       })
       return new Buffer(JSON.stringify(output));
     }))
-    .pipe(gulp.dest(PATHS.dist + '/data/'));
+    .pipe(gulp.dest(PATHS.build + '/data/'));
 };
 
 function buildingBlockCategoryMeta() {
-  return gulp.src(PATHS.dist + '/data/building-blocks.json')
+  return gulp.src(PATHS.build + '/data/building-blocks.json')
     .pipe($.jsoncombine('categories.json', function(data) {
       var output = {}
       output['index'] = {blocks: [], total: 0}
@@ -47,7 +48,7 @@ function buildingBlockCategoryMeta() {
       });
       return new Buffer(JSON.stringify(output));
     }))
-    .pipe(gulp.dest(PATHS.dist + '/data/'));
+    .pipe(gulp.dest(PATHS.build + '/data/'));
 };
 
 
