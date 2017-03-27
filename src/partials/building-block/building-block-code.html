@@ -17,13 +17,17 @@
   <!-- Code Preview -->
   <div class="row expanded collapse">
     <div class="column code-box">
-      {{bb-html page}}
+      {{#code "html"}}
+{{{bb-html page}}}
+      {{/code}}
     </div>
     <div class="column code-box hide-for-small-only">
-      <p>CSS</p>
+      {{#code "scss"}}
+{{{bb-scss page}}}
+      {{/code}}
     </div>
     <div class="column code-box hide-for-small-only">
-      <p>JS</p>
+
     </div>
   </div>
 </div>
