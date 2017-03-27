@@ -7,7 +7,6 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 .code-menu-item {
   background-color: $code-button-bg;
   border-radius: 2px;
-  margin: 10px 3px;
   margin: 10px 5px;
   padding: rem-calc(5) rem-calc(20);
 
@@ -25,5 +24,14 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   border-left: 1px solid $medium-gray;
   border-top: 1px solid $medium-gray;
   height: 400px;
-  overflow: scroll; 
+
+  margin-bottom: 2rem;
+  overflow: scroll;
+  padding: 1rem;
+
+  //highlight js override
+  code {
+    background: transparent;
+    border: 0;
+  }
 }

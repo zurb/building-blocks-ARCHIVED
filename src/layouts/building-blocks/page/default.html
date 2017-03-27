@@ -11,7 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
-  <body class="{{#ifpage 'index'}} page-background-alt {{/ifpage}}">
+  <body>
 
     <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
       {{> offcanvas-menulists}}
@@ -19,7 +19,7 @@
 
     <div class="off-canvas-content" data-off-canvas-content>
       {{> global-nav-mobile}}
-      {{> global-navigation-new}}
+      {{> global-navigation}}
       {{#if hero}}
         {{> hero}}
       {{/if}}
@@ -30,7 +30,44 @@
         {{> filter-dropdowns}}
       {{/if}}
       <div class="page-container">
-        {{> body}}
+        <div class="row columns">
+          {{> bb-breadcrumbs}}
+        </div>
+
+        {{> building-block-header}}
+
+        {{> building-block-preview}}
+
+        {{> building-block-description}}
+
+<!-- This is indented on purposed -->
+{{> building-block-code}}
+
+        <div class="building-block-related">
+          <div class="row column">
+            <h2 class="bb-related-title">Similar Containers</h2>
+          </div>
+          <div class="row small-up-2 medium-up-3">
+            {{#repeat 3}}
+            <div class="column colum-block">
+              {{> building-block-card}}
+            </div>
+            {{/repeat}}
+          </div>
+        </div>
+
+        <div class="building-block-related">
+          <div class="row column">
+            <h2 class="bb-related-title">Users Also Searched</h2>
+          </div>
+          <div class="row small-up-2 medium-up-3">
+            {{#repeat 3}}
+            <div class="column colum-block">
+              {{> building-block-card}}
+            </div>
+            {{/repeat}}
+          </div>
+        </div>
         {{#ifpage 'index'}}
           {{> pagination}}
         {{/ifpage}}

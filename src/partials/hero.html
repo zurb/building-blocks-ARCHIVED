@@ -1,12 +1,11 @@
-<header class="hero {{hero-class}}">
-<div class="row column hero-flex">
-    <div class="hero-content">
-      <!-- <div class="post-date">{{post-date}}</div> -->
-      <h1 class="hero-header">{{title}}</h1>
-      <h2 class="hero-subheader">{{subtitle}}</h2>
-    </div>
+
+<header class="hero {{#if hero-class}}{{hero-class}}{{else}}{{get-nav-data page 'hero-class' navigation}}{{/if}}">
+  <div class="hero-content">
+    <!-- <div class="post-date">{{post-date}}</div> -->
+    <h1 class="hero-header">{{#if title}}{{title}}{{else}}{{get-nav-data page 'title' navigation}}{{/if}}</h1>
+    <h2 class="hero-subheader">{{#if subtitle}}{{subtitle}}{{else}}{{get-nav-data page 'subtitle' navigation}}{{/if}}</h2>
     <div class="hero-img">
-    <img src="{{root}}assets/img/images/hero-yeti.png" alt="#">
+      <img src="{{root}}assets/img/images/hero-yeti.png" alt="#">
     </div>
     <!-- <a href="#" class="button success">{{cta}}</a> -->
   </div>

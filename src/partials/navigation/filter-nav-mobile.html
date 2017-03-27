@@ -1,4 +1,4 @@
-<div class="filter-nav-mobile-container">
+<div class="filter-nav-mobile-container" data-closable>
   <div class="row column">
     <button class="filter-nav-mobile-button" data-toggle="filter-nav-mobile-modal"><img src="{{root}}assets/img/icons/mobile-categories.svg" class="inject-me bb-category-icon" height="" title="Filters" width="" alt="Filters"><span>Categories</span></button>
   </div>
@@ -8,10 +8,12 @@
   <div class="filter-nav-mobile">
     <div class="row collapse filter-nav-mobile-header">
       <div class="column">
-        <h2 class="filter-nav-title">Categories</h2>
+        <h2 class="filter-title">Filters</h2>
       </div>
       <div class="column flex-container align-right align-self-middle">
-        <a href="#" class="filter-nav-cancel">Cancel</a>
+        <button aria-label="Dismiss alert" type="button" data-close>
+          <h2 aria-hidden="true" class="cancel-button">Cancel</h2>
+        </button>
       </div>
     </div>
     <div class="row collapse small-up-2">
@@ -21,9 +23,19 @@
       </div>
       {{/each}}
     </div>
-    <div class="row collapse filter-nav-mobile-sort">
+    <div class="row collapse">
       <div class="column">
-        <h2 class="filter-nav-title">Sort By</h2>
+        <h2 class="sort-title">Sort By</h2>
+        <ul class="vertical menu sort-menu">
+          <li><a href="#" class="is-active">Newest</a></li>
+          <li><a href="#">Oldest</a></li>
+          <li><a href="#">Alphabetical</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row column">
+      <div class="apply-filters-button">
+        <button class="button expanded">Apply</button>
       </div>
     </div>
   </div>

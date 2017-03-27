@@ -1,0 +1,10 @@
+name: 'Special Card'
+tags:
+  - special
+  - card
+  - magic
+category: containers
+versions:
+  - 6.3.1
+author:
+  name: Timbo Slice

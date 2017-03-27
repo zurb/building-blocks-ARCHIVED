@@ -1,18 +1,24 @@
 'use strict';
 
-import plugins  from 'gulp-load-plugins';
-import yargs    from 'yargs';
-import browser  from 'browser-sync';
-import gulp     from 'gulp';
-import panini   from 'panini';
-import rimraf   from 'rimraf';
-import sherpa   from 'style-sherpa';
-import yaml     from 'js-yaml';
-import fs       from 'fs';
-import sassLint from 'gulp-sass-lint';
+import plugins      from 'gulp-load-plugins';
+import yargs        from 'yargs';
+import browser      from 'browser-sync';
+import gulp         from 'gulp';
+import panini       from 'panini';
+import rimraf       from 'rimraf';
+import sherpa       from 'style-sherpa';
+import yaml         from 'js-yaml';
+import fs           from 'fs';
+import sassLint     from 'gulp-sass-lint';
+import gulpRename   from 'gulp-rename';
+import _            from 'lodash';
+import requireDir   from 'require-dir';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
+
+// load subtasks
+requireDir('./gulp/tasks');
 
 // Check for --production flag
 const PRODUCTION = !!(yargs.argv.production);
@@ -25,6 +31,7 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
+// Lint task
 gulp.task('lint', function () {
   return gulp.src('src/assets/scss/**/*.s+(a|c)ss')
   .pipe(sassLint())
@@ -34,16 +41,23 @@ gulp.task('lint', function () {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, 'lint', sass, javascript, images, copy), styleGuide));
+ gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
 
+gulp.task('bb-iframe',
+  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices'));
+
+// Create Building Blocks
+gulp.task('bb',
+  gulp.series(clean, 'bb-iframe', buildingBlockSass, sass, javascript, images, copy, server, watch ));
+
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
-  rimraf(PATHS.dist, done);
+  rimraf(PATHS.dist, () => rimraf(PATHS.build, done));
 }
 
 // Copy files out of the assets folder
@@ -64,7 +78,61 @@ function pages() {
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulp.dest(PATHS.dist));
+  }
+
+function getNewPanini(options) {
+  var p = new panini.Panini(options);
+  p.loadBuiltinHelpers();
+  p.refresh();
+  return p.render()
 }
+
+// Create a building block
+function buildingBlockIframe() {
+  return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
+    .pipe(getNewPanini({
+      root: 'src/',
+      layouts: 'src/layouts/building-blocks/iframe/',
+      partials: 'src/partials/building-block/',
+      data: 'src/data/',
+      helpers: 'src/panini-helpers/'
+    }))
+    .pipe(gulpRename(function (path) {
+      path.basename += "-iframe";
+    }))
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
+}
+
+function buildingBlockSass() {
+  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/**/*.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    // Comment in the pipe below to run UnCSS in production
+    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+    .pipe($.if(PRODUCTION, $.cssnano()))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"))
+    .pipe(browser.reload({ stream: true }));
+}
+
+function buildingBlockPage() {
+  return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
+    .pipe(getNewPanini({
+      root: 'src/',
+      layouts: 'src/layouts/building-blocks/page/',
+      partials: 'src/partials',
+      data: 'src/data/',
+      helpers: 'src/panini-helpers/'
+    }))
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
+}
+
 
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
