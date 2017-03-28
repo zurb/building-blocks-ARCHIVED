@@ -1,5 +1,6 @@
 .filter-nav-container {
   background: $white;
+
   @include breakpoint(small only) {
     display: none;
   }
@@ -17,6 +18,7 @@
     .bb-search-icon {
       height: 30px;
       width: 30px;
+
       * {
         fill: $dark-blue;
       }
@@ -118,7 +120,7 @@
 
   .dropdown {
     border-radius: rem-calc(3);
-    border: 0px solid white;
+    border: 0;
   }
 
   .menu {
@@ -133,7 +135,6 @@
       background: $white;
       color: $dark-blue;
       border-radius: 3px;
-
     }
   }
 
@@ -141,7 +142,6 @@
     border-top: 1px solid $white-blue;
     margin: -1px 0 0 -1px;
     width: 100%;
-    //min-width: rem-calc(170);
 
     li > a {
       color: $dark-blue;
