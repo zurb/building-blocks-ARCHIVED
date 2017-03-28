@@ -45,29 +45,17 @@
 
         <div class="building-block-related">
           <div class="row column">
-            <h2 class="bb-related-title">Similar Containers</h2>
+            <h2 class="bb-related-title">Similar Building Blocks</h2>
           </div>
           <div class="row small-up-2 medium-up-3">
-            {{#repeat 3}}
+            {{#random-related-blocks this 3}}
             <div class="column colum-block">
-              {{> building-block-card}}
+              {{> building-block-card currentBlock}}
             </div>
-            {{/repeat}}
+            {{/random-related-blocks}}
           </div>
         </div>
 
-        <div class="building-block-related">
-          <div class="row column">
-            <h2 class="bb-related-title">Users Also Searched</h2>
-          </div>
-          <div class="row small-up-2 medium-up-3">
-            {{#repeat 3}}
-            <div class="column colum-block">
-              {{> building-block-card}}
-            </div>
-            {{/repeat}}
-          </div>
-        </div>
         {{#ifpage 'index'}}
           {{> pagination}}
         {{/ifpage}}
