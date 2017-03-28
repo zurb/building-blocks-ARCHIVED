@@ -127,7 +127,7 @@ function buildingBlockPage() {
       root: 'src/',
       layouts: 'src/layouts/building-blocks/page/',
       partials: 'src/partials',
-      data: 'src/data/',
+      data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));

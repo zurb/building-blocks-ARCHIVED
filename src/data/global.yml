@@ -44,5 +44,5 @@ filter-nav:
 
 global-nav-links:
   -
-    url: 
+    url:
     page-name: 'control'

@@ -1,53 +1,36 @@
-.marketing-topbar {
-  background: $topbar-bg !important;
+$global-nav-bg: $topbar-bg;
+$global-nav-border-color: #3B4951;
+$global-nav-hover-color: lighten($global-nav-bg, 10%);
+
+.global-nav {
+  background: $global-nav-bg !important;
   display: flex;
+  justify-content: space-between;
   font-size: rem-calc(13);
   font-weight: bold;
-  justify-content: space-between;
   position: relative;
+  height: rem-calc(45);
 
-  .dropdown.menu a {
-    background: $topbar-bg;
-  }
+  .dropdown {
+    width: auto;
 
-  .dropdown.menu a.button {
-    background: $primary-color;
+    &.menu a {
+      background: $global-nav-bg;
 
-    &:hover {
-      background: darken($primary-color, 10%);
+      &.button {
+        background: $primary-color;
+
+        &:hover {
+          background: darken($primary-color, 10%);
+        }
+      }
     }
   }
 
   // background of the dropdown items on hover
   .is-dropdown-submenu-item a {
     &:hover {
-      background: $topbar-hover-color;
-    }
-  }
-
-  .zurb-logo-text {
-    @include vertical-center;
-    margin-left: 5px;
-    padding-top: 4px;
-  }
-
-  .topbar-title > a {
-    font-family: "zurb-logo";
-    font-size: 38px;
-    font-weight: normal;
-    opacity: 0.75;
-    transition: $transition;
-
-    strong {
-      display: inline;
-      font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 17px;
-      line-height: 45px;
-      margin-left: 7px;
-    }
-
-    &:hover {
-      opacity: 1;
+      background: $global-nav-hover-color;
     }
   }
 
@@ -60,7 +43,7 @@
 
     &:hover:not(.button, .zurb-logo),
     &:focus {
-      background: $topbar-hover-color;
+      background: $global-nav-hover-color;
     }
 
     &.button {
@@ -79,13 +62,7 @@
   }
 
   // zurb logo
-  .zurb-logo img {
-    height: 45px;
-    opacity: 0.9;
-    width: 76px;
-  }
-
-  .topbar-title {
+  .global-nav-title {
     opacity: 0.9;
     transition: all .25s ease-in-out;
 
@@ -96,7 +73,7 @@
   }
 
   .title {
-    background: $topbar-bg;
+    background: $global-nav-bg;
     color: $dark-gray;
     font-size: 0.8em;
     padding: 10px;
@@ -105,21 +82,49 @@
 
   .is-active {
     a {
-      background: darken($topbar-bg, 20%);
+      background: darken($global-nav-bg, 20%);
     }
   }
 
   .menu:last-child {
-    border-left: 1px solid $topbar-border-color;
+    border-left: 1px solid $global-nav-border-color;
   }
 
   .menu {
     li:not(:last-child) {
-      border-right: 1px solid $topbar-border-color;
+      border-right: 1px solid $global-nav-border-color;
     }
   }
 }
 
+.global-nav-title {
+  line-height: 0;
+  padding-left: $global-padding;
+
+  a {
+    font-family: "zurb-logo";
+    font-size: 38px;
+    font-weight: normal;
+    opacity: 0.75;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    color: $white;
+
+    strong {
+      display: inline;
+      font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 45px;
+      margin-left: 7px;
+      margin-top: 1px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
 
 .menu > .menu-item {
   display: flex;
