@@ -1,7 +1,7 @@
-module.exports = function(start, end, options) {
-  if (end - start > 3) {
+module.exports = function(current, numPages, direction, options) {
+  if(direction < 0 && current > 6)  {
+    return options.fn();
+  } else if (direction > 0 && (numPages - current) > 5){
     return options.fn();
   }
-
-}
-
+} 
