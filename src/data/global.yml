@@ -3,49 +3,49 @@ filter-nav:
     img: ../assets/img/icons/filter-all.svg
     title: All
     page: 'index'
-    alt: Layout
+    alt: All items icon
     classes:
   -
     img: ../assets/img/icons/filter-featured.svg
     title: Featured
-    page: 'index'
-    alt: Layout
+    page: 'featured'
+    alt: featured items icon
     classes:
   -
     img: ../assets/img/icons/filter-navigation.svg
     title: Navigation
     page: 'navigation'
-    alt: Layout
+    alt: navigation icon
     classes:
   -
     img: ../assets/img/icons/filter-status.svg
     title: Status
     page: 'status'
-    alt: Layout
+    alt: status icon
     classes:
   -
     img: ../assets/img/icons/filter-media.svg
     title: Media
     page: 'media'
-    alt: Layout
+    alt: media icon
     classes:
   -
     img: ../assets/img/icons/filter-containers.svg
     title: Containers
     page: 'containers'
-    alt: Layout
+    alt: containers icon
     classes:
   -
     img: ../assets/img/icons/filter-forms.svg
     title: Forms
     page: 'forms'
-    alt: Layout
+    alt: forms icon
     classes:
   -
     img: ../assets/img/icons/filter-control.svg
     title: Control
     page: 'control'
-    alt: Layout
+    alt: control icon
     classes:
 
 global-nav-links:
