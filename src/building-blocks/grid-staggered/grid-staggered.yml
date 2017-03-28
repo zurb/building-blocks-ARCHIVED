@@ -1,0 +1,12 @@
+name: "Staggered Grid"
+tags:
+  - css-grid
+  - layout
+  - grid
+  - hover
+category: containers
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: John Cheng
