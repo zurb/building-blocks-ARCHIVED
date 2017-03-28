@@ -12,6 +12,8 @@ const $ = plugins();
 
 const { COMPATIBILITY, PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
+const PAGE_SIZE = 12;
+
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
   return yaml.load(ymlFile);
@@ -20,16 +22,19 @@ function loadConfig() {
 // From http://stackoverflow.com/questions/23230569/how-do-you-create-a-file-from-a-string-in-gulp
 function stringSrc(categories, cb) {
   async.eachOf(categories, (category, name, callback) => {
-    var numPages = Math.ceil(category.total / 12);
+    var numPages = Math.ceil(category.total / PAGE_SIZE);
     var objs = []
     for(var i = 0; i < numPages; i++) {
-      var obj = {total: category.total, page: i + 1, numPages: numPages};
-      obj.blocks = category.blocks.slice(i * numPages, 12);
-      objs.push(obj)
+      var obj = {total: category.total, currentPage: i + 1, numPages: numPages};
+      if(numPages > 1) { obj.paginate = true;}
+      obj.filename = ((obj.currentPage === 1) ? name : name + '-' + obj.currentPage) + '.html';
+      var start = i * PAGE_SIZE;
+      obj.blocks = category.blocks.slice(start, start + PAGE_SIZE);
+      objs.push(obj);
     }
     async.each(objs, (obj, innerCallback) => {
       var str = "---\n" + yaml.safeDump(obj) + "---\n"
-      fs.writeFile(PATHS.build + "/" + name + ".html", str, innerCallback)
+      fs.writeFile(PATHS.build + "/" + obj.filename, str, innerCallback)
     }, callback);
   }, cb)
 }
