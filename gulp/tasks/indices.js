@@ -20,8 +20,17 @@ function loadConfig() {
 // From http://stackoverflow.com/questions/23230569/how-do-you-create-a-file-from-a-string-in-gulp
 function stringSrc(categories, cb) {
   async.eachOf(categories, (category, name, callback) => {
-    var str = "---\n" + yaml.safeDump(category) + "---\n"
-    fs.writeFile(PATHS.build + "/" + name + ".html", str, callback)
+    var numPages = Math.ceil(category.total / 12);
+    var objs = []
+    for(var i = 0; i < numPages; i++) {
+      var obj = {total: category.total, page: i + 1, numPages: numPages};
+      obj.blocks = category.blocks.slice(i * numPages, 12);
+      objs.push(obj)
+    }
+    async.each(objs, (obj, innerCallback) => {
+      var str = "---\n" + yaml.safeDump(obj) + "---\n"
+      fs.writeFile(PATHS.build + "/" + name + ".html", str, innerCallback)
+    }, callback);
   }, cb)
 }
 
