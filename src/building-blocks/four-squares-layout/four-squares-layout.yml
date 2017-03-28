@@ -1,0 +1,11 @@
+name: "4 Squares Layout"
+tags:
+  - layout
+  - squares
+  - grid
+category: container
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: ZURB

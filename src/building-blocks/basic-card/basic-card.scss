@@ -1,0 +1,37 @@
+.container {
+  height: 100vh;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.image {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  background-color: blue;
+
+  img {
+    width: 100%;
+  }
+}
+
+.content {
+  grid-row-start: 2/3;
+  background-color: green;
+  overflow: scroll;
+}
+
+.content {
+  grid-row-start: 3/4;
+  background-color: yellow;
+}
+
+.callout {
+  margin: 0;
+  border: none;
+}
