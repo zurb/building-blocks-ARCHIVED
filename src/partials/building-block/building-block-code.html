@@ -14,19 +14,23 @@
     </ul>
   </div>
 
+  <button class="button copy-button" data-clipboard-target="#copyHTML">Copy HTML</button>
+  <button class="button copy-button" data-clipboard-target="#copySCSS">Copy SCSS</button>
+  <button class="button copy-button" data-clipboard-target="#copyJS">Copy JS</button>
+
   <!-- Code Preview -->
   <div class="row expanded">
-    <div class="column code-box">
-      {{#code "html"}}
+    <div id="copyHTML" class="column code-box">
+{{#code "html"}}
 {{{bb-html page}}}
-      {{/code}}
+{{/code}}
     </div>
-    <div class="column code-box hide-for-small-only">
-      {{#code "scss"}}
+    <div id="copySCSS" class="column code-box hide-for-small-only">
+{{#code "scss"}}
 {{{bb-scss page}}}
-      {{/code}}
+{{/code}}
     </div>
-    <div class="column code-box hide-for-small-only">
+    <div id="copyJS" class="column code-box hide-for-small-only">
 
     </div>
   </div>

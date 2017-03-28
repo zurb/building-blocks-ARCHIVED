@@ -48,11 +48,11 @@ gulp.task('default',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices'));
+  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', buildingBlockSass, sass, javascript, images, copy,));
 
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series(clean, 'bb-iframe', buildingBlockSass, sass, javascript, images, copy, server, watch ));
+  gulp.series('bb-iframe', server, watch ));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -210,8 +210,9 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, copy);
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, browser.reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
+  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, browser.reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
   gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));

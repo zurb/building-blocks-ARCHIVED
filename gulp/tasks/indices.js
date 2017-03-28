@@ -45,6 +45,7 @@ function buildingBlocksCategoryStarters(cb) {
 }
 
 function buildingBlocksCategoryPages() {
+  panini.refresh();
   return gulp.src(PATHS.build + '/*.html')
     .pipe(panini({
       root: '_build/',

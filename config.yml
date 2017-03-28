@@ -60,6 +60,7 @@ PATHS:
     - "bower_components/foundation-sites/js/foundation.tooltip.js"
     - "bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js"
     - "node_modules/svg-injector/svg-injector.js"
+    - "node_modules/clipboard/dist/clipboard.js"
     # Paths to your own project code are here
     - "src/assets/js/!(app).js"
     - "src/assets/js/app.js"
