@@ -1,5 +1,11 @@
 filter-nav:
   -
+    img: ../assets/img/icons/filter-all.svg
+    title: All
+    page: 'index'
+    alt: Layout
+    classes:
+  -
     img: ../assets/img/icons/filter-featured.svg
     title: Featured
     page: 'index'
@@ -44,5 +50,5 @@ filter-nav:
 
 global-nav-links:
   -
-    url: 
+    url:
     page-name: 'control'
