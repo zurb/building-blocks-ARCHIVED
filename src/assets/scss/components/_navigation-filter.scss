@@ -114,6 +114,7 @@
 .filter-nav-dropdown {
   position: relative;
   z-index: 1;
+  margin-bottom: $page-spacing;
 
   .dropdown {
     border-radius: rem-calc(3);
