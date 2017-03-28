@@ -52,7 +52,7 @@ gulp.task('bb-iframe',
 
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series(clean, 'bb-iframe', buildingBlockSass, sass, images, copy, server, watch ));
+  gulp.series(clean, 'bb-iframe', buildingBlockSass, sass, javascript, images, copy, server, watch ));
 
 // Delete the "dist" folder
 // This happens every time a build starts
