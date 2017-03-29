@@ -1,0 +1,11 @@
+name: "Expandable Searchbar"
+tags:
+  - searchbar
+  - js
+  - expand
+category: navigation
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Christine Siu
