@@ -2,10 +2,10 @@
   <!-- Code Menu -->
   <div class="flex-container align-center">
     <ul class="code-menu menu">
-      <li class="code-menu-item">
+      <li class="code-menu-item is-active">
         <a href="#">HTML</a>
       </li>
-      <li class="code-menu-item">
+      <li class="code-menu-item is-active">
         <a href="#">SCSS</a>
       </li>
       <li class="code-menu-item">
@@ -14,18 +14,16 @@
     </ul>
   </div>
 
-  <button class="button copy-button" data-clipboard-target="#copyHTML">Copy HTML</button>
-  <button class="button copy-button" data-clipboard-target="#copySCSS">Copy SCSS</button>
-  <button class="button copy-button" data-clipboard-target="#copyJS">Copy JS</button>
-
   <!-- Code Preview -->
   <div class="row expanded">
     <div id="copyHTML" class="column code-box">
+      <button class="button docs-code-copy" data-clipboard-target="#copyHTML">Copy</button>
 {{#code "html"}}
 {{{bb-html page}}}
 {{/code}}
     </div>
-    <div id="copySCSS" class="column code-box hide-for-small-only">
+    <div id="copySCSS" class="column code-box">
+      <button class="button docs-code-copy" data-clipboard-target="#copySCSS">Copy</button>
       <button class="code-toggler is-active" id="scssToggle">SCSS</button>
       <button class="code-toggler" id="cssToggle">CSS</button>
 
@@ -40,8 +38,8 @@
 {{/code}}
       </div>
     </div>
-    <div id="copyJS" class="column code-box hide-for-small-only">
-
+    <div id="copyJS" class="column code-box">
+      <button class="button docs-code-copy" data-clipboard-target="#copyJS">Copy</button>
     </div>
   </div>
 </div>
