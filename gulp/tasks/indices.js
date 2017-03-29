@@ -24,6 +24,7 @@ function stringSrc(categories, cb) {
   async.eachOf(categories, (category, name, callback) => {
     var numPages = Math.ceil(category.total / PAGE_SIZE);
     var objs = []
+    var blocks = _.sortBy(category.blocks, function(block) { return -(new Date(block.dateUpdated));});
     for(var i = 0; i < numPages; i++) {
       var obj = {total: category.total, currentPage: i + 1, numPages: numPages};
       if(numPages > 1) { obj.paginate = true;}
@@ -31,7 +32,7 @@ function stringSrc(categories, cb) {
       var start = i * PAGE_SIZE;
       obj.datafile = 'categories.json';
       obj.datakey = name;
-      obj.blocks = category.blocks.slice(start, start + PAGE_SIZE);
+      obj.blocks = blocks.slice(start, start + PAGE_SIZE);
       objs.push(obj);
     }
     async.each(objs, (obj, innerCallback) => {
