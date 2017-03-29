@@ -57,3 +57,22 @@ if($searchInput.is('*')) {
     setTimeout( () => { $searchInput.focus();}, 1)
   });
 }
+
+function toggleCode() {
+  $('#codeBoxSCSS').toggleClass('is-active');
+  $('#scssToggle').toggleClass('is-active');
+  $('#codeBoxCSS').toggleClass('is-active');
+  $('#cssToggle').toggleClass('is-active');
+}
+
+$('#scssToggle').click(function(){
+  if ($('#cssToggle').hasClass('is-active')) {
+    toggleCode();
+  }
+});
+
+$('#cssToggle').click(function(){
+  if ($('#scssToggle').hasClass('is-active')) {
+    toggleCode();
+  }
+});
