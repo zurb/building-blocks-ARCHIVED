@@ -35,6 +35,7 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   padding: 1rem;
   position: relative;
   z-index: 0;
+  display: none;
 
   //highlight js override
   code {
@@ -44,6 +45,10 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 
   pre {
     position: relative;
+  }
+
+  &.is-active {
+    display: block;
   }
 }
 
