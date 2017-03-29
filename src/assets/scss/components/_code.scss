@@ -8,7 +8,7 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   background-color: $code-button-bg;
   border-radius: 2px;
   margin: 10px 5px;
-  padding: rem-calc(15);
+  padding: rem-calc(5) rem-calc(20);
 
   a {
     color: $dark-blue;
@@ -24,7 +24,8 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   border-left: 1px solid $medium-gray;
   border-top: 1px solid $medium-gray;
   height: 400px;
-  margin-bottom: 2rem;
+
+  //margin-bottom: 2rem;
   overflow: scroll;
   padding: 1rem;
 

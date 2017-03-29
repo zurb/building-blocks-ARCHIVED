@@ -1,20 +1,19 @@
 $page-spacing: 3rem;
 
 .page-container {
-  margin-bottom: $page-spacing;
-  margin-top: $page-spacing;
-}
-
-.card-container {
-  margin-bottom: $page-spacing;
+  padding-top: $page-spacing;
 }
 
 
 .scroll-container {
-  @include breakpoint(small only) {
+  @include breakpoint(medium down) {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
     width: 100vw;
   }
+}
+
+.background-alt {
+  background: $pale-blue;
 }

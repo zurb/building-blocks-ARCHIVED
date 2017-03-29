@@ -1,4 +1,6 @@
 .filter-nav-container {
+  background: $white;
+
   @include breakpoint(small only) {
     display: none;
   }
@@ -6,8 +8,8 @@
 
 .filter-nav {
   align-items: flex-start;
-  margin-bottom: $global-margin;
   position: relative;
+  margin-bottom: $page-spacing;
 
   .bb-search-button {
     display: flex;
@@ -16,28 +18,38 @@
     .bb-search-icon {
       height: 30px;
       width: 30px;
-    }
 
-    &:hover {
-      .bb-search-icon {
-        * {
-          fill: $dark-blue;
-        }
+      * {
+        fill: $dark-blue;
       }
     }
   }
 
   .filter-nav-button {
     align-items: center;
-    color: $dark-gray;
+    color: $dark-blue;
     display: flex;
     flex-direction: column;
-    padding: rem-calc(20);
-    width: rem-calc(100);
+    padding-bottom: rem-calc(20);
+    padding-top: rem-calc(20);
+    flex: 1 0 0px;
+    border-radius: 0;
+
+    .bb-filter-icons {
+      height: 36px;
+      margin-bottom: 1rem;
+      width: 36px;
+
+      * {
+        fill: $dark-blue;
+      }
+    }
 
     &.active {
-      background: $light-blue;
       color: $dark-blue;
+      box-sizing: border-box;
+      border-bottom: 5px solid $dark-blue;
+      border-radius: 0;
 
       .bb-filter-icons {
         * {
@@ -49,6 +61,7 @@
     &:hover {
       background: $light-blue;
       color: $dark-blue;
+      border-bottom: 5px solid $dark-blue;
 
       .bb-filter-icons {
         * {
@@ -64,11 +77,7 @@
   }
 }
 
-.bb-filter-icons {
-  height: 36px;
-  margin-bottom: 1rem;
-  width: 36px;
-}
+
 
 .bb-search-bar-container {
   @include vertical-center;
@@ -111,11 +120,10 @@
 
   .dropdown {
     border-radius: rem-calc(3);
+    border: 0;
   }
 
   .menu {
-    border: 1px solid $light-gray;
-    border-radius: rem-calc(3);
     width: auto;
   }
 
@@ -124,21 +132,22 @@
     justify-content: space-between;
 
     a {
-      background: $light-gray;
+      background: $white;
       color: $dark-blue;
+      border-radius: 3px;
     }
   }
 
   .is-dropdown-submenu {
-    border-top: 1px solid $light-gray;
+    border-top: 1px solid $white-blue;
     margin: -1px 0 0 -1px;
-    min-width: rem-calc(170);
+    width: 100%;
 
     li > a {
       color: $dark-blue;
 
       &:hover {
-        background: $medium-gray;
+        background: $light-blue;
       }
     }
   }

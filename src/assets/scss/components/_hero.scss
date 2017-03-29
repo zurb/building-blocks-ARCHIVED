@@ -3,28 +3,34 @@
   background-color: $light-gray;
   display: flex;
   height: rem-calc(360);
-  padding: 3rem;
 
   &.hero-building-blocks {
-    background: url('../img/images/hero-image.png') center right no-repeat;
+    background-color: $medium-blue;
     background-size: cover;
-    color: $slate-gray;
-
-    @include breakpoint(medium down) {
-      background: url('../img/images/hero-image.png') center center no-repeat;
-      background-size: cover;
-      color: $slate-gray;
-    }
+    color: $white;
   }
 }
 
+.hero-flex {
+  display: flex;
+  justify-content: space-between;
+}
 .hero-content {
-  text-align: center;
+  align-self: center;
+  flex: 4;
+  text-align: left;
 
-  @include breakpoint (medium) {
-    flex-basis: 40%;
-    margin-left: $global-margin;
-    text-align: left;
+  @include breakpoint(medium down) {
+    text-align: center;
+  }
+}
+
+.hero-img {
+  flex: 3;
+  padding-left: 100px;
+  
+  @include breakpoint(medium down) {
+    display: none;
   }
 }
 

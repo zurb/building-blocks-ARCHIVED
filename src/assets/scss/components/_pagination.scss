@@ -1,4 +1,6 @@
 .pagination {
+  margin-bottom: $page-spacing;
+
   a {
     color: $dark-blue;
     font-weight: $global-weight-semibold;
