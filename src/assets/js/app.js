@@ -21,6 +21,7 @@ if($searchInput.is('*')) {
   var $current = $('[data-sort-current]');
   var $sortLinks = $('[data-sort]');
   $sortLinks.on('click', function(e) {
+    e.preventDefault();
     var $el = $(e.currentTarget);
     var type = $el.data().type;
     $current.text($el.text());

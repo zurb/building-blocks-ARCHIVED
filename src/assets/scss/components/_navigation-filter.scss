@@ -116,7 +116,7 @@
 
 .filter-nav-dropdown {
   position: relative;
-  z-index: 1;
+  z-index: 81; // Above the card hover state
 
   .dropdown {
     border-radius: rem-calc(3);
