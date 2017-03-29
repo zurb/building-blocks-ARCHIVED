@@ -1,49 +1,11 @@
-
 <header class="hero {{#if hero-class}}{{hero-class}}{{else}}{{get-nav-data page 'hero-class' navigation}}{{/if}}">
-  <div class="row column hero-flex">
-    <div class="hero-content">
-      <!-- <div class="post-date">{{post-date}}</div> -->
-      <h1 class="hero-header">{{#if title}}{{title}}{{else}}{{get-nav-data page 'title' navigation}}{{/if}}</h1>
+  <div class="row hero-flex">
+    <div class="column hero-content">
+      <h1 class="hero-header">{{#if title}}{{title}}{{else}}{{get-nav-data page 'title' navigation}}{{/if}} test test s</h1>
       <h2 class="hero-subheader">{{#if subtitle}}{{subtitle}}{{else}}{{get-nav-data page 'subtitle' navigation}}{{/if}}</h2>
     </div>
-    <div class="hero-img">
+    <div class="column shrink hero-img">
       <img src="{{root}}assets/img/images/hero-yeti.png" alt="#">
-      <!-- <a href="#" class="button success">{{cta}}</a> -->
     </div>
   </div>
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-nav:
-  -
-    link: 'http://foo'
-    text: Something
-  -
-    link: 'http://bar'
-    text: Something else
-
-<ul class="menu">
-  {{#each nav}}
-    <li><a href="{{link}}" target="_blank">{{text}}</a></li>
-  {{/each}}
-</ul> -->
