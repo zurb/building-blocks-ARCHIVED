@@ -4,7 +4,7 @@
   "description": "Official ZURB Template for Foundation for Sites.",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp",
+    "start": "gulp bb",
     "build": "gulp build --production",
     "bb": "gulp bb",
     "bb-i": "gulp bb-iframe"

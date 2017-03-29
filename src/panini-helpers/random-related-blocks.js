@@ -9,7 +9,6 @@ module.exports = function(context, number, options) {
       return b.name !== currentBlock.name;
     });
     var list = _.shuffle(relatedBlocks).slice(0, number - 1);
-    console.log(list)
     for(var i = 0; i < list.length; i++) {
       ret = ret + options.fn({currentBlock: list[i]});
     }
