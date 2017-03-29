@@ -3,25 +3,25 @@ var Search = function(options) {
   this.$searchContainer = $(options.searchContainer);
   this.onSearch = options.onSearch;
   this.source = options.template || '#building-block-card';
-  this.updateSearch = this.updateSearch.bind(this)
-  this.$filters = options.filters;
-  this.filters = [];
   this.setup();
 };
 
 Search.prototype.setup = function() {
+  this.updateSearch = this.updateSearch.bind(this)
   this.loadTemplate();
   this.globalFileName = $('meta[name="bbfile"]').prop('content');
   this.localFileName = $('meta[name="datafile"]').prop('content');
   this.datakey = $('meta[name="datakey"]').prop('content');
   this.loadData();
   this.sort = 'newest';
+  this.filter = 'all';
   this.$input.on('keyup', this.updateSearch);
-  this.setupFilters();
 };
 
 
-Search.prototype.setupFilters = function() {
+Search.prototype.setFilter = function(type) {
+  this.filter = type;
+  this.updateSearch();
 };
 
 Search.prototype.setSort = function(type) {
@@ -56,29 +56,25 @@ Search.prototype.updateSearch = function(event) {
   var results;
   if(term.length > 0) {
     results = this.findResults(term.toLowerCase());
-  } else if (this.filters.length > 0) {
   } else {
     results = this.localData;
   }
-  results = this.sortResults(results);
 
-  console.log(results);
+  results = this.sortResults(this.filterResults(results));
+
+
   var template = this.template;
   var html = _.map(results, function(result) {
     return template(result);
   }).join('');
   this.$searchContainer.html(html).foundation();
-  if(this.onSearch) {this.onSearch(term, this.filters, this.sort, results);}
+  if(this.onSearch) {this.onSearch(term, this.filter, this.sort, results);}
 };
 
 Search.prototype.findResults = function(value) {
   if (!this.data) { return []; }
   var data;
-  if(this.filters.length > 0) {
-    data = this.searchableLocalData;
-  } else {
-    data = this.searchableData;
-  }
+  data = this.searchableData;
 
   var results = _.map(_.filter(data, function(pair) {
     return pair[0].indexOf(value) !== -1;
@@ -104,7 +100,24 @@ Search.prototype.compareFn = function() {
     return function() { return 1; };
   }
 };
+
+Search.prototype.filterFn = function() {
+  if(this.filter === "all") {
+    return function() { return true; };
+  } else {
+    var version = this.filter;
+    return function(elem) {
+      return !!_.find(elem.versions, function(v) {
+        return v.indexOf(version) == 0;
+      });
+    }
+  }
+}
+
 Search.prototype.sortResults = function(results) {
-  var fn = this.compareFn();
   return _.sortBy(results, this.compareFn());
+};
+
+Search.prototype.filterResults = function(results) {
+  return _.filter(results, this.filterFn());
 };

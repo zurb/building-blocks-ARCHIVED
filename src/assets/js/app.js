@@ -4,29 +4,14 @@ var mySVGsToInject = document.querySelectorAll('img.inject-me');
 
 SVGInjector(mySVGsToInject);
 var $searchInput = $('input[type="search"]')
-if($searchInput.is('*')) {
-  window.search = new Search({
-    input: $('input[type="search"]'),
-    searchContainer: $('#search-results-container .card-container'),
-    onSearch: function(term, filters, sort, results) {
-      if(term.length > 0 || filters.length > 0 || sort !== 'newest') {
-        $('#main-results-container').hide();
-        $('#search-results-container').show();
-      } else {
-        $('#main-results-container').show();
-        $('#search-results-container').hide();
-      }
-    }
-  });
-  var $current = $('[data-sort-current]');
-  var $sortLinks = $('[data-sort]');
-  $sortLinks.on('click', function(e) {
+var setupFilterable = function($current, $links, updateMethod) {
+  $links.on('click', function(e) {
     e.preventDefault();
     var $el = $(e.currentTarget);
     var type = $el.data().type;
     $current.text($el.text());
-    window.search.setSort(type);
-    $sortLinks.each(function() {
+    updateMethod(type);
+    $links.each(function() {
       var $link = $(this);
       if (typeof($link.data().hideActive) === 'undefined') {
         if ($link.data().type === type) {
@@ -43,6 +28,28 @@ if($searchInput.is('*')) {
       }
     });
   });
+}
+if($searchInput.is('*')) {
+  window.search = new Search({
+    input: $('input[type="search"]'),
+    searchContainer: $('#search-results-container .card-container'),
+    onSearch: function(term, filter, sort, results) {
+      if(term.length > 0 || filter !== 'all' || sort !== 'newest') {
+        $('#main-results-container').hide();
+        $('#search-results-container').show();
+      } else {
+        $('#main-results-container').show();
+        $('#search-results-container').hide();
+      }
+    }
+  });
+  var $currentSort = $('[data-sort-current]');
+  var $sortLinks = $('[data-sort]');
+  setupFilterable($currentSort, $sortLinks, window.search.setSort.bind(window.search));
+
+  var $currentFilter = $('[data-filter-current]');
+  var $filterLinks = $('[data-filter]');
+  setupFilterable($currentFilter, $filterLinks, window.search.setFilter.bind(window.search));
   $('#bb-search-bar').on('close.zf.trigger', function() {
     $searchInput.val('');
     window.search.updateSearch();

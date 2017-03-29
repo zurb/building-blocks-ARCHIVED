@@ -2,11 +2,12 @@
     <div class="medium-3 columns">
       <ul class="dropdown menu" data-dropdown-menu>
         <li>
-          <a data-version="all" href="#">All versions</a>
+          <a data-filter-current href="#">All versions</a>
           <ul class="menu">
             {{#each versions}}
-            <li><a data-version="{{this}}" =href="#">{{this}}.X</a></li>
+            <li><a data-hide-active data-filter data-type="{{this}}" href="#">Version {{this}}.X</a></li>
             {{/each}}
+            <li><a class="hide" data-hide-active data-filter data-type="all" href="#">All Versions</a></li>
           </ul>
         </li>
       </ul>
