@@ -4,6 +4,7 @@
   display: flex;
   margin-bottom: $page-spacing;
   overflow: hidden;
+  border-radius: rem-calc(5);
 
   .card-imghover-overlay::after {
     align-items: center;
