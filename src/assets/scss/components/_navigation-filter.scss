@@ -84,15 +84,16 @@
 
   background-color: white;
   display: none;
-  height: rem-calc(106);
+  height: 100%;
   margin: 0 auto;
   max-width: $global-width;
   width: 100%;
+  border-bottom: 2px solid $dark-blue;
 
   .close-button {
     @include vertical-center;
 
-    color: $medium-gray;
+    color: $medium-blue;
   }
 
   .bb-search-bar {
@@ -100,17 +101,22 @@
 
     background-color: $white;
     border: 0;
-    border-bottom: 1px solid $medium-gray;
     box-shadow: none;
-    color: $dark-gray;
+    color: $dark-blue;
     font-size: rem-calc(24);
     height: rem-calc(55);
 
     &:focus {
       border: 0;
-      border-bottom: 1px solid $dark-blue;
       box-shadow: none;
     }
+  }
+  .bb-search-subtext {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: rem-calc(14);
+    left: rem-calc(8);
+    color: $dark-blue;
   }
 }
 
