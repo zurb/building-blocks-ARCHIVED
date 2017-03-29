@@ -24,8 +24,6 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   border-left: 1px solid $medium-gray;
   border-top: 1px solid $medium-gray;
   height: 400px;
-
-  //margin-bottom: 2rem;
   overflow: scroll;
   padding: 1rem;
 
@@ -33,5 +31,25 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   code {
     background: transparent;
     border: 0;
+  }
+}
+
+.code-block-toggle {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.code-toggler {
+  font-size: rem-calc(14);
+  font-weight: $global-weight-bold;
+  margin-right: 0.2rem;
+  padding: 0.8rem 1rem;
+  text-transform: uppercase;
+
+  &.is-active {
+    background: $code-button-bg;
   }
 }

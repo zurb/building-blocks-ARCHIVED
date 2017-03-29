@@ -48,7 +48,7 @@ gulp.task('default',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', buildingBlockSass, sass, javascript, images, copy,));
+  gulp.series(clean,'building-block-meta', buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, copy,));
 
 // Create Building Blocks
 gulp.task('bb',
@@ -80,6 +80,7 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
   }
 
+// Resets Panini so that we can assemble using different layouts for the iframes and building block pages
 function getNewPanini(options) {
   var p = new panini.Panini(options);
   p.loadBuiltinHelpers();
@@ -103,9 +104,9 @@ function buildingBlockIframe() {
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
+// Compiles the Sass for the building blocks
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/**/*.scss'])
-    .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
     })
@@ -116,11 +117,17 @@ function buildingBlockSass() {
     // Comment in the pipe below to run UnCSS in production
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
-    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"))
     .pipe(browser.reload({ stream: true }));
 }
 
+// Moves JS from the Building Blocks into the dist
+function buildingBlockJS() {
+  return gulp.src('src/building-blocks/**/*.js')
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
+}
+
+// Compiles the building block page
 function buildingBlockPage() {
   return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
     .pipe(getNewPanini({
@@ -132,7 +139,6 @@ function buildingBlockPage() {
     }))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
-
 
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
