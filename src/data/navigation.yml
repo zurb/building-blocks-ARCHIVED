@@ -21,3 +21,6 @@ forms:
 control:
   title: 'Control Building Blocks'
   'hero-class': 'hero-building-blocks'
+'sign-in':
+  title: 'Sign In Building Blocks'
+  'hero-class': 'hero-building-blocks'

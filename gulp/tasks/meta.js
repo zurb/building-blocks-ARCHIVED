@@ -79,6 +79,28 @@ function buildingBlockCategoryMeta() {
       return new Buffer(JSON.stringify(output));
     }))
     .pipe(gulp.dest(PATHS.build + '/data/'));
+  };
+
+function buildingBlockTagsMeta() {
+  return gulp.src(PATHS.build + '/data/building-blocks.json')
+    .pipe($.jsoncombine('tags.json', function(data) {
+      var output = {};
+      _.each(data['building-blocks'], (value, key) => {
+        _.each(value['tags'], (tag) => {
+          output[tag] = output[tag] || {};
+          output[tag].blocks = output[tag].blocks || [];
+          output[tag].total = output[tag].total || 0;
+
+          var versions = minorVersions(value.versions);
+          output[tag].versions = _.union(output[tag].versions, versions);
+
+          output[tag].blocks.push(value);
+          output[tag].total = output[tag].total + 1;
+        });
+      });
+      return new Buffer(JSON.stringify(output));
+    }))
+    .pipe(gulp.dest(PATHS.build + '/data/'));
 };
 
 gulp.task('add-git-meta', function() {
@@ -109,5 +131,5 @@ gulp.task('add-git-meta', function() {
 });
 
 gulp.task('building-block-meta',
-  gulp.series(buildingBlockCombineMeta, 'add-git-meta', buildingBlockCategoryMeta));
+  gulp.series(buildingBlockCombineMeta, 'add-git-meta', buildingBlockCategoryMeta, buildingBlockTagsMeta));
 
