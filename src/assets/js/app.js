@@ -42,5 +42,10 @@ if($searchInput.is('*')) {
       }
     });
   });
-
+  $('#bb-search-bar').on('close.zf.trigger', function() {
+    $searchInput.val('');
+    window.search.updateSearch();
+  }).on('toggle.zf.trigger', function() {
+    setTimeout( () => { $searchInput.focus();}, 1)
+  });
 }
