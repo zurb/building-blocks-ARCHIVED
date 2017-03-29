@@ -26,9 +26,19 @@
 {{/code}}
     </div>
     <div id="copySCSS" class="column code-box hide-for-small-only">
+      <button class="code-toggler is-active" id="scssToggle">SCSS</button>
+      <button class="code-toggler" id="cssToggle">CSS</button>
+
+      <div class="code-block-toggle is-active" id="codeBoxSCSS" data-toggler=".is-active">
 {{#code "scss"}}
 {{{bb-scss page}}}
 {{/code}}
+      </div>
+      <div class="code-block-toggle" id="codeBoxCSS" data-toggler=".is-active">
+{{#code "css"}}
+{{{bb-css page}}}
+{{/code}}
+      </div>
     </div>
     <div id="copyJS" class="column code-box hide-for-small-only">
 

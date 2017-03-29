@@ -48,7 +48,7 @@ gulp.task('default',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', buildingBlockSass, sass, javascript, images, copy,));
+  gulp.series(clean,'building-block-meta', buildingBlockSass, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, copy,));
 
 // Create Building Blocks
 gulp.task('bb',
@@ -105,7 +105,6 @@ function buildingBlockIframe() {
 
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/**/*.scss'])
-    .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
     })
@@ -116,7 +115,6 @@ function buildingBlockSass() {
     // Comment in the pipe below to run UnCSS in production
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
-    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"))
     .pipe(browser.reload({ stream: true }));
 }
