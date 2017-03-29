@@ -48,7 +48,7 @@
     &.active {
       color: $dark-blue;
       box-sizing: border-box;
-      border-bottom: 5px solid $dark-blue;
+      box-shadow: 0 -4px inset;
       border-radius: 0;
 
       .bb-filter-icons {
@@ -59,9 +59,8 @@
     }
 
     &:hover {
-      background: $light-blue;
+      background: $pale-blue;
       color: $dark-blue;
-      border-bottom: 5px solid $dark-blue;
 
       .bb-filter-icons {
         * {
