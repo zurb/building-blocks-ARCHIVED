@@ -26,7 +26,7 @@ function stringSrc(categories, cb) {
     var objs = []
     var blocks = _.sortBy(category.blocks, function(block) { return -(new Date(block.dateUpdated));});
     for(var i = 0; i < numPages; i++) {
-      var obj = {total: category.total, currentPage: i + 1, numPages: numPages};
+      var obj = {total: category.total, currentPage: i + 1, numPages: numPages, versions: category.versions};
       if(numPages > 1) { obj.paginate = true;}
       obj.filename = ((obj.currentPage === 1) ? name : name + '-' + obj.currentPage) + '.html';
       var start = i * PAGE_SIZE;

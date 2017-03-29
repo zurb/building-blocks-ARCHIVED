@@ -32,16 +32,28 @@ function buildingBlockCombineMeta() {
     .pipe(gulp.dest(PATHS.build + '/data/'));
 };
 
+function minorVersions(versions) {
+  var list = {};
+  _.each(versions, function(v) {
+    list[v.split('.').slice(0, 2).join('.')] = true
+  });
+  return _.keys(list);
+}
+
 function buildingBlockCategoryMeta() {
   return gulp.src(PATHS.build + '/data/building-blocks.json')
     .pipe($.jsoncombine('categories.json', function(data) {
       var output = {};
-      output['index'] = {blocks: [], total: 0}
+      output['index'] = {blocks: [], total: 0, versions: []}
       _.each(data['building-blocks'], (value, key) => {
         var category = value['category']
         output[category] = output[category] || {};
         output[category].blocks = output[category].blocks || [];
         output[category].total = output[category].total || 0;
+
+        var versions = minorVersions(value.versions);
+        output[category].versions = _.union(output[category].versions, versions);
+        output['index'].versions = _.union(output['index'].versions, versions);
 
         output[category].blocks.push(value);
         output['index'].blocks.push(value);
