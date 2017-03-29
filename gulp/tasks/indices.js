@@ -29,6 +29,8 @@ function stringSrc(categories, cb) {
       if(numPages > 1) { obj.paginate = true;}
       obj.filename = ((obj.currentPage === 1) ? name : name + '-' + obj.currentPage) + '.html';
       var start = i * PAGE_SIZE;
+      obj.datafile = 'categories.json';
+      obj.datakey = name;
       obj.blocks = category.blocks.slice(start, start + PAGE_SIZE);
       objs.push(obj);
     }
