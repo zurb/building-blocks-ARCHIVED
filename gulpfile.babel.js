@@ -39,16 +39,19 @@ gulp.task('lint', function () {
   .pipe(sassLint.failOnError())
 });
 
+
+gulp.task('copy', gulp.parallel(copyAssets, copyData));
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
+ gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, 'copy'), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', buildingBlockSass, sass, javascript, images, copy,));
+  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', buildingBlockSass, sass, javascript, images, 'copy'));
 
 // Create Building Blocks
 gulp.task('bb',
@@ -62,9 +65,16 @@ function clean(done) {
 
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
-function copy() {
+function copyAssets() {
   return gulp.src(PATHS.assets)
     .pipe(gulp.dest(PATHS.dist + '/assets'));
+}
+
+// Copy files out of the assets folder
+// This task skips over the "img", "js", and "scss" folders, which are parsed separately
+function copyData() {
+  return gulp.src(PATHS.build + '/data/*')
+    .pipe(gulp.dest(PATHS.dist + '/data'));
 }
 
 // Copy page templates into finished HTML files
@@ -173,7 +183,7 @@ function sass() {
 function javascript() {
   return gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
-    .pipe($.babel({ignore: ['what-input.js']}))
+    .pipe($.babel({ignore: ['what-input.js', 'handlebars.min.js', 'lodash.min.js']}))
     .pipe($.concat('app.js'))
     .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
@@ -208,7 +218,7 @@ function reload(done) {
 
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
-  gulp.watch(PATHS.assets, copy);
+  gulp.watch(PATHS.assets, gulp.series('copy', browser.reload));
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
   gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));

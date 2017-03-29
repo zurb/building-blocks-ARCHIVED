@@ -24,14 +24,18 @@
       {{> filter-nav}}
       {{> filter-dropdowns}}
       <div class="page-container">
-        <div class="row small-up-2 medium-up-3 card-container">
-          {{#each blocks}}
-            <div class="column column-block">
-              {{> building-block-card this}}
-            </div>
-          {{/each}}
+        <div id="main-results-container">
+          <div class="row small-up-2 medium-up-3 card-container">
+            {{#each blocks}}
+              {{> building-block-card-with-column this}}
+            {{/each}}
+          </div>
+          {{> pagination}}
         </div>
-        {{> pagination}}
+        <div id="search-results-container">
+          <div class="row small-up-2 medium-up-3 card-container">
+          </div>
+        </div>
         {{> preview-modal}}
       </div>
       {{> footer}}
@@ -41,7 +45,7 @@
       <div class="smedium-4 columns"></div>
     </div>
 
-    {{{partial-as-script 'building-block-card' 'building-block/building-block-card.html'}}}
+    {{{partial-as-script 'building-block-card' 'building-block/building-block-card-with-column.html'}}}
     <script src="{{root}}assets/js/app.js"></script>
   </body>
 </html>
