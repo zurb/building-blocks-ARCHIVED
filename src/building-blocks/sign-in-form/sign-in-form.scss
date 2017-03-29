@@ -1,17 +1,12 @@
 body {
   padding: 1rem;
-  background: rgba(41, 50, 60, 1);
-  background: -moz-linear-gradient(left, rgba(41, 50, 60, 1) 0%, rgba(72, 85, 99, 1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(41, 50, 60, 1)), color-stop(100%, rgba(72, 85, 99, 1)));
-  background: -webkit-linear-gradient(left, rgba(41, 50, 60, 1) 0%, rgba(72, 85, 99, 1) 100%);
-  background: -o-linear-gradient(left, rgba(41, 50, 60, 1) 0%, rgba(72, 85, 99, 1) 100%);
-  background: -ms-linear-gradient(left, rgba(41, 50, 60, 1) 0%, rgba(72, 85, 99, 1) 100%);
-  background: linear-gradient(to right, rgba(41, 50, 60, 1) 0%, rgba(72, 85, 99, 1) 100%);
+  background-color: #ededed
 }
 
 .container {
   padding: 1rem 1.5em;
   border-radius: .5rem;
+  background-color: #3d454f;
 }
 
 h4 {
@@ -50,6 +45,7 @@ input:focus {
   background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 1px;
+
   &:hover {
     background-color: #44c8ed;
     border-color: #44c8ed;
