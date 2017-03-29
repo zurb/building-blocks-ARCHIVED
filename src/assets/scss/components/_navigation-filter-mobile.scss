@@ -1,6 +1,7 @@
 .filter-nav-mobile-container {
   background-color: $light-blue;
   margin-top: $global-margin;
+  margin-bottom: 1rem;
 
   .filter-nav-mobile-button {
     align-items: center;
@@ -15,8 +16,12 @@
       margin-left: $global-margin;
     }
 
-    * {
-      fill: $white;
+    .bb-category-icon {  
+      height: rem-calc(24);
+
+      * {
+        fill: $white;
+      }
     }
   }
 
