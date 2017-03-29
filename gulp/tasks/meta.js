@@ -26,6 +26,7 @@ function buildingBlockCombineMeta() {
         var name = key.split('/')[0];
         output[name] = value;
         output[name].href = '/building-block/' + key + '.html';
+        output[name]['major-versions'] = majorVersions(value.versions);
       })
       return new Buffer(JSON.stringify(output));
     }))
@@ -33,11 +34,26 @@ function buildingBlockCombineMeta() {
 };
 
 function minorVersions(versions) {
-  var list = {};
+  var hash = {};
   _.each(versions, function(v) {
-    list[v.split('.').slice(0, 2).join('.')] = true
+    hash[v.split('.').slice(0, 2).join('.')] = true
   });
-  return _.keys(list);
+  return _.keys(hash);
+}
+
+function majorVersions(versions) {
+  var hash = {};
+  _.each(versions, function(v) {
+    var major = v.split('.').slice(0, 1).join('.')
+    hash[major] = hash[major] || []
+    hash[major].push(v)
+  });
+  var list = [];
+  _.each(_.keys(hash), function(k) {
+    var obj = {major: k, minors: hash[k].join(', ')}
+    list.push(obj);
+  })
+  return list;
 }
 
 function buildingBlockCategoryMeta() {
