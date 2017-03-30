@@ -9,7 +9,7 @@
 
   .card-imghover-overlay::after {
     align-items: center;
-    background-color: rgba(40, 103, 127, .72);
+    background-color: rgba(40, 103, 127, 0.72);
     border-radius: rem-calc(5) rem-calc(5) rem-calc(0) rem-calc(0);
     color: $white;
     content: 'See code';
