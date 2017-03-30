@@ -8,7 +8,7 @@
   <div class="filter-nav-mobile">
     <div class="row collapse filter-nav-mobile-header">
       <div class="column">
-        <h2 class="filter-title">Filters</h2>
+        <h2 class="filter-title">Categories</h2>
       </div>
       <div class="column flex-container align-right align-self-middle">
         <button aria-label="Dismiss alert" type="button" data-close>
@@ -16,27 +16,12 @@
         </button>
       </div>
     </div>
-    <div class="row collapse small-up-2">
+    <div class="row collapse small-up-2 bb-filter-icons-container">
       {{#each global.filter-nav}}
       <div class="column">
         <button class="filter-nav-button {{classes}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></button>
       </div>
       {{/each}}
-    </div>
-    <div class="row collapse">
-      <div class="column">
-        <h2 class="sort-title">Sort By</h2>
-        <ul class="vertical menu sort-menu">
-          <li><a data-sort data-type="newest" href="#" class="is-active">Newest</a></li>
-          <li><a data-sort data-type="oldest" href="#">Oldest</a></li>
-          <li><a data-sort data-type="alphabetical" href="#">Alphabetical</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row column">
-      <div class="apply-filters-button">
-        <button class="button expanded">Apply</button>
-      </div>
     </div>
   </div>
 </div>
