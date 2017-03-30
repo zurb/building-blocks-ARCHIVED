@@ -17,11 +17,9 @@
 
   </head>
   <body>
-    {{#if block.containerClass}}
-      <div class="{{block.containerClass}}">{{> body}}</div>
-    {{else}}
+    <div class="{{#if block.containerClass}}{{block.containerClass}}{{else}}row column container-padded{{/if}}">
       {{> body}}
-    {{/if}}
+    </div>
     <script src="{{root}}assets/js/app.js"></script>
 
     <script src="{{root}}building-block/{{page}}/{{page}}.js"></script>

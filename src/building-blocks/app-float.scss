@@ -50,3 +50,7 @@ $global-flexbox: false;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+.container-padded {
+  padding: 1rem 0;
+}
