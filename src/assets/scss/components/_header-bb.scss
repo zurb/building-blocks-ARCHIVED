@@ -2,6 +2,12 @@
   margin-bottom: 2rem;
   position: relative;
 
+  .version-menu {
+    height: rem-calc(26);
+    width: rem-calc(26);
+    cursor: pointer;
+  }
+
   .version-badge,
   .version-menu {
     margin-right: 0.7rem;
@@ -17,6 +23,7 @@
   }
 
   .bb-dropdown-pane {
+    box-shadow: 0 2px 10px 0 $medium-gray;
     margin-top: 2rem;
     padding-bottom: 0;
     width: auto;
@@ -49,9 +56,11 @@
   display: inline;
   font-size: rem-calc(15);
   text-transform: none;
+  margin-left: 0.5rem;
 
   @include breakpoint(small only) {
     display: block;
+    margin-left: 0;
   }
 }
 
@@ -59,10 +68,11 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0.4rem;
 }
 
 .building-block-tag {
-  color: $dark-blue;
+  color: $medium-blue;
   margin-left: 0.5rem;
 
   &:last-child {
@@ -95,6 +105,8 @@
 }
 
 .bb-header-social {
+  margin-left: 1rem;
+  
   @include breakpoint(small only) { 
     display: none;
   }
