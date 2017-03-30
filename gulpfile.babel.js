@@ -51,7 +51,7 @@ gulp.task('default',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, 'copy'));
+  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, 'copy'));
 
 // Create Building Blocks
 gulp.task('bb',
@@ -133,9 +133,25 @@ function buildingBlockIframe() {
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
+function buildingBlockBaseStyles() {
+  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/app-float.scss'])
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    // Comment in the pipe below to run UnCSS in production
+    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+    .pipe($.if(PRODUCTION, $.cssnano()))
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"))
+    .pipe(browser.reload({ stream: true }));
+}
 // Compiles the Sass for the building blocks
 function buildingBlockSass() {
-  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/**/*.scss'])
+  return gulp.src(['src/building-blocks/**/*.scss'])
+    .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
     .pipe($.sass({
       includePaths: PATHS.sass
     })
