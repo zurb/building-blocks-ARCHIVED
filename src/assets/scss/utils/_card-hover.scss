@@ -36,11 +36,11 @@
     @include transition(opacity 0.2s ease-out);
   }
 
-  &:hover .card-actions span, 
+  &:hover .card-actions span,
   &:hover .card-author,
   &:hover .bb-card-social-icon {
     color: $dark-gray;
-    
+
     * {
       fill: $dark-gray;
     }
