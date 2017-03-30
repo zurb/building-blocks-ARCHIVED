@@ -62,7 +62,10 @@ $dark-gray: #9B9B9B;
 $slate-gray: #2c3840;
 $black: #0a0a0a;
 $white: #fff;
+$blue-gray: #E6E8EB;
+$white-blue: #EDEFF2;
 $pale-blue: #F8F9FA;
+$medium-blue: #085a78;
 $light-blue: rgba(40,102,127,0.06);
 $dark-blue: #074E68;
 $emails-color: #232547;
@@ -342,7 +345,7 @@ $drilldown-background: $white;
 
 $dropdown-padding: 1rem;
 $dropdown-background: $body-background;
-$dropdown-border: 1px solid $medium-gray;
+$dropdown-border: 1px solid $white;
 $dropdown-font-size: 1rem;
 $dropdown-width: 300px;
 $dropdown-radius: $global-radius;
@@ -360,7 +363,7 @@ $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-arrow-size: 6px;
 $dropdownmenu-min-width: 200px;
 $dropdownmenu-background: $white;
-$dropdownmenu-border: 1px solid $medium-gray;
+$dropdownmenu-border: 1px solid $white;
 
 // 19. Forms
 // ---------
@@ -385,10 +388,10 @@ $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
 $input-color: $black;
-$input-placeholder-color: $medium-gray;
+$input-placeholder-color: $blue-gray;
 $input-font-family: inherit;
 $input-font-size: rem-calc(16);
-$input-font-weight: $global-weight-normal;
+$input-font-weight: $global-weight-bold;
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;

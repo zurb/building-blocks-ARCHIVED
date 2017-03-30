@@ -1,6 +1,7 @@
 .filter-nav-mobile-container {
   background-color: $light-blue;
   margin-top: $global-margin;
+  margin-bottom: 1rem;
 
   .filter-nav-mobile-button {
     align-items: center;
@@ -12,11 +13,14 @@
 
     span {
       color: $white;
-      margin-left: $global-margin;
     }
 
-    * {
-      fill: $white;
+    .bb-category-icon {
+      height: rem-calc(24);
+
+      * {
+        fill: $white;
+      }
     }
   }
 
@@ -25,19 +29,38 @@
   }
 }
 
+.bb-filter-icons-container {
+  height: calc(100vh - 60px);
+}
+
 .filter-nav-mobile-modal {
   height: 100vh;
   padding: 0;
 }
 
 .filter-nav-mobile {
+  height: 100vh;
+
+  .bb-filter-icons {
+    margin-bottom: 1rem;
+  }
+
   .filter-nav-button {
     align-items: center;
-    color: $dark-gray;
+    color: $dark-blue;
     display: flex;
     flex-direction: column;
-    padding: rem-calc(20);
-    width: rem-calc(100);
+    height: 100%;
+    padding-bottom: rem-calc(20);
+    padding-top: rem-calc(20);
+    flex: 1 0 0px;
+    border-radius: 0;
+
+    .bb-filter-icons {
+      * {
+        fill: $dark-blue;
+      }
+    }
 
     // expands width of buttons in mobile filter
     @include breakpoint(small) {
@@ -84,6 +107,7 @@
   .cancel-button {
     color: $white;
     margin-bottom: 0;
+    font-size: 1rem;
   }
 }
 

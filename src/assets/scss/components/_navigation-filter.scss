@@ -1,4 +1,6 @@
 .filter-nav-container {
+  background: $white;
+
   @include breakpoint(small only) {
     display: none;
   }
@@ -6,8 +8,8 @@
 
 .filter-nav {
   align-items: flex-start;
-  margin-bottom: $global-margin;
   position: relative;
+  margin-bottom: $page-spacing;
 
   .bb-search-button {
     display: flex;
@@ -16,28 +18,38 @@
     .bb-search-icon {
       height: 30px;
       width: 30px;
-    }
 
-    &:hover {
-      .bb-search-icon {
-        * {
-          fill: $dark-blue;
-        }
+      * {
+        fill: $dark-blue;
       }
     }
   }
 
   .filter-nav-button {
     align-items: center;
-    color: $dark-gray;
+    color: $dark-blue;
     display: flex;
     flex-direction: column;
-    padding: rem-calc(20);
-    width: rem-calc(100);
+    padding-bottom: rem-calc(20);
+    padding-top: rem-calc(20);
+    flex: 1 0 0px;
+    border-radius: 0;
+
+    .bb-filter-icons {
+      height: 36px;
+      margin-bottom: 1rem;
+      width: 36px;
+
+      * {
+        fill: $dark-blue;
+      }
+    }
 
     &.active {
-      background: $light-blue;
       color: $dark-blue;
+      box-sizing: border-box;
+      box-shadow: 0 -4px inset;
+      border-radius: 0;
 
       .bb-filter-icons {
         * {
@@ -47,7 +59,7 @@
     }
 
     &:hover {
-      background: $light-blue;
+      background: $pale-blue;
       color: $dark-blue;
 
       .bb-filter-icons {
@@ -64,26 +76,22 @@
   }
 }
 
-.bb-filter-icons {
-  height: 36px;
-  margin-bottom: 1rem;
-  width: 36px;
-}
+
 
 .bb-search-bar-container {
   @include vertical-center;
-
   background-color: white;
   display: none;
-  height: rem-calc(106);
+  height: 100%;
   margin: 0 auto;
   max-width: $global-width;
   width: 100%;
+  border-bottom: 2px solid $dark-blue;
 
   .close-button {
     @include vertical-center;
 
-    color: $medium-gray;
+    color: $medium-blue;
   }
 
   .bb-search-bar {
@@ -91,31 +99,36 @@
 
     background-color: $white;
     border: 0;
-    border-bottom: 1px solid $medium-gray;
     box-shadow: none;
-    color: $dark-gray;
+    color: $dark-blue;
     font-size: rem-calc(24);
     height: rem-calc(55);
 
     &:focus {
       border: 0;
-      border-bottom: 1px solid $dark-blue;
       box-shadow: none;
     }
+  }
+  .bb-search-subtext {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: rem-calc(14);
+    left: rem-calc(8);
+    color: $medium-blue;
+    font-size: rem-calc(14);
   }
 }
 
 .filter-nav-dropdown {
   position: relative;
-  z-index: 1;
+  z-index: 81; // Above the card hover state
 
   .dropdown {
     border-radius: rem-calc(3);
+    border: 0;
   }
 
   .menu {
-    border: 1px solid $light-gray;
-    border-radius: rem-calc(3);
     width: auto;
   }
 
@@ -124,21 +137,22 @@
     justify-content: space-between;
 
     a {
-      background: $light-gray;
+      background: $white;
       color: $dark-blue;
+      border-radius: 3px;
     }
   }
 
   .is-dropdown-submenu {
-    border-top: 1px solid $light-gray;
+    border-top: 1px solid $white-blue;
     margin: -1px 0 0 -1px;
-    min-width: rem-calc(170);
+    width: 100%;
 
     li > a {
       color: $dark-blue;
 
       &:hover {
-        background: $medium-gray;
+        background: $light-blue;
       }
     }
   }

@@ -5,16 +5,23 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 }
 
 .code-menu-item {
-  background-color: $code-button-bg;
-  border-radius: 2px;
   margin: 10px 5px;
-  padding: rem-calc(15);
+  padding: rem-calc(5) rem-calc(20);
 
   a {
-    color: $dark-blue;
-    font-size: rem-calc(18);
+    color: $medium-gray;
     font-weight: $global-weight-bold;
+    font-size: rem-calc(18);
     text-transform: uppercase;
+  }
+
+  &.is-active {
+    background-color: $code-button-bg;
+    border-radius: 2px;
+
+    a {
+      color: $dark-blue;
+    }
   }
 }
 
@@ -24,13 +31,43 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   border-left: 1px solid $medium-gray;
   border-top: 1px solid $medium-gray;
   height: 400px;
-  margin-bottom: 2rem;
   overflow: scroll;
   padding: 1rem;
+  position: relative;
+  z-index: 0;
+  display: none;
 
   //highlight js override
   code {
     background: transparent;
     border: 0;
+  }
+
+  pre {
+    position: relative;
+  }
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.code-block-toggle {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.code-toggler {
+  font-size: rem-calc(14);
+  font-weight: $global-weight-bold;
+  margin-right: 0.2rem;
+  padding: 0.8rem 1rem;
+  text-transform: uppercase;
+
+  &.is-active {
+    background: $code-button-bg;
   }
 }

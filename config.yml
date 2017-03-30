@@ -61,6 +61,8 @@ PATHS:
     - "bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js"
     - "node_modules/svg-injector/svg-injector.js"
     - "node_modules/clipboard/dist/clipboard.js"
+    - "node_modules/handlebars/dist/handlebars.min.js"
+    - "node_modules/lodash/lodash.min.js"
     # Paths to your own project code are here
     - "src/assets/js/!(app).js"
     - "src/assets/js/app.js"

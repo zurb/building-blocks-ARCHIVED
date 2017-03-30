@@ -39,20 +39,35 @@ gulp.task('lint', function () {
   .pipe(sassLint.failOnError())
 });
 
+
+gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages));
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
+ gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, 'copy'), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', buildingBlockSass, sass, javascript, images, copy,));
+  gulp.series(clean,'building-block-meta', buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, 'copy'));
 
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series('bb-iframe', server, watch ));
+gulp.series('bb-iframe', server, watch ));
+
+// Uploads the documentation to the live server
+gulp.task('deploy', gulp.series('bb-iframe', function() {
+  return gulp.src('./dist/**')
+    .pipe($.prompt.confirm('Make sure everything looks right before you deploy.'))
+    .pipe($.rsync({
+      root: './dist',
+      hostname: 'deployer@72.32.134.77',
+      destination: '/home/deployer/sites/building-blocks'
+    }));
+}));
+
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -62,9 +77,23 @@ function clean(done) {
 
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
-function copy() {
+function copyAssets() {
   return gulp.src(PATHS.assets)
     .pipe(gulp.dest(PATHS.dist + '/assets'));
+}
+
+// Copy files out of the assets folder
+// This task skips over the "img", "js", and "scss" folders, which are parsed separately
+function copyData() {
+  return gulp.src(PATHS.build + '/data/*')
+    .pipe(gulp.dest(PATHS.dist + '/data'));
+  }
+
+// Copy files out of the assets folder
+// This task skips over the "img", "js", and "scss" folders, which are parsed separately
+function copyBBImages() {
+  return gulp.src('src/building-blocks/**/*.png')
+    .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
 }
 
 // Copy page templates into finished HTML files
@@ -80,6 +109,7 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
   }
 
+// Resets Panini so that we can assemble using different layouts for the iframes and building block pages
 function getNewPanini(options) {
   var p = new panini.Panini(options);
   p.loadBuiltinHelpers();
@@ -103,9 +133,9 @@ function buildingBlockIframe() {
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
+// Compiles the Sass for the building blocks
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/**/*.scss'])
-    .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
     })
@@ -116,11 +146,17 @@ function buildingBlockSass() {
     // Comment in the pipe below to run UnCSS in production
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
-    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"))
     .pipe(browser.reload({ stream: true }));
 }
 
+// Moves JS from the Building Blocks into the dist
+function buildingBlockJS() {
+  return gulp.src('src/building-blocks/**/*.js')
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
+}
+
+// Compiles the building block page
 function buildingBlockPage() {
   return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
     .pipe(getNewPanini({
@@ -132,7 +168,6 @@ function buildingBlockPage() {
     }))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
-
 
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
@@ -173,7 +208,7 @@ function sass() {
 function javascript() {
   return gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
-    .pipe($.babel({ignore: ['what-input.js']}))
+    .pipe($.babel({ignore: ['what-input.js', 'handlebars.min.js', 'lodash.min.js']}))
     .pipe($.concat('app.js'))
     .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
@@ -208,7 +243,7 @@ function reload(done) {
 
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
-  gulp.watch(PATHS.assets, copy);
+  gulp.watch(PATHS.assets, gulp.series('copy', browser.reload));
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
   gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));

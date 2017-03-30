@@ -11,7 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
-  <body>
+  <body class="{{#ifpage 'index'}} page-background-alt {{/ifpage}}">
 
     <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
       {{> offcanvas-menulists}}
@@ -22,14 +22,15 @@
       {{> global-navigation}}
       {{#if hero}}
         {{> hero}}
-      {{/if}}
-      {{#if filter-nav}}
-        {{> filter-nav}}
-      {{/if}}
-      {{#if filter-dropdowns}}
-        {{> filter-dropdowns}}
+        AWESOME
       {{/if}}
       <div class="page-container">
+        {{#if filter-nav}}
+          {{> filter-nav}}
+        {{/if}}
+        {{#if filter-dropdowns}}
+          {{> filter-dropdowns}}
+        {{/if}}
         {{> body}}
         {{#ifpage 'index'}}
           {{> pagination}}

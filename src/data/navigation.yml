@@ -1,7 +1,7 @@
 index:
   'meta-title': 'Foundation Building Blocks'
-  title: 'A Library of Foundation UI Components'
-  subtitle: 'These HTML, CSS and JS snippets can be plugged into any Foundation project to build faster. Enjoy!'
+  title: 'Building Blocks'
+  subtitle: 'A Library of Foundation UI Components. These HTML, CSS and JS snippets can be plugged into any Foundation project to build faster. Enjoy!'
   'hero-class': 'hero-building-blocks'
 navigation:
   title: 'Navigation Building Blocks'
@@ -20,4 +20,7 @@ forms:
   'hero-class': 'hero-building-blocks'
 control:
   title: 'Control Building Blocks'
+  'hero-class': 'hero-building-blocks'
+'sign-in':
+  title: 'Sign In Building Blocks'
   'hero-class': 'hero-building-blocks'

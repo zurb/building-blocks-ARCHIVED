@@ -10,6 +10,10 @@
     <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <meta name="bbfile" content="{{root}}data/building-blocks.json">
+    <meta name="datafile" content="{{root}}data/{{datafile}}">
+    <meta name="rootpath" content="{{root}}">
+    <meta name="datakey" content="{{datakey}}">
   </head>
   <body>
 
@@ -17,30 +21,31 @@
       {{> offcanvas-menulists}}
     </div>
 
-    <div class="off-canvas-content" data-off-canvas-content>
+    <div class="off-canvas-content background-alt" data-off-canvas-content>
       {{> global-nav-mobile}}
       {{> global-navigation}}
       {{> hero}}
       {{> filter-nav}}
       {{> filter-dropdowns}}
       <div class="page-container">
-        <div class="row small-up-2 medium-up-3 card-container">
-          {{#each blocks}}
-            <div class="column column-block">
-              {{> building-block-card this}}
-            </div>
-          {{/each}}
+        <div id="main-results-container">
+          <div class="row small-up-1 medium-up-2 large-up-3 card-container">
+            {{#each blocks}}
+              {{> building-block-card-with-column this}}
+            {{/each}}
+          </div>
+          {{> pagination}}
         </div>
-        {{> pagination}}
+        <div id="search-results-container">
+          <div class="row small-up-1 medium-up-2 large-up-3 card-container">
+          </div>
+        </div>
         {{> preview-modal}}
       </div>
       {{> footer}}
     </div>
 
-    <div class="row">
-      <div class="smedium-4 columns"></div>
-    </div>
-
+    {{{partial-as-script 'building-block-card' 'building-block/building-block-card-with-column.html'}}}
     <script src="{{root}}assets/js/app.js"></script>
   </body>
 </html>
