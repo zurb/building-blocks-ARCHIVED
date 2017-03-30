@@ -5,16 +5,23 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 }
 
 .code-menu-item {
-  background-color: $code-button-bg;
-  border-radius: 2px;
   margin: 10px 5px;
   padding: rem-calc(5) rem-calc(20);
 
   a {
-    color: $dark-blue;
-    font-size: rem-calc(18);
+    color: $medium-gray;
     font-weight: $global-weight-bold;
+    font-size: rem-calc(18);
     text-transform: uppercase;
+  }
+
+  &.is-active {
+    background-color: $code-button-bg;
+    border-radius: 2px;
+
+    a {
+      color: $dark-blue;
+    }
   }
 }
 
@@ -26,11 +33,22 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   height: 400px;
   overflow: scroll;
   padding: 1rem;
+  position: relative;
+  z-index: 0;
+  display: none;
 
   //highlight js override
   code {
     background: transparent;
     border: 0;
+  }
+
+  pre {
+    position: relative;
+  }
+
+  &.is-active {
+    display: block;
   }
 }
 

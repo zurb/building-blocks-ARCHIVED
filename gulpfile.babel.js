@@ -55,7 +55,19 @@ gulp.task('bb-iframe',
 
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series('bb-iframe', server, watch ));
+gulp.series('bb-iframe', server, watch ));
+
+// Uploads the documentation to the live server
+gulp.task('deploy', gulp.series('bb-iframe', function() {
+  return gulp.src('./dist/**')
+    .pipe($.prompt.confirm('Make sure everything looks right before you deploy.'))
+    .pipe($.rsync({
+      root: './dist',
+      hostname: 'deployer@72.32.134.77',
+      destination: '/home/deployer/sites/building-blocks'
+    }));
+}));
+
 
 // Delete the "dist" folder
 // This happens every time a build starts
