@@ -67,4 +67,4 @@ function buildingBlocksCategoryPages() {
 
 gulp.task('building-blocks-categories', buildingBlocksCategoryPages);
 gulp.task('building-block-indices',
-  gulp.series(buildingBlocksCategoryStarters, buildingBlocksTagsStarters, buildingBlocksCategoryPages));
+  gulp.series(buildingBlocksCategoryStarters, buildingBlocksCategoryPages));
