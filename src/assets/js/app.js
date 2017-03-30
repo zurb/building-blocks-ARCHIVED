@@ -29,10 +29,16 @@ var setupFilterable = function($current, $links, updateMethod) {
     });
   });
 }
+var params = getParams();
 if($searchInput.is('*')) {
+  if(params.q) {
+    $('#bb-search-bar').removeClass('is-hidden').show();
+    $searchInput.focus();
+  }
   window.search = new Search({
     input: $('input[type="search"]'),
     searchContainer: $('#search-results-container .card-container'),
+    initialQuery: params.q,
     onSearch: function(term, filter, sort, results) {
       if(term.length > 0 || filter !== 'all' || sort !== 'newest') {
         $('#main-results-container').hide();
@@ -57,6 +63,13 @@ if($searchInput.is('*')) {
     setTimeout( () => { $searchInput.focus();}, 1)
   });
 }
+
+function getParams() { 
+  var search = location.search.substring(1);
+  return search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
+                   function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
+}
+
 
 function toggleCode() {
   $('#codeBoxSCSS').toggleClass('is-active');

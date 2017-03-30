@@ -2,6 +2,7 @@ var Search = function(options) {
   this.$input = $(options.input);
   this.$searchContainer = $(options.searchContainer);
   this.onSearch = options.onSearch;
+  this.initialQuery = options.initialQuery;
   this.source = options.template || '#building-block-card';
   this.setup();
 };
@@ -41,6 +42,10 @@ Search.prototype.loadData = function() {
       var content = [object.author.name, object.name, object.category].concat(object.tags).join(' ').toLowerCase()
       return [content, object];
     });
+    if(self.initialQuery && self.data && self.localData) {
+      self.$input.val(self.initialQuery);
+      self.updateSearch();
+    }
   });
   $.getJSON(this.localFileName, function(res) {
     self.localData = res[self.datakey].blocks;
@@ -48,6 +53,10 @@ Search.prototype.loadData = function() {
       var content = [object.author.name, object.name, object.category].concat(object.tags).join(' ').toLowerCase()
       return [content, object];
     });
+    if(self.initialQuery && self.data && self.localData) {
+      self.$input.val(self.initialQuery);
+      self.updateSearch();
+    }
   });
 };
 
