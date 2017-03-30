@@ -73,13 +73,14 @@ $card-height: rem-calc(347);
 
 // card fonts and text styles
 .card-category {
+  color: $muted-blue;
+  font-size: rem-calc(14);
+  font-weight: $global-weight-bold;
+  opacity: 0.4;
   position: absolute;
-  top: rem-calc(12);
   right: rem-calc(12);
   text-transform: uppercase;
-  font-size: rem-calc(14);
-  color: $dark-gray;
-  font-weight: $global-weight-semibold;
+  top: rem-calc(12);
 }
 
 .card-author {
