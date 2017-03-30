@@ -1,0 +1,12 @@
+name: "Selectable Card"
+tags:
+  - card
+  - js
+  - containers
+  - select
+category: control
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Christine Siu
