@@ -15,6 +15,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .hero-content {
   align-self: center;
   flex: 4;
@@ -28,7 +29,7 @@
 .hero-img {
   flex: 3;
   padding-left: 100px;
-  
+
   @include breakpoint(medium down) {
     display: none;
   }

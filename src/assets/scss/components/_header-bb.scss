@@ -3,9 +3,9 @@
   position: relative;
 
   .version-menu {
+    cursor: pointer;
     height: rem-calc(26);
     width: rem-calc(26);
-    cursor: pointer;
   }
 
   .version-badge,
@@ -46,7 +46,7 @@
   font-weight: $global-weight-bold;
   text-transform: uppercase;
 
-  @include breakpoint(small only) { 
+  @include breakpoint(small only) {
     padding-right: rem-calc(50);
   }
 }
@@ -55,8 +55,8 @@
   color: $medium-gray;
   display: inline;
   font-size: rem-calc(15);
-  text-transform: none;
   margin-left: 0.5rem;
+  text-transform: none;
 
   @include breakpoint(small only) {
     display: block;
@@ -99,15 +99,15 @@
   font-size: rem-calc(16);
   font-weight: $global-weight-semibold;
 
-  @include breakpoint(small only) { 
+  @include breakpoint(small only) {
     display: none;
   }
 }
 
 .bb-header-social {
   margin-left: 1rem;
-  
-  @include breakpoint(small only) { 
+
+  @include breakpoint(small only) {
     display: none;
   }
 }
