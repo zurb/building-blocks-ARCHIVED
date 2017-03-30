@@ -63,6 +63,8 @@ $card-height: rem-calc(347);
     font-size: rem-calc(12);
     font-weight: $global-weight-bold;
     color: $medium-gray;
+    transition: all 0.2s ease-out;
+    transition-delay: 0.25s;
   }
 
   .card-views {
@@ -96,4 +98,6 @@ $card-height: rem-calc(347);
   font-weight: $global-weight-semibold;
   color: $medium-gray;
   text-transform: capitalize;
+  transition: all 0.2s ease-out;
+  transition-delay: 0.25s;
 }
