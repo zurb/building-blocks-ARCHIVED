@@ -16,22 +16,25 @@
 
   <!-- Code Preview -->
   <div class="row expanded">
+
+    <!--html-->
     <div id="codeBoxHTML" class="column code-box is-active">
       <div class="code-box-header">
         <button class="button docs-code-copy" data-clipboard>Copy</button>
         <div class="code-toggler inactive">HTML</div>
       </div>
       <div class="code-box-script">
-      {{#code "html"}}
-      {{{bb-html page}}}
-      {{/code}}
+        {{#code "html"}}
+        {{{bb-html page}}}
+        {{/code}}
       </div>
     </div>
+    <!--css-->
     <div id="codeBoxStyles" class="column code-box is-active">
       <div class="code-box-header">
-      <button class="button docs-code-copy" data-clipboard>Copy</button>
-      <button class="code-toggler is-active" id="scssToggle">SCSS</button>
-      <button class="code-toggler" id="cssToggle">CSS</button>
+        <button class="button docs-code-copy" data-clipboard>Copy</button>
+        <button class="code-toggler is-active" id="scssToggle">SCSS</button>
+        <button class="code-toggler" id="cssToggle">CSS</button>
       </div>
       <div class="code-block-toggle is-active code-box-script" id="codeBoxSCSS" data-toggler=".is-active">
         {{#code "scss"}}
@@ -44,13 +47,14 @@
         {{/code}}
       </div>
     </div>
+    <!--JS-->
     <div id="codeBoxJS" class="column code-box">
       <button class="button docs-code-copy" data-clipboard-target="#copyJS">Copy</button>
       <div class="code-toggler inactive">JS</div>
       <div class="code-box-script">
-      {{#code "js"}}
-      {{{bb-js page}}}
-      {{/code}}
+        {{#code "js"}}
+        {{{bb-js page}}}
+        {{/code}}
       </div>
     </div>
   </div>

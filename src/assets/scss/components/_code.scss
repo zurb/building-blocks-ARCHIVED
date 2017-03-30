@@ -9,10 +9,11 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   padding: rem-calc(5) rem-calc(20);
 
   a {
-    color: $medium-gray;
+    color: $dark-blue;
     font-weight: $global-weight-bold;
     font-size: rem-calc(18);
     text-transform: uppercase;
+
   }
 
   &.is-active {
@@ -22,6 +23,10 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
     a {
       color: $dark-blue;
     }
+  }
+
+  &.is-disabled {
+    color: $medium-gray;
   }
 }
 
@@ -48,11 +53,11 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 
   &.is-active {
     display: block;
+    width: 30%;
   }
 }
 
 .code-box-header {
-  width: 100%;
   height: rem-calc(48);
 }
 
@@ -72,6 +77,7 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 
 
 .code-toggler {
+  color: $dark-blue;
   font-size: rem-calc(14);
   font-weight: $global-weight-bold;
   margin-right: 0.2rem;

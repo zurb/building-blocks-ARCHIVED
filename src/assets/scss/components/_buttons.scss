@@ -34,9 +34,17 @@ button {
   z-index: 1;
   margin: 0;
   box-shadow: none;
+  
+  &:focus {
+    background: transparent;
+    color: $dark-blue;
+  }
 
   &:hover,
-  &.zeroclipboard-is-hover {
+  &.zeroclipboard-is-hover,
+  &:active {
     background: scale-color($dark-blue, $lightness: -5%);
+    color: $white;
   }
+
 }
