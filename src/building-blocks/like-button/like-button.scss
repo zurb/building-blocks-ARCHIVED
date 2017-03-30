@@ -20,14 +20,14 @@ body {
   }
   &:focus {
     background-color: transparent;
-    .fi-heart, span {
+    .fa, span {
       color: #afafaf;
     }
   }
   &:hover {
     border-color: #e53d65;
     background-color: transparent;
-    .fi-heart, span {
+    .fa, span {
       color: #e53d65;
     }
   }
@@ -36,24 +36,24 @@ body {
 .liked {
   background-color: #e53d65;
   border-color: #e53d65;
-  .fi-heart, span {
+  .fa, span {
     color: white;
   }
   &:focus {
     background-color: #e53d65;
-    .fi-heart, span {
+    .fa, span {
       color: white;
     }
   }
   &:hover {
     background-color: #e53d65;
     border-color: #e53d65;
-    .fi-heart, span {
+    .fa, span {
       color: white;
     }
   }
 }
 
-.fi-heart, span {
+.fa, span {
   transition: all ease 0.4s;
 }
