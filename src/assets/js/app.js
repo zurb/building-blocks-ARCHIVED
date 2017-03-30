@@ -76,3 +76,34 @@ $('#cssToggle').click(function(){
     toggleCode();
   }
 });
+
+var toggleHTML = $('[data-toggle-HTML]');
+var toggleSCSS = $('[data-toggle-SCSS]');
+var toggleJS   = $('[data-toggle-JS]');
+
+// toggles trigger for the code boxes
+toggleHTML.click(function(e) {
+  if( toggleSCSS.hasClass('is-active') || toggleJS.hasClass('.is-active') ) {
+    $(this).toggleClass('is-active');
+    $('#codeBoxHTML').toggleClass('is-active');
+  }
+  e.preventDefault();
+});
+
+toggleSCSS.click(function(e) {
+  if( toggleHTML.hasClass('is-active') || toggleJS.hasClass('.is-active') ) {
+    $(this).toggleClass('is-active');
+    $('#codeBoxSCSS').toggleClass('is-active');
+  }
+  e.preventDefault();
+});
+
+toggleSCSS.click(function(e) {
+  if( toggleSCSS.hasClass('is-active') || toggleJS.hasClass('.is-active') ) {
+    $(this).toggleClass('is-active');
+    $('#codeBoxJS').toggleClass('is-active');
+  }
+  e.preventDefault();
+});
+
+

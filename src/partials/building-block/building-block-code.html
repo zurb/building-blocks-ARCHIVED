@@ -2,30 +2,28 @@
   <!-- Code Menu -->
   <div class="flex-container align-center">
     <ul class="code-menu menu">
-      <li class="code-menu-item">
+      <li class="code-menu-item is-active" data-toggle-HTML>
         <a href="#">HTML</a>
       </li>
-      <li class="code-menu-item">
+      <li class="code-menu-item is-active" data-toggle-styles>
         <a href="#">SCSS</a>
       </li>
-      <li class="code-menu-item">
+      <li class="code-menu-item" data-toggle-JS>
         <a href="#">JS</a>
       </li>
     </ul>
   </div>
 
-  <button class="button copy-button" data-clipboard-target="#copyHTML">Copy HTML</button>
-  <button class="button copy-button" data-clipboard-target="#copySCSS">Copy SCSS</button>
-  <button class="button copy-button" data-clipboard-target="#copyJS">Copy JS</button>
-
   <!-- Code Preview -->
   <div class="row expanded">
-    <div id="copyHTML" class="column code-box">
+    <div id="codeBoxHTML" class="column code-box is-active">
+      <button class="button docs-code-copy" data-clipboard>Copy</button>
 {{#code "html"}}
 {{{bb-html page}}}
 {{/code}}
     </div>
-    <div id="copySCSS" class="column code-box hide-for-small-only">
+    <div id="codeBoxStyles" class="column code-box is-active">
+      <button class="button docs-code-copy" data-clipboard>Copy</button>
       <button class="code-toggler is-active" id="scssToggle">SCSS</button>
       <button class="code-toggler" id="cssToggle">CSS</button>
 
@@ -34,13 +32,14 @@
 {{{bb-scss page}}}
 {{/code}}
       </div>
-      <div class="code-block-toggle" id="codeBoxCSS" data-toggler=".is-active">
+      <div class="code-block-toggle" id="codeBoxCSS">
 {{#code "css"}}
 {{{bb-css page}}}
 {{/code}}
       </div>
     </div>
-    <div id="copyJS" class="column code-box hide-for-small-only">
+    <div id="codeBoxJS" class="column code-box">
+      <button class="button docs-code-copy" data-clipboard-target="#copyJS">Copy</button>
 {{#code "js"}}
 {{{bb-js page}}}
 {{/code}}
