@@ -8,3 +8,4 @@ versions:
   - 6.3.1
 author:
   name: Christine Siu
+containerClass: 'row columns medium-7 medium-centered'
