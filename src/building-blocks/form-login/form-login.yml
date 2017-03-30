@@ -10,4 +10,4 @@ versions:
   - 6.3.1
 author:
   name: Rafi
-containerClass: row column medium-6 large-4
+containerClass: row column align-center medium-6 large-4 container-padded
