@@ -124,7 +124,7 @@ function buildingBlockIframe() {
       root: 'src/',
       layouts: 'src/layouts/building-blocks/iframe/',
       partials: 'src/partials/building-block/',
-      data: 'src/data/',
+      data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulpRename(function (path) {
