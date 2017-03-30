@@ -25,7 +25,7 @@ function buildingBlockCombineMeta() {
       _.each(files, (value, key) => {
         var name = key.split('/')[0];
         output[name] = value;
-        output[name].href = '/building-block/' + key + '.html';
+        output[name].href = 'building-block/' + key + '.html';
         output[name]['major-versions'] = majorVersions(value.versions);
       })
       return new Buffer(JSON.stringify(output));

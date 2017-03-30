@@ -13,6 +13,7 @@ Search.prototype.setup = function() {
   this.globalFileName = $('meta[name="bbfile"]').prop('content');
   this.localFileName = $('meta[name="datafile"]').prop('content');
   this.datakey = $('meta[name="datakey"]').prop('content');
+  this.rootpath = $('meta[name="rootpath"]').prop('content');
   this.loadData();
   this.sort = 'newest';
   this.filter = 'all';
@@ -73,8 +74,9 @@ Search.prototype.updateSearch = function(event) {
 
 
   var template = this.template;
+  var self = this;
   var html = _.map(results, function(result) {
-    return template(result);
+    return template(_.extend({root: self.rootpath},result));
   }).join('');
   this.$searchContainer.html(html).foundation();
   if(this.onSearch) {this.onSearch(term, this.filter, this.sort, results);}
