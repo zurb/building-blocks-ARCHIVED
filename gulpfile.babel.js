@@ -245,8 +245,12 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, gulp.series('copy', browser.reload));
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
-  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(buildingBlockPage, buildingBlockIframe, 'building-block-indices', browser.reload));
+  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series(buildingBlockPage, buildingBlockIframe, 'building-block-indices', browser.reload));
+  gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass, buildingBlockPage, buildingBlockIframe, browser.reload));
+  gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, buildingBlockPage, buildingBlockIframe, browser.reload));
+  gulp.watch('src/building-blocks/**/*.png').on('all', gulp.series('copy', browser.reload));
+  gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, browser.reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
