@@ -4,11 +4,12 @@
   display: flex;
   margin-bottom: $page-spacing;
   overflow: hidden;
-  border-radius: rem-calc(5);
+  transition: all 0.2s ease-out;
+  transition-delay: 0.25s;
 
   .card-imghover-overlay::after {
     align-items: center;
-    background-color: rgba(40, 103, 127, .72);
+    background-color: rgba(40, 103, 127, 0.72);
     border-radius: rem-calc(5) rem-calc(5) rem-calc(0) rem-calc(0);
     color: $white;
     content: 'See code';
@@ -30,18 +31,20 @@
   &:hover .card-imghover-overlay::after {
     opacity: 1;
     @include transition(opacity 0.2s ease-out);
+    @include transition-delay( 0.25s);
   }
 
   &:hover .card-hover-link {
     opacity: 1;
     @include transition(opacity 0.2s ease-out);
+    @include transition-delay( 0.25s);
   }
 
-  &:hover .card-actions span, 
+  &:hover .card-actions span,
   &:hover .card-author,
   &:hover .bb-card-social-icon {
     color: $dark-gray;
-    
+
     * {
       fill: $dark-gray;
     }
@@ -69,4 +72,8 @@
     @include transition(opacity 0.2s ease-out);
     @include transition-delay( 0.25s);
   }
+}
+
+.card-img {
+  border-radius: 0.3125rem 0.3125rem 0 0;
 }

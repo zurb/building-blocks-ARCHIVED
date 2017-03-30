@@ -1,7 +1,7 @@
 $card-hover-link-height: rem-calc(92);
 $card-height: rem-calc(347);
 
-.card-block {
+.column-block {
   margin-bottom: 2rem;
 
   &.scroll-x {
@@ -17,9 +17,13 @@ $card-height: rem-calc(347);
   }
 }
 
-.card {
-  border: 0;
+.card-building-block {
+  @include transition(all 0.2s ease-out);
+  @include transition-delay( 0.25s);
   width: 100%;
+  border: 0;
+  height: $card-height;
+  border-radius: rem-calc(5);
 
   hr {
     margin: 0;
@@ -27,13 +31,18 @@ $card-height: rem-calc(347);
 }
 
 .card-title {
+  width: calc(100% - 25px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 0;
+  width: 100%;
+}
+
+.card-title {
   color: $dark-blue;
   font-size: rem-calc(20);
   font-weight: $global-weight-bold;
-}
-
-.card-building-block {
-  height: $card-height;
 }
 
 .card-divider {
@@ -62,7 +71,9 @@ $card-height: rem-calc(347);
     color: $medium-gray;
     font-size: rem-calc(12);
     font-weight: $global-weight-bold;
-    margin-left: 5px;
+    color: $medium-gray;
+    transition: all 0.2s ease-out;
+    transition-delay: 0.25s;
   }
 
   .card-views {
@@ -71,10 +82,11 @@ $card-height: rem-calc(347);
 }
 
 .card-img {
-  background: pale-blue;
-  background-position: center;
+  position: relative;
+  flex: 1 0 auto;
+  background: $pale-blue;
+  border-radius: rem-calc(5) rem-calc(5) 0 0;
   background-size: contain;
-  border-radius: rem-calc(5) rem-calc(5) 0 0 ;
   flex: 1 0 auto;
   position: relative;
 }
@@ -95,4 +107,6 @@ $card-height: rem-calc(347);
   font-size: rem-calc(12);
   font-weight: $global-weight-semibold;
   text-transform: capitalize;
+  transition: all 0.2s ease-out;
+  transition-delay: 0.25s;
 }
