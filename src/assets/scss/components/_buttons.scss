@@ -6,34 +6,34 @@ button {
   border: 0;
   box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
   font-weight: $global-weight-bold;
-}
 
-.button.secondary {
-  background: none;
-  border: 2px solid $dark-blue;
-  box-shadow: none;
-  color: $dark-blue;
-
-  &:hover {
-    background: $light-blue;
+  &.secondary {
+    background: none;
+    border: 2px solid $dark-blue;
+    box-shadow: none;
     color: $dark-blue;
+
+    &:hover {
+      background: $light-blue;
+      color: $dark-blue;
+    }
   }
 }
 
 // Styles for the copy button shown on every code sample
 .docs-code-copy {
-  color: $dark-blue;
-  border: 2px solid $dark-blue;
   background: transparent;
+  border-radius: 0.1875rem;
+  border: 2px solid $dark-blue;
+  box-shadow: none;
+  color: $dark-blue;
   font-size: 1rem;
+  margin: 0;
   padding: 0.875rem 2.5rem;
   position: absolute;
-  border-radius: 0.1875rem;
   right: 1rem;
   top: 1rem;
   z-index: 1;
-  margin: 0;
-  box-shadow: none;
   
   &:focus {
     background: transparent;

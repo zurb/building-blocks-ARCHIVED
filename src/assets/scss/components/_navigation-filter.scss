@@ -8,8 +8,8 @@
 
 .filter-nav {
   align-items: flex-start;
-  position: relative;
   margin-bottom: $page-spacing;
+  position: relative;
 
   .bb-search-button {
     display: flex;
@@ -27,13 +27,13 @@
 
   .filter-nav-button {
     align-items: center;
+    border-radius: 0;
     color: $dark-blue;
     display: flex;
+    flex: 1 0 0;
     flex-direction: column;
     padding-bottom: rem-calc(20);
     padding-top: rem-calc(20);
-    flex: 1 0 0px;
-    border-radius: 0;
 
     .bb-filter-icons {
       height: 36px;
@@ -46,10 +46,10 @@
     }
 
     &.active {
-      color: $dark-blue;
-      box-sizing: border-box;
-      box-shadow: 0 -4px inset;
       border-radius: 0;
+      box-shadow: 0 -4px inset;
+      box-sizing: border-box;
+      color: $dark-blue;
 
       .bb-filter-icons {
         * {
@@ -80,13 +80,14 @@
 
 .bb-search-bar-container {
   @include vertical-center;
+
   background-color: white;
+  border-bottom: 2px solid $dark-blue;
   display: none;
   height: 100%;
   margin: 0 auto;
   max-width: $global-width;
   width: 100%;
-  border-bottom: 2px solid $dark-blue;
 
   .close-button {
     @include vertical-center;
@@ -109,13 +110,14 @@
       box-shadow: none;
     }
   }
+
   .bb-search-subtext {
-    margin-bottom: 0;
-    position: absolute;
     bottom: rem-calc(14);
-    left: rem-calc(8);
     color: $medium-blue;
     font-size: rem-calc(14);
+    left: rem-calc(8);
+    margin-bottom: 0;
+    position: absolute;
   }
 }
 
@@ -124,8 +126,8 @@
   z-index: 81; // Above the card hover state
 
   .dropdown {
-    border-radius: rem-calc(3);
     border: 0;
+    border-radius: rem-calc(3);
   }
 
   .menu {
@@ -138,8 +140,8 @@
 
     a {
       background: $white;
-      color: $dark-blue;
       border-radius: 3px;
+      color: $dark-blue;
     }
   }
 

@@ -1,7 +1,7 @@
 .filter-nav-mobile-container {
   background-color: $light-blue;
-  margin-top: $global-margin;
   margin-bottom: 1rem;
+  margin-top: $global-margin;
 
   .filter-nav-mobile-button {
     align-items: center;
@@ -47,14 +47,14 @@
 
   .filter-nav-button {
     align-items: center;
+    border-radius: 0;
     color: $dark-blue;
     display: flex;
+    flex: 1 0 0;
     flex-direction: column;
     height: 100%;
     padding-bottom: rem-calc(20);
     padding-top: rem-calc(20);
-    flex: 1 0 0px;
-    border-radius: 0;
 
     .bb-filter-icons {
       * {
@@ -106,22 +106,22 @@
 
   .cancel-button {
     color: $white;
-    margin-bottom: 0;
     font-size: 1rem;
+    margin-bottom: 0;
   }
 }
 
 .filter-title {
-  margin-bottom: 0;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 .sort-title {
   background-color: $dark-blue;
   color: $white;
+  font-weight: 600;
   margin-bottom: 0;
   padding: $global-padding;
-  font-weight: 600;
 }
 
 .sort-menu {

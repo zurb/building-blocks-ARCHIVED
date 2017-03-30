@@ -1,0 +1,10 @@
+name: "Responsive Social Media Section"
+tags:
+  - social
+description: A responsive section for social media links.
+category: media
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Laurel Beyers
