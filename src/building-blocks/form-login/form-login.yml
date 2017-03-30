@@ -11,3 +11,4 @@ versions:
 author:
   name: Rafi
 containerClass:
+grid: float
