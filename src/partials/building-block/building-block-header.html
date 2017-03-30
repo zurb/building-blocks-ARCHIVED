@@ -17,7 +17,7 @@
         <img class="inject-me bb-divider"   src="{{root}}assets/img/icons/vertical-line.svg" alt="">
         <div class="building-block-tag-container">
           {{#tag-links block.tags}}
-          <a href="{{../root}}{{this.href}}" class="building-block-tag">{{this.name}}</a>
+          <a href="{{../root}}?q={{this.name}}" class="building-block-tag">{{this.name}}</a>
           {{/tag-links}}
 
         </div>
