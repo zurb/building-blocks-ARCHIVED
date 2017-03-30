@@ -1,13 +1,13 @@
 @charset 'utf-8';
 
-@import 'styles/github';
 @import 'settings';
+$global-flexbox: false;
 @import 'foundation';
 @import 'motion-ui';
 
 @include foundation-global-styles;
-// @include foundation-grid;
-@include foundation-flex-grid;
+@include foundation-grid;
+//@include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -45,40 +45,12 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 @include foundation-visibility-classes;
-// @include foundation-float-classes;
-@include foundation-flex-classes;
+@include foundation-float-classes;
+//@include foundation-flex-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-// custom mixins
-@import 'mixins/transitions';
-
-// custom global
-@import 'colors';
-@import 'typography';
-@import 'layout';
-
-// custom components
-@import 'components/avatar';
-@import 'components/breadcrumbs';
-@import 'components/buttons';
-@import 'components/building-block-iframe';
-@import 'components/cards-bb';
-@import 'components/code';
-@import 'components/description-bb';
-@import 'components/footer';
-@import 'components/global-nav-mobile';
-@import 'components/header-bb';
-@import 'components/hero';
-@import 'components/navigation-filter';
-@import 'components/navigation-filter-mobile';
-@import 'components/navigation-global';
-@import 'components/pagination';
-@import 'components/preview-bb';
-@import 'components/preview-modal';
-@import 'components/related-bb';
-@import 'components/version-badge';
-
-// custom utils
-@import 'utils/card-hover';
+.container-padded {
+  padding: 1rem 0;
+}
