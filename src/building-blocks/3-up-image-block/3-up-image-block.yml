@@ -3,6 +3,7 @@ tags:
   - media
   - image-layout
 category: media
+description: Three image block that stacks when in mobile.
 versions:
   - 6.3.1
   - 6.3.0

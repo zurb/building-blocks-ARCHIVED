@@ -2,7 +2,7 @@ name: 'Responsive Blog Footer'
 tags:
   - media
 category: media
-discription: A responsive footer that has a mailing list, about me section and search tag area - perfect for a blog site!
+description: A responsive footer that has a mailing list, about me section and search tag area - perfect for a blog site!
 versions:
   - 6.3.1
   - 6.3.0

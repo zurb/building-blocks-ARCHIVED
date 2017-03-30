@@ -1,7 +1,7 @@
 name: "Responsive Social Media Section"
 tags:
   - social
-discription: A responsive section for social media links.
+description: A responsive section for social media links.
 category: media
 versions:
   - 6.3.0
