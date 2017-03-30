@@ -40,7 +40,7 @@ gulp.task('lint', function () {
 });
 
 
-gulp.task('copy', gulp.parallel(copyAssets, copyData));
+gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages));
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
@@ -87,6 +87,13 @@ function copyAssets() {
 function copyData() {
   return gulp.src(PATHS.build + '/data/*')
     .pipe(gulp.dest(PATHS.dist + '/data'));
+  }
+
+// Copy files out of the assets folder
+// This task skips over the "img", "js", and "scss" folders, which are parsed separately
+function copyBBImages() {
+  return gulp.src('src/building-blocks/**/*.png')
+    .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
 }
 
 // Copy page templates into finished HTML files
