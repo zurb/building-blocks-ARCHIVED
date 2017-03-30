@@ -20,7 +20,7 @@ function loadConfig() {
 }
 
 // From http://stackoverflow.com/questions/23230569/how-do-you-create-a-file-from-a-string-in-gulp
-function stringSrc(categories, cb) {
+function stringSrc(categories, prefix, datafile, cb) {
   async.eachOf(categories, (category, name, callback) => {
     var numPages = Math.ceil(category.total / PAGE_SIZE);
     var objs = []
@@ -30,26 +30,31 @@ function stringSrc(categories, cb) {
       if(numPages > 1) { obj.paginate = true;}
       obj.filename = ((obj.currentPage === 1) ? name : name + '-' + obj.currentPage) + '.html';
       var start = i * PAGE_SIZE;
-      obj.datafile = 'categories.json';
+      obj.datafile = datafile;
       obj.datakey = name;
       obj.blocks = blocks.slice(start, start + PAGE_SIZE);
       objs.push(obj);
     }
     async.each(objs, (obj, innerCallback) => {
       var str = "---\n" + yaml.safeDump(obj) + "---\n"
-      fs.writeFile(PATHS.build + "/" + obj.filename, str, innerCallback)
+      fs.writeFile(PATHS.build + "/" + prefix + obj.filename, str, innerCallback)
     }, callback);
   }, cb)
 }
 
 function buildingBlocksCategoryStarters(cb) {
   var categories = JSON.parse(fs.readFileSync(PATHS.build + '/data/categories.json', 'utf8'));
-  fs.mkdir(PATHS.build, () => {stringSrc(categories, cb)})
+  fs.mkdir(PATHS.build, () => {stringSrc(categories, '', 'categories.json', cb)})
+}
+
+function buildingBlocksTagsStarters(cb) {
+  var tags = JSON.parse(fs.readFileSync(PATHS.build + '/data/tags.json', 'utf8'));
+  fs.mkdir(PATHS.build + '/tags', () => {stringSrc(tags, 'tags/', 'tags.json', cb)})
 }
 
 function buildingBlocksCategoryPages() {
   panini.refresh();
-  return gulp.src(PATHS.build + '/*.html')
+  return gulp.src([PATHS.build + '/*.html', PATHS.build + '/**/*.html'])
     .pipe(panini({
       root: '_build/',
       layouts: 'src/layouts/building-blocks/index',
@@ -58,8 +63,8 @@ function buildingBlocksCategoryPages() {
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulp.dest(PATHS.dist));
-}
+  }
 
 gulp.task('building-blocks-categories', buildingBlocksCategoryPages);
 gulp.task('building-block-indices',
-  gulp.series(buildingBlocksCategoryStarters, buildingBlocksCategoryPages));
+  gulp.series(buildingBlocksCategoryStarters, buildingBlocksTagsStarters, buildingBlocksCategoryPages));
