@@ -1,0 +1,10 @@
+name: 'Responsive Featured Section'
+tags:
+  - media
+category: media
+description: A responsive "feature" section that could show different logos from other sites, etc using flexbox.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  name: Laurel Beyers

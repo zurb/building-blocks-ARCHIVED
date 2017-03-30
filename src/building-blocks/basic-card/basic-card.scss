@@ -1,37 +1,28 @@
-.container {
-  height: 100vh;
-}
+@import 'settings';
+@import 'foundation';
 
-.card {
+.basic-card {
+  @include card-container;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  width: 50%;
   margin: 0 auto;
+  width: 50%;
 }
 
-.image {
-  grid-row-start: 1;
+.basic-card-image {
   grid-row-end: 4;
-  background-color: blue;
+  grid-row-start: 1;
 
   img {
     width: 100%;
   }
 }
 
-.content {
-  grid-row-start: 2/3;
-  background-color: green;
-  overflow: scroll;
-}
-
-.content {
-  grid-row-start: 3/4;
-  background-color: yellow;
-}
-
-.callout {
+.basic-card-content {
+  border: 0;
+  grid-row-start: 3 / 4;
   margin: 0;
-  border: none;
+  overflow: scroll;
 }
