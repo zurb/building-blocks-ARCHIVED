@@ -1,15 +1,14 @@
 .hover-wrapper {
+  @include transition(opacity 0.1s ease-out);
+  border-radius: rem-calc(5);
   display: flex;
   flex-direction: column;
   margin-bottom: $page-spacing;
   overflow: hidden;
   position: relative;
-  transition: all 0.2s ease-out;
-  transition-delay: 0.25s;
 
   .card-imghover-overlay::after {
     @include transition(opacity 0.2s ease-out);
-    @include transition-delay(0.25s);
 
     align-items: center;
     background-color: rgba(40, 103, 127, 0.72);
@@ -30,18 +29,19 @@
   }
 
   &:hover {
+    @include transition(opacity 0.1s ease-out);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-
-    .card-hover-link {
+    
+    .card-imghover-overlay::after {
+      @include transition(opacity 0.1s ease-out);
       opacity: 1;
-      @include transition(opacity 0.2s ease-out);
-      @include transition-delay( 0.25s);
     }
 
     .card-actions span,
     .card-actions img, 
     .card-author,
     .bb-card-social-icon {
+    @include transition(opacity 0.1s ease-out);
       color: $dark-gray;
 
       * {
@@ -49,27 +49,27 @@
       }
     }
   }
-
-  .card-hover-link {
-    @include transition(opacity 0.2s ease-out);
-    @include transition-delay(0.25s);
-
-    align-items: center;
-    background-color: $white;
-    bottom: 0;
-    color: $dark-gray;
-    display: flex;
-    font-size: rem-calc(18);
-    font-weight: $global-weight-bold;
-    height: $card-hover-link-height;
-    justify-content: center;
-    opacity: 0;
-    position: absolute;
-    text-transform: capitalize;
-    width: 100%;
-    z-index: 80;
-  }
 }
+
+//   .card-hover-link {
+//     @include transition(opacity 0.2s ease-out);
+
+//     align-items: center;
+//     background-color: $white;
+//     bottom: 0;
+//     color: $dark-gray;
+//     display: flex;
+//     font-size: rem-calc(18);
+//     font-weight: $global-weight-bold;
+//     height: $card-hover-link-height;
+//     justify-content: center;
+//     opacity: 0;
+//     position: absolute;
+//     text-transform: capitalize;
+//     width: 100%;
+//     z-index: 80;
+//   }
+// }
 
 .card-img {
   border-radius: 0.3125rem 0.3125rem 0 0;
