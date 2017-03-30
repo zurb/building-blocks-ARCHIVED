@@ -3,30 +3,33 @@ $card-height: rem-calc(347);
 
 .card-block {
   margin-bottom: 2rem;
-}
 
-.column-block.scroll-x {
-  @include breakpoint(medium only) {
-  display: inline-block;
-  width: 46%;
-  }
-  @include breakpoint(small only) {
-    display: inline-block;
-    width: 90%;
+  &.scroll-x {
+    @include breakpoint(medium only) {
+      display: inline-block;
+      width: 46%;
+    }
+
+    @include breakpoint(small only) {
+      display: inline-block;
+      width: 90%;
+    }
   }
 }
-
 
 .card {
-  //box-shadow: 0 2px 7px 0 rgba(0,0,0,0.25);
+  border: 0;
   width: 100%;
-  border: 0px;
+
+  hr {
+    margin: 0;
+  }
 }
 
 .card-title {
+  color: $dark-blue;
   font-size: rem-calc(20);
   font-weight: $global-weight-bold;
-  color: $dark-blue;
 }
 
 .card-building-block {
@@ -34,24 +37,32 @@ $card-height: rem-calc(347);
 }
 
 .card-divider {
-  display: flex;
   align-items: center;
+  display: flex;
 
-  h1,h2,h3,h4,h5,h6,p,a,.button {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  .button {
     margin-bottom: 0;
   }
 }
 
 .card-actions {
-  display: flex;
   align-items: center;
+  display: flex;
   vertical-align: baseline;
 
   span {
-    margin-left: 5px;
+    color: $medium-gray;
     font-size: rem-calc(12);
     font-weight: $global-weight-bold;
-    color: $medium-gray;
+    margin-left: 5px;
   }
 
   .card-views {
@@ -59,32 +70,29 @@ $card-height: rem-calc(347);
   }
 }
 
-.card hr {
-  margin: 0;
-}
-
 .card-img {
-  position: relative;
-  flex: 1 0 auto;
   background: pale-blue;
-  border-radius: rem-calc(5) rem-calc(5) 0 0 ;
+  background-position: center;
   background-size: contain;
+  border-radius: rem-calc(5) rem-calc(5) 0 0 ;
+  flex: 1 0 auto;
+  position: relative;
 }
 
 // card fonts and text styles
 .card-category {
+  color: $dark-gray;
+  font-size: rem-calc(14);
+  font-weight: $global-weight-semibold;
   position: absolute;
-  top: rem-calc(12);
   right: rem-calc(12);
   text-transform: uppercase;
-  font-size: rem-calc(14);
-  color: $dark-gray;
-  font-weight: $global-weight-semibold;
+  top: rem-calc(12);
 }
 
 .card-author {
+  color: $medium-gray;
   font-size: rem-calc(12);
   font-weight: $global-weight-semibold;
-  color: $medium-gray;
   text-transform: capitalize;
 }
