@@ -68,6 +68,7 @@ $card-height: rem-calc(347);
   flex: 1 0 auto;
   background: pale-blue;
   border-radius: rem-calc(5) rem-calc(5) 0 0 ;
+  background-size: contain;
 }
 
 // card fonts and text styles

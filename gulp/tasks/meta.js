@@ -26,6 +26,7 @@ function buildingBlockCombineMeta() {
         var name = key.split('/')[0];
         output[name] = value;
         output[name].href = 'building-block/' + key + '.html';
+        output[name].thumb = 'assets/img/building-block/' + key + '.png';
         output[name]['major-versions'] = majorVersions(value.versions);
       })
       return new Buffer(JSON.stringify(output));
