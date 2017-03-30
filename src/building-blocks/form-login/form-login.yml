@@ -1,0 +1,14 @@
+name: "Log In Form"
+tags:
+  - form
+  - log-in
+  - input
+category: form
+description: Simple log in form. You can add it inside grid columns or in a modal, dropdown pane, or other UI component.
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Rafi
+containerClass:
+grid: float
