@@ -3,7 +3,7 @@ tags:
   - flexbox
   - card
 category: container
-description: an Article card usiong Flexbox great for allowing following of author
+description: an Article card using Flexbox. Great for allowing following of author
 versions:
   - 6.3.1
   - 6.3.0
