@@ -3,9 +3,11 @@ tags:
   - navigation
   - nav
   - menu
-  - topbar
-  - top bar
+  - top-bar
+  - mega-menu
+  - dropdown
 category: navigation
+description:
 versions:
   - 6.3.1
   - 6.3.0
@@ -15,3 +17,5 @@ versions:
   - 6.2.0
 author:
   name: Rafi
+containerClass: row column
+grid: flexbox

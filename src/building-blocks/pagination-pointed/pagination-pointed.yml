@@ -1,0 +1,13 @@
+name: "Pagination with Pointed Previous/Next Buttons"
+tags:
+  - nav
+  - navigation
+  - pagination
+category: form
+description: A unique way to show a password in a form.
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Rafi
+containerClass: container-padded

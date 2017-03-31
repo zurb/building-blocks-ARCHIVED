@@ -1,9 +1,9 @@
 name: "Expandable Searchbar"
 tags:
-  - searchbar
-  - js
-  - expand
-category: navigation
+  - search
+  - form
+  - input
+category: forms
 versions:
   - 6.3.0
   - 6.3.1
