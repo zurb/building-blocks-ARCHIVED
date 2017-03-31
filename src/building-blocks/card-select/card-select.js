@@ -1,8 +1,8 @@
 $(document).foundation();
 
 $(function() {
-  $('.button')
+  $('.selectable-card-button')
     .bind('click', function(event) {
-      $(".card").toggleClass("selected");
+      $(".selectable-card").toggleClass("selected");
     })
 });
