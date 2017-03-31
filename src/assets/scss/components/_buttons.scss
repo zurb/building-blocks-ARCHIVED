@@ -22,9 +22,9 @@ button {
 
 // Styles for the copy button shown on every code sample
 .docs-code-copy {
-  background: $white;
-  border: 2px solid $dark-blue;
+  background: transparent;
   border-radius: 0.1875rem;
+  border: 2px solid $dark-blue;
   box-shadow: none;
   color: $dark-blue;
   font-size: 1rem;
@@ -34,9 +34,17 @@ button {
   right: 1rem;
   top: 1rem;
   z-index: 1;
+  
+  &:focus {
+    background: transparent;
+    color: $dark-blue;
+  }
 
   &:hover,
-  &.zeroclipboard-is-hover {
+  &.zeroclipboard-is-hover,
+  &:active {
     background: scale-color($dark-blue, $lightness: -5%);
+    color: $white;
   }
+
 }

@@ -18,8 +18,7 @@ $card-height: rem-calc(347);
 }
 
 .card-building-block {
-  @include transition(all 0.2s ease-out);
-  @include transition-delay(0.25s);
+  @include transition(all 0.1s ease-out);
 
   border: 0;
   border-radius: rem-calc(5);
@@ -68,8 +67,7 @@ $card-height: rem-calc(347);
     color: $medium-gray;
     font-size: rem-calc(12);
     font-weight: $global-weight-bold;
-    transition: all 0.2s ease-out;
-    transition-delay: 0.25s;
+    transition: all 0.1s ease-out;
   }
 
   .card-views {
@@ -78,7 +76,7 @@ $card-height: rem-calc(347);
 }
 
 .card-img {
-  background: $pale-blue;
+  background: $blue-gray;
   background-size: contain;
   border-radius: rem-calc(5) rem-calc(5) 0 0;
   flex: 1 0 auto;
@@ -87,9 +85,10 @@ $card-height: rem-calc(347);
 
 // card fonts and text styles
 .card-category {
-  color: $dark-gray;
+  color: $muted-blue;
   font-size: rem-calc(14);
-  font-weight: $global-weight-semibold;
+  font-weight: $global-weight-bold;
+  opacity: 0.4;
   position: absolute;
   right: rem-calc(12);
   text-transform: uppercase;
@@ -101,6 +100,10 @@ $card-height: rem-calc(347);
   font-size: rem-calc(12);
   font-weight: $global-weight-semibold;
   text-transform: capitalize;
-  transition: all 0.2s ease-out;
-  transition-delay: 0.25s;
+  transition: all 0.1s ease-out;
+}
+
+.bb-card-social-icon {
+  margin-right: rem-calc(5);
+  transition: all 0.1s ease-out;
 }
