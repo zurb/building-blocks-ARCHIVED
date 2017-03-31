@@ -51,26 +51,6 @@
   }
 }
 
-//   .card-hover-link {
-//     @include transition(opacity 0.2s ease-out);
-
-//     align-items: center;
-//     background-color: $white;
-//     bottom: 0;
-//     color: $dark-gray;
-//     display: flex;
-//     font-size: rem-calc(18);
-//     font-weight: $global-weight-bold;
-//     height: $card-hover-link-height;
-//     justify-content: center;
-//     opacity: 0;
-//     position: absolute;
-//     text-transform: capitalize;
-//     width: 100%;
-//     z-index: 80;
-//   }
-// }
-
 .card-img {
   border-radius: 0.3125rem 0.3125rem 0 0;
 }
