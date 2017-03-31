@@ -4,7 +4,7 @@ tags:
   - navigation
   - pagination
 category: form
-description: A unique way to show a password in a form.
+description: Pagination with nice buttons for good touch target.
 versions:
   - 6.3.0
   - 6.3.1
