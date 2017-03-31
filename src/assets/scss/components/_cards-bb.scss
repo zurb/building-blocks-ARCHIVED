@@ -79,7 +79,7 @@ $card-height: rem-calc(347);
   background: $blue-gray;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: auto 100%;
   border-radius: rem-calc(5) rem-calc(5) 0 0;
   flex: 1 0 auto;
   position: relative;
