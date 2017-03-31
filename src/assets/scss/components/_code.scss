@@ -9,10 +9,12 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   padding: rem-calc(5) rem-calc(20);
 
   a {
-    color: $medium-gray;
+    color: $dark-blue;
+    font-weight: $global-weight-bold;
     font-size: rem-calc(18);
     font-weight: $global-weight-bold;
     text-transform: uppercase;
+
   }
 
   &.is-active {
@@ -23,6 +25,10 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
       color: $dark-blue;
     }
   }
+
+  &.is-disabled {
+    color: $medium-gray;
+  }
 }
 
 .code-box {
@@ -32,7 +38,6 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   border-top: 1px solid $medium-gray;
   display: none;
   height: 400px;
-  overflow: scroll;
   padding: 1rem;
   position: relative;
   z-index: 0;
@@ -49,7 +54,17 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 
   &.is-active {
     display: block;
+    width: 30%;
   }
+}
+
+.code-box-header {
+  height: rem-calc(48);
+}
+
+.code-box-script {
+    overflow: scroll;
+    height: 90%;
 }
 
 .code-block-toggle {
@@ -60,12 +75,20 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   }
 }
 
+
+
 .code-toggler {
+  color: $dark-blue;
   font-size: rem-calc(14);
   font-weight: $global-weight-bold;
   margin-right: 0.2rem;
   padding: 0.8rem 1rem;
   text-transform: uppercase;
+
+  &.inactive {
+    width: rem-calc(100);
+    display: inline-block;
+  }
 
   &.is-active {
     background: $code-button-bg;
