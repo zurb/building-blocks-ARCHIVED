@@ -1,28 +1,16 @@
-$gray: #808080;
-$white: #fff;
-$highlight: #4ec6cd;
-$nav-text-color: $gray;
-$vert-seperate: 4rem;
-h4 {
-  @media screen and (max-width: 39.9375em) {
-    font-size: 1.5rem;
-  }
-}
+$hero-height: 60vh;
 
-p {
-  color: $gray;
-}
-
-.wrapper {
+.hero-section {
   background: url(https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg) 50% no-repeat;
   background-size: cover;
-  height: 40vh;
+  height: $hero-height;
   text-align: center;
-  margin-bottom: $vert-seperate;
   display: flex;
   align-items: center;
   justify-content: center;
-  .hero-text {
+
+  .hero-section-text {
     color: $white;
+    text-shadow: 1px 1px 2px $black;
   }
 }

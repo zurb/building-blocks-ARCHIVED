@@ -1,9 +1,9 @@
 name: "Responsive Hero Section"
 tags:
-  - hero-image
   - hero
-description: A responsive hero image with centered text overlaid.
+  - header
 category: media
+description: A responsive hero image with centered text overlaid.
 versions:
   - 6.3.1
   - 6.3.0
