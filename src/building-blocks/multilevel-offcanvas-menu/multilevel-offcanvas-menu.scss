@@ -1,9 +1,7 @@
-$white: #fff;
 $nav-text-color: $white;
 $nav-height: 75px;
 $nav-background: #2c3840;
 $offcanvas-padding: 20px;
-$font-family: 'Titillium Web', sans-serif;
 
 .nav-bar {
   display: flex;
@@ -11,7 +9,6 @@ $font-family: 'Titillium Web', sans-serif;
   align-items: center;
   background: $nav-background;
   height: $nav-height;
-  font-family: $font-family;
   margin-bottom: 75px;
 
   .nav-bar-logo {
@@ -41,7 +38,6 @@ $font-family: 'Titillium Web', sans-serif;
     justify-content: center;
     padding: 1.6rem;
     color: $nav-text-color;
-    font-family: $font-family;
     text-transform: uppercase;
     background-color: lighten($nav-background, 20%);
     transition: background-color 0.2s ease-in;
@@ -62,11 +58,10 @@ $font-family: 'Titillium Web', sans-serif;
   }
 }
 
-.off-canvas {
+.multilevel-offcanvas {
   background: darken($nav-background, 5%);
   padding: 20px;
   color: $white;
-  font-family: $font-family;
 
   > .menu {
     margin-bottom: 1rem;
@@ -111,7 +106,6 @@ $font-family: 'Titillium Web', sans-serif;
 
 .body-info {
   text-align: center;
-  font-family: $font-family;
   color: $nav-background;
 
   .button {
