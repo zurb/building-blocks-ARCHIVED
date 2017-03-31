@@ -1,49 +1,44 @@
-$gray: #808080;
-$white: #fff;
-$highlight: #4ec6cd;
-$nav-text-color: $gray;
+$highlight-color: #4ec6cd;
+$nav-padding: 1rem;
+$nav-text-color: $dark-gray;
+$nav-bg-color: lighten($nav-text-color, 30%);
 
+.responsive-nav-social-mobile {
+  background: $nav-bg-color;
+  display: flex;
+  align-items: center;
+  width: 100%;
 
+  .responsive-nav-social-mobile-left {
+    flex: 1 0 0;
 
-h4 {
+    li {
+      font-size: 1.5rem;
 
-  @media screen and (max-width: 39.9375em) {
-    font-size: 1.5rem;
-  }
-}
-
-p {
-  color: $gray;
-}
-
-.title-bar {
-  background: lighten($gray, 40%);
-
-  .title-bar-left li {
-    font-size: 1.5rem;
-
-    .fa {
-      color: $gray;
-      margin-right: -.7rem;
+      .fa {
+        color: $nav-text-color;
+        margin-right: -0.7rem;
+      }
     }
   }
 
-  .title-bar-right {
-    button {
-      margin-right: 1rem;
-    }
+  .responsive-nav-social-mobile-right {
+    .menu-icon {
+      margin-right: $nav-padding;
 
-    .menu-icon::after {
-      padding-right: 1.5rem;
-      background: $highlight;
-      box-shadow: 0 7px 0 $highlight, 0 14px 0 $highlight;
-     }
+      &::after {
+        padding-right: 1.5rem;
+        background: $highlight-color;
+        box-shadow: 0 7px 0 $highlight-color, 0 14px 0 $highlight-color;
+      }
+    }
   }
 }
 
-.main-nav {
-  padding: 1rem;
-  background-color: lighten($gray, 40%);
+.responsive-nav-social {
+  padding: $nav-padding;
+  background-color: $nav-bg-color;
+  max-width: none !important;
 
    &.is-stuck {
     width: 100%;
@@ -51,32 +46,31 @@ p {
    }
 
    a {
-     color: $gray;
-     font-size: .8rem;
+     color: $nav-text-color;
+     font-size: 0.8rem;
 
      &:hover {
-       color: darken($nav-text-color, 25%);
-       transition: color .3s ease-in;
+       color: $highlight-color;
+       transition: color 0.2s ease-in;
      }
   }
 
-   @media screen and (max-width: 39.9375em) {
-
+  @media screen and (max-width: 39.9375em) {
     .menu li a {
        font-size: 1.5rem;
        padding: 1.5rem;
-       color: $highlight;
+       color: $highlight-color;
      }
 
      li {
-        border-bottom: 3px solid lighten($nav-text-color, 40%);
+        border-bottom: 3px solid $highlight-color;
 
         &:last-of-type {
-         border-bottom: 0;
+          border: 0;
        }
      }
 
-     .main-nav-left {
+     .responsive-nav-social-left {
        width: 100%;
 
        .menu.vertical a {
@@ -85,19 +79,23 @@ p {
      }
    }
 
-  .main-nav-right {
+  .responsive-nav-social-right {
     a {
-      padding-right: .1rem;
+      padding-right: 0.1rem;
     }
   }
 
   i.fa {
     font-size: 1.3rem;
-    color: $gray;
+    color: $nav-text-color;
 
        &:hover {
-       color: darken($nav-text-color, 25%);
-       transition: color .3s ease-in;
+       color: $highlight-color;
+       transition: color 0.2s ease-in;
      }
   }
+}
+
+.sticky-container {
+  width: 100%;
 }
