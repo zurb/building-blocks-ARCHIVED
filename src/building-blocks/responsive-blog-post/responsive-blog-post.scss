@@ -1,0 +1,48 @@
+$gray: #808080;
+$highlight: #4ec6cd;
+$nav-text-color: $gray;
+$vert-seperate: 4rem;
+
+.blog-post {
+  margin-bottom: $vert-seperate;
+
+  p {
+    color: $gray;
+  }
+
+  .button {
+    padding: 0.85rem 3rem;
+    background: $highlight;
+
+    &:hover {
+      background-color: darken($highlight, 5%);
+      transition: color 0.3s ease-in;
+    }
+  }
+
+  .individual-post {
+    margin-bottom: $vert-seperate;
+  }
+
+  h4 {
+    margin-bottom: 0;
+
+    &:hover {
+      text-decoration: underline;
+      transition: color 0.3s ease-in;
+    }
+
+    @media screen and (max-width: 39.9375em) {
+      font-size: 1.5rem;
+    }
+  }
+
+  img {
+    margin-bottom: 1.5rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+    color: $gray;
+  }
+}

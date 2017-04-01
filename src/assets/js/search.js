@@ -2,6 +2,7 @@ var Search = function(options) {
   this.$input = $(options.input);
   this.$searchContainer = $(options.searchContainer);
   this.onSearch = options.onSearch;
+  this.initialQuery = options.initialQuery;
   this.source = options.template || '#building-block-card';
   this.setup();
 };
@@ -12,6 +13,7 @@ Search.prototype.setup = function() {
   this.globalFileName = $('meta[name="bbfile"]').prop('content');
   this.localFileName = $('meta[name="datafile"]').prop('content');
   this.datakey = $('meta[name="datakey"]').prop('content');
+  this.rootpath = $('meta[name="rootpath"]').prop('content');
   this.loadData();
   this.sort = 'newest';
   this.filter = 'all';
@@ -41,6 +43,10 @@ Search.prototype.loadData = function() {
       var content = [object.author.name, object.name, object.category].concat(object.tags).join(' ').toLowerCase()
       return [content, object];
     });
+    if(self.initialQuery && self.data && self.localData) {
+      self.$input.val(self.initialQuery);
+      self.updateSearch();
+    }
   });
   $.getJSON(this.localFileName, function(res) {
     self.localData = res[self.datakey].blocks;
@@ -48,6 +54,10 @@ Search.prototype.loadData = function() {
       var content = [object.author.name, object.name, object.category].concat(object.tags).join(' ').toLowerCase()
       return [content, object];
     });
+    if(self.initialQuery && self.data && self.localData) {
+      self.$input.val(self.initialQuery);
+      self.updateSearch();
+    }
   });
 };
 
@@ -64,8 +74,9 @@ Search.prototype.updateSearch = function(event) {
 
 
   var template = this.template;
+  var self = this;
   var html = _.map(results, function(result) {
-    return template(result);
+    return template(_.extend({root: self.rootpath},result));
   }).join('');
   this.$searchContainer.html(html).foundation();
   if(this.onSearch) {this.onSearch(term, this.filter, this.sort, results);}

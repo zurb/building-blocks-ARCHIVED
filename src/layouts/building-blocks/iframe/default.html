@@ -1,5 +1,4 @@
-{{!-- This is the base layout for your project, and will be used on every page. --}}
-
+{{#set-bb-data this}}
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -9,15 +8,21 @@
     <title>{{meta-title}} | Foundation 6</title>
     <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    {{#ifequal block.grid 'float'}}
+      <link rel="stylesheet" href="{{root}}building-block/app-float.css">
+    {{else}}
+      <link rel="stylesheet" href="{{root}}building-block/app.css">
+    {{/ifequal}}
     <link rel="stylesheet" href="{{root}}building-block/{{page}}/{{page}}.css">
 
   </head>
   <body>
-
-        {{> body}}
+    <div class="{{#if block.containerClass}}{{block.containerClass}}{{else}}row column container-padded{{/if}}">
+      {{> body}}
+    </div>
     <script src="{{root}}assets/js/app.js"></script>
 
     <script src="{{root}}building-block/{{page}}/{{page}}.js"></script>
   </body>
 </html>
+{{/set-bb-data}}

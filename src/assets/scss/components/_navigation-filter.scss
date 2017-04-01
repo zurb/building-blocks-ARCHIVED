@@ -8,8 +8,8 @@
 
 .filter-nav {
   align-items: flex-start;
-  position: relative;
   margin-bottom: $page-spacing;
+  position: relative;
 
   .bb-search-button {
     display: flex;
@@ -27,13 +27,13 @@
 
   .filter-nav-button {
     align-items: center;
+    border-radius: 0;
     color: $dark-blue;
     display: flex;
+    flex: 1 0 0;
     flex-direction: column;
     padding-bottom: rem-calc(20);
     padding-top: rem-calc(20);
-    flex: 1 0 0px;
-    border-radius: 0;
 
     .bb-filter-icons {
       height: 36px;
@@ -46,10 +46,10 @@
     }
 
     &.active {
-      color: $dark-blue;
-      box-sizing: border-box;
-      border-bottom: 5px solid $dark-blue;
       border-radius: 0;
+      box-shadow: 0 -4px inset;
+      box-sizing: border-box;
+      color: $dark-blue;
 
       .bb-filter-icons {
         * {
@@ -59,9 +59,8 @@
     }
 
     &:hover {
-      background: $light-blue;
+      background: $pale-blue;
       color: $dark-blue;
-      border-bottom: 5px solid $dark-blue;
 
       .bb-filter-icons {
         * {
@@ -83,8 +82,9 @@
   @include vertical-center;
 
   background-color: white;
+  border-bottom: 2px solid $dark-blue;
   display: none;
-  height: rem-calc(106);
+  height: 100%;
   margin: 0 auto;
   max-width: $global-width;
   width: 100%;
@@ -92,7 +92,7 @@
   .close-button {
     @include vertical-center;
 
-    color: $medium-gray;
+    color: $medium-blue;
   }
 
   .bb-search-bar {
@@ -100,17 +100,24 @@
 
     background-color: $white;
     border: 0;
-    border-bottom: 1px solid $medium-gray;
     box-shadow: none;
-    color: $dark-gray;
+    color: $dark-blue;
     font-size: rem-calc(24);
     height: rem-calc(55);
 
     &:focus {
       border: 0;
-      border-bottom: 1px solid $dark-blue;
       box-shadow: none;
     }
+  }
+
+  .bb-search-subtext {
+    bottom: rem-calc(14);
+    color: $medium-blue;
+    font-size: rem-calc(14);
+    left: rem-calc(8);
+    margin-bottom: 0;
+    position: absolute;
   }
 }
 
@@ -119,8 +126,8 @@
   z-index: 81; // Above the card hover state
 
   .dropdown {
-    border-radius: rem-calc(3);
     border: 0;
+    border-radius: rem-calc(3);
   }
 
   .menu {
@@ -133,8 +140,8 @@
 
     a {
       background: $white;
-      color: $dark-blue;
       border-radius: 3px;
+      color: $dark-blue;
     }
   }
 

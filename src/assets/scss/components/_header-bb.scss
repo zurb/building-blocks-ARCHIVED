@@ -2,6 +2,12 @@
   margin-bottom: 2rem;
   position: relative;
 
+  .version-menu {
+    cursor: pointer;
+    height: rem-calc(26);
+    width: rem-calc(26);
+  }
+
   .version-badge,
   .version-menu {
     margin-right: 0.7rem;
@@ -17,6 +23,7 @@
   }
 
   .bb-dropdown-pane {
+    box-shadow: 0 2px 10px 0 $medium-gray;
     margin-top: 2rem;
     padding-bottom: 0;
     width: auto;
@@ -39,19 +46,21 @@
   font-weight: $global-weight-bold;
   text-transform: uppercase;
 
-  @include breakpoint(small only) { 
+  @include breakpoint(small only) {
     padding-right: rem-calc(50);
   }
 }
 
 .building-block-author {
-  color: $medium-gray;
+  color: $dark-gray;
   display: inline;
   font-size: rem-calc(15);
+  margin-left: 0.5rem;
   text-transform: none;
 
   @include breakpoint(small only) {
     display: block;
+    margin-left: 0;
   }
 }
 
@@ -59,10 +68,11 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0.4rem;
 }
 
 .building-block-tag {
-  color: $dark-blue;
+  color: $medium-blue;
   margin-left: 0.5rem;
 
   &:last-child {
@@ -89,13 +99,15 @@
   font-size: rem-calc(16);
   font-weight: $global-weight-semibold;
 
-  @include breakpoint(small only) { 
+  @include breakpoint(small only) {
     display: none;
   }
 }
 
 .bb-header-social {
-  @include breakpoint(small only) { 
+  margin-left: 1rem;
+
+  @include breakpoint(small only) {
     display: none;
   }
 }

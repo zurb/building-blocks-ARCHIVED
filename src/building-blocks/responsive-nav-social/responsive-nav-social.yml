@@ -1,0 +1,17 @@
+name: "Responsive Nav with Social"
+tags:
+  - top-bar
+  - navigation
+  - nav
+  - social
+  - menu
+  - sticky-nav
+description: A responsive sticky navigation with social icons.
+category: navigation
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Laurel Beyers
+containerClass:
+

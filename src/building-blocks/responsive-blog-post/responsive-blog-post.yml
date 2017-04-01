@@ -1,0 +1,13 @@
+name: 'Responsive Blog Post'
+tags:
+  - media
+  - blog
+  - preview
+category: media
+description: A responsive blog post with title, image, and description with Call to Action.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  name: Laurel Beyers
+containerClass: row align-center medium-5 large-5 columns

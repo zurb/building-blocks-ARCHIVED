@@ -1,17 +1,11 @@
-/**
- * This module adds a copy button to all code examples in the docs.
- */
-
-
-// Look for code samples and set up a copy button on each
-var clipboard = new Clipboard('.copy-button');
-
-clipboard.on('success', function(e) {
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-
+$('[data-clipboard]').each(function() {
+  var self = this;
+  var clipboard = new Clipboard(this, {text: function() {
+    var text = $(self).parents('.code-box').find('code:visible').text().replace('&lt;', '<').replace('&gt;', '>');
+    return text;
+  }});
+  clipboard.on('success', function(e) {
     $(e.trigger).text('Copied!');
-
     e.clearSelection();
+  });
 });

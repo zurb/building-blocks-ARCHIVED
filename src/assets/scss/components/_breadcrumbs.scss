@@ -1,4 +1,9 @@
-.breadcrumbs li {
-  text-transform: capitalize;
-  font-size: rem-calc(14);
+.breadcrumbs {
+  margin: 0 0 0.5rem;
+
+  li {
+    color: $dark-gray;
+    font-size: rem-calc(14);
+    text-transform: capitalize;
+  }
 }

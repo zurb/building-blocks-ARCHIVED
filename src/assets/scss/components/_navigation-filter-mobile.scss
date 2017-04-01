@@ -1,7 +1,7 @@
 .filter-nav-mobile-container {
   background-color: $light-blue;
-  margin-top: $global-margin;
   margin-bottom: 1rem;
+  margin-top: $global-margin;
 
   .filter-nav-mobile-button {
     align-items: center;
@@ -13,10 +13,9 @@
 
     span {
       color: $white;
-      margin-left: $global-margin;
     }
 
-    .bb-category-icon {  
+    .bb-category-icon {
       height: rem-calc(24);
 
       * {
@@ -30,19 +29,38 @@
   }
 }
 
+.bb-filter-icons-container {
+  height: calc(100vh - 60px);
+}
+
 .filter-nav-mobile-modal {
   height: 100vh;
   padding: 0;
 }
 
 .filter-nav-mobile {
+  height: 100vh;
+
+  .bb-filter-icons {
+    margin-bottom: 1rem;
+  }
+
   .filter-nav-button {
     align-items: center;
-    color: $dark-gray;
+    border-radius: 0;
+    color: $dark-blue;
     display: flex;
+    flex: 1 0 0;
     flex-direction: column;
-    padding: rem-calc(20);
-    width: rem-calc(100);
+    height: 100%;
+    padding-bottom: rem-calc(20);
+    padding-top: rem-calc(20);
+
+    .bb-filter-icons {
+      * {
+        fill: $dark-blue;
+      }
+    }
 
     // expands width of buttons in mobile filter
     @include breakpoint(small) {
@@ -88,21 +106,22 @@
 
   .cancel-button {
     color: $white;
+    font-size: 1rem;
     margin-bottom: 0;
   }
 }
 
 .filter-title {
-  margin-bottom: 0;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 .sort-title {
   background-color: $dark-blue;
   color: $white;
+  font-weight: 600;
   margin-bottom: 0;
   padding: $global-padding;
-  font-weight: 600;
 }
 
 .sort-menu {

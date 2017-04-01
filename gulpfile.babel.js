@@ -40,7 +40,7 @@ gulp.task('lint', function () {
 });
 
 
-gulp.task('copy', gulp.parallel(copyAssets, copyData));
+gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages));
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
@@ -51,11 +51,23 @@ gulp.task('default',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, 'copy'));
+  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, 'copy'));
 
 // Create Building Blocks
 gulp.task('bb',
-  gulp.series('bb-iframe', server, watch ));
+gulp.series('bb-iframe', server, watch ));
+
+// Uploads the documentation to the live server
+gulp.task('deploy', gulp.series('bb-iframe', function() {
+  return gulp.src('./dist/**')
+    .pipe($.prompt.confirm('Make sure everything looks right before you deploy.'))
+    .pipe($.rsync({
+      root: './dist',
+      hostname: 'deployer@72.32.134.77',
+      destination: '/home/deployer/sites/building-blocks'
+    }));
+}));
+
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -75,6 +87,13 @@ function copyAssets() {
 function copyData() {
   return gulp.src(PATHS.build + '/data/*')
     .pipe(gulp.dest(PATHS.dist + '/data'));
+  }
+
+// Copy files out of the assets folder
+// This task skips over the "img", "js", and "scss" folders, which are parsed separately
+function copyBBImages() {
+  return gulp.src('src/building-blocks/**/*.png')
+    .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
 }
 
 // Copy page templates into finished HTML files
@@ -105,7 +124,7 @@ function buildingBlockIframe() {
       root: 'src/',
       layouts: 'src/layouts/building-blocks/iframe/',
       partials: 'src/partials/building-block/',
-      data: 'src/data/',
+      data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulpRename(function (path) {
@@ -114,9 +133,25 @@ function buildingBlockIframe() {
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
+function buildingBlockBaseStyles() {
+  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/app-float.scss'])
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    // Comment in the pipe below to run UnCSS in production
+    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+    .pipe($.if(PRODUCTION, $.cssnano()))
+    .pipe(gulp.dest(PATHS.dist + "/building-block/"))
+    .pipe(browser.reload({ stream: true }));
+}
 // Compiles the Sass for the building blocks
 function buildingBlockSass() {
-  return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/**/*.scss'])
+  return gulp.src(['src/building-blocks/**/*.scss'])
+    .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
     .pipe($.sass({
       includePaths: PATHS.sass
     })
@@ -226,8 +261,12 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, gulp.series('copy', browser.reload));
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
-  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series('bb-iframe', browser.reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(buildingBlockPage, buildingBlockIframe, 'building-block-indices', browser.reload));
+  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series(buildingBlockPage, buildingBlockIframe, 'building-block-indices', browser.reload));
+  gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass, buildingBlockPage, buildingBlockIframe, browser.reload));
+  gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, buildingBlockPage, buildingBlockIframe, browser.reload));
+  gulp.watch('src/building-blocks/**/*.png').on('all', gulp.series('copy', browser.reload));
+  gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, browser.reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));

@@ -29,10 +29,16 @@ var setupFilterable = function($current, $links, updateMethod) {
     });
   });
 }
+var params = getParams();
 if($searchInput.is('*')) {
+  if(params.q) {
+    $('#bb-search-bar').removeClass('is-hidden').show();
+    $searchInput.focus();
+  }
   window.search = new Search({
     input: $('input[type="search"]'),
     searchContainer: $('#search-results-container .card-container'),
+    initialQuery: params.q,
     onSearch: function(term, filter, sort, results) {
       if(term.length > 0 || filter !== 'all' || sort !== 'newest') {
         $('#main-results-container').hide();
@@ -58,6 +64,13 @@ if($searchInput.is('*')) {
   });
 }
 
+function getParams() { 
+  var search = location.search.substring(1);
+  return search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
+                   function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
+}
+
+
 function toggleCode() {
   $('#codeBoxSCSS').toggleClass('is-active');
   $('#scssToggle').toggleClass('is-active');
@@ -76,3 +89,34 @@ $('#cssToggle').click(function(){
     toggleCode();
   }
 });
+
+var toggleHTML = $('[data-toggle-HTML]');
+var toggleSCSS = $('[data-toggle-SCSS]');
+var toggleJS   = $('[data-toggle-JS]');
+
+// toggles trigger for the code boxes
+toggleHTML.click(function(e) {
+  if( toggleSCSS.hasClass('is-active') || toggleJS.hasClass('.is-active') ) {
+    $(this).toggleClass('is-active');
+    $('#codeBoxHTML').toggleClass('is-active');
+  }
+  e.preventDefault();
+});
+
+toggleSCSS.click(function(e) {
+  if( toggleHTML.hasClass('is-active') || toggleJS.hasClass('.is-active') ) {
+    $(this).toggleClass('is-active');
+    $('#codeBoxSCSS').toggleClass('is-active');
+  }
+  e.preventDefault();
+});
+
+toggleSCSS.click(function(e) {
+  if( toggleSCSS.hasClass('is-active') || toggleJS.hasClass('.is-active') ) {
+    $(this).toggleClass('is-active');
+    $('#codeBoxJS').toggleClass('is-active');
+  }
+  e.preventDefault();
+});
+
+

@@ -1,0 +1,58 @@
+.selectable-card {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.5s ease;
+  border: 1px solid #e6e6e6;
+  border-radius: .2rem;
+  background: #fefefe;
+  box-shadow: none;
+  overflow: hidden;
+  color: #0a0a0a;
+}
+
+.selectable-card-divider {
+  background-color: white;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.selectable-card-section {
+  padding: 1rem;
+}
+
+.selectable-card-button {
+  padding: 1rem;
+  background-color: #c9c9c9;
+  transition: all 0.5s ease;
+  width: 100%;
+
+  &:after {
+    content: 'Select';
+  }
+
+  &:hover {
+    background-color: #00a1e4;
+  }
+
+  &:focus {
+    background-color: #00a1e4;
+  }
+}
+
+// toggle this class on click
+.selected {
+  border: 1px solid #00a1e4;
+  box-shadow: 0 0 10px #dbdbdb;
+  transition: all 0.5s ease;
+
+  .selectable-card-button {
+    background-color: #00a1e4;
+
+    &:after {
+      content: 'Selected';
+    }
+  }
+}

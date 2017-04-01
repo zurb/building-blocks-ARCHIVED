@@ -25,7 +25,8 @@ function buildingBlockCombineMeta() {
       _.each(files, (value, key) => {
         var name = key.split('/')[0];
         output[name] = value;
-        output[name].href = '/building-block/' + key + '.html';
+        output[name].href = 'building-block/' + key + '.html';
+        output[name].thumb = 'assets/img/building-block/' + key + '.png';
         output[name]['major-versions'] = majorVersions(value.versions);
       })
       return new Buffer(JSON.stringify(output));
@@ -61,6 +62,7 @@ function buildingBlockCategoryMeta() {
     .pipe($.jsoncombine('categories.json', function(data) {
       var output = {};
       output['index'] = {blocks: [], total: 0, versions: []}
+      output['featured'] = {blocks: [], total: 0, versions: []}
       _.each(data['building-blocks'], (value, key) => {
         var category = value['category']
         output[category] = output[category] || {};
@@ -75,6 +77,11 @@ function buildingBlockCategoryMeta() {
         output['index'].blocks.push(value);
         output[category].total = output[category].total + 1;
         output['index'].total = output['index'].total + 1;
+        if (value.featured) {
+          output['featured'].versions = _.union(output['featured'].versions, versions);
+          output['featured'].blocks.push(value);
+          output['featured'].total = output['featured'].total + 1;
+        }
       });
       return new Buffer(JSON.stringify(output));
     }))

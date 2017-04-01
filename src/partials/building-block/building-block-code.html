@@ -2,48 +2,60 @@
   <!-- Code Menu -->
   <div class="flex-container align-center">
     <ul class="code-menu menu">
-      <li class="code-menu-item">
+      <li class="code-menu-item is-active" data-toggle-HTML>
         <a href="#">HTML</a>
       </li>
-      <li class="code-menu-item">
+      <li class="code-menu-item is-active" data-toggle-styles>
         <a href="#">SCSS</a>
       </li>
-      <li class="code-menu-item">
+      <li class="code-menu-item" data-toggle-JS>
         <a href="#">JS</a>
       </li>
     </ul>
   </div>
 
-  <button class="button copy-button" data-clipboard-target="#copyHTML">Copy HTML</button>
-  <button class="button copy-button" data-clipboard-target="#copySCSS">Copy SCSS</button>
-  <button class="button copy-button" data-clipboard-target="#copyJS">Copy JS</button>
-
   <!-- Code Preview -->
   <div class="row expanded">
-    <div id="copyHTML" class="column code-box">
+
+    <!--html-->
+    <div id="codeBoxHTML" class="column code-box is-active">
+      <div class="code-box-header">
+        <button class="button docs-code-copy" data-clipboard>Copy</button>
+        <div class="code-toggler inactive">HTML</div>
+      </div>
+      <div class="code-box-script">
 {{#code "html"}}
 {{{bb-html page}}}
 {{/code}}
+      </div>
     </div>
-    <div id="copySCSS" class="column code-box hide-for-small-only">
-      <button class="code-toggler is-active" id="scssToggle">SCSS</button>
-      <button class="code-toggler" id="cssToggle">CSS</button>
-
-      <div class="code-block-toggle is-active" id="codeBoxSCSS" data-toggler=".is-active">
+    <!--css-->
+    <div id="codeBoxStyles" class="column code-box is-active">
+      <div class="code-box-header">
+        <button class="button docs-code-copy" data-clipboard>Copy</button>
+        <button class="code-toggler is-active" id="scssToggle">SCSS</button>
+        <button class="code-toggler" id="cssToggle">CSS</button>
+      </div>
+      <div class="code-block-toggle is-active code-box-script" id="codeBoxSCSS" data-toggler=".is-active">
 {{#code "scss"}}
 {{{bb-scss page}}}
 {{/code}}
       </div>
-      <div class="code-block-toggle" id="codeBoxCSS" data-toggler=".is-active">
+      <div class="code-block-toggle code-box-script" id="codeBoxCSS">
 {{#code "css"}}
 {{{bb-css page}}}
 {{/code}}
       </div>
     </div>
-    <div id="copyJS" class="column code-box hide-for-small-only">
+    <!--JS-->
+    <div id="codeBoxJS" class="column code-box">
+      <button class="button docs-code-copy" data-clipboard-target="#copyJS">Copy</button>
+      <div class="code-toggler inactive">JS</div>
+      <div class="code-box-script">
 {{#code "js"}}
 {{{bb-js page}}}
 {{/code}}
+      </div>
     </div>
   </div>
 </div>

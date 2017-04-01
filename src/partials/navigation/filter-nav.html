@@ -3,17 +3,19 @@
 
     <div class="column medium-8 flex-container align-middle align-spaced">
       {{#each global.filter-nav}}
-      <a href="{{../root}}{{page}}.html" class="filter-nav-button {{classes}} {{#ifpage page}}active{{/ifpage}}"><img src="{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></a>
+      <a href="{{@root.root}}{{page}}.html" class="filter-nav-button {{classes}} {{#ifequal @root.datakey page}}active{{/ifequal}}"><img src="{{root}}{{img}}" class="inject-me bb-filter-icons" height="" title="{{title}}" width="" alt="{{alt}}"><span>{{title}}</span></a>
       {{/each}}
     </div>
 
     <!-- search -->
-    <div class="column medium-2 flex-container align-right align-self-center">
+    <div class="column medium-2 flex-container align-right align-self-center fast">
       <button class="bb-search-button" data-toggle="bb-search-bar bb-filter-icons-container"><img src="{{root}}assets/img/icons/filter-search.svg" class="inject-me bb-search-icon" height="" title="Search Building Blocks" width="30" alt="Search icon"><span></span></button>
     </div>
-    <div class="bb-search-bar-container" id="bb-search-bar" data-toggler=".is-hidden" data-animate="fade-in fade-out" data-closable>
-      <input type="search" placeholder="Search for a building block..." class="bb-search-bar">
-      <button class="close-button" data-close>&times;</button>
+    <!--search container-->
+    <div class="bb-search-bar-container fast" id="bb-search-bar" data-toggler=".is-hidden" data-animate="fade-in fade-out" data-closable>
+      <input type="search" placeholder="Search for a building block..." class="bb-search-bar fast">
+      <button class="close-button fast" data-close>&times;</button>
+      <p class="bb-search-subtext fast">0 Results</p>
     </div>
   </div>
 </div>

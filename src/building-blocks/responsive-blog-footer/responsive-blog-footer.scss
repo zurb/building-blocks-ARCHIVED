@@ -1,0 +1,55 @@
+$gray: #808080;
+$highlight: #4ec6cd;
+$nav-text-color: $gray;
+$vert-seperate: 4rem;
+
+
+.top-footer {
+  background: darken($gray, 25%);
+  padding: 3rem 3rem;
+  color: white;
+
+  h4 {
+    @media screen and (max-width: 39.9375em) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    color: $gray;
+  }
+
+  .mailing-list {
+    margin-bottom: 1.5rem;
+  }
+  .mailing-container {
+    margin-bottom: 2rem;
+  }
+
+  .about-section, .tag-section {
+    margin-bottom: 2rem;
+
+    a {
+      color: $highlight;
+    }
+  }
+
+  .subscribe-button {
+    background-color:$highlight;
+
+    &:hover {
+     background-color: darken($highlight, 5%);
+     transition: color 0.3s ease-in;
+    }
+  }
+
+  .fa-chevron-circle-up {
+    font-size: 3rem;
+    color: $gray;
+
+     &:hover {
+     color: lighten($gray, 15%);
+     transition: color 0.3s ease-in;
+    }
+  }
+}
