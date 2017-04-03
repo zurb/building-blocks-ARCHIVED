@@ -1,0 +1,16 @@
+name: "Add to Cart Interaction"
+tags:
+  - button
+  - ecommerce
+  - animation
+  - loader
+  - notification
+  - alert
+category: control
+description: A nice spinning animation to show an item is being added to the shopping cart. It triggers an alert after the animation is complete.
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Rafi
+containerClass: container-padded text-center
