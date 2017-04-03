@@ -10,3 +10,4 @@ versions:
   - 6.3.0
 author:
   name: Kevin
+containerClass: row small-up-3 medium-up-4 large-up-5 align-center
