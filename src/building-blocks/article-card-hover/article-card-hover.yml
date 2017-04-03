@@ -5,7 +5,7 @@ tags:
   - card
   - animation
 category: container
-description: Article Card with hover effect and a nice overlap on the image. This card gives you a spot for the amount of time it takes to read the article and the name for the author.
+description: Article Card with hover effect and a nice overlap on the image with details for topic, author, title, summary and time to read.
 versions:
   - 6.3.1
   - 6.3.0

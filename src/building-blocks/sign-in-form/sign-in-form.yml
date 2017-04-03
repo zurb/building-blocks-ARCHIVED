@@ -3,7 +3,7 @@ tags:
   - form
   - sign-in
 category: form
-description: 'test'
+description: A stylish and modern sign-in form with rounded form inputs.
 versions:
   - 6.3.0
   - 6.3.1

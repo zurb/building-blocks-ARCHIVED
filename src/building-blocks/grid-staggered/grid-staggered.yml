@@ -5,6 +5,7 @@ tags:
   - grid
   - hover
 category: containers
+description: A masonry style staggered grid layout.
 versions:
   - 6.3.0
   - 6.3.1

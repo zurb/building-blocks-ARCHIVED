@@ -6,6 +6,7 @@ tags:
   - topbar
   - top bar
 category: navigation
+description: A topbar navigation mega-menu with search field.
 versions:
   - 6.3.1
   - 6.3.0

@@ -5,6 +5,7 @@ tags:
   - js
   - button
 category: control
+description: A modern, rounded, ghost-style "like" button with heart icon that fills on click.
 versions:
   - 6.3.0
   - 6.3.1

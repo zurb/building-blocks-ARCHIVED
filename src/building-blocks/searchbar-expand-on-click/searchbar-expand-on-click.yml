@@ -4,6 +4,7 @@ tags:
   - js
   - expand
 category: navigation
+description: A search bar with icon that expands on click.
 versions:
   - 6.3.0
   - 6.3.1

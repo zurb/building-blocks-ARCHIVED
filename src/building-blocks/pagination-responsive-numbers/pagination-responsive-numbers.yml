@@ -1,10 +1,10 @@
-name: 'Multi-level Offcanvas Menu'
+name: 'Responsive Pagination'
 tags:
   - navigation
   - nav
   - pagination
 category: navigation
-description: The code adds contextual page numbers on the small breakpoint. This is a great pattern to use where room is limited on a small screen but users can still see where they are in the page flow.
+description: Responsive pagination that adds contextual page numbers on the small breakpoint. 
 versions:
   - 6.3.1
   - 6.3.0

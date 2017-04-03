@@ -4,7 +4,7 @@ tags:
   - links
   - features
 category: container
-description: A responsive section for social media links or any other featured links.
+description: A responsive section for social media links with icons or any other featured links.
 versions:
   - 6.3.0
   - 6.3.1

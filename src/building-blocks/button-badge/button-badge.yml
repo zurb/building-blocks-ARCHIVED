@@ -5,6 +5,7 @@ tags:
   - button
   - icon
 category: status
+description: A simple button with an iOS style notification badge.
 versions:
   - 6.3.0
   - 6.3.1

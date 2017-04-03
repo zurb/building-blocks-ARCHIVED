@@ -6,6 +6,7 @@ tags:
   - content
   - basic
 category: container
+description: A simple card with title, description, and links.
 versions:
   - 6.3.0
   - 6.3.1
