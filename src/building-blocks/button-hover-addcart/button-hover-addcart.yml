@@ -1,10 +1,10 @@
-name: "Hover Like Button"
+name: "Hover Add to Cart Button"
 tags:
   - button
   - ecommerce
   - hover
 category: control
-description: Hover over the button to reveal a heart.
+description: Hover over the button to reveal a cart.
 versions:
   - 6.3.0
   - 6.3.1
