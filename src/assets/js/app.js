@@ -43,9 +43,11 @@ if($searchInput.is('*')) {
       if(term.length > 0 || filter !== 'all' || sort !== 'newest') {
         $('#main-results-container').hide();
         $('#search-results-container').show();
+        $('#result-count').text(results.length);
       } else {
         $('#main-results-container').show();
         $('#search-results-container').hide();
+        $('#result-count').text(results.length);
       }
     }
   });
@@ -60,7 +62,7 @@ if($searchInput.is('*')) {
     $searchInput.val('');
     window.search.updateSearch();
   }).on('toggle.zf.trigger', function() {
-    setTimeout( () => { $searchInput.focus();}, 1)
+    setTimeout( () => { $searchInput.focus();window.search.updateSearch();}, 1)
   });
 }
 
