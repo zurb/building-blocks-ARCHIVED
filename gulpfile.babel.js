@@ -40,7 +40,7 @@ gulp.task('lint', function () {
 });
 
 
-gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages));
+gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles));
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
@@ -94,6 +94,11 @@ function copyData() {
 function copyBBImages() {
   return gulp.src('src/building-blocks/**/*.png')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
+}
+
+function copyBBFiles() {
+  return gulp.src('src/building-blocks/**/*.{html,js,scss}')
+    .pipe(gulp.dest(PATHS.dist + '/files/building-blocks/'));
 }
 
 // Copy page templates into finished HTML files
