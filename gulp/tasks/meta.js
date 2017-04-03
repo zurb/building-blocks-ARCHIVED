@@ -24,6 +24,7 @@ function buildingBlockCombineMeta() {
       var output = {};
       _.each(files, (value, key) => {
         var name = key.split('/')[0];
+        value.datakey = name;
         output[name] = value;
         output[name].href = 'building-block/' + key + '.html';
         output[name].thumb = 'assets/img/building-block/' + key + '.png';
@@ -64,7 +65,7 @@ function buildingBlockCategoryMeta() {
       output['index'] = {blocks: [], total: 0, versions: []}
       output['featured'] = {blocks: [], total: 0, versions: []}
       _.each(data['building-blocks'], (value, key) => {
-        var category = value['category']
+        var category = value['category'];
         output[category] = output[category] || {};
         output[category].blocks = output[category].blocks || [];
         output[category].total = output[category].total || 0;
