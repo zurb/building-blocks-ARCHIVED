@@ -1,7 +1,9 @@
 name: '3-Up Image Block'
 tags:
-  - media
-  - image-layout
+  - feature
+  - image
+  - links
+  - layout
 category: media
 description: A simple and useful three image block that stacks on mobile.
 versions:

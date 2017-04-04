@@ -2,9 +2,10 @@ name: "Product Card"
 tags:
   - ecommerce
   - card
-  - product    
+  - product
+  - selection
 category: container
-description: Product Card for an eCommerce site
+description: Product Card for an eCommerce site that has selectable options.
 versions:
   - 6.3.1
   - 6.3.0

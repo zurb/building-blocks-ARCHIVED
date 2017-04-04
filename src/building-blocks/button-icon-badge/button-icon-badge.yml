@@ -4,6 +4,7 @@ tags:
   - notification
   - button
   - icon
+  - alert
 category: status
 description: A long button with icon and notification badge.
 versions:

@@ -5,8 +5,9 @@ tags:
   - hover
   - control
   - show hide
+  - interaction
 category: containers
-description:
+description: A card or callout hover interaction that reveals additional content. Can be used where space is limited or to create a surprise interaction.
 versions:
   - 6.3.0
   - 6.3.1

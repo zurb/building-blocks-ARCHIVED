@@ -1,11 +1,11 @@
 name: "Input Number Incrementer"
 tags:
   - ecommerce
-  - form
-  - number
-  - input
+  - travel
+  - forms
   - flexbox
   - counter
+  - js
 category: forms
 description: A common use case for a "quantity" input on an eCommerce site. These number inputs could be a little friendlier and easier to use than a form.
 versions:

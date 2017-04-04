@@ -2,6 +2,8 @@ name: "Responsive Hero Section"
 tags:
   - hero
   - header
+  - image
+  - flexbox
 category: media
 description: A responsive hero image with centered text overlaid.
 versions:

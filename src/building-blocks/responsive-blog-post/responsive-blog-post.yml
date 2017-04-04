@@ -1,8 +1,9 @@
 name: 'Responsive Blog Post'
 tags:
-  - media
   - blog
   - preview
+  - image
+  - flexbox
 category: media
 description: A responsive blog post with title, image, and description with call to action.
 versions:

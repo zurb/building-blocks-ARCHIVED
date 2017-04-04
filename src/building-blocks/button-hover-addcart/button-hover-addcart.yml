@@ -3,6 +3,7 @@ tags:
   - button
   - ecommerce
   - hover
+  - interaction
 category: control
 description: Hover over the button to reveal a cart.
 versions:

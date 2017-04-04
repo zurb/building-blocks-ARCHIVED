@@ -1,9 +1,10 @@
-name: "Staggered Grid"
+name: "CSS Grid - Staggered Grid"
 tags:
-  - css-grid
+  - css grid
   - layout
   - grid
   - hover
+  - masonry
 category: containers
 description: A masonry style staggered grid layout.
 versions:

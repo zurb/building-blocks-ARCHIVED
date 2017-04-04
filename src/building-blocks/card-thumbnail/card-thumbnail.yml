@@ -1,11 +1,15 @@
-name: "Card With Thumbnail"
+name: "CSS Grid - Card With Thumbnail"
 tags:
   - card
+  - css grid
+  - badge
+  - links
   - thumbnail
 category: containers
-description: A card with image, title, author, likes/favorites and other detail.
+description: A card built using CSS Grid with an image, title, author, likes/favorites and other detail.
 versions:
   - 6.3.0
   - 6.3.1
 author:
   name: John Cheng
+containerClass:

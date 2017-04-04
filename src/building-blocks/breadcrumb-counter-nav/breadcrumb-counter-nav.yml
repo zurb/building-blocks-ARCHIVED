@@ -3,8 +3,10 @@ tags:
   - progress
   - navigation
   - nav
-  - breadcrumb
+  - breadcrumbs
   - flexbox
+  - interaction
+  - js
 category: navigation
 description: A nifty breadcrumb navigation using CSS counters to automatically number each step.
 versions:

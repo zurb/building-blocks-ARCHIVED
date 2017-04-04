@@ -4,6 +4,7 @@ tags:
   - notification
   - button
   - icon
+  - alert
 category: status
 description: A simple button with an iOS style notification badge.
 versions:

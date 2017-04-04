@@ -1,12 +1,12 @@
-name: "4 Squares Layout"
+name: "CSS Grid - 4 Squares Layout"
 tags:
   - layout
-  - squares
   - grid
+  - CSS Grid
 category: container
-description: A four section layout that stacks on smaller screens. 
+description: A four section layout that stacks on smaller screens.
 versions:
   - 6.3.0
   - 6.3.1
 author:
-  name: ZURB
+  name: Christine Siu

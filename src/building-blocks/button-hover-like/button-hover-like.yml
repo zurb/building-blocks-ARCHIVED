@@ -1,8 +1,12 @@
 name: "Hover Like Button"
 tags:
   - button
+  - social
+  - like
+  - favorite
   - ecommerce
   - hover
+  - interaction
 category: control
 description: Hover over the button to reveal a heart.
 versions:

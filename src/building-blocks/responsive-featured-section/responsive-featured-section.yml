@@ -1,8 +1,9 @@
 name: 'Responsive Featured Section'
 tags:
-  - container
   - links
   - menu
+  - feature
+  - flexbox
 category: container
 description: A responsive "feature" section for displaying logos, thumbnails, or other content using Flexbox.
 versions:

@@ -1,8 +1,7 @@
 name: "Log In Form"
 tags:
   - form
-  - log-in
-  - input
+  - login
 category: form
 description: A simple log in form that can be added inside grid columns, modals, dropdown panes, or other UI components.
 versions:

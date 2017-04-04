@@ -3,7 +3,8 @@ tags:
   - card
   - js
   - containers
-  - select
+  - selection
+  - interaction
 category: control
 description: A basic card with title, description and select button.
 versions:

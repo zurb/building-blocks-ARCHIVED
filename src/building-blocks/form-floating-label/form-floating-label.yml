@@ -1,9 +1,8 @@
 name: "Floating Label Forms"
 tags:
-  - form
+  - forms
   - material
-  - input
-  - textarea
+  - interaction
 category: form
 description: Form inputs and textareas with floating labels on focus. This makes the label seem like a placeholder and still shows the user what the context of the input is once focussed.
 versions:

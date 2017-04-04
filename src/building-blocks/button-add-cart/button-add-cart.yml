@@ -6,6 +6,7 @@ tags:
   - loader
   - notification
   - alert
+  - interaction
 category: control
 description: A nice spinning animation to show an item is being added to the shopping cart. It triggers an alert after the animation is complete.
 versions:

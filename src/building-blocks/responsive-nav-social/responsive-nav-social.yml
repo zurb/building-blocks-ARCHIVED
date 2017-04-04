@@ -1,11 +1,12 @@
 name: "Responsive Nav with Social"
 tags:
-  - top-bar
+  - top bar
   - navigation
   - nav
   - social
   - menu
-  - sticky-nav
+  - sticky
+  - icons
 description: A responsive sticky navigation with social icons.
 category: navigation
 versions:

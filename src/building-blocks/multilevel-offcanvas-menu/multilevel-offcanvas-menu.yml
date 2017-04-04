@@ -6,7 +6,7 @@ tags:
   - sidebar
   - menu
   - off-canvas
-  - top-bar
+  - top bar
 category: navigation
 description: A top bar with off-canvas navigation and dropdowns for submenus.
 versions:

@@ -2,9 +2,7 @@ name: "Basic Card"
 tags:
   - card
   - links
-  - container
   - content
-  - basic
 category: container
 description: A simple card with title, description, and links.
 versions:

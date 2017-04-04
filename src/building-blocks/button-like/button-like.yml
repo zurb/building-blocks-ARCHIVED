@@ -1,9 +1,12 @@
 name: "Like Button"
 tags:
   - like
+  - favorite
   - social
   - js
   - button
+  - hover
+  - interaction
 category: control
 description: A modern, rounded, ghost-style "like" button with heart icon that fills on click.
 versions:
