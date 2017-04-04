@@ -7,6 +7,7 @@ tags:
   - block grid
   - interaction
   - js
+  - flexbox
 category: control
 description: A simple content filter allowing you to show or hide items based on the class you assign to them.
 versions:
