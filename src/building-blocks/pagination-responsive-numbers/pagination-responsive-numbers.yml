@@ -1,10 +1,10 @@
-name: 'Responsive Pagination'
+name: 'Responsive Breadcrumb with Page Number'
 tags:
   - navigation
   - nav
   - pagination
 category: navigation
-description: Responsive pagination that adds contextual page numbers on the small breakpoint. 
+description: Responsive pagination that adds contextual page numbers on the small breakpoint.
 versions:
   - 6.3.1
   - 6.3.0
@@ -14,3 +14,4 @@ versions:
   - 6.2.0
 author:
   name: Rafi
+containerClass:

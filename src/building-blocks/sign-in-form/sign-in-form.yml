@@ -1,7 +1,8 @@
 name: "Sign In Form"
 tags:
   - form
-  - sign-in
+  - login
+  - input
 category: form
 description: A stylish and modern sign-in form with rounded form inputs.
 versions:

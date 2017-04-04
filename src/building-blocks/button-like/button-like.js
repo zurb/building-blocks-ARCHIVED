@@ -1,8 +1,8 @@
 $(document).foundation();
 
 $(function() {
-  $('.like')
+  $('.button-like')
     .bind('click', function(event) {
-      $(".like").toggleClass("liked");
+      $(".button-like").toggleClass("liked");
     })
 });

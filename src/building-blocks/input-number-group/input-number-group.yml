@@ -1,0 +1,16 @@
+name: "Input Number Incrementer"
+tags:
+  - ecommerce
+  - form
+  - number
+  - input
+  - flexbox
+  - counter
+category: forms
+description: A common use case for a "quantity" input on an eCommerce site. These number inputs could be a little friendlier and easier to use than a form.
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Rafi
+containerClass: container-padded

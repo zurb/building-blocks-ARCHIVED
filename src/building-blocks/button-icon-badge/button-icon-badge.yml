@@ -1,4 +1,4 @@
-name: "Long Button with Notification Badge"
+name: "Button with Notification Badge"
 tags:
   - badge
   - notification
@@ -11,3 +11,4 @@ versions:
   - 6.3.1
 author:
   name: Christine Siu
+containerClass: text-center container-padded

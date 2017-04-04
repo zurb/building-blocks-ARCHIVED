@@ -1,8 +1,9 @@
 name: "Responsive Social Media Section"
 tags:
   - social
+  - social sharing
   - links
-  - features
+  - feature
 category: container
 description: A responsive section for social media links with icons or any other featured links.
 versions:
