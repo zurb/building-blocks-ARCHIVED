@@ -58,7 +58,7 @@ gulp.task('bb',
 gulp.series('bb-iframe', server, watch ));
 
 // Uploads the documentation to the live server
-gulp.task('deploy', gulp.series('bb-iframe', function() {
+gulp.task('deploy', gulp.series('bb-iframe', 'zip', function() {
   return gulp.src('./dist/**')
     .pipe($.prompt.confirm('Make sure everything looks right before you deploy.'))
     .pipe($.rsync({
