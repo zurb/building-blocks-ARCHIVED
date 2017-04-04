@@ -3,6 +3,7 @@ tags:
   - card
   - thumbnail
 category: containers
+description: A card with image, title, author, likes/favorites and other detail.
 versions:
   - 6.3.0
   - 6.3.1

@@ -5,6 +5,7 @@ tags:
   - layout
   - grid
 category: containers
+description: The classic web pattern of a header, footer, and three columns.
 versions:
   - 6.3.0
   - 6.3.1

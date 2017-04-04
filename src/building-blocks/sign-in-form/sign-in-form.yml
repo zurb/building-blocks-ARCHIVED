@@ -4,9 +4,10 @@ tags:
   - login
   - input
 category: form
+description: A stylish and modern sign-in form with rounded form inputs.
 versions:
   - 6.3.0
   - 6.3.1
 author:
   name: Christine Siu
-containerClass: row columns medium-7 align-center
+containerClass: "row columns medium-7 align-center container-padded"

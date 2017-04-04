@@ -5,6 +5,7 @@ tags:
   - button
   - icon
 category: status
+description: A long button with icon and notification badge.
 versions:
   - 6.3.0
   - 6.3.1

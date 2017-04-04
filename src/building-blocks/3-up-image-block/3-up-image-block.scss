@@ -6,17 +6,17 @@ $header-font:'Sanchez', serif;
 $vert-seperate: 4rem;
 
 
-h4 {
-  font-family: $header-font;
-
-  @media screen and (max-width: 39.9375em) {
-    font-size: 1.5rem;
-  }
-}
-
   .main-links {
     padding-top: $vert-seperate;
     margin-bottom: $vert-seperate;
+
+    h4 {
+      font-family: $header-font;
+
+      @media screen and (max-width: 39.9375em) {
+        font-size: 1.5rem;
+      }
+    }
 
     .columns {
       position: relative;

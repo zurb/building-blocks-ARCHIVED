@@ -5,6 +5,7 @@ tags:
   - containers
   - select
 category: control
+description: A basic card with title, description and select button.
 versions:
   - 6.3.0
   - 6.3.1

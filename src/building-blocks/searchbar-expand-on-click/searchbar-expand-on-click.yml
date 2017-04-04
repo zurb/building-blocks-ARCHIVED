@@ -3,9 +3,12 @@ tags:
   - search
   - form
   - input
+  - js
 category: forms
+description: A search bar with icon that expands on click.
 versions:
   - 6.3.0
   - 6.3.1
 author:
   name: Christine Siu
+containerClass:

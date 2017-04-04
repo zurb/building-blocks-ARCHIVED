@@ -1,20 +1,14 @@
-body {
-  padding-top: 3rem;
-  background-color: #efefef;
-  text-align: center;
-}
-
-.button {
-  background: white;
+.button-badge {
+  background-color: $primary-color;
   text-decoration: none;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   position: relative;
   display: inline-block;
-  border-radius: .3rem;
+  border-radius: .2rem;
   transition: all ease 0.4s;
 }
 
-.button:hover {
+.button-badge:hover {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -23,7 +17,6 @@ body {
   top: -10px;
   right: -10px;
   font-size: .8em;
-  padding: .4rem;
 }
 
 .fa {
