@@ -12,4 +12,4 @@ versions:
   - 6.3.0
 author:
   name: Rafi
-containerClass:
+containerClass: none
