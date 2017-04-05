@@ -1,6 +1,8 @@
 .pricing-table {
   background-color: $white;
   border: solid 1px $medium-gray;
+  width: 100%;
+  @extend .text-center, .no-bullet;
 
   li {
     border-bottom: dotted 1px $medium-gray;
