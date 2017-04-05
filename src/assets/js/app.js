@@ -2,6 +2,10 @@ $(document).foundation();
 
 var mySVGsToInject = document.querySelectorAll('img.inject-me');
 
+var likes = new window.Likes();
+likes.populateLikesInPage();
+likes.setupLike();
+
 SVGInjector(mySVGsToInject);
 var $searchInput = $('input[type="search"]')
 var setupFilterable = function($current, $links, updateMethod) {
@@ -49,6 +53,7 @@ if($searchInput.is('*')) {
         $('#search-results-container').hide();
         $('#result-count').text(results.length);
       }
+      likes.populateLikesInPage();
     }
   });
   var $currentSort = $('[data-sort-current]');
@@ -120,5 +125,4 @@ toggleSCSS.click(function(e) {
   }
   e.preventDefault();
 });
-
 
