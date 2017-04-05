@@ -14,5 +14,6 @@ versions:
   - 6.2.3
   - 6.2.0
 author:
+  github: LaurelBCodin
   name: Laurel Beyers
 containerClass: none

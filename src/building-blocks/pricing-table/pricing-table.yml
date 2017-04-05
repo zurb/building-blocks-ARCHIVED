@@ -16,5 +16,6 @@ versions:
   - 6.2.3
   - 6.2.0
 author:
+  github: andycochran
   name: Andy Cochran
 containerClass: container-padded row align-center medium-6 large-4 columns
