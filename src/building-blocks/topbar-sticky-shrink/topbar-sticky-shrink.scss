@@ -1,0 +1,25 @@
+$topbar-sticky-shrink-padding: 2rem; // controls the un-stuck height of topbar
+$topbar-sticky-shrink-padding-stuck: 1rem; // controls the is stuck height of topbar
+
+.topbar-sticky-shrink {
+  padding:$topbar-sticky-shrink-padding;
+  transition: padding 0.25s ease;
+}
+
+.is-stuck .topbar-sticky-shrink {
+  padding: $topbar-sticky-shrink-padding-stuck;
+  transition: padding 0.25s ease;
+}
+
+[data-sticky] {
+  width: 100%;
+}
+
+// for demo only
+.topbar-sticky-shrink-header {
+  padding: 10rem 0;
+  background: url('http://placehold.it/2000x500&text=this is a header') center center no-repeat;
+  background-size: cover;
+}
+
+
