@@ -1,7 +1,11 @@
 name: "Pricing Table"
 tags:
-  - price
-  - table
+  - pricing table
+  - card
+  - content
+  - ecommerce
+  - business
+  - product
 category: containers
 description: Replicates Foundation 5's Pricing Table. If you're making a rockin' marketing site for a subscription-based product, you're likely in need of a pricing table. These tables fill 100% of their container and are made from a simple unordered list.
 versions:
