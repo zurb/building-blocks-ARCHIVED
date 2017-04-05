@@ -2,6 +2,8 @@ name: 'Three Up Feature'
 tags:
   - containers
   - featured
+  - content
+  - product
 category: containers
 description: Three sections that can feature products, people or functions of a product.
 versions:
