@@ -1,0 +1,15 @@
+.email-subscription-form {
+  text-align: center;
+  background: $light-gray;
+  padding: 3rem 0;
+
+  .email-subscription-form-inputs {
+    margin-bottom: 1rem;
+    display: flex;
+  }
+
+  .email-subscription-form-button {
+    border-radius: 5rem;
+    padding: 0.75rem 2rem;
+  }
+}
