@@ -2,6 +2,8 @@ name: 'Four Up Feature'
 tags:
   - containers
   - featured
+  - product
+  - content
 category: containers
 description: Four sections that can feature products, people or functions of a product.
 versions:
@@ -9,4 +11,4 @@ versions:
   - 6.3.0
 author:
   name: Laurel Beyers
-containerClass: container-padded
+containerClass: none

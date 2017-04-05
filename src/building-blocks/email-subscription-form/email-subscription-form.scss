@@ -6,6 +6,12 @@
   .email-subscription-form-inputs {
     margin-bottom: 1rem;
     display: flex;
+
+    @include breakpoint(small only) {
+      input {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .email-subscription-form-button {
