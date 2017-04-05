@@ -4,6 +4,7 @@ var mySVGsToInject = document.querySelectorAll('img.inject-me');
 
 var likes = new window.Likes();
 likes.populateLikesInPage();
+likes.setupLike();
 
 SVGInjector(mySVGsToInject);
 var $searchInput = $('input[type="search"]')
