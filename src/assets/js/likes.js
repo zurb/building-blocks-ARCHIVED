@@ -87,16 +87,18 @@
 
   Likes.prototype.populateLikesInPage = function populateLikesInPage() {
     var self = this;
-    $('[data-likes]').each(function() {
-      var $elem = $(this);
-      var key = $(this).data().likes;
-      self.getLikesForKey(key, function(likes){
-        if(likes) {
-          $elem.text(likes.count);
-        } else {
-          $elem.text('0');
-        }
-      })
+    self.getLikes(function() {
+      $('[data-likes]').each(function() {
+        var $elem = $(this);
+        var key = $(this).data().likes;
+        self.getLikesForKey(key, function(likes){
+          if(likes) {
+            $elem.text(likes.count);
+          } else {
+            $elem.text('0');
+          }
+        })
+      });
     });
   };
 
