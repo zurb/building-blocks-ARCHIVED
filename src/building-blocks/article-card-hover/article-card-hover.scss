@@ -6,11 +6,6 @@ $shadow: #888888;
 .card-article-hover {
   box-shadow: 0px 0px 7px $shadow;
 
-  a {
-    position: relative;
-    z-index: -1;
-  }
-
   .card-section {
     width: 90%;
     background: $white;

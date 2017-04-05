@@ -1,5 +1,3 @@
-$(document).foundation();
-
-$('.button').bind('click', function(event) {
-  $(".card").toggleClass("is-selected");
+$('[data-cardSelectButton]').click(function() {
+  $(this).parent('[data-cardSelect]').toggleClass('is-selected');
 });
