@@ -1,9 +1,15 @@
 $topbar-sticky-shrink-padding: 2rem; // controls the un-stuck height of topbar
 $topbar-sticky-shrink-padding-stuck: 1rem; // controls the is stuck height of topbar
+$topbar-sticky-shrink-bg: #2c3840;
 
 .topbar-sticky-shrink {
   padding:$topbar-sticky-shrink-padding;
   transition: padding 0.25s ease;
+  background: $topbar-sticky-shrink-bg;
+
+  .menu {
+    background: $topbar-sticky-shrink-bg;
+  }
 }
 
 .is-stuck .topbar-sticky-shrink {
