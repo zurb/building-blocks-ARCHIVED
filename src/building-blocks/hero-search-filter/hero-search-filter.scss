@@ -75,7 +75,7 @@ $hero-search-filter-height: 300px;
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 39.9375em) {
+  @include breakpoint(small only) {
     width: 95%;
   }
 }
