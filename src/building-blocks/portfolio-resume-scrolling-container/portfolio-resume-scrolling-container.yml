@@ -1,5 +1,5 @@
 name: Portfolio Resume Scrolling Container
-description: A simple portfolio resume container with fixed left and scrolling right
+description: A simple portfolio resume container with fixed left and scrolling right on larger screens, simple stacked scroll on small screens
 category: containers
 tags:
   - portfolio

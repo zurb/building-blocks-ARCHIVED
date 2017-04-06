@@ -35,8 +35,10 @@ $portfolio-resume-scrolling-padding: 10px;
 }
 
 .portfolio-resume-scrolling {
-  height: $portfolio-resume-scrolling-container-height;
-  overflow-y: auto;
+  @include breakpoint(medium) {
+    height: $portfolio-resume-scrolling-container-height;
+    overflow-y: auto;
+  }
   padding-top: $portfolio-resume-scrolling-padding;
   padding-bottom: $portfolio-resume-scrolling-padding;
 }
