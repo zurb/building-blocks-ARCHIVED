@@ -1,0 +1,42 @@
+$portfolio-resume-scrolling-container-height: 400px;
+$portfolio-resume-content-width: 300px;
+$portfolio-resume-scrolling-padding: 10px;
+
+.portfolio-resume-scrolling-container {
+  height: $portfolio-resume-scrolling-container-height;
+  border: 1px solid $medium-gray;
+}
+
+.portfolio-resume-overview {
+  height: $portfolio-resume-scrolling-container-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 1;
+  z-index: 0;
+  &:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('http://lorempixel.com/400/400/people/');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    z-index:0;
+  }
+}
+.portfolio-resume-overview-content {
+  max-width: $portfolio-resume-content-width;
+  z-index: 1;
+}
+
+.portfolio-resume-scrolling {
+  height: $portfolio-resume-scrolling-container-height;
+  overflow-y: auto;
+  padding-top: $portfolio-resume-scrolling-padding;
+  padding-bottom: $portfolio-resume-scrolling-padding;
+}
