@@ -11,3 +11,4 @@ versions:
 author:
   name: ZURB
 grid: float
+containerClass: container-padded row column medium-8

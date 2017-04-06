@@ -1,0 +1,5 @@
+name: Blog
+description: A Foundation Building Block Kit filled with components for creating a blog
+blocks:
+  - responsive-blog-post
+  - responsive-blog-footer

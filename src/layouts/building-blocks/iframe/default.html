@@ -13,13 +13,30 @@
     {{else}}
       <link rel="stylesheet" href="{{root}}building-block/app.css">
     {{/ifequal}}
+    <link rel="stylesheet" href="{{root}}building-block/{{page}}/layout.css">
     <link rel="stylesheet" href="{{root}}building-block/{{page}}/{{page}}.css">
+    <style>
+      body {
+        background-color: #E6E8EB;
+        padding: 16px;
+      }
 
+      @media screen and (min-width: 40em) {
+        body {
+          padding: 20px;
+        }
+      }
+
+      @media screen and (min-width: 64em) {
+        body {
+          padding: 50px;
+        }
+      }
+
+    </style>
   </head>
-  <body style="background-color: #E6E8EB; padding: 50px;">
-    <div class="{{#if block.containerClass}}{{block.containerClass}}{{else}}row column container-padded{{/if}}">
-      {{> body}}
-    </div>
+  <body>
+    {{> body}}
     <script src="{{root}}assets/js/app.js"></script>
 
     <script src="{{root}}building-block/{{page}}/{{page}}.js"></script>
