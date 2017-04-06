@@ -12,40 +12,7 @@ filter-dropdowns: false
 {{#repeat 12}}
 <div class="row column">
   <!--kit card-->
-  <div class="kit-card row">
-    <!--header and CTA-->
-    <div class="kit-card-summary column">
-      <h2>E-Commerce Kit</h2>
-      <p>Get started building an e-commerce site with these components</p>
-      <button>download</button>
-      <a href="#">See Details</a>
-    </div>
-
-    <!--kit card visual and hover effect-->
-    <div class="kit-card-visual column">
-      <img src="" alt="kit building blocks image">
-      <!--icon row-->
-      <div class="kit-card-visual-hover">
-        {{#repeat 3}}
-        <div class="row">
-          <div class="small-6 column kit-card-bb">
-            <img src="" alt="category icon">
-            <ul>
-              <li>Product Card</li>
-              <li>Shopping Cart</li>
-            </ul>
-          </div>
-          <div class="small-6 column kit-card-bb">
-            <img src="" alt="category icon">
-            <ul>
-              <li>Checkout Summary Table</li>
-            </ul>
-          </div>
-        </div>
-        {{/repeat}}
-      </div>
-    </div>
-  </div>
+  {{> kit-card}}
   <!--end kit card-->
 </div>
 {{/repeat}}

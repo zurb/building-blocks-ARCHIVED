@@ -44,11 +44,11 @@ gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles)
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, 'copy'), styleGuide));
+ gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, copyAssets), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('static',
-  gulp.series('build', server, watch));
+  gulp.series('build', server, watchStatic));
 
 gulp.task('bb-iframe',
   gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, 'copy'));
@@ -273,6 +273,16 @@ function watch() {
   gulp.watch('src/building-blocks/**/*.png').on('all', gulp.series('copy', reload));
   gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, reload));
+  gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload));
+  gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload));
+  gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, reload));
+}
+// Watch for changes to static assets, pages, Sass, and JavaScript
+function watchStatic() {
+  gulp.watch(PATHS.assets, gulp.series('copy', reload));
+  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(pages, reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload));
   gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, reload));

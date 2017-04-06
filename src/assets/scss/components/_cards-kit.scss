@@ -1,0 +1,50 @@
+.kit-card {
+  background: linear-gradient(70deg, #43053C, #427D93, #427D93);
+  border-radius: rem-calc(5);
+  color: $white;
+  height: $card-height;
+  margin-bottom: $page-spacing;
+  width: 100%;
+}
+
+.kit-card-summary {
+  padding: 3rem;
+}
+
+.kit-card-header {
+  font-weight: $global-weight-bold;
+}
+
+.kit-card-sub-header {
+  font-weight: $global-weight-semibold;
+}
+
+.kit-card-primary {
+  background: $white;
+  color: #43053C;
+  font-weight: $global-weight-bold;
+  margin-right: 1rem;
+  padding: 1rem 3rem;
+}
+
+.arrow-down {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-top: rem-calc(5) solid black;
+  border-left: rem-calc(5) solid transparent;
+  border-right: rem-calc(5) solid transparent;
+
+}
+
+.kit-card-secondary {
+  border: 1px solid white;
+  color: $white;
+  padding: 1rem 2.5rem;
+}
+
+.kit-card-link-text {
+  color: white;
+  display: block;
+  margin-top: 1rem;
+}
