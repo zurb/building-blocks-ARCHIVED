@@ -5,6 +5,16 @@
   height: $card-height;
   margin-bottom: $page-spacing;
   width: 100%;
+  overflow: hidden;
+
+  &:hover {
+    .kit-card-visual-img {
+      opacity: 0.2;
+    }
+    .kit-card-visual-hover {
+      display: block;
+    }
+  }
 }
 
 .kit-card-summary {
@@ -24,18 +34,27 @@
   color: #43053C;
   font-weight: $global-weight-bold;
   margin-right: 1rem;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
+
 }
 
 .arrow-down {
-  display: inline-block;
-  height: 0;
-  width: 0;
-  border-top: rem-calc(5) solid black;
-  border-left: rem-calc(5) solid transparent;
-  border-right: rem-calc(5) solid transparent;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: rem-calc(5) solid #43053C;
+    border-left: rem-calc(5) solid transparent;
+    border-right: rem-calc(5) solid transparent;
+    margin-left: 1rem;
+  }
 
+.dropdown-pane {
+  color: $dark-blue;
+  font-size: 1rem;
+  font-weight: $global-weight-semibold;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
+
 
 .kit-card-secondary {
   border: 1px solid white;
@@ -48,3 +67,42 @@
   display: block;
   margin-top: 1rem;
 }
+
+.kit-card-visual {
+  position: relative;
+}
+
+.kit-card-visual-hover {
+  display: none;
+  position: absolute;
+  width: 90%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.kit-card-visual-img {
+}
+
+.kit-card-bb {
+  margin-top: 2rem;
+}
+
+.kit-card-bb-icon {
+  display: inline-block;
+  margin-top: rem-calc(5);
+  margin-right: 1rem;
+
+  * {
+    fill: $white;
+  }
+}
+
+.kit-card-bb-list {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  vertical-align: top;
+}
+
+

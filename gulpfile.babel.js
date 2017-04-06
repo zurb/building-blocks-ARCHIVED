@@ -104,7 +104,7 @@ function copyBBFiles() {
 // Copy page templates into finished HTML files
 function pages() {
   return gulp.src('src/pages/**/*.{html,hbs,handlebars}')
-    .pipe(panini({
+    .pipe(getNewPanini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
       partials: 'src/partials/',
