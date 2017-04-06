@@ -1,0 +1,17 @@
+name: "Menu with Fancy Active State"
+tags:
+  - interaction
+  - links
+  - menu
+  - navigation
+  - nav
+  - portfolio
+category: navigation
+description: Colorful menu with a fancy active state. Clicking on each link will change the state on the selected link.
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  github: rafibomb
+  name: Rafi
+containerClass: content-padded align-center row column
