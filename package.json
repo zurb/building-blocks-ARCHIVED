@@ -8,6 +8,7 @@
     "build": "gulp build --production",
     "bb": "gulp bb",
     "bb-i": "gulp bb-iframe",
+    "static": "gulp static",
     "deploy": "gulp deploy"
   },
   "author": "ZURB <foundation@zurb.com>",

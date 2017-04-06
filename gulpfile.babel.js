@@ -47,7 +47,7 @@ gulp.task('build',
  gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, 'copy'), styleGuide));
 
 // Build the site, run the server, and watch for file changes
-gulp.task('default',
+gulp.task('static',
   gulp.series('build', server, watch));
 
 gulp.task('bb-iframe',
