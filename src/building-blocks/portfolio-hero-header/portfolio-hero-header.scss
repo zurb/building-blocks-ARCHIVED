@@ -12,18 +12,21 @@ $portfolio-hero-header-background-color: $light-gray;
   display: flex;
   justify-content: center;
   margin: 0;
+  
   li {
     flex: 1 0 200px;
     text-align: center;
     padding: 0 20px;
     position: relative;
     white-space: nowrap;
+    
     &:before {
       content: "*";
       position: absolute;
       left: 0px;
       top: 5px;
     }
+    
     &:first-child:before {
       content: "";
     }
@@ -35,8 +38,10 @@ $portfolio-hero-header-background-color: $light-gray;
   display: flex;
   justify-content: center;
   margin: 0;
+  
   li {
     margin: 20px;
+    
     a {
       padding-left: 30px;
       padding-right: 30px;
