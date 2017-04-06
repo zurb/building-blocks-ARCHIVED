@@ -54,7 +54,7 @@ function buildingBlocksTagsStarters(cb) {
 
 function buildingBlocksCategoryPages() {
   panini.refresh();
-  return gulp.src([PATHS.build + '/*.html', PATHS.build + '/**/*.html'])
+  return gulp.src([PATHS.build + '/*.html'])
     .pipe(panini({
       root: '_build/',
       layouts: 'src/layouts/building-blocks/index',
