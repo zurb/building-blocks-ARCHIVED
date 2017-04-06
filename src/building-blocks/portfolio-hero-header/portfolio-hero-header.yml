@@ -3,8 +3,11 @@ description: A simple portfolio hero header with logo.
 category: navigation
 tags:
   - portfolio
-  - logo
   - hero
+  - menu
+  - header
+  - navigation
+  - nav
 versions:
   - 6.2.0
   - 6.2.1
@@ -16,3 +19,4 @@ versions:
 author:
   name: Kevin Ball
   github: kball
+containerClass: none
