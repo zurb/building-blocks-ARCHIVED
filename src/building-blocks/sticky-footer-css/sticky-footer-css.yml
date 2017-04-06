@@ -12,4 +12,4 @@ versions:
 author:
   github: rafibomb
   name: Rafi
-containerClass:
+containerClass: none
