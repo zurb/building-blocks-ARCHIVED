@@ -24,14 +24,16 @@ function getNewPanini(options) {
 }
 
 
-function string_src(filename, string) {
+function defaultTemplate(filename, blockname) {
+
+  var text= '<div class="{{#if block.containerClass}}{{block.containerClass}}{{else}}row column container-padded{{/if}}">{{> ' + blockname + '}}</div>'
   var src = require('stream').Readable({ objectMode: true })
   src._read = function () {
     this.push(new $.util.File({
       cwd: "",
       base: "",
       path: filename,
-      contents: new Buffer(string)
+      contents: new Buffer(text)
     }))
     this.push(null)
   }
@@ -51,7 +53,7 @@ function buildingBlockFrameLayouts() {
          }))
         .pipe(gulp.dest(PATHS.build + '/building-block/' + fileName + '/'));
       } else {
-        string_src(fileName + '.html', '{{> ' + fileName + '}}')
+        defaultTemplate(fileName + '.html', fileName)
         .pipe(gulp.dest(PATHS.build + '/building-block/' + fileName + '/'));
       }
       return stream;
