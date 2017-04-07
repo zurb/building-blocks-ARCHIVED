@@ -14,6 +14,9 @@
   color: $dark-blue;
   font-size: rem-calc(23);
   font-weight: $global-weight-bold;
+  &.space {
+    margin-bottom: $page-spacing;
+  }
 }
 
 .bb-related-link {

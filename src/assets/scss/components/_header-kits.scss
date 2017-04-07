@@ -1,0 +1,48 @@
+.kit-header {
+  background-color: $dark-blue;
+  background-image: url("../../assets/img/images/kit-background-ex.png");
+  background-position: center 100px;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100%;
+  background-size: 80vw;
+  background-attachment:fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.kit-details {
+  background: $white;
+  padding: $page-spacing;
+
+}
+
+.kit-details-summary {
+  color: $dark-blue;
+}
+
+
+
+.kit-building-blocks {
+  z-index: 100;
+
+}
+
+.kit-card-bb-icon {
+  display: inline-block;
+  margin-top: rem-calc(5);
+  margin-right: 1rem;
+
+  * {
+    fill: $white;
+  }
+}
+
+.kit-card-bb-list {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  vertical-align: top;
+}
