@@ -13,7 +13,7 @@ $product-feature-section-divider-color: $medium-gray;
   margin: 0 auto;
   flex-direction: column;
 
-  @media screen and (min-width: 40em) {
+  @include breakpoint(medium) {
     max-width: $product-feature-section-large-width;
   }
 }
@@ -65,7 +65,7 @@ $product-feature-section-divider-color: $medium-gray;
     font-size: 2rem;
   }
 
-  @media screen and (min-width: 40em) {
+  @include breakpoint(medium) {
     padding: 2rem;
     flex: 1 0 50%;
     justify-content: flex-start;
