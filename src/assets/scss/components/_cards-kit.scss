@@ -152,6 +152,14 @@
     display: none;
   }
 
+  .kit-card-primary.blue,
+  .kit-card-link-text.blue {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  } 
+
   .kit-card-header,
   .kit-card-sub-header, {
     text-align: center;
