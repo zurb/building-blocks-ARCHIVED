@@ -16,29 +16,28 @@
   }
 
   @include breakpoint(small only) {
-    height: 30vh;
+    height: 25vh;
     background-size: 95vw;
-
   }
 }
-
-
 
 .kit-details {
   background: $white;
   padding: $page-spacing;
-
 }
 
 .kit-details-summary {
   color: $dark-blue;
 }
 
-
+.kit-details-bb {
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+}
 
 .kit-building-blocks {
   z-index: 100;
-
 }
 
 .kit-card-bb-icon {
