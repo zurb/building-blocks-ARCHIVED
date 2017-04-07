@@ -40,6 +40,14 @@ gulp.task('lint', function () {
 });
 
 
+// Resets Panini so that we can assemble using different layouts for the iframes and building block pages
+function getNewPanini(options) {
+  var p = new panini.Panini(options);
+  p.loadBuiltinHelpers();
+  p.refresh();
+  return p.render()
+}
+
 gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles));
 
 // Build the "dist" folder by running all of the below tasks
@@ -51,7 +59,7 @@ gulp.task('static',
   gulp.series('build', server, watchStatic));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, 'building-block-pages', 'building-block-indices', sass, javascript, images, 'copy'));
+  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, kitIndex,'building-block-pages', 'kits-pages', 'building-block-indices',  sass, javascript, images, 'copy'));
 
 // Create Building Blocks
 gulp.task('bb',
@@ -102,9 +110,21 @@ function copyBBFiles() {
 }
 
 // Copy page templates into finished HTML files
+function kitIndex() {
+  return gulp.src('src/pages/kits.html')
+    .pipe(getNewPanini({
+      root: 'src/',
+      layouts: 'src/layouts/',
+      partials: 'src/partials/',
+      data: 'src/data/',
+      helpers: 'src/panini-helpers/'
+    }))
+    .pipe(gulp.dest(PATHS.dist));
+  }
+// Copy page templates into finished HTML files
 function pages() {
   return gulp.src('src/pages/**/*.{html,hbs,handlebars}')
-    .pipe(panini({
+    .pipe(getNewPanini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
       partials: 'src/partials/',

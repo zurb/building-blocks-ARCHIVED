@@ -4,6 +4,7 @@ import plugins      from 'gulp-load-plugins';
 import fs           from 'fs';
 import panini       from 'panini';
 import yaml         from 'js-yaml';
+import async        from 'async';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -13,6 +14,19 @@ const { COMPATIBILITY, PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
   return yaml.load(ymlFile);
+}
+
+function kitYaml(kits, prefix, datafile, cb) {
+  async.eachOf(kits, (kit, name, callback) => {
+    var obj = {total: kit.total, blocks: kit.blocks};
+    obj.filename = name + '.html'
+    obj.datafile = datafile;
+    obj.datakey = name;
+    obj.blocks = kit.blocks
+
+    var str = "---\n" + yaml.safeDump(obj) + "---\n"
+    fs.writeFile(PATHS.build + "/" + prefix + obj.filename, str, callback)
+  }, cb)
 }
 
 // Resets Panini so that we can assemble using different layouts for the iframes and building block pages
@@ -76,7 +90,7 @@ function buildingBlockIframe() {
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
   }
 
-// Compiles the building block page
+// Compiles the building block pages
 function buildingBlockPage() {
   return gulp.src(PATHS.build + '/building-block/**/*.{html,hbs,handlebars}')
     .pipe(getNewPanini({
@@ -89,5 +103,23 @@ function buildingBlockPage() {
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
+function kitsStarters(cb) {
+  var kits = JSON.parse(fs.readFileSync(PATHS.build + '/data/kits.json', 'utf8'));
+  fs.mkdir(PATHS.build + '/kits', () => {kitYaml(kits, 'kits/', 'kits.json', cb)})
+}
 
+// Compiles the building block pages
+function kitsPages() {
+  return gulp.src(PATHS.build + '/kits/*.{html,hbs,handlebars}')
+    .pipe(getNewPanini({
+      root: PATHS.build,
+      layouts: 'src/layouts/kits/page/',
+      partials: 'src/partials',
+      data: ['src/data/', PATHS.build + '/data'],
+      helpers: 'src/panini-helpers/'
+    }))
+    .pipe(gulp.dest(PATHS.dist + "/kits/"));
+}
+
+gulp.task('kits-pages', gulp.series(kitsStarters, kitsPages));
 gulp.task('building-block-pages', gulp.series(buildingBlockFrameLayouts, buildingBlockIframe, buildingBlockPage));
