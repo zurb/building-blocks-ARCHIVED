@@ -5,4 +5,7 @@ blocks:
   - work-feature-block
   - testimonial-block-vertical
   - portfolio-resume-scrolling-container
+  - portfolio-resume
   - topbar-responsive
+  - social-footer
+  - image-hover-wrapper
