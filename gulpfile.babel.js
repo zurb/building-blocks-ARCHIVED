@@ -67,16 +67,18 @@ gulp.task('bb-iframe',
 gulp.task('bb',
 gulp.series('bb-iframe', server, watch ));
 
-// Uploads the documentation to the live server
-gulp.task('deploy', gulp.series('bb-iframe', 'zip', function() {
-  return gulp.src('./dist/**')
+gulp.task('rsync', function() {
+  return gulp.src('dist/**/*')
     .pipe($.prompt.confirm('Make sure everything looks right before you deploy.'))
     .pipe($.rsync({
       root: './dist',
       hostname: 'deployer@72.32.134.77',
       destination: '/home/deployer/sites/building-blocks'
     }));
-}));
+});
+
+// Uploads the documentation to the live server
+gulp.task('deploy', gulp.series('bb-iframe', 'zip', 'rsync'));
 
 
 // Delete the "dist" folder
@@ -115,7 +117,7 @@ function copyBBFiles() {
 function kitIndex() {
   return gulp.src('src/pages/kits.html')
     .pipe(getNewPanini({
-      root: 'src/',
+      root: 'src/pages/',
       layouts: 'src/layouts/',
       partials: 'src/partials/',
       data: ['src/data/', PATHS.build + '/data'],
