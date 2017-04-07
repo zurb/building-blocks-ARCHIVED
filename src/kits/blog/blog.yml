@@ -3,3 +3,9 @@ description: A Foundation Building Block Kit filled with components for creating
 blocks:
   - responsive-blog-post
   - responsive-blog-footer
+  - pagination-pointed
+  - pagination-responsive-numbers
+  - image-hover-wrapper
+  - responsive-social-media-section
+  - card-flex-article
+  - read-more

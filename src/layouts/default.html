@@ -22,7 +22,6 @@
       {{> global-navigation}}
       {{#if hero}}
         {{> hero}}
-        AWESOME
       {{/if}}
       <div class="page-container">
         {{#if filter-nav}}
@@ -30,7 +29,7 @@
         {{/if}}
         {{#if filter-dropdowns}}
           {{> filter-dropdowns}}
-        {{/if}}
+          {{/if}}
         {{> body}}
         {{#ifpage 'index'}}
           {{> pagination}}
@@ -40,6 +39,7 @@
       {{> footer}}
     </div>
 
+    {{{partial-as-script 'building-block-card' 'building-block/building-block-card-with-column.html'}}}
     <script src="{{root}}assets/js/app.js"></script>
   </body>
 </html>

@@ -5,7 +5,7 @@ tags:
   - links
   - feature
   - flexbox
-category: container
+category: containers
 description: A responsive section for social media links with icons or any other featured links.
 versions:
   - 6.3.0

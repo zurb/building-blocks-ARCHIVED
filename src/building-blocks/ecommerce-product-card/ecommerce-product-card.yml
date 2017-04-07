@@ -4,7 +4,7 @@ tags:
   - card
   - product
   - selection
-category: container
+category: containers
 description: Product Card for an eCommerce site that has selectable options.
 versions:
   - 6.3.1

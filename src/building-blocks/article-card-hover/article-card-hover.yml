@@ -6,7 +6,7 @@ tags:
   - animation
   - hover
   - interaction
-category: container
+category: containers
 description: Article Card with hover effect and a nice overlap on the image with details for topic, author, title, summary and time to read.
 versions:
   - 6.3.1

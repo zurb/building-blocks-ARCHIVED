@@ -67,7 +67,7 @@ function kitsInitial() {
         var name = key.split('/')[0];
         value.datakey = name;
         output[name] = value;
-        output[name].href = 'kits/' + key + '.html';
+        output[name].href = 'kits/' + name + '.html';
         output[name].thumb = 'assets/img/kits/' + key + '.png';
         output[name].total = value.blocks.length;
       })
