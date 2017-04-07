@@ -107,7 +107,7 @@ function copyBBImages() {
 }
 
 function copyBBFiles() {
-  return gulp.src('src/building-blocks/**/*.{html,js,scss}')
+  return gulp.src(['src/building-blocks/**/*.{html,js,scss}', 'dist/building-blocks/**/*.css', '!dist/building-blocks/**/layout.css'])
     .pipe(gulp.dest(PATHS.dist + '/files/building-blocks/'));
 }
 
