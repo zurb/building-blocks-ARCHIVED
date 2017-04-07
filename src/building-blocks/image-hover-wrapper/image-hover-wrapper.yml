@@ -17,4 +17,4 @@ versions:
 author:
   github: rafibomb
   name: Rafi
-containerClass: none
+containerClass: row column medium-5 align-center

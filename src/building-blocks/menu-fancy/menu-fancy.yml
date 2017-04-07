@@ -6,6 +6,8 @@ tags:
   - navigation
   - nav
   - portfolio
+  - js
+  - flexbox
 category: navigation
 description: Colorful menu with a fancy active state. Clicking on each link will change the state on the selected link.
 versions:
