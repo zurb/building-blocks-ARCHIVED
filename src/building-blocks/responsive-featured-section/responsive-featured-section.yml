@@ -4,7 +4,7 @@ tags:
   - menu
   - feature
   - flexbox
-category: container
+category: containers
 description: A responsive "feature" section for displaying logos, thumbnails, or other content using Flexbox.
 versions:
   - 6.3.1
