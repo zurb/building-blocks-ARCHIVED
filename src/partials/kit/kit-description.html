@@ -10,18 +10,8 @@
     <div class="small-12 large-6 columns kit-details-summary">
       <h1 class="kit-card-header">E-Commerce Kit</h1>
       <p class="kit-card-sub-header">This is a description of the kit</p>
-
       <button class="kit-card-primary blue" type="button" data-toggle="example-dropdown">download<div class="arrow-down white"></div></button>
-      <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
-        <h4>Install with Foundation CLI</h4>
-        <div class="input-group">
-          <input class="input-group-field" type="text" placeholder="https://github.com/zurb/building-blocks.git">
-          <div class="input-group-button">
-            <input type="Copy" class="button" value="Copy">
-          </div>
-        </div>
-        <p class="text-center">Download Zip</p>
-      </div>
+      {{>kit-dropdown}}
 
       <div>
         <a class="kit-card-link-text blue" href="#">How do I use This</a>

@@ -61,8 +61,36 @@
   font-size: 1rem;
   font-weight: $global-weight-semibold;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 0;
+  
+  .input-group {
+    margin-bottom: 0;
+  }
 }
 
+.dropdown-foundation {
+  padding: 1rem;
+}
+
+.dropdown-input {
+  box-shadow: none;
+  border-color: $primary-color;
+  background: $light-blue;
+}
+
+.dropdown-copy {
+  width: rem-calc(100);
+}
+
+.dropdown-download {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: $primary-color;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid $light-blue;
+}
 
 .kit-card-secondary {
   border: 1px solid white;

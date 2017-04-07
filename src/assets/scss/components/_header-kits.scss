@@ -9,6 +9,17 @@
   background-attachment:fixed;
   position: relative;
   overflow: hidden;
+
+  @include breakpoint(medium only) {
+    height: 40vh;
+    background-size: 90vw;
+  }
+
+  @include breakpoint(small only) {
+    height: 30vh;
+    background-size: 95vw;
+
+  }
 }
 
 
