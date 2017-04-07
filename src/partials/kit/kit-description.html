@@ -8,8 +8,8 @@
     <div class="row">
       <!--summary-->
       <div class="medium-6 columns">
-        <h1>E-Commerce Kit</h1>
-        <p>This is a description of the kit</p>
+        <h1>{{#if name}}{{name}}{{else}}E-Commerce Kit{{/if}}</h1>
+        <p>{{#if description}}{{description}}{{else}}Get started building an e-commerce site with these components{{/if}}</p>
 
         <button class="button" type="button" data-toggle="example-dropdown">download<div class="arrow-down"></div></button>
         <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
@@ -22,42 +22,22 @@
           </div>
           <p class="text-center">Download Zip</p>
         </div>
-
-
-
-
-
-
-
         <a href="#">How do I use This</a>
       </div>
       <!--kit compoonent types-->
       <div class="medium-6 columns">
-        {{#repeat 2}}
         <div class="row">
+        {{#blocks-by-category blocks}}
           <div class="small-4 column kit-card-bb">
-            <img class="kit-card-bb-icon inject-me" src="" alt="category icon">
+            <img class="kit-card-bb-icon inject-me" src="{{@root.root}}assets/img/icons/filter-{{category}}.svg" alt="category icon">
             <ul class="kit-card-bb-list">
-              <li>Product Card</li>
-              <li>Shopping Cart</li>
+              {{#each blocks}}
+                <li>{{name}}</li>
+              {{/each}}
             </ul>
           </div>
-          <div class="small-4 column kit-card-bb">
-            <img class="kit-card-bb-icon inject me" src="" alt="category icon">
-            <ul class="kit-card-bb-list">
-              <li>Product Card</li>
-              <li>Shopping Cart</li>
-            </ul>
-          </div>
-          <div class="small-4 column kit-card-bb">
-            <img class="kit-card-bb-icon inject me" src="" alt="category icon">
-            <ul class="kit-card-bb-list">
-              <li>Product Card</li>
-              <li>Shopping Cart</li>
-            </ul>
-          </div>
+        {{/blocks-by-category}}
         </div>
-        {{/repeat}}
       </div>
     </div>
   </div>
