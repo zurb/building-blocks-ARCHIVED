@@ -1,10 +1,10 @@
 <div class="kit-card row">
     <!--header and CTA-->
     <div class="kit-card-summary column medium-5">
-      <h2 class="kit-card-header">E-Commerce Kit</h2>
-      <p class="kit-card-sub-header">Get started building an e-commerce site with these components</p>
+      <h2 class="kit-card-header">{{#if name}}{{name}}{{else}}E-Commerce Kit{{/if}}</h2>
+      <p class="kit-card-sub-header">{{#if description}}{{description}}{{else}}Get started building an e-commerce site with these components{{/if}}</p>
       <button class="kit-card-primary" type="button" data-toggle="download-dropdown">download <div class="arrow-down"></button>
-      <button class="kit-card-secondary" href="#">See Details</button>
+        <a class="kit-card-secondary" href="{{href}}">See Details</a>
       <a class="kit-card-link-text" href="#">How do I use this?</a>
       <!--dropdown pane-->
       <div class="dropdown-pane" id="download-dropdown" data-dropdown data-auto-focus="true">

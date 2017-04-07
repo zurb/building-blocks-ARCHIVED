@@ -116,11 +116,14 @@ function kitIndex() {
       root: 'src/',
       layouts: 'src/layouts/',
       partials: 'src/partials/',
-      data: 'src/data/',
+      data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
     .pipe(gulp.dest(PATHS.dist));
   }
+
+gulp.task('kit-index', kitIndex)
+
 // Copy page templates into finished HTML files
 function pages() {
   return gulp.src('src/pages/**/*.{html,hbs,handlebars}')
@@ -249,8 +252,8 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, gulp.series('copy', reload));
-  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
+  gulp.watch('src/pages/**/*.html').on('all', gulp.series(kitIndex, reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(kitIndex, 'building-block-pages', 'building-block-indices', reload));
   gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
   gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
   gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
