@@ -1,9 +1,11 @@
  <!--kit details section-->
  <div class="kit-details">
+
   <!--breadcrumbs-->
   <div class="row column">
     {{> bb-breadcrumbs kit=this}}
   </div>
+
   <!--kit details-->
   <div class="row">
     <!--summary-->
@@ -12,11 +14,11 @@
       <p class="kit-card-sub-header">{{#if description}}{{description}}{{else}}Get started building an e-commerce site with these components{{/if}}</p>
       <button class="kit-card-primary blue" type="button" data-toggle="example-dropdown">download<div class="arrow-down white"></div></button>
       {{>kit-dropdown}}
-
       <div>
         <a class="kit-card-link-text blue" href="#">How do I use This?</a>
       </div>
     </div>
+    
     <!--kit compoonent types-->
     <div class="small-12 large-6 columns kit-details-bb">
       <div class="row">

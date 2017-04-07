@@ -1,8 +1,8 @@
 .dropdown-pane {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   color: $dark-blue;
   font-size: 1rem;
   font-weight: $global-weight-semibold;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   padding: 0;
   
   .input-group {
@@ -29,9 +29,9 @@
 }
 
 .dropdown-input {
-  box-shadow: none;
-  border-color: $primary-color;
   background: $light-blue;
+  border-color: $primary-color;
+  box-shadow: none;
 }
 
 .dropdown-copy {
@@ -39,11 +39,11 @@
 }
 
 .dropdown-download {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: $primary-color;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   border-top: 1px solid $light-blue;
+  color: $primary-color;
+  display: block;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
 }
