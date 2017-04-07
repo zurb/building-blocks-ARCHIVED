@@ -7,9 +7,9 @@ filter-nav:
     classes:
   -
     img: assets/img/icons/filter-featured.svg
-    title: Featured
-    page: 'featured'
-    alt: featured items icon
+    title: Kits
+    page: 'kits'
+    alt: kits icon
     classes:
   -
     img: assets/img/icons/filter-navigation.svg
