@@ -1,0 +1,58 @@
+.kit-header {
+  background-attachment:fixed;
+  background-color: $dark-blue;
+  background-image: url("../../assets/img/images/kit-background-ex.png");
+  background-position: center 100px;
+  background-repeat: no-repeat;
+  background-size: 80vw;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(medium only) {
+    background-size: 90vw;
+    height: 40vh;
+  }
+
+  @include breakpoint(small only) {
+    background-size: 95vw;
+    height: 25vh;
+  }
+}
+
+.kit-details {
+  background: $white;
+  padding: $page-spacing;
+}
+
+.kit-details-summary {
+  color: $dark-blue;
+}
+
+.kit-details-bb {
+  align-items: center;
+  display: flex;
+  opacity: 0.7;
+}
+
+.kit-building-blocks {
+  z-index: 100;
+}
+
+.kit-card-bb-icon {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: rem-calc(5);
+
+  * {
+    fill: $white;
+  }
+}
+
+.kit-card-bb-list {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  vertical-align: top;
+}

@@ -1,0 +1,11 @@
+name: Portfolio
+description: A Foundation Building Block Kit filled with components for creating a portfolio site
+blocks:
+  - portfolio-hero-header
+  - work-feature-block
+  - testimonial-block-vertical
+  - portfolio-resume-scrolling-container
+  - portfolio-resume
+  - topbar-responsive
+  - social-footer
+  - image-hover-wrapper
