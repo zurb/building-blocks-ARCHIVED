@@ -1,23 +1,23 @@
 .kit-header {
+  background-attachment:fixed;
   background-color: $dark-blue;
   background-image: url("../../assets/img/images/kit-background-ex.png");
   background-position: center 100px;
   background-repeat: no-repeat;
-  height: 50vh;
-  width: 100%;
   background-size: 80vw;
-  background-attachment:fixed;
-  position: relative;
+  height: 50vh;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 
   @include breakpoint(medium only) {
-    height: 40vh;
     background-size: 90vw;
+    height: 40vh;
   }
 
   @include breakpoint(small only) {
-    height: 25vh;
     background-size: 95vw;
+    height: 25vh;
   }
 }
 
@@ -31,8 +31,8 @@
 }
 
 .kit-details-bb {
-  display: flex;
   align-items: center;
+  display: flex;
   opacity: 0.7;
 }
 
@@ -42,8 +42,8 @@
 
 .kit-card-bb-icon {
   display: inline-block;
-  margin-top: rem-calc(5);
   margin-right: 1rem;
+  margin-top: rem-calc(5);
 
   * {
     fill: $white;

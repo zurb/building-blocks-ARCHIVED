@@ -4,21 +4,53 @@
   color: $white;
   height: $card-height;
   margin-bottom: $page-spacing;
-  width: 100%;
   overflow: hidden;
 
-  &:hover {
-    .kit-card-visual-img {
-      opacity: 0.2;
-    }
-    .kit-card-visual-hover {
-      display: block;
+  @include breakpoint(rem-calc(900) up) {
+
+    &:hover {
+
+      .kit-card-visual-img {
+        opacity: 0.2;
+      }
+
+      .kit-card-visual-hover {
+        display: block;
+      }
     }
   }
 }
 
+@media screen and #{breakpoint(small only)} {
+  .kit-card-primary,
+  .kit-card-secondary,
+  .dropdown-pane,
+  .kit-card-link-text {
+    display: none;
+  }
+
+  .kit-card-header,
+  .kit-card-sub-header, {
+    text-align: center;
+  }
+  
+  .kit-card-summary {
+    padding: 2rem;
+  }
+
+  .kit-card-visual-img {
+    min-width: 95%;
+  }
+
+}
+
+
 .kit-card-summary {
-  padding: 3rem;
+  padding: 2rem 0 2rem 2rem;
+
+  @include breakpoint(rem-calc(900) up) {
+    padding: 3rem;
+  }
 }
 
 .kit-card-header {
@@ -40,21 +72,22 @@
     background: $primary-color;
     color: $white;
   }
-
 }
 
 .arrow-down {
-    display: inline-block;
-    height: 0;
-    width: 0;
-    border-top: rem-calc(5) solid #43053C;
-    border-left: rem-calc(5) solid transparent;
-    border-right: rem-calc(5) solid transparent;
-    margin-left: 1rem;
-    &.white {
-      border-top: rem-calc(5) solid $white;
-    }
+  border-left: rem-calc(5) solid transparent;
+  border-right: rem-calc(5) solid transparent;
+  border-top: rem-calc(5) solid #43053C;
+  display: inline-block;
+  height: 0;
+  margin-left: 1rem;
+  vertical-align: middle;
+  width: 0;
+
+  &.white {
+    border-top: rem-calc(5) solid $white;
   }
+}
 
 .kit-card-secondary {
   border: 1px solid white;
@@ -83,15 +116,16 @@
 
 .kit-card-visual-hover {
   display: none;
+  left: 0;
   padding-top: 3rem;
   position: absolute;
-  width: 90%;
   top: 0;
-  left: 0;
+  width: 90%;
   z-index: 10;
 }
 
 .kit-card-visual-img {
+  min-width: rem-calc(500);
 }
 
 .kit-card-bb {
@@ -101,16 +135,18 @@
 
 .kit-card-bb-icon {
   display: inline-block;
-  margin-top: rem-calc(5);
   margin-right: 1rem;
+  margin-top: rem-calc(5);
+
   * {
     fill: $white;
   }
 
   &.blue {
-      * {
-    fill: $dark-blue;
-    }
+
+    * {
+      fill: $dark-blue;
+    } 
   }
 }
 
