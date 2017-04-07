@@ -6,7 +6,12 @@
   margin-bottom: $page-spacing;
   overflow: hidden;
 
-  @include breakpoint(rem-calc(900) up) {
+
+  @include breakpoint(medium down) {
+    margin-bottom: 1rem;
+  }
+
+  @include breakpoint(900) {
 
     &:hover {
 
@@ -21,34 +26,11 @@
   }
 }
 
-@media screen and #{breakpoint(small only)} {
-  .kit-card-primary,
-  .kit-card-secondary,
-  .dropdown-pane,
-  .kit-card-link-text {
-    display: none;
-  }
-
-  .kit-card-header,
-  .kit-card-sub-header, {
-    text-align: center;
-  }
-  
-  .kit-card-summary {
-    padding: 2rem;
-  }
-
-  .kit-card-visual-img {
-    min-width: 95%;
-  }
-
-}
-
 
 .kit-card-summary {
   padding: 2rem 0 2rem 2rem;
 
-  @include breakpoint(rem-calc(900) up) {
+  @include breakpoint(900) {
     padding: 3rem;
   }
 }
@@ -92,6 +74,7 @@
 .kit-card-secondary {
   border: 1px solid white;
   color: $white;
+  margin-top: 1rem;
   padding: 1rem 2.5rem;
 }
 
@@ -161,4 +144,26 @@
   }
 }
 
+
+@include breakpoint(small only) {
+  .kit-card-primary,
+  .kit-card-secondary,
+  .kit-card-link-text {
+    display: none;
+  }
+
+  .kit-card-header,
+  .kit-card-sub-header, {
+    text-align: center;
+  }
+  
+  .kit-card-summary {
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  .kit-card-visual-img {
+    min-width: 95%;
+  }
+
+}
 
