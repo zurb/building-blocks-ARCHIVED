@@ -58,8 +58,10 @@ gulp.task('build',
 gulp.task('static',
   gulp.series('build', server, watchStatic));
 
+gulp.task('dynamic-pages', gulp.series(kitIndex, 'kits-pages', 'building-block-indices', 'building-block-pages'));
+
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, kitIndex,'building-block-pages', 'kits-pages', 'building-block-indices',  sass, javascript, images, 'copy'));
+  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, 'dynamic-pages',  sass, javascript, images, 'copy'));
 
 // Create Building Blocks
 gulp.task('bb',
@@ -253,12 +255,13 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, gulp.series('copy', reload));
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(kitIndex, reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(kitIndex, 'building-block-pages', 'building-block-indices', reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(kitIndex, 'dynamic-pages',  reload));
   gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
   gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
   gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
   gulp.watch('src/building-blocks/**/*.png').on('all', gulp.series('copy', reload));
-  gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta',  'building-block-pages','building-block-indices', reload));
+  gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
+  gulp.watch('src/kits/**/*.yml').on('all', gulp.series('dynamic-pages', reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload));
