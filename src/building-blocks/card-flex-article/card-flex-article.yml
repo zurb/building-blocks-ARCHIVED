@@ -5,7 +5,7 @@ tags:
   - content
   - media
   - blog
-category: container
+category: containers
 description: An article card using Flexbox with tags, author, time, summary, and other details.
 versions:
   - 6.3.1

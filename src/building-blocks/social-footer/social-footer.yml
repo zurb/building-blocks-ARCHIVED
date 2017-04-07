@@ -2,7 +2,7 @@ name: 'Social Media Footer'
 tags:
   - social-media
   - footer
-category: container
+category: containers
 description: A Responsive footer with social media icons and logo space.
 versions:
   - 6.3.1

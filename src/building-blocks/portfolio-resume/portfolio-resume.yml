@@ -2,7 +2,7 @@ name: 'Responsive Portfolio Resume'
 tags:
   - feature
   - Portfolio
-category: container
+category: containers
 description: A Responsive Portfolio Resume section for anyone's persoal website or this layout could be used for featured information.
 versions:
   - 6.3.1
