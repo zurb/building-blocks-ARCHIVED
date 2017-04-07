@@ -3,8 +3,10 @@ description: A simple portfolio resume container with fixed left and scrolling r
 category: containers
 tags:
   - portfolio
-  - scrolling
   - resume
+  - content
+  - feature
+  - flexbox
 versions:
   - 6.2.0
   - 6.2.1
@@ -16,3 +18,4 @@ versions:
 author:
   name: Kevin Ball
   github: kball
+containerClass: none
