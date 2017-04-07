@@ -6,7 +6,6 @@
   margin-bottom: $page-spacing;
   overflow: hidden;
 
-
   @include breakpoint(medium down) {
     margin-bottom: 1rem;
   }
