@@ -5,14 +5,16 @@
   &:hover {
     background-color: darken($primary-color, 10%)
   }
+
+  i {
+    margin-right: .5rem;
+  }
 }
 
-i {
-  margin-right: .5rem;
-}
-
-.dropdown-pane {
-  padding: 0;
+.shopping-cart-dropdown-pane {
+  .dropdown-pane {
+    padding: 0;
+  }
 }
 
 .shopping-cart-item {
@@ -35,7 +37,7 @@ i {
   font-weight: bold;
 }
 
-.checkout {
+.shopping-cart-checkout {
   padding: .5rem;
   margin-bottom: 0;
 }
