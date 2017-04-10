@@ -9,6 +9,7 @@
 }
 
 $circle-graph-size: rem-calc(90);
+$circle-graph-background-color: $light-gray;
 $circle-graph-empty-color: $dark-gray;
 $circle-graph-fill-color: $primary-color;
 
@@ -46,7 +47,7 @@ $circle-graph-fill-color: $primary-color;
 }
 .circle-graph-percents {
   @include circle-graph-circle(#{$circle-graph-size/1.45});
-  background: $white;
+  background: $circle-graph-background-color;
   text-align: center;
   display: table;
   z-index: 4;

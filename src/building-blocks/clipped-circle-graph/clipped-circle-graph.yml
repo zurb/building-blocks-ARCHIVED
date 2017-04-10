@@ -5,7 +5,7 @@ tags:
   - data
   - viz
 category: status
-description: A SCSS based cliped circle graph
+description: A SCSS based clipped circle graph
 versions:
   - 6.3.0
   - 6.3.1
