@@ -27,11 +27,11 @@
     </div>
     <div class="column shrink align-self-top hide-for-small-only">
       <div class="flex-container align-right">
-        <a href="#"><img src="{{root}}assets/img/icons/bb-like.svg" alt="" class="inject-me bb-like-button"></a>
+        <a data-like="{{block.datakey}}"><img src="{{root}}assets/img/icons/bb-like.svg" alt="" class="inject-me bb-like-button"></a>
         <a href="#"><img src="{{root}}assets/img/icons/bb-share.svg" alt="" class="inject-me bb-header-social"></a>
       </div>
       <div class="flex-container align-right">
-        <span class="bb-media-stats">6 Views	&#8226; 6 Likes</span>
+        <span class="bb-media-stats"><!-- 6 Views	&#8226; --><span data-likes="{{block.datakey}}"></span> Likes</span>
       </div>
     </div>
   </div>

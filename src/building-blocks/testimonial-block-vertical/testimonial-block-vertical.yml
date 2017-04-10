@@ -1,0 +1,15 @@
+name: "Vertical Testimonial Block"
+tags:
+  - quote
+  - testimonial
+  - content
+  - flexbox
+category: containers
+description: A testimonial block to tell your site visitors how awesome you are.
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  github: rafibomb
+  name: Rafi
+containerClass: row medium-6 columns align-center

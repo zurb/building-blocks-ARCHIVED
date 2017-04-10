@@ -7,13 +7,14 @@ hero-class: hero-building-blocks
 hero: true
 filter-nav: true
 filter-dropdowns: false
+layout: static
 ---
 
-{{#repeat 12}}
+{{#each kits}}
 <div class="row column">
   <!--kit card-->
-  {{> kit-card}}
+  {{> kit-card this}}
   <!--end kit card-->
 </div>
-{{/repeat}}
+{{/each}}
 

@@ -76,6 +76,13 @@
   color: $white;
   margin-top: 1rem;
   padding: 1rem 2.5rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: $global-radius;
+  line-height: 1;
+  &:hover {
+    color: $white;
+  }
 }
 
 .kit-card-link {
@@ -168,7 +175,7 @@
   } 
 
   .kit-card-header,
-  .kit-card-sub-header, {
+  .kit-card-sub-header {
     text-align: center;
   }
   

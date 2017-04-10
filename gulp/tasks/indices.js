@@ -20,7 +20,7 @@ function loadConfig() {
 }
 
 // From http://stackoverflow.com/questions/23230569/how-do-you-create-a-file-from-a-string-in-gulp
-function stringSrc(categories, prefix, datafile, cb) {
+function categoryYaml(categories, prefix, datafile, cb) {
   async.eachOf(categories, (category, name, callback) => {
     var numPages = Math.ceil(category.total / PAGE_SIZE);
     var objs = []
@@ -44,17 +44,17 @@ function stringSrc(categories, prefix, datafile, cb) {
 
 function buildingBlocksCategoryStarters(cb) {
   var categories = JSON.parse(fs.readFileSync(PATHS.build + '/data/categories.json', 'utf8'));
-  fs.mkdir(PATHS.build, () => {stringSrc(categories, '', 'categories.json', cb)})
+  fs.mkdir(PATHS.build, () => {categoryYaml(categories, '', 'categories.json', cb)})
 }
 
 function buildingBlocksTagsStarters(cb) {
   var tags = JSON.parse(fs.readFileSync(PATHS.build + '/data/tags.json', 'utf8'));
-  fs.mkdir(PATHS.build + '/tags', () => {stringSrc(tags, 'tags/', 'tags.json', cb)})
+  fs.mkdir(PATHS.build + '/tags', () => {categoryYaml(tags, 'tags/', 'tags.json', cb)})
 }
 
 function buildingBlocksCategoryPages() {
   panini.refresh();
-  return gulp.src([PATHS.build + '/*.html', PATHS.build + '/**/*.html'])
+  return gulp.src([PATHS.build + '/*.html'])
     .pipe(panini({
       root: '_build/',
       layouts: 'src/layouts/building-blocks/index',
