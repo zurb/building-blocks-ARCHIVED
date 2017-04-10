@@ -4,11 +4,12 @@ tags:
   - card
   - product
   - selection
-category: container
+category: containers
 description: Product Card for an eCommerce site that has selectable options.
 versions:
   - 6.3.1
   - 6.3.0
 author:
+  github: kwhchu
   name: Kevin
 containerClass: row small-up-3 medium-up-4 large-up-5 align-center

@@ -3,11 +3,12 @@ tags:
   - nav
   - navigation
   - pagination
-category: form
+category: forms
 description: Pagination with nice buttons for good touch target.
 versions:
   - 6.3.0
   - 6.3.1
 author:
+  github: rafibomb
   name: Rafi
 containerClass: container-padded

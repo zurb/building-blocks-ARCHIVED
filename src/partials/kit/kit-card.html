@@ -2,39 +2,35 @@
   <div class="row">
     <!--header and CTA-->
     <div class="kit-card-summary column small-12 medium-6">
-      <h2 class="kit-card-header">E-Commerce Kit</h2>
-      <p class="kit-card-sub-header">Get started building an e-commerce site with these components</p>
+      <h2 class="kit-card-header">{{#if name}}{{name}}{{else}}E-Commerce Kit{{/if}}</h2>
+      <p class="kit-card-sub-header">{{#if description}}{{description}}{{else}}Get started building an e-commerce site with these components{{/if}}</p>
 
       <button class="kit-card-primary" type="button" data-toggle="example-dropdown">download <div class="arrow-down"></div></button>
       {{> kit-dropdown}}
-      <button class="kit-card-secondary" href="#">See Details</button>
+      <a class="kit-card-secondary" href="{{href}}">See Details</a>
       <div class="kit-card-link">
       <a class="kit-card-link-text" href="#">How do I use this?</a>
       </div>
     </div>
 
+
     <!--kit card visual and hover effect-->
-    <div class="kit-card-visual column small 12 medium-6">
+    <div class="kit-card-visual column small-12 medium-6">
       <img class="kit-card-visual-img" src="{{root}}assets/img/images/kit-background-ex.png" alt="kit building blocks image">
       <!--icon row-->
       <div class="kit-card-visual-hover">
-        {{#repeat 3}}
         <div class="row">
-          <div class="small-6 column kit-card-bb">
-            <img class="kit-card-bb-icon inject-me" src="{{root}}assets/img/icons/filter-containers.svg" alt="category icon">
-            <ul class="kit-card-bb-list">
-              <li>Product Card</li>
-              <li>Shopping Cart</li>
-            </ul>
-          </div>
-          <div class="small-6 column kit-card-bb">
-            <img class="kit-card-bb-icon inject-me" src="{{root}}assets/img/icons/filter-containers.svg" alt="category icon">
-            <ul class="kit-card-bb-list">
-              <li>Checkout Summary Table</li>
-            </ul>
-          </div>
+          {{#blocks-by-category blocks}}
+            <div class="small-6 column kit-card-bb">
+              <img class="kit-card-bb-icon inject-me" src="{{root}}assets/img/icons/filter-{{category}}.svg" alt="category icon">
+              <ul class="kit-card-bb-list">
+                {{#each blocks}}
+                  <li>{{name}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/blocks-by-category}}
         </div>
-        {{/repeat}}
       </div>
     </div>
   </div>

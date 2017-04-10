@@ -3,7 +3,7 @@ tags:
   - card
   - links
   - content
-category: container
+category: containers
 description: A simple card with title, description, and links.
 versions:
   - 6.3.0
@@ -11,3 +11,4 @@ versions:
 author:
   name: ZURB
 grid: float
+containerClass: container-padded row column medium-8

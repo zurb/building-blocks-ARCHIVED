@@ -58,6 +58,40 @@ function majorVersions(versions) {
   return list;
 }
 
+function kitsInitial() {
+  return gulp.src('src/kits/**/*.{yml,yaml}')
+    .pipe($.yaml())
+    .pipe($.jsoncombine('kits.json', function(files) {
+      var output = {};
+      _.each(files, (value, key) => {
+        var name = key.split('/')[0];
+        value.datakey = name;
+        output[name] = value;
+        output[name].href = 'kits/' + name + '.html';
+        output[name].thumb = 'assets/img/kits/' + key + '.png';
+        output[name].total = value.blocks.length;
+      })
+      return new Buffer(JSON.stringify(output));
+    }))
+    .pipe(gulp.dest(PATHS.build + '/data/'));
+}
+
+function kitsAddBlocks() {
+  return gulp.src([PATHS.build + '/data/building-blocks.json', PATHS.build + '/data/kits.json'])
+    .pipe($.jsoncombine('kits.json', function(data) {
+      var output = data.kits;
+      _.each(data.kits, (value, key) => {
+        var blocks = []
+        _.each(value.blocks, (blockName) => {
+          blocks.push(data['building-blocks'][blockName])
+        });
+        output[key].blocks = blocks;
+      });
+      return new Buffer(JSON.stringify(output));
+    }))
+    .pipe(gulp.dest(PATHS.build + '/data/'));
+}
+
 function buildingBlockCategoryMeta() {
   return gulp.src(PATHS.build + '/data/building-blocks.json')
     .pipe($.jsoncombine('categories.json', function(data) {
@@ -139,5 +173,5 @@ gulp.task('add-git-meta', function() {
 });
 
 gulp.task('building-block-meta',
-  gulp.series(buildingBlockCombineMeta, 'add-git-meta', buildingBlockCategoryMeta, buildingBlockTagsMeta));
+  gulp.series(buildingBlockCombineMeta, 'add-git-meta', buildingBlockCategoryMeta, buildingBlockTagsMeta, kitsInitial, kitsAddBlocks));
 
