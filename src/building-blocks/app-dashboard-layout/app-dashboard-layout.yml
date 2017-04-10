@@ -1,5 +1,5 @@
 name: App Dashboard Layout
-description: A responsive layout common for app dashboards, with a top navgation, expandable sidebar, and scrolling content
+description: A responsive layout common for app dashboards, with a top navigation, expandable sidebar, and scrolling content
 category: containers
 tags:
   - dashboard
