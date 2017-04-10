@@ -22,6 +22,9 @@
       {{#if hero}}
         {{> hero}}
       {{/if}}
+      <!--fixed backround with image-->
+      <div class="kit-header">
+      </div> 
       <div class="page-container">
         {{#if filter-nav}}
           {{> filter-nav}}
@@ -29,22 +32,18 @@
         {{#if filter-dropdowns}}
           {{> filter-dropdowns}}
         {{/if}}
-        <!--fixed backround with image-->
-        <div class="kit-background">
-          {{> kit-description kit}}   
-          <!--kit building blocks-->
-          <div class="page-background-alt building-block-related">
-            <div class="row column building-block-related-header">
-              <h2 class="bb-related-title">Building Blocks In The Kit</h2>
+        {{> kit-description kit}}   
+        <!--kit building blocks-->
+        <div class="page-background-alt building-block-related kit-building-blocks">
+          <div class="row column building-block-related-header">
+            <h2 class="bb-related-title space">Building Blocks In The Kit</h2>
+          </div>
+          <div class="row small-up-1 medium-up-2 large-up-3">
+            {{#each kit.blocks}}
+            <div class="column column-block card-block">
+              {{> building-block-card this}}
             </div>
-            <div class="row small-up-1 medium-up-2 large-up-3">
-              {{#each kit.blocks}}
-              <div class="column column-block card-block">
-                {{> building-block-card this}}
-              </div>
-              {{/each}}
-            </div>
-            <button class="button" type="button" data-toggle="download-dropdown">Download <div class="arrow-down"></div></button>
+            {{/each}}
           </div>
         </div>
         {{#ifpage 'index'}}

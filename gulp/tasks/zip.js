@@ -35,7 +35,6 @@ function zipKits(done) {
         var blockFiles = _.map(value.blocks, (block) => {
           return PATHS.dist + "/files/building-blocks/" + block.datakey + "/**/*";
         });
-        console.log(blockFiles);
         gulp.src(blockFiles, {base: PATHS.dist + '/files/building-blocks/'})
           .pipe($.rename(function(path) {
             path.dirname = fileName + "/" + path.dirname;

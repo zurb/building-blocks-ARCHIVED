@@ -5,7 +5,7 @@
   height: $card-height;
   margin-bottom: $page-spacing;
   overflow: hidden;
-
+  
 
   @include breakpoint(medium down) {
     margin-bottom: 1rem;
@@ -20,15 +20,15 @@
       }
 
       .kit-card-visual-hover {
-        display: block;
+        opacity: 1;
+        
       }
     }
   }
 }
 
-
 .kit-card-summary {
-  padding: 2rem 0 2rem 2rem;
+  padding: 2rem 0 2rem 3rem;
 
   @include breakpoint(900) {
     padding: 3rem;
@@ -76,12 +76,22 @@
   color: $white;
   margin-top: 1rem;
   padding: 1rem 2.5rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: $global-radius;
+  line-height: 1;
+  &:hover {
+    color: $white;
+  }
+}
+
+.kit-card-link {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .kit-card-link-text {
   color: white;
-  display: block;
-  margin-top: 1rem;
 
   &.blue {
     color: $primary-color;
@@ -98,17 +108,19 @@
 }
 
 .kit-card-visual-hover {
-  display: none;
+  opacity: 0;
   left: 0;
   padding-top: 3rem;
   position: absolute;
   top: 0;
   width: 90%;
   z-index: 10;
+  transition: opacity 0.2s ease-out;
 }
 
 .kit-card-visual-img {
   min-width: rem-calc(500);
+  transition: opacity 0.2s ease-out;
 }
 
 .kit-card-bb {
@@ -144,8 +156,10 @@
   }
 }
 
+//card change for smaller screens
 
 @include breakpoint(small only) {
+
   .kit-card-primary,
   .kit-card-secondary,
   .kit-card-link-text {
@@ -161,7 +175,7 @@
   } 
 
   .kit-card-header,
-  .kit-card-sub-header, {
+  .kit-card-sub-header {
     text-align: center;
   }
   
@@ -175,3 +189,9 @@
 
 }
 
+@include breakpoint(850 down) {
+  .kit-card-primary,
+  .kit-card-secondary {
+    width: 100%;
+  }
+}
