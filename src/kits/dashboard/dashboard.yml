@@ -6,4 +6,6 @@ blocks:
   - dashboard-table
   - circle-graph
   - clipped-circle-graph
+  - input-number-group
+  - searchbar-expand-on-click
 
