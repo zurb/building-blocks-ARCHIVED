@@ -39,7 +39,6 @@ gulp.task('lint', function () {
   .pipe(sassLint.failOnError())
 });
 
-
 // Resets Panini so that we can assemble using different layouts for the iframes and building block pages
 function getNewPanini(options) {
   var p = new panini.Panini(options);
@@ -153,7 +152,7 @@ function buildingBlockBaseStyles() {
       includePaths: PATHS.sass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
+      .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
     // Comment in the pipe below to run UnCSS in production
@@ -167,7 +166,8 @@ function buildingBlockSass() {
   return gulp.src(['src/building-blocks/**/*.scss'])
     .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
     .pipe($.sass({
-      includePaths: PATHS.sass
+      includePaths: PATHS.sass,
+      outputStyle: 'expanded'
     })
       .on('error', $.sass.logError))
     .pipe($.autoprefixer({
