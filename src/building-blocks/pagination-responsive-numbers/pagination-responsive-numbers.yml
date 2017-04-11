@@ -14,5 +14,6 @@ versions:
   - 6.2.0
 author:
   github: rafibomb
+  'foundation-forum': 10
   name: Rafi
 containerClass:
