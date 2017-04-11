@@ -13,6 +13,7 @@ import sassLint     from 'gulp-sass-lint';
 import gulpRename   from 'gulp-rename';
 import _            from 'lodash';
 import requireDir   from 'require-dir';
+import stripCssComments from 'gulp-strip-css-comments';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -39,7 +40,6 @@ gulp.task('lint', function () {
   .pipe(sassLint.failOnError())
 });
 
-
 // Resets Panini so that we can assemble using different layouts for the iframes and building block pages
 function getNewPanini(options) {
   var p = new panini.Panini(options);
@@ -48,7 +48,7 @@ function getNewPanini(options) {
   return p.render()
 }
 
-gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles));
+gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles, copyKitImages));
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
@@ -106,7 +106,13 @@ function copyData() {
 function copyBBImages() {
   return gulp.src('src/building-blocks/**/*.png')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
+  }
+
+function copyKitImages() {
+  return gulp.src('src/kits/**/*.png')
+    .pipe(gulp.dest(PATHS.dist + '/assets/img/kits/'));
 }
+
 
 function copyBBFiles() {
   return gulp.src(['src/building-blocks/**/*.{html,js,scss}', 'dist/building-blocks/**/*.css', '!dist/building-blocks/**/layout.css'])
@@ -147,7 +153,7 @@ function buildingBlockBaseStyles() {
       includePaths: PATHS.sass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
+      .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
     // Comment in the pipe below to run UnCSS in production
@@ -160,8 +166,10 @@ function buildingBlockBaseStyles() {
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/**/*.scss'])
     .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
+    .pipe(stripCssComments())
     .pipe($.sass({
-      includePaths: PATHS.sass
+      includePaths: PATHS.sass,
+      outputStyle: 'expanded'
     })
       .on('error', $.sass.logError))
     .pipe($.autoprefixer({

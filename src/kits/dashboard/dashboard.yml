@@ -1,0 +1,11 @@
+name: Dashboard
+description: A Foundation Building Block Kit filled with components for creating a dashboard
+blocks:
+  - app-dashboard-layout
+  - dashboard-number-card
+  - dashboard-table
+  - circle-graph
+  - clipped-circle-graph
+  - input-number-group
+  - searchbar-expand-on-click
+

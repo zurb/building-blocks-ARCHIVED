@@ -58,14 +58,14 @@
 }
 
 .kit-card-secondary {
+  border-radius: $global-radius;
   border: 1px solid white;
   color: $white;
+  display: inline-block;
+  line-height: 1;
   margin-top: 1rem;
   padding: 1rem 2.5rem;
-  display: inline-block;
   text-align: center;
-  border-radius: $global-radius;
-  line-height: 1;
   &:hover {
     color: $white;
   }
@@ -106,8 +106,8 @@
 }
 
 .kit-card-visual-hover {
-  opacity: 0;
   left: 0;
+  opacity: 0;
   padding-top: 3rem;
   position: absolute;
   top: 0;
