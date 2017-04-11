@@ -6,7 +6,7 @@ module.exports = function(blocks, options) {
     blocksByCategory[block.category] = blocksByCategory[block.category] || [];
     blocksByCategory[block.category].push(block);
   });
-  content = '';
+  let content = '';
   _.each(blocksByCategory, function(blocks, category) {
     content = content + options.fn({category: category, blocks: blocks});
   });

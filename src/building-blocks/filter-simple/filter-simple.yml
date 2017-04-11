@@ -15,5 +15,6 @@ versions:
   - 6.3.0
 author:
   github: rafibomb
+  'foundation-forum': 10
   name: Rafi
 containerClass: container-padded
