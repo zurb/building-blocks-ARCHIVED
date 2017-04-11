@@ -167,7 +167,7 @@ function buildingBlockSass() {
     .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
     .pipe($.sass({
       includePaths: PATHS.sass,
-      outputStyle: 'expanded'
+      outputStyle: 'compressed'
     })
       .on('error', $.sass.logError))
     .pipe($.autoprefixer({
