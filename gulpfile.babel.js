@@ -13,6 +13,7 @@ import sassLint     from 'gulp-sass-lint';
 import gulpRename   from 'gulp-rename';
 import _            from 'lodash';
 import requireDir   from 'require-dir';
+import stripCssComments from 'gulp-strip-css-comments';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -165,9 +166,10 @@ function buildingBlockBaseStyles() {
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/**/*.scss'])
     .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
+    .pipe(stripCssComments())
     .pipe($.sass({
       includePaths: PATHS.sass,
-      outputStyle: 'compressed'
+      outputStyle: 'expanded'
     })
       .on('error', $.sass.logError))
     .pipe($.autoprefixer({
