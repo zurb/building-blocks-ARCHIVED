@@ -8,7 +8,9 @@
   height: $size;
 }
 
-$circle-graph-size: rem-calc(90);
+$circle-graph-size: rem-calc(180);
+$circle-graph-percent-number-size: rem-calc(24);
+$circle-graph-percent-unit-size: rem-calc(16);
 $circle-graph-background-color: $light-gray;
 $circle-graph-empty-color: $dark-gray;
 $circle-graph-fill-color: $primary-color;
@@ -54,14 +56,14 @@ $circle-graph-fill-color: $primary-color;
 
   .circle-graph-percents-number {
     display: block;
-    font-size: rem-calc(14);
+    font-size: $circle-graph-percent-number-size;
     font-weight: bold;
     color: $circle-graph-fill-color;
   }
 
   .circle-graph-percents-units {
     display: block;
-    font-size: rem-calc(8);
+    font-size: $circle-graph-percent-unit-size;
     font-weight: bold;
   }
 }

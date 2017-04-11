@@ -8,10 +8,13 @@
   height: $size;
 }
 
-$clipped-circle-graph-size: rem-calc(90);
+$clipped-circle-graph-size: rem-calc(180);
+$clipped-circle-graph-percent-number-size: rem-calc(24);
+$clipped-circle-graph-percent-unit-size: rem-calc(16);
 $clipped-circle-graph-empty-color: $dark-gray;
 $clipped-circle-background-color: $light-gray;
 $clipped-circle-graph-fill-color: $primary-color;
+$clipped-circle-clip-size: rem-calc(80);
 
 .clipped-circle-graph {
   width: $clipped-circle-graph-size;
@@ -28,8 +31,8 @@ $clipped-circle-graph-fill-color: $primary-color;
     @include horizontal-center;
     bottom: 19px;
     background: $clipped-circle-background-color;
-    height: 40px;
-    width: 40px;
+    height: $clipped-circle-clip-size;
+    width: $clipped-circle-clip-size;
     z-index: 3;
     transform: rotate(45deg) translate3d(0,0,0);
     transform-origin: -30px 15px;
@@ -66,14 +69,14 @@ $clipped-circle-graph-fill-color: $primary-color;
 
   .clipped-circle-graph-percents-number {
     display: block;
-    font-size: rem-calc(14);
+    font-size: $clipped-circle-graph-percent-number-size;
     font-weight: bold;
     color: $clipped-circle-graph-fill-color;
   }
 
   .clipped-circle-graph-percents-units {
     display: block;
-    font-size: rem-calc(8);
+    font-size: $clipped-circle-graph-percent-unit-size;
     font-weight: bold;
   }
 }
