@@ -31,38 +31,51 @@
 }
 
 .kit-details-action {
-  
-  @include breakpoint(medium) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  @include breakpoint(small only) {
+    width: 100%;
   }
 
 }
+.kit-details-header {
+  margin-bottom: $page-spacing;
+}
 
-.kit-details-bb {
-  align-items: center;
+.kit-details-header-text {
   display: flex;
-  opacity: 0.7;
+  align-items: center;
+
+  @include breakpoint(small only) {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .kit-details-header-text-heading {
+  color: $dark-blue;
+  font-size: rem-calc(23);
+  font-weight: $global-weight-bold;
+  margin-bottom: 0;
+  }
 }
 
-.kit-building-blocks {
-  z-index: 100;
+.kit-details-search {
+  border-radius: 500px;
+  background-color: darken($pale-blue, 5%);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.kit-card-bb-icon {
-  display: inline-block;
+.kit-details-search-text {
   margin-right: 1rem;
-  margin-top: rem-calc(5);
+  color: $dark-blue;
+}
+
+.kit-details-search-icon {
+  width: 0.8rem;
 
   * {
-    fill: $white;
+    fill: $dark-blue;
   }
-}
-
-.kit-card-bb-list {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  vertical-align: top;
 }

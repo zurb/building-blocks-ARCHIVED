@@ -10,21 +10,6 @@
   @include breakpoint(medium down) {
     margin-bottom: 1rem;
   }
-
-  @include breakpoint(900) {
-
-  //   &:hover {
-
-  //     .kit-card-visual-img {
-  //       opacity: 0.2;
-  //     }
-
-  //     .kit-card-visual-hover {
-  //       opacity: 1;
-        
-  //     }
-  //   }
-  }
 }
 
 .kit-card-summary {
@@ -128,12 +113,10 @@
   top: 0;
   width: 90%;
   z-index: 10;
-  //transition: opacity 0.2s ease-out;
 }
 
 .kit-card-visual-img {
   min-width: rem-calc(500);
-  //transition: opacity 0.2s ease-out;
 }
 
 .kit-card-bb {

@@ -35,8 +35,18 @@
         {{> kit-description kit}}   
         <!--kit building blocks-->
         <div class="page-background-alt building-block-related kit-building-blocks">
-          <div class="row column building-block-related-header">
-            <h2 class="bb-related-title space">Building Blocks In The Kit</h2>
+          <div class="row kit-details-header">
+          <div class="columns kit-details-header-text">
+            <h2 class="kit-details-header-text-heading">Building Blocks In The Kit</h2>
+          </div>
+          <div class="columns shrink kit-details-action">
+            <a class="kit-details-search">
+              <span class="kit-details-search-text" data-toggle="bb-search-bar bb-filter-icons-container">Find More Building Blocks</span>
+              <img class="inject-me kit-details-search-icon" src="{{root}}assets/img/icons/filter-search.svg" alt="Search">
+            </a>
+          </div>
+
+
           </div>
           <div class="row small-up-1 medium-up-2 large-up-3">
             {{#each kit.blocks}}
