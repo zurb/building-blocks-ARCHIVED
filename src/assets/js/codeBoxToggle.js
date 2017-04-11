@@ -2,6 +2,22 @@ var toggleHTML = $('[data-toggle-HTML]');
 var toggleStyles = $('[data-toggle-styles]');
 var toggleJS   = $('[data-toggle-JS]');
 
+if($('#codeBoxJS code').text().trim().length === 0) {
+  toggleJS.addClass('is-disabled');
+}
+else {
+  toggleJS.addClass('is-active');
+  $('#codeBoxJS').addClass('is-active');
+}
+
+if($('#codeBoxStyles code').text().trim().length === 0) {
+  toggleStyles.addClass('is-disabled');
+}
+else {
+  toggleStyles.addClass('is-active');
+  $('#codeBoxStyles').addClass('is-active');
+}
+
 $(window).on("load resize", function() {
   //On small only show one at a time
   if (Foundation.MediaQuery.current == 'small') {
