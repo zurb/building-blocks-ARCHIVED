@@ -3,7 +3,7 @@ tags:
   - card
   - dashboard
   - data
-category: container
+category: containers
 description: A simple card for displaying data with positive and negative indicators
 versions:
   - 6.3.0
