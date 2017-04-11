@@ -10,10 +10,10 @@ $responsive-blog-post-vert-seperate: 4rem;
 
   .button {
     padding: 0.85rem 3rem;
-    background: $highlight;
+    background: $responsive-blog-post-highlight;
 
     &:hover {
-      background-color: darken($highlight, 5%);
+      background-color: darken($responsive-blog-post-highlight, 5%);
       transition: color 0.3s ease-in;
     }
   }
