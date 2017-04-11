@@ -1,5 +1,9 @@
 name: Blog
 description: A Foundation Building Block Kit filled with components for creating a blog
+background: '#0D91D1'
+images:
+  'hero': 'blog.png'
+  'card': 'blog-small.png'
 blocks:
   - responsive-blog-post
   - responsive-blog-footer
