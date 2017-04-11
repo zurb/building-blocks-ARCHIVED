@@ -1,4 +1,5 @@
-$travel-feature-card-header-font-color: $dark-gray;
+$travel-feature-card-header-font-color: $black;
+$travel-feature-card-body-color: $dark-gray;
 $travel-feature-card-header-background-color: #56524b;
 
 .travel-feature-card-header {
@@ -62,6 +63,7 @@ $travel-feature-card-header-background-color: #56524b;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding: 20px;
+  color: $travel-feature-card-body-color;
   
   button.added-button {
     color: #505050;
@@ -87,6 +89,12 @@ $travel-feature-card-header-background-color: #56524b;
   }
 }
 
+.travel-feature-card-content {
+  @include breakpoint(small only) {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $medium-gray;
+  }
+}
 .travel-feature-card-price {
   text-align: right;
   
@@ -101,7 +109,7 @@ $travel-feature-card-header-background-color: #56524b;
   h6 {
     font-weight: 600;
     font-size: 1.3em;
-    color: #555555;
+    color: $travel-feature-card-header-font-color;
     padding: 0;
     margin: 0;
   }
