@@ -1,4 +1,4 @@
-<div class="kit-card">
+<div class="kit-card"{{#if background}}style="background:{{background}};"{{/if}}>
   <div class="row">
     <!--header and CTA-->
     <div class="kit-card-summary column small-12 medium-6">
@@ -16,7 +16,7 @@
 
     <!--kit card visual and hover effect-->
     <div class="kit-card-visual column small-12 medium-6">
-      <img class="kit-card-visual-img" src="{{root}}assets/img/images/kit-background-ex.png" alt="kit building blocks image">
+      <img class="kit-card-visual-img" src="{{@root.root}}assets/img/{{#if images.card}}kits/{{datakey}}/{{images.card}}{{else}}images/kit-background-ex.png{{/if}}" alt="kit building blocks image">
       <!--icon row-->
       <div class="kit-card-visual-hover">
         <div class="row">

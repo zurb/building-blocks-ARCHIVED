@@ -48,7 +48,7 @@ function getNewPanini(options) {
   return p.render()
 }
 
-gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles));
+gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles, copyKitImages));
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
@@ -106,7 +106,13 @@ function copyData() {
 function copyBBImages() {
   return gulp.src('src/building-blocks/**/*.png')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
+  }
+
+function copyKitImages() {
+  return gulp.src('src/kits/**/*.png')
+    .pipe(gulp.dest(PATHS.dist + '/assets/img/kits/'));
 }
+
 
 function copyBBFiles() {
   return gulp.src(['src/building-blocks/**/*.{html,js,scss}', 'dist/building-blocks/**/*.css', '!dist/building-blocks/**/layout.css'])
