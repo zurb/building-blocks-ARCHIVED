@@ -1,0 +1,6 @@
+name: Real Estate or Travel
+description: A Foundation Building Block Kit filled with components for creating a real estate or travel site
+blocks:
+  - responsive-hero-section
+  - tabbed-search
+
