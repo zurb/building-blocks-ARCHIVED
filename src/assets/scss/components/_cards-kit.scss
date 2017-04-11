@@ -13,17 +13,17 @@
 
   @include breakpoint(900) {
 
-    &:hover {
+  //   &:hover {
 
-      .kit-card-visual-img {
-        opacity: 0.2;
-      }
+  //     .kit-card-visual-img {
+  //       opacity: 0.2;
+  //     }
 
-      .kit-card-visual-hover {
-        opacity: 1;
+  //     .kit-card-visual-hover {
+  //       opacity: 1;
         
-      }
-    }
+  //     }
+  //   }
   }
 }
 
@@ -53,6 +53,7 @@
   &.blue {
     background: $primary-color;
     color: $white;
+    margin-right: 0;
   }
 }
 
@@ -87,15 +88,27 @@
 
 .kit-card-link {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
+  
+  &.blue {
+    text-align: right;  
+  }
 }
 
 .kit-card-link-text {
   color: white;
 
+  &:hover, &:focus {
+    color: white;
+  }
+
   &.blue {
     color: $primary-color;
     margin-bottom: $page-spacing;
+    
+    &:hover, &:focus {
+      color: $primary-color;
+    }
 
     @include breakpoint(large only) {
       margin-bottom: 0;
@@ -115,12 +128,12 @@
   top: 0;
   width: 90%;
   z-index: 10;
-  transition: opacity 0.2s ease-out;
+  //transition: opacity 0.2s ease-out;
 }
 
 .kit-card-visual-img {
   min-width: rem-calc(500);
-  transition: opacity 0.2s ease-out;
+  //transition: opacity 0.2s ease-out;
 }
 
 .kit-card-bb {
@@ -186,7 +199,6 @@
   .kit-card-visual-img {
     min-width: 95%;
   }
-
 }
 
 @include breakpoint(850 down) {
