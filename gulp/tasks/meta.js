@@ -6,6 +6,7 @@ import fs           from 'fs';
 import yaml         from 'js-yaml';
 import async        from 'async';
 import through      from 'through2';
+import path         from 'path';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -23,7 +24,7 @@ function buildingBlockCombineMeta() {
     .pipe($.jsoncombine('building-blocks.json', function(files) {
       var output = {};
       _.each(files, (value, key) => {
-        var name = key.split('/')[0];
+        var name = key.split(path.sep)[0];
         value.datakey = name;
         output[name] = value;
         output[name].href = 'building-block/' + key + '.html';
@@ -64,7 +65,7 @@ function kitsInitial() {
     .pipe($.jsoncombine('kits.json', function(files) {
       var output = {};
       _.each(files, (value, key) => {
-        var name = key.split('/')[0];
+        var name = key.split(path.sep)[0];
         value.datakey = name;
         output[name] = value;
         output[name].href = 'kits/' + name + '.html';

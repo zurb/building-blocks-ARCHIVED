@@ -5,6 +5,7 @@ import fs           from 'fs';
 import panini       from 'panini';
 import yaml         from 'js-yaml';
 import async        from 'async';
+import path         from 'path';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -58,7 +59,7 @@ function defaultTemplate(filename, blockname) {
 function buildingBlockFrameLayouts() {
   return gulp.src(['src/building-blocks/*', '!src/building-blocks/*.scss'])
   .pipe($.foreach(function(stream, file) {
-    var fileName = file.path.substr(file.path.lastIndexOf("/") + 1);
+    var fileName = file.path.substr(file.path.lastIndexOf(path.sep) + 1);
       var layout = file.path + "/layout.html";
       if (fs.existsSync(layout)) {
         gulp.src(layout)
