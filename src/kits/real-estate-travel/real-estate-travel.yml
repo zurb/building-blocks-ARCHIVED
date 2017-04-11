@@ -3,6 +3,12 @@ description: A Foundation Building Block Kit filled with components for creating
 blocks:
   - responsive-hero-section
   - tabbed-search
+  - topbar-responsive
   - full-width-testimonial
   - featured-image-block-grid
+  - topbar-center-logo
   - travel-feature-card
+  - testimonial-block-vertical
+  - marketing-site-footer
+  - social-footer
+  - image-hover-wrapper
