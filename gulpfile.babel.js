@@ -61,7 +61,7 @@ gulp.task('static',
 gulp.task('dynamic-pages', gulp.series(kitIndex, 'kits-pages', 'building-block-indices', 'building-block-pages'));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, 'dynamic-pages',  sass, javascript, images, 'copy'));
+  gulp.series(clean,'building-block-meta',  buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, 'dynamic-pages', 'copy', 'zip', sass, javascript, images));
 
 // Create Building Blocks
 gulp.task('bb',
@@ -78,7 +78,7 @@ gulp.task('rsync', function() {
 });
 
 // Uploads the documentation to the live server
-gulp.task('deploy', gulp.series('bb-iframe', 'zip', 'rsync'));
+gulp.task('deploy', gulp.series('bb-iframe',  'rsync'));
 
 
 // Delete the "dist" folder

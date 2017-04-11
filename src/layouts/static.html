@@ -21,13 +21,13 @@
       {{#if hero}}
         {{> hero}}
       {{/if}}
+      {{#if filter-nav}}
+        {{> filter-nav}}
+      {{/if}}
+      {{#if filter-dropdowns}}
+        {{> filter-dropdowns}}
+      {{/if}}
       <div class="page-container">
-        {{#if filter-nav}}
-          {{> filter-nav}}
-        {{/if}}
-        {{#if filter-dropdowns}}
-          {{> filter-dropdowns}}
-          {{/if}}
         {{> body}}
         {{#ifpage 'index'}}
           {{> pagination}}
