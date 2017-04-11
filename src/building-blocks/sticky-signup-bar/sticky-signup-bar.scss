@@ -1,21 +1,21 @@
 $subscription-footer-height: 50px;
 
 .subscription-footer {
-  background: white;
-  border-bottom: 1px solid #eee;
-  border-top: 1px solid #eee;
+  background: $white;
+  border-bottom: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
   bottom: 0;
   display: block;
   height: $subscription-footer-height;
   left: 0;
-  padding: 15px 10px $subscription-footer-height 10px;
+  padding: 15px 10px $subscription-footer-height;
   position: fixed;
   width: 100%;
   z-index: 100;
 
   &.is-in-page {
-    position: relative;
     margin-bottom: 1rem;
+    position: relative;
   }
 }
 
@@ -26,7 +26,7 @@ $subscription-footer-height: 50px;
 
 .subscription-description {
   bottom: 0;
-  color: #7c7c7c;
+  color: $medium-gray;
   font-size: 0.9rem;
   left: 0;
   top: 6px;
@@ -42,5 +42,5 @@ $subscription-footer-height: 50px;
 .email-center-wrapper {
   margin: 0 auto;
   max-width: 1000px;
-  position: relative
+  position: relative;
 }

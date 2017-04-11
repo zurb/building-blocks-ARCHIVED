@@ -4,11 +4,6 @@ $(window).on("load scroll", function() {
     var windowHeight = $(window).height();
     var footerHeight = $('#email-subscription-footer').outerHeight();
 
-          console.log("footer offset " + footerOffset);
-          console.log("scroll pos " + myScrollPosition);
-          console.log("window h " + windowHeight);
-          console.log("footer " + footerHeight);
-
     if ((myScrollPosition + windowHeight - footerHeight) > footerOffset) {
       $('#email-subscription-footer').addClass('is-in-page');
     } else {
