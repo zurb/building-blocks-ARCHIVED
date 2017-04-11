@@ -13,8 +13,6 @@
     {{else}}
       <link rel="stylesheet" href="{{root}}building-block/app.css">
     {{/ifequal}}
-    <link rel="stylesheet" href="{{root}}building-block/{{page}}/layout.css">
-    <link rel="stylesheet" href="{{root}}building-block/{{page}}/{{page}}.css">
     <style>
       body {
         background-color: #E6E8EB;
@@ -34,6 +32,8 @@
       }
 
     </style>
+    <link rel="stylesheet" href="{{root}}building-block/{{page}}/layout.css">
+    <link rel="stylesheet" href="{{root}}building-block/{{page}}/{{page}}.css">
   </head>
   <body>
     {{> body}}

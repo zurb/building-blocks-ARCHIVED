@@ -1,0 +1,17 @@
+name: Marketing
+description: A Foundation Building Block Kit filled with components for creating a snazzy marketing site.
+blocks:
+  - marketing-site-content-section
+  - marketing-site-features
+  - marketing-site-footer
+  - marketing-site-hero
+  - marketing-site-three-up
+  - responsive-social-media-section
+  - topbar-responsive
+  - read-more
+  - testimonial-block-vertical
+  - product-feature-section
+  - pricing-table
+  - topbar-center-logo
+  - app-feature-section
+
