@@ -1,11 +1,11 @@
-<div class="kit-card">
+<div class="kit-card"{{#if background}}style="background:{{background}};"{{/if}}>
   <div class="row">
     <!--header and CTA-->
     <div class="kit-card-summary column small-12 medium-6">
       <h2 class="kit-card-header">{{#if name}}{{name}}{{else}}E-Commerce Kit{{/if}}</h2>
       <p class="kit-card-sub-header">{{#if description}}{{description}}{{else}}Get started building an e-commerce site with these components{{/if}}</p>
 
-      <button class="kit-card-primary" type="button" data-toggle="example-dropdown">download <div class="arrow-down"></div></button>
+      <button class="kit-card-primary" type="button" data-toggle="example-dropdown">Download <div class="arrow-down"></div></button>
       {{> kit-dropdown}}
       <a class="kit-card-secondary" href="{{href}}">See Details</a>
       <div class="kit-card-link">
@@ -16,7 +16,7 @@
 
     <!--kit card visual and hover effect-->
     <div class="kit-card-visual column small-12 medium-6">
-      <img class="kit-card-visual-img" src="{{root}}assets/img/images/kit-background-ex.png" alt="kit building blocks image">
+      <img class="kit-card-visual-img" src="{{@root.root}}assets/img/{{#if images.card}}kits/{{datakey}}/{{images.card}}{{else}}images/kit-background-ex.png{{/if}}" alt="kit building blocks image">
       <!--icon row-->
       <div class="kit-card-visual-hover">
         <div class="row">
