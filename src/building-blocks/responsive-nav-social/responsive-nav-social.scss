@@ -38,7 +38,6 @@ $nav-bg-color: lighten($nav-text-color, 30%);
 .responsive-nav-social {
   padding: $nav-padding;
   background-color: $nav-bg-color;
-  max-width: none !important;
 
    &.is-stuck {
     width: 100%;
