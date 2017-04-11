@@ -1,24 +1,33 @@
 .kit-header {
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-color: $dark-blue;
-  background-image: url("../../assets/img/images/kit-background-ex.png");
+  background-image: url('../../assets/img/images/kit-background-ex.png');
   background-position: center 100px;
   background-repeat: no-repeat;
-  background-size: 80vw;
   height: 50vh;
-  max-height: 470px;
+  max-height: 460px;
   overflow: hidden;
   position: relative;
   width: 100%;
 
+  @include breakpoint(large up) {
+    background-size: 70%;
+    max-height: 350px;
+  }
+
   @include breakpoint(medium only) {
     background-size: 90vw;
     height: 40vh;
+    max-height: 300px;
   }
 
   @include breakpoint(small only) {
     background-size: 95vw;
-    height: 25vh;
+    height: 200px;
+  }
+
+  @media (min-width: 1600px) {
+    max-height: 500px;
   }
 }
 
