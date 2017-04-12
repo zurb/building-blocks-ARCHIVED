@@ -121,7 +121,7 @@ function copyBBFiles() {
 
 // Copy page templates into finished HTML files
 function kitIndex() {
-  return gulp.src('src/pages/kits.html')
+  return gulp.src(['src/pages/kits.html', 'src/pages/how-to.html'])
     .pipe(getNewPanini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
@@ -269,7 +269,7 @@ function watch() {
   gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
   gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
   gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
-  gulp.watch('src/building-blocks/**/*.png').on('all', gulp.series('copy', reload));
+  gulp.watch(['src/building-blocks/**/*.png', 'src/kits/**/*.png']).on('all', gulp.series('copy', reload));
   gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
   gulp.watch('src/kits/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, reload));

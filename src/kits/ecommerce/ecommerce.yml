@@ -7,3 +7,5 @@ blocks:
   - button-add-cart
   - button-hover-addcart
   - shopping-cart-button
+  - checkout-summary
+  - promotion-hero-links
