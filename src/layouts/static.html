@@ -8,6 +8,9 @@
     <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <meta name="rootpath" content="{{root}}">
+    <meta name="bbfile" content="{{root}}data/building-blocks.json">
+    <meta name="kitfile" content="{{root}}data/kits.json">
   </head>
   <body class="{{#ifpage 'index'}} page-background-alt {{/ifpage}}">
 
@@ -28,16 +31,24 @@
         {{> filter-dropdowns}}
       {{/if}}
       <div class="page-container">
-        {{> body}}
-        {{#ifpage 'index'}}
-          {{> pagination}}
-        {{/ifpage}}
+        <div id="main-results-container">
+          {{> body}}
+          {{#ifpage 'index'}}
+            {{> pagination}}
+          {{/ifpage}}
+        </div>
+        <div id="search-results-container">
+          <div class="kit-container"></div>
+          <div class="row small-up-1 medium-up-2 large-up-3 card-container">
+          </div>
+        </div>
         {{> preview-modal}}
       </div>
       {{> footer}}
     </div>
 
     {{{partial-as-script 'building-block-card' 'building-block/building-block-card-with-column.html'}}}
+    {{{partial-as-script 'kit-card' 'kit/kit-card-with-column.html'}}}
     <script src="{{root}}assets/js/app.js"></script>
   </body>
 </html>

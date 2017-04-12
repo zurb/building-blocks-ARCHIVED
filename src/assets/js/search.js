@@ -1,16 +1,19 @@
 var Search = function(options) {
   this.$input = $(options.input);
   this.$searchContainer = $(options.searchContainer);
+  this.$kitContainer = $(options.kitContainer);
   this.onSearch = options.onSearch;
   this.initialQuery = options.initialQuery;
-  this.source = options.template || '#building-block-card';
+  this.blockSource = options.blockTemplate || '#building-block-card';
+  this.kitSource = options.kitTemplate || '#kit-card';
   this.setup();
 };
 
 Search.prototype.setup = function() {
   this.updateSearch = this.updateSearch.bind(this)
-  this.loadTemplate();
+  this.loadTemplates();
   this.globalFileName = $('meta[name="bbfile"]').prop('content');
+  this.kitFileName = $('meta[name="kitfile"]').prop('content');
   this.localFileName = $('meta[name="datafile"]').prop('content');
   this.datakey = $('meta[name="datakey"]').prop('content');
   this.rootpath = $('meta[name="rootpath"]').prop('content');
@@ -31,8 +34,9 @@ Search.prototype.setSort = function(type) {
   this.updateSearch();
 };
 
-Search.prototype.loadTemplate = function() {
-  this.template = Handlebars.compile($(this.source).html());
+Search.prototype.loadTemplates = function() {
+  this.blockTemplate = Handlebars.compile($(this.blockSource).html());
+  this.kitTemplate = Handlebars.compile($(this.kitSource).html());
 };
 
 Search.prototype.loadData = function() {
@@ -43,7 +47,19 @@ Search.prototype.loadData = function() {
       var content = [object.author.name, object.name, object.category].concat(object.tags).join(' ').toLowerCase()
       return [content, object];
     });
-    if(self.initialQuery && self.data && self.localData) {
+
+    if(self.initialQuery && self.data && self.kitData && self.localData) {
+      self.$input.val(self.initialQuery);
+      self.updateSearch();
+    }
+  });
+  $.getJSON(this.kitFileName, function(res) {
+    self.kitData = res;
+    self.searchableKitData = _.map(_.values(res), function(object) {
+      var content = [object.name].join(' ').toLowerCase()
+      return [content, object];
+    });
+    if(self.initialQuery && self.data && self.kitData && self.localData) {
       self.$input.val(self.initialQuery);
       self.updateSearch();
     }
@@ -54,7 +70,7 @@ Search.prototype.loadData = function() {
       var content = [object.author.name, object.name, object.category].concat(object.tags).join(' ').toLowerCase()
       return [content, object];
     });
-    if(self.initialQuery && self.data && self.localData) {
+    if(self.initialQuery && self.data && self.kitData && self.localData) {
       self.$input.val(self.initialQuery);
       self.updateSearch();
     }
@@ -63,29 +79,52 @@ Search.prototype.loadData = function() {
 
 Search.prototype.updateSearch = function(event) {
   var term = this.$input.val();
-  var results;
+  var blockResults, kitResults;
   if(term.length > 0) {
-    results = this.findResults(term.toLowerCase());
+    blockResults = this.findResults(term.toLowerCase());
+    kitResults = this.findKitResults(term.toLowerCase());
   } else {
-    results = this.localData;
+    blockResults = this.localData;
   }
 
-  results = this.sortResults(this.filterResults(results));
+  blockResults = this.sortResults(this.filterResults(blockResults));
 
+  console.log('results', blockResults);
 
-  var template = this.template;
+  var blockTemplate = this.blockTemplate;
+  var kitTemplate = this.kitTemplate;
   var self = this;
-  var html = _.map(results, function(result) {
-    return template(_.extend({root: self.rootpath},result));
+
+  var blockHTML = _.map(blockResults, function(result) {
+    return blockTemplate(_.extend({root: self.rootpath},result));
   }).join('');
-  this.$searchContainer.html(html).foundation();
-  if(this.onSearch) {this.onSearch(term, this.filter, this.sort, results);}
+
+  this.$searchContainer.html(blockHTML).foundation();
+  if(kitResults) {
+    var kitHTML = _.map(kitResults, function(result) {
+      return kitTemplate(_.extend({root: self.rootpath},result));
+    }).join('');
+    this.$kitContainer.html(kitHTML).foundation();
+  }
+  if(this.onSearch) {this.onSearch(term, this.filter, this.sort, blockResults, kitResults);}
 };
 
 Search.prototype.findResults = function(value) {
   if (!this.data) { return []; }
   var data;
   data = this.searchableData;
+
+  var results = _.map(_.filter(data, function(pair) {
+    return pair[0].indexOf(value) !== -1;
+  }), function(pair) {return pair[1]});
+  // TODO: Actual results;
+  return results;
+};
+
+Search.prototype.findKitResults = function(value) {
+  if (!this.kitData) { return []; }
+  var data;
+  data = this.searchableKitData;
 
   var results = _.map(_.filter(data, function(pair) {
     return pair[0].indexOf(value) !== -1;

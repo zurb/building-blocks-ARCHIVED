@@ -1,10 +1,12 @@
-.dropdown-pane {
+.download-dropdown-pane {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   color: $dark-blue;
   font-size: 1rem;
   font-weight: $global-weight-semibold;
   padding: 0;
-  
+  @include breakpoint(medium) {
+    width: 500px;
+  }
   .input-group {
     margin-bottom: 0;
   }

@@ -56,11 +56,13 @@ if($searchInput.is('*')) {
   window.search = new Search({
     input: $('input[type="search"]'),
     searchContainer: $('#search-results-container .card-container'),
+    kitContainer: $('#search-results-container .kit-container'),
     initialQuery: params.q,
-    onSearch: function(term, filter, sort, results) {
+    onSearch: function(term, filter, sort, results, kitResults) {
       if(term.length > 0 || filter !== 'all' || sort !== 'newest') {
         $('#main-results-container').hide();
         $('#search-results-container').show();
+        $('#search-results-container').foundation();
         $('#result-count').text(results.length);
       } else {
         $('#main-results-container').show();
