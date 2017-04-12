@@ -1,11 +1,14 @@
 name: Vertical Bar Graph
-description: A responsive flexbox-based vertical bar graph using only html and scss.
+description: A responsive flexbox-based vertical bar graph using only HTML and SCSS.
 category: status
 tags:
   - graph
-  - bar
+  - chart
   - data
-  - viz
+  - vizualization
+  - dashboard
+  - admin
+  - app
 versions:
   - 6.3.0
   - 6.3.1
