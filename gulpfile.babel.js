@@ -121,7 +121,7 @@ function copyBBFiles() {
 
 // Copy page templates into finished HTML files
 function kitIndex() {
-  return gulp.src('src/pages/kits.html')
+  return gulp.src(['src/pages/kits.html', 'src/pages/how-to.html'])
     .pipe(getNewPanini({
       root: 'src/pages/',
       layouts: 'src/layouts/',

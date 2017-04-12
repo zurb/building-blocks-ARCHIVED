@@ -1,0 +1,14 @@
+.sidenav-bb {
+  @include menu-base;
+  @include menu-direction(vertical);
+}
+
+[data-magellan] a {
+  color: $primary-color;
+
+  &.active,
+  &.active:focus {
+    background: $primary-color;
+    color: $white;
+  }
+}

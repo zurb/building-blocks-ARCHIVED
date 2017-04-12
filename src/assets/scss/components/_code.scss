@@ -97,3 +97,37 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
     background: $code-button-bg;
   }
 }
+
+.docs-code code {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  margin-bottom: 1.5rem;
+}
+
+.docs-code .bash::before {
+  content: '$ ';
+  color: #ccc;
+}
+
+.docs-code .bash::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.25rem;
+  background: #777;
+  border-radius: 4px 4px 0 0;
+}
+
+.docs-code .bash {
+  border: 0;
+  background: #333;
+  color: $white;
+  border-radius: 4px;
+  position: relative;
+  padding-top: 2rem;
+}
