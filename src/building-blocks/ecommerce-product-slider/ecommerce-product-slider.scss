@@ -20,66 +20,18 @@
   }
 }
 
-.product-listing {
-  margin-left: 2rem;
-  width: 132px;
-  position: relative; 
+.product-card {
+  background-color: $white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.product-listing-thumbnail-image-wrapper {
+.product-card-thumbnail {
   display: block;
   position: relative;
-  text-align: center;
-  
-  .product-thumbnail-image {
-    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.4);
-  }
 }
 
-.quick-view {
-  position: absolute;
-  bottom: 0;
-  transform: translateX(-50%);
-  left: 50%;
-  width: 80%;
-  display: none;
-}
-
-.button.white-hollow {
-  border: 1px solid $white;
-  color: $white;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.04rem;
-  font-size: 0.8rem;
-  background-color: transparent;
-  transition: border 0.5s ease;
-  transition: color 0.5s ease;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border: 1px solid darken($white, 30%);
-    color: darken($white, 30%);
-    transition: border 0.5s ease;
-    transition: color 0.5s ease;
-  }
-}
-
-.product-thumbnail {
-  width: 200px;
-  outline: none;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-}
-
-.product-thumbnail:hover {
-  .quick-view {
-    display: block;
-  }
-}
-
-.product-thumbnail-title {
+.product-card-title {
   font-size: 0.9rem;
   font-weight: 600;
   font-family: 'Open sans', sans-serif;
@@ -89,14 +41,14 @@
   margin-bottom: 0;
 }
 
-.product-thumbnail-author {
+.product-card-desc {
   font-size: 0.85rem;
   font-family: 'Open sans', sans-serif;
   color: $dark-gray;
   display: block;
 }
 
-.product-thumbnail-price {
+.product-card-price {
   font-size: 0.85rem;
   display: inline-block;
   font-weight: 600;
@@ -105,7 +57,7 @@
   margin-top: 0.8rem;
 }
 
-.product-thumbnail-sale {
+.product-card-sale {
   font-size: 0.85rem;
   color: darken($medium-gray,10%);
   text-decoration: line-through;
@@ -114,13 +66,12 @@
   margin-bottom: 0.5rem;
 }
 
-.product-thumbnail-colors {
+.product-card-colors {
   display: block;
 }
 
-.product-color {
+.product-card-color-option {
   display: inline-block;
-  background: $dark-gray;
-  height: 20px;
-  width: 15px;
+  height: 25px;
+  width: 25px;
 }
