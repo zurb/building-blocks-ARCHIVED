@@ -9,6 +9,8 @@
     <link rel="icon" href="{{root}}assets/img/icons/foundation-favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <meta name="rootpath" content="{{root}}">
+    <meta name="bbfile" content="{{root}}data/building-blocks.json">
   </head>
   <body class="{{#ifpage 'index'}} page-background-alt {{/ifpage}}">
 
@@ -40,30 +42,35 @@
             <h2 class="kit-details-header-text-heading">Building Blocks In The Kit</h2>
           </div>
           <div class="columns shrink kit-details-action">
-            <a class="kit-details-search">
-              <span class="kit-details-search-text" data-toggle="bb-search-bar bb-filter-icons-container">Find More Building Blocks</span>
+            <a class="kit-details-search" data-toggle="bb-search-bar">
+              <span class="kit-details-search-text">Find More Building Blocks</span>
               <img class="inject-me kit-details-search-icon" src="{{root}}assets/img/icons/filter-search.svg" alt="Search">
             </a>
           </div>
+          {{> search-bar type="kits"}}
 
-
-          </div>
-          <div class="row small-up-1 medium-up-2 large-up-3">
-            {{#each kit.blocks}}
-            <div class="column column-block card-block">
-              {{> building-block-card this}}
+        </div>
+          <div id="main-results-container">
+            <div class="row small-up-1 medium-up-2 large-up-3">
+              {{#each kit.blocks}}
+              <div class="column column-block card-block">
+                {{> building-block-card this}}
+              </div>
+              {{/each}}
             </div>
-            {{/each}}
           </div>
         </div>
-        {{#ifpage 'index'}}
-          {{> pagination}}
-        {{/ifpage}}
+        <div id="search-results-container">
+          <div class="row small-up-1 medium-up-2 large-up-3 card-container">
+          </div>
+        </div>
         {{> preview-modal}}
       </div>
       {{> footer}}
     </div>
 
+    {{{partial-as-script 'building-block-card' 'building-block/building-block-card-with-column.html'}}}
+    {{{partial-as-script 'kit-card' 'kit/kit-card-with-column.html'}}}
     <script src="{{root}}assets/js/app.js"></script>
   </body>
 </html>
