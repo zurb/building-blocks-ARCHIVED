@@ -2,9 +2,9 @@ name: 'Testimonial Slider'
 tags:
   - testimonial
   - slider
-  - container
+  - containers
   - quote
-category: container
+category: containers
 description: A Responsive slider container for testimonials and quotes from individuals or companies.
 versions:
   - 6.3.1
