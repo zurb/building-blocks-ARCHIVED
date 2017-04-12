@@ -93,6 +93,9 @@
     top: 0;
   }
 }
+.liked .bb-like-button path {
+  fill: $primary-color;
+}
 
 .bb-media-stats {
   color: $dark-gray;

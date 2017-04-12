@@ -1,12 +1,13 @@
 name: "Sign In Form"
 tags:
-  - form
-  - sign-in
+  - forms
+  - login
 category: form
-description: 'test'
+description: A stylish and modern sign-in form with rounded form inputs.
 versions:
   - 6.3.0
   - 6.3.1
 author:
+  github: canterberrie
   name: Christine Siu
 containerClass: "row columns medium-7 align-center container-padded"

@@ -3,9 +3,12 @@ tags:
   - navigation
   - nav
   - menu
-  - topbar
   - top bar
+  - mega-menu
+  - dropdown
+  - flexbox
 category: navigation
+description: A topbar navigation mega-menu with search field.
 versions:
   - 6.3.1
   - 6.3.0
@@ -14,4 +17,7 @@ versions:
   - 6.2.3
   - 6.2.0
 author:
+  github: rafibomb
+  'foundation-forum': 10
   name: Rafi
+containerClass: row column

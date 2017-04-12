@@ -3,12 +3,12 @@ tags:
   - navigation
   - nav
   - menu
-  - topbar
   - top bar
+  - js
   - dropdown menu
   - animation
 category: navigation
-description:
+description: A top bar navigation with a dropdown with subtle fade in/out animation.
 versions:
   - 6.3.1
   - 6.3.0
@@ -17,4 +17,7 @@ versions:
   - 6.2.3
   - 6.2.0
 author:
+  github: rafibomb
+  'foundation-forum': 10
   name: Rafi
+containerClass: row column align-center

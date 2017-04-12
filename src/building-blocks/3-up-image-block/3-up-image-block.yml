@@ -1,12 +1,15 @@
 name: '3-Up Image Block'
 tags:
-  - media
-  - image-layout
+  - feature
+  - image
+  - links
+  - layout
 category: media
-description: Three image block that stacks when in mobile.
+description: A simple and useful three image block that stacks on mobile.
 versions:
   - 6.3.1
   - 6.3.0
 author:
   name: Laurel Beyers
+  github: LaurelBCodin
 containerClass: container-padded

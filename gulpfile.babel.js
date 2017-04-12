@@ -13,6 +13,7 @@ import sassLint     from 'gulp-sass-lint';
 import gulpRename   from 'gulp-rename';
 import _            from 'lodash';
 import requireDir   from 'require-dir';
+import stripCssComments from 'gulp-strip-css-comments';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -39,34 +40,45 @@ gulp.task('lint', function () {
   .pipe(sassLint.failOnError())
 });
 
+// Resets Panini so that we can assemble using different layouts for the iframes and building block pages
+function getNewPanini(options) {
+  var p = new panini.Panini(options);
+  p.loadBuiltinHelpers();
+  p.refresh();
+  return p.render()
+}
 
-gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles));
+gulp.task('copy', gulp.parallel(copyAssets, copyData, copyBBImages, copyBBFiles, copyKitImages));
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, 'copy'), styleGuide));
+ gulp.series(clean, 'lint', gulp.parallel(pages, sass, javascript, images, copyAssets), styleGuide));
 
 // Build the site, run the server, and watch for file changes
-gulp.task('default',
-  gulp.series('build', server, watch));
+gulp.task('static',
+  gulp.series('build', server, watchStatic));
+
+gulp.task('dynamic-pages', gulp.series(kitIndex, 'kits-pages', 'building-block-indices', 'building-block-pages'));
 
 gulp.task('bb-iframe',
-  gulp.series(clean,'building-block-meta', buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, buildingBlockPage, buildingBlockIframe, 'building-block-indices', sass, javascript, images, 'copy'));
+  gulp.series(clean,'building-block-meta',  buildingBlockBaseStyles, buildingBlockSass, buildingBlockJS, 'dynamic-pages', 'copy', 'zip', sass, javascript, images));
 
 // Create Building Blocks
 gulp.task('bb',
 gulp.series('bb-iframe', server, watch ));
 
-// Uploads the documentation to the live server
-gulp.task('deploy', gulp.series('bb-iframe', function() {
-  return gulp.src('./dist/**')
+gulp.task('rsync', function() {
+  return gulp.src('dist/**/*')
     .pipe($.prompt.confirm('Make sure everything looks right before you deploy.'))
     .pipe($.rsync({
       root: './dist',
       hostname: 'deployer@72.32.134.77',
       destination: '/home/deployer/sites/building-blocks'
     }));
-}));
+});
+
+// Uploads the documentation to the live server
+gulp.task('deploy', gulp.series('bb-iframe',  'rsync'));
 
 
 // Delete the "dist" folder
@@ -94,17 +106,38 @@ function copyData() {
 function copyBBImages() {
   return gulp.src('src/building-blocks/**/*.png')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
+  }
+
+function copyKitImages() {
+  return gulp.src('src/kits/**/*.png')
+    .pipe(gulp.dest(PATHS.dist + '/assets/img/kits/'));
 }
 
+
 function copyBBFiles() {
-  return gulp.src('src/building-blocks/**/*.{html,js,scss}')
+  return gulp.src(['src/building-blocks/**/*.{html,js,scss}', 'dist/building-blocks/**/*.css', '!dist/building-blocks/**/layout.css'])
     .pipe(gulp.dest(PATHS.dist + '/files/building-blocks/'));
 }
 
 // Copy page templates into finished HTML files
+function kitIndex() {
+  return gulp.src('src/pages/kits.html')
+    .pipe(getNewPanini({
+      root: 'src/pages/',
+      layouts: 'src/layouts/',
+      partials: 'src/partials/',
+      data: ['src/data/', PATHS.build + '/data'],
+      helpers: 'src/panini-helpers/'
+    }))
+    .pipe(gulp.dest(PATHS.dist));
+  }
+
+gulp.task('kit-index', kitIndex)
+
+// Copy page templates into finished HTML files
 function pages() {
   return gulp.src('src/pages/**/*.{html,hbs,handlebars}')
-    .pipe(panini({
+    .pipe(getNewPanini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
       partials: 'src/partials/',
@@ -114,37 +147,13 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
   }
 
-// Resets Panini so that we can assemble using different layouts for the iframes and building block pages
-function getNewPanini(options) {
-  var p = new panini.Panini(options);
-  p.loadBuiltinHelpers();
-  p.refresh();
-  return p.render()
-}
-
-// Create a building block
-function buildingBlockIframe() {
-  return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
-    .pipe(getNewPanini({
-      root: 'src/',
-      layouts: 'src/layouts/building-blocks/iframe/',
-      partials: 'src/partials/building-block/',
-      data: ['src/data/', PATHS.build + '/data'],
-      helpers: 'src/panini-helpers/'
-    }))
-    .pipe(gulpRename(function (path) {
-      path.basename += "-iframe";
-    }))
-    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
-}
-
 function buildingBlockBaseStyles() {
   return gulp.src(['src/building-blocks/app.scss', 'src/building-blocks/app-float.scss'])
     .pipe($.sass({
       includePaths: PATHS.sass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
+      .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
     // Comment in the pipe below to run UnCSS in production
@@ -157,8 +166,10 @@ function buildingBlockBaseStyles() {
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/**/*.scss'])
     .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
+    .pipe(stripCssComments())
     .pipe($.sass({
-      includePaths: PATHS.sass
+      includePaths: PATHS.sass,
+      outputStyle: 'expanded'
     })
       .on('error', $.sass.logError))
     .pipe($.autoprefixer({
@@ -174,19 +185,6 @@ function buildingBlockSass() {
 // Moves JS from the Building Blocks into the dist
 function buildingBlockJS() {
   return gulp.src('src/building-blocks/**/*.js')
-    .pipe(gulp.dest(PATHS.dist + "/building-block/"));
-}
-
-// Compiles the building block page
-function buildingBlockPage() {
-  return gulp.src('src/building-blocks/**/*.{html,hbs,handlebars}')
-    .pipe(getNewPanini({
-      root: 'src/',
-      layouts: 'src/layouts/building-blocks/page/',
-      partials: 'src/partials',
-      data: ['src/data/', PATHS.build + '/data'],
-      helpers: 'src/panini-helpers/'
-    }))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
@@ -262,17 +260,29 @@ function reload(done) {
   done();
 }
 
+
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, gulp.series('copy', reload));
-  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(buildingBlockPage, buildingBlockIframe, 'building-block-indices', reload));
-  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series(buildingBlockPage, buildingBlockIframe, 'building-block-indices', reload));
-  gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass, buildingBlockPage, buildingBlockIframe, reload));
-  gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, buildingBlockPage, buildingBlockIframe, reload));
+  gulp.watch('src/pages/**/*.html').on('all', gulp.series(kitIndex, reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(kitIndex, 'dynamic-pages',  reload));
+  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
+  gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
+  gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
   gulp.watch('src/building-blocks/**/*.png').on('all', gulp.series('copy', reload));
-  gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', buildingBlockPage, buildingBlockIframe, 'building-block-indices', reload));
+  gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
+  gulp.watch('src/kits/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, reload));
+  gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload));
+  gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload));
+  gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, reload));
+}
+// Watch for changes to static assets, pages, Sass, and JavaScript
+function watchStatic() {
+  gulp.watch(PATHS.assets, gulp.series('copy', reload));
+  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(pages, reload));
+  gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload));
   gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, reload));

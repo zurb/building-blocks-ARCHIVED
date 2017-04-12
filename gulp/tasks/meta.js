@@ -6,6 +6,7 @@ import fs           from 'fs';
 import yaml         from 'js-yaml';
 import async        from 'async';
 import through      from 'through2';
+import path         from 'path';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -23,7 +24,8 @@ function buildingBlockCombineMeta() {
     .pipe($.jsoncombine('building-blocks.json', function(files) {
       var output = {};
       _.each(files, (value, key) => {
-        var name = key.split('/')[0];
+        var name = key.split(path.sep)[0];
+        value.datakey = name;
         output[name] = value;
         output[name].href = 'building-block/' + key + '.html';
         output[name].thumb = 'assets/img/building-block/' + key + '.png';
@@ -57,6 +59,40 @@ function majorVersions(versions) {
   return list;
 }
 
+function kitsInitial() {
+  return gulp.src('src/kits/**/*.{yml,yaml}')
+    .pipe($.yaml())
+    .pipe($.jsoncombine('kits.json', function(files) {
+      var output = {};
+      _.each(files, (value, key) => {
+        var name = key.split(path.sep)[0];
+        value.datakey = name;
+        output[name] = value;
+        output[name].href = 'kits/' + name + '.html';
+        output[name].thumb = 'assets/img/kits/' + key + '.png';
+        output[name].total = value.blocks.length;
+      })
+      return new Buffer(JSON.stringify(output));
+    }))
+    .pipe(gulp.dest(PATHS.build + '/data/'));
+}
+
+function kitsAddBlocks() {
+  return gulp.src([PATHS.build + '/data/building-blocks.json', PATHS.build + '/data/kits.json'])
+    .pipe($.jsoncombine('kits.json', function(data) {
+      var output = data.kits;
+      _.each(data.kits, (value, key) => {
+        var blocks = []
+        _.each(value.blocks, (blockName) => {
+          blocks.push(data['building-blocks'][blockName])
+        });
+        output[key].blocks = blocks;
+      });
+      return new Buffer(JSON.stringify(output));
+    }))
+    .pipe(gulp.dest(PATHS.build + '/data/'));
+}
+
 function buildingBlockCategoryMeta() {
   return gulp.src(PATHS.build + '/data/building-blocks.json')
     .pipe($.jsoncombine('categories.json', function(data) {
@@ -64,7 +100,7 @@ function buildingBlockCategoryMeta() {
       output['index'] = {blocks: [], total: 0, versions: []}
       output['featured'] = {blocks: [], total: 0, versions: []}
       _.each(data['building-blocks'], (value, key) => {
-        var category = value['category']
+        var category = value['category'];
         output[category] = output[category] || {};
         output[category].blocks = output[category].blocks || [];
         output[category].total = output[category].total || 0;
@@ -138,5 +174,5 @@ gulp.task('add-git-meta', function() {
 });
 
 gulp.task('building-block-meta',
-  gulp.series(buildingBlockCombineMeta, 'add-git-meta', buildingBlockCategoryMeta, buildingBlockTagsMeta));
+  gulp.series(buildingBlockCombineMeta, 'add-git-meta', buildingBlockCategoryMeta, buildingBlockTagsMeta, kitsInitial, kitsAddBlocks));
 

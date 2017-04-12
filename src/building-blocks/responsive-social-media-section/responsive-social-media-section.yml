@@ -1,12 +1,15 @@
 name: "Responsive Social Media Section"
 tags:
   - social
+  - social sharing
   - links
-  - features
-category: container
-description: A responsive section for social media links or any other featured links.
+  - feature
+  - flexbox
+category: containers
+description: A responsive section for social media links with icons or any other featured links.
 versions:
   - 6.3.0
   - 6.3.1
 author:
+  github: LaurelBCodin
   name: Laurel Beyers

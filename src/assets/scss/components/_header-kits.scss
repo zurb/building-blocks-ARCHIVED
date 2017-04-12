@@ -1,0 +1,105 @@
+.kit-header {
+  background-attachment: fixed;
+  background-color: $dark-blue;
+  background-image: url('../../assets/img/images/kit-background-ex.png');
+  background-position: center 100px;
+  background-repeat: no-repeat;
+  height: 50vh;
+  max-height: 460px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(large up) {
+    background-size: 70%;
+    max-height: 350px;
+  }
+
+  @include breakpoint(medium only) {
+    background-size: 90vw;
+    height: 40vh;
+    max-height: 300px;
+  }
+
+  @include breakpoint(small only) {
+    background-size: 95vw;
+    height: 200px;
+  }
+
+  @media (min-width: 1600px) {
+    max-height: 500px;
+  }
+}
+
+.kit-details {
+  background: $white;
+  padding: $page-spacing;
+}
+
+.kit-details-summary {
+  color: $dark-blue;
+}
+
+.kit-details-action {
+  @include breakpoint(small only) {
+    width: 100%;
+  }
+
+}
+.kit-details-header {
+  margin-bottom: 5rem;
+  position: relative;
+  .bb-search-bar-container {
+    height: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 15px);
+    background-color: $pale-blue;
+    .bb-search-bar {
+      background-color: $pale-blue;
+      top: 50%;
+    }
+  }
+}
+
+.kit-details-header-text {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(small only) {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .kit-details-header-text-heading {
+  color: $dark-blue;
+  font-size: rem-calc(23);
+  font-weight: $global-weight-bold;
+  margin-bottom: 0;
+  }
+}
+
+.kit-details-search {
+  align-items: center;
+  background-color: darken($pale-blue, 5%);
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+
+}
+
+.kit-details-search-text {
+  color: $dark-blue;
+  margin-right: 1rem;
+}
+
+.kit-details-search-icon {
+  width: 0.8rem;
+
+  * {
+    fill: $dark-blue;
+  }
+
+}
+
