@@ -1,0 +1,22 @@
+$mobile-app-filter-menu-height: rem-calc(45);
+
+.mobile-app-filter-menu {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  margin: 0;
+  height: $mobile-app-filter-menu-height;
+  align-items: center;
+
+  li {
+    a {
+      color: $medium-gray;
+    }
+
+    &.active {
+      a {
+        color: $dark-gray;
+      }
+    }
+  }
+}

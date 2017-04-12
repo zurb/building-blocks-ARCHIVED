@@ -5,3 +5,5 @@ blocks:
   - mobile-nav-bar
   - mobile-bottom-bar
   - mobile-action-sheet
+  - mobile-ios-modal
+  - mobile-app-filter-menu
