@@ -1,0 +1,59 @@
+/// Default background color of the panel
+/// @type Color
+$panel-container-background-color: $white !default;
+
+/// Default radius of the panel
+/// @type List
+$panel-container-radius: $global-radius !default;
+
+/// Default bottom border width of the panel's header
+/// @type Number
+$panel-header-border-bottom-width: rem-calc(1) !default;
+
+/// Default bottom border color of the panel's header
+/// @type Color
+$panel-header-border-bottom-color: $light-gray !default;
+
+/// Default font color of the panel's title
+/// @type Color
+$panel-header-color: $primary-color;
+
+/// Default font size of the panel's title
+/// @type Number
+$panel-header-font-size: rem-calc(24);
+
+
+.posts-panel{
+    @include grid-col-row();  
+    background-color: $panel-container-background-color;
+    border-radius: $panel-container-radius;
+    box-shadow: rem-calc(0 0 4 0) rgba(0,0,0,.2);
+    
+    .panel-header{
+        @include grid-col-row(); 
+        border-bottom: $panel-header-border-bottom-width solid $panel-header-border-bottom-color;
+
+        .panel-title{
+            margin: 0;
+            padding: rem-calc(5 0);
+            color: $panel-header-color;
+            font-size: $panel-header-font-size;
+        }
+    }
+    .panel-content{
+        @include grid-col-row(); 
+        .pinned-post{
+
+        }
+
+        .posts-list{
+
+        }
+
+        .post-item{
+
+        }
+    }
+    
+
+}
