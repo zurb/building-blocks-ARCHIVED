@@ -58,6 +58,9 @@
   font-size: rem-calc(15);
   margin-left: 0.5rem;
   text-transform: none;
+  a {
+    color: $dark-gray;
+  }
 
   @include breakpoint(small only) {
     display: block;
