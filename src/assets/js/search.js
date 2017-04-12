@@ -65,6 +65,7 @@ Search.prototype.updateSearch = function(event) {
   var term = this.$input.val();
   var results;
   if(term.length > 0) {
+    console.log('looking for ', term.toLowerCase());
     results = this.findResults(term.toLowerCase());
   } else {
     results = this.localData;
@@ -72,6 +73,7 @@ Search.prototype.updateSearch = function(event) {
 
   results = this.sortResults(this.filterResults(results));
 
+  console.log('results', results);
 
   var template = this.template;
   var self = this;
