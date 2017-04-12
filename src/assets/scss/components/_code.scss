@@ -1,8 +1,9 @@
-$code-button-bg: rgba(0, 67, 91, 0.08);
+$code-button-bg: rgba(0,67,91,0.08);
+$transparent-bg: rgba(248,249,250,0.90);
 
 .code-menu {
-  width: auto;
   padding-top: 1rem;
+  width: auto;
 }
 
 .code-menu-item {
@@ -11,7 +12,6 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 
   a {
     color: $dark-blue;
-    font-weight: $global-weight-bold;
     font-size: rem-calc(18);
     font-weight: $global-weight-bold;
     text-transform: uppercase;
@@ -28,7 +28,11 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   }
 
   &.is-disabled {
-    color: $medium-gray;
+    pointer-events: none;
+
+    a {
+      color: $medium-gray;
+    }
   }
 }
 
@@ -61,12 +65,22 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
 }
 
 .code-box-header {
-  height: rem-calc(48);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background: $transparent-bg;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .code-box-script {
-    overflow: scroll;
-    height: 90%;
+  height: 100%;
+  overflow: scroll;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
 }
 
 .code-block-toggle {
@@ -77,8 +91,6 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   }
 }
 
-
-
 .code-toggler {
   color: $dark-blue;
   font-size: rem-calc(14);
@@ -88,11 +100,45 @@ $code-button-bg: rgba(0, 67, 91, 0.08);
   text-transform: uppercase;
 
   &.inactive {
-    width: rem-calc(100);
     display: inline-block;
+    width: rem-calc(100);
   }
 
   &.is-active {
     background: $code-button-bg;
   }
+}
+
+.docs-code code {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  margin-bottom: 1.5rem;
+}
+
+.docs-code .bash::before {
+  content: '$ ';
+  color: #ccc;
+}
+
+.docs-code .bash::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.25rem;
+  background: #777;
+  border-radius: 4px 4px 0 0;
+}
+
+.docs-code .bash {
+  border: 0;
+  background: #333;
+  color: $white;
+  border-radius: 4px;
+  position: relative;
+  padding-top: 2rem;
 }

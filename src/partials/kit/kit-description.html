@@ -1,0 +1,24 @@
+ <!--kit details section-->
+ <div class="kit-details">
+
+  <!--breadcrumbs-->
+  <div class="row column">
+    {{> bb-breadcrumbs kit=this}}
+  </div>
+
+  <!--kit details-->
+  <div class="row">
+    <!--summary-->
+    <div class="columns kit-details-summary">
+      <h1 class="kit-card-header">{{#if name}}{{name}}{{else}}E-Commerce Kit{{/if}}</h1>
+      <p class="kit-card-sub-header">{{#if description}}{{description}}{{else}}Get started building an e-commerce site with these components{{/if}}</p>
+    </div>
+    <div class="columns kit-details-action shrink">
+      <button class="kit-card-primary blue float-right" type="button" data-toggle="example-dropdown">Download<div class="arrow-down white"></div></button>
+      {{>kit-dropdown}}
+      <div class="kit-card-link blue">
+        <a class="kit-card-link-text blue" target="_blank" href="{{@root.root}}/how-to.html#use">How do I use This?</a>
+      </div>
+    </div>
+  </div>
+</div>

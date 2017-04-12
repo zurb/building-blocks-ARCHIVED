@@ -1,5 +1,14 @@
 <div class="building-block-preview">
   <div class="row align-center expanded building-block-iframe-wrapper">
-      <iframe class="building-block-iframe" src="{{bb-iframe-path page}}" frameborder="0"></iframe>
+      <div class="bb-like">
+        <a data-like="{{block.datakey}}"><img src="{{root}}assets/img/icons/bb-like.svg" alt="" class="inject-me bb-like-button"></a>
+        <span class="bb-media-stats"><!-- 6 Views &#8226; --><span data-likes="{{block.datakey}}"></span> Likes</span>
+      </div>
+    <iframe class="building-block-iframe" src="{{bb-iframe-path page}}" frameborder="0"></iframe>
+  </div>
+  <div class="building-block-description">
+    <div class="row align-center">
+      <p>{{block.description}}</p>
+    </div>
   </div>
 </div>

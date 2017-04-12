@@ -12,11 +12,7 @@
       <button class="bb-search-button" data-toggle="bb-search-bar bb-filter-icons-container"><img src="{{root}}assets/img/icons/filter-search.svg" class="inject-me bb-search-icon" height="" title="Search Building Blocks" width="30" alt="Search icon"><span></span></button>
     </div>
     <!--search container-->
-    <div class="bb-search-bar-container fast" id="bb-search-bar" data-toggler=".is-hidden" data-animate="fade-in fade-out" data-closable>
-      <input type="search" placeholder="Search for a building block..." class="bb-search-bar fast">
-      <button class="close-button fast" data-close>&times;</button>
-      <p class="bb-search-subtext fast"><span id="result-count">0</span> Results</p>
-    </div>
+    {{> search-bar type="blocks"}}
   </div>
 </div>
 

@@ -15,5 +15,5 @@ versions:
 author:
   github: LaurelBCodin
   name: Laurel Beyers
-containerClass:
+containerClass: 'row columns container-padded' 
 

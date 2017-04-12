@@ -1,0 +1,12 @@
+name: Ecommerce
+short_description: Display your products and make some sales with a beautiful online store.
+description: Most business could benefit from an online storefront and the Ecommerce Kit makes it a snap to build. In this kit you’ll find a slick responsive pricing table, some product cards and feature sections, and an assortment of “add to cart” buttons so you’ll be able to display and sell your products with a slick new ecommerce site.
+blocks:
+  - ecommerce-product-card
+  - product-feature-section
+  - pricing-table
+  - button-add-cart
+  - button-hover-addcart
+  - shopping-cart-button
+  - checkout-summary
+  - promotion-hero-links
