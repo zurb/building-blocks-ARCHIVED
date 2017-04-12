@@ -2,18 +2,10 @@
   background: $light-gray;
   padding: 1rem 1rem;
 
-  .orbit-previous {
-    color: $black;
-    left: -1rem;
-
-    &:hover, &:active, &:focus {
-      background-color: transparent;
-    }
-  }
-
+  .orbit-previous,
   .orbit-next {
     color: $black;
-    right: -1rem;
+    left: -1rem;
 
     &:hover, &:active, &:focus {
       background-color: transparent;
