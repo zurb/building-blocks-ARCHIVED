@@ -5,11 +5,18 @@
   .orbit-previous,
   .orbit-next {
     color: $black;
-    left: -1rem;
 
     &:hover, &:active, &:focus {
       background-color: transparent;
     }
+  }
+  
+  .orbit-previous {
+    left: -1rem;
+  }
+  
+  .orbit-next {
+    right: -1rem;
   }
 
   .testimonial-slide {
