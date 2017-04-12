@@ -66,17 +66,17 @@ function buildingBlockFrameLayouts() {
         .pipe($.rename(function(path) {
           path.basename = fileName;
          }))
-        .pipe(gulp.dest(PATHS.build + '/building-block/' + fileName + '/'));
+        .pipe(gulp.dest(PATHS.build + '/building-block/'));
       } else {
         return defaultTemplate(fileName + '.html', fileName)
-        .pipe(gulp.dest(PATHS.build + '/building-block/' + fileName + '/'));
+        .pipe(gulp.dest(PATHS.build + '/building-block/'));
       }
     }));
 }
 
 // Create a building block
 function buildingBlockIframe() {
-  return gulp.src(PATHS.build + '/building-block/**/*.{html,hbs,handlebars}')
+  return gulp.src(PATHS.build + '/building-block/*.{html,hbs,handlebars}')
     .pipe(getNewPanini({
       root: PATHS.build,
       layouts: 'src/layouts/building-blocks/iframe/',
@@ -92,7 +92,7 @@ function buildingBlockIframe() {
 
 // Compiles the building block pages
 function buildingBlockPage() {
-  return gulp.src(PATHS.build + '/building-block/**/*.{html,hbs,handlebars}')
+  return gulp.src(PATHS.build + '/building-block/*.{html,hbs,handlebars}')
     .pipe(getNewPanini({
       root: PATHS.build,
       layouts: 'src/layouts/building-blocks/page/',
