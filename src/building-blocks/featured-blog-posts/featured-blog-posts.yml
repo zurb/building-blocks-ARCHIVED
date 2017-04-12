@@ -12,4 +12,4 @@ author:
   name: Abdullah Salem
   github: abdullahsalem
   'foundation-forum': 3045
-containerClass: container-padded row
+containerClass: row column small-6 align-center container-padded
