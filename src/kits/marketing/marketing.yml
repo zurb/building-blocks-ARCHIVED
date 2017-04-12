@@ -10,6 +10,8 @@ blocks:
   - topbar-responsive
   - read-more
   - testimonial-block-vertical
+  - featured-testimonials
+  - testimonial-slider
   - product-feature-section
   - pricing-table
   - topbar-center-logo

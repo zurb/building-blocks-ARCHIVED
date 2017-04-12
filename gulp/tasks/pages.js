@@ -62,16 +62,15 @@ function buildingBlockFrameLayouts() {
     var fileName = file.path.substr(file.path.lastIndexOf(path.sep) + 1);
       var layout = file.path + "/layout.html";
       if (fs.existsSync(layout)) {
-        gulp.src(layout)
+        return gulp.src(layout)
         .pipe($.rename(function(path) {
           path.basename = fileName;
          }))
         .pipe(gulp.dest(PATHS.build + '/building-block/' + fileName + '/'));
       } else {
-        defaultTemplate(fileName + '.html', fileName)
+        return defaultTemplate(fileName + '.html', fileName)
         .pipe(gulp.dest(PATHS.build + '/building-block/' + fileName + '/'));
       }
-      return stream;
     }));
 }
 

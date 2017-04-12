@@ -4,6 +4,8 @@ blocks:
   - portfolio-hero-header
   - work-feature-block
   - testimonial-block-vertical
+  - featured-testimonials
+  - testimonial-slider
   - portfolio-resume-scrolling-container
   - portfolio-resume
   - topbar-responsive
