@@ -1,0 +1,7 @@
+name: Mobile App
+description: A Foundation Building Block Kit filled with components for creating a mobile app
+blocks:
+  - block-list
+  - mobile-nav-bar
+  - mobile-bottom-bar
+  - mobile-action-sheet
