@@ -8,22 +8,11 @@
   width: 0.65rem;
 }
 
-.hero-slider-slide {
-  background-color: $white;
-  padding: 1.5rem; 
-}
-
-.hero-slider-slide-content {
-  p {
-    font-size: 0.9rem; 
-    color: $dark-gray;
-  }
-}
-
 .product-card {
   background-color: $white;
+  border: 1px solid $light-gray;
   padding: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;  
 }
 
 .product-card-thumbnail {
@@ -32,42 +21,40 @@
 }
 
 .product-card-title {
+  font-family: 'Open sans', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  font-family: 'Open sans', sans-serif;
-  margin-top: 1rem;
-  color: darken($dark-gray,30%);
   line-height: 1.45rem;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 
 .product-card-desc {
-  font-size: 0.85rem;
-  font-family: 'Open sans', sans-serif;
   color: $dark-gray;
   display: block;
+  font-family: 'Open sans', sans-serif;
+  font-size: 0.85rem;
 }
 
 .product-card-price {
-  font-size: 0.85rem;
-  display: inline-block;
-  font-weight: 600;
   color: darken($dark-gray,30%);
-  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
   margin-top: 0.8rem;
 }
 
 .product-card-sale {
-  font-size: 0.85rem;
-  color: darken($medium-gray,10%);
-  text-decoration: line-through;
+  color: $medium-gray;
   display: inline-block;
+  font-size: 0.85rem;
   margin-left: 0.3rem;
-  margin-bottom: 0.5rem;
+  text-decoration: line-through;
 }
 
 .product-card-colors {
   display: block;
+  margin-top: 0.8rem;
 }
 
 .product-card-color-option {
