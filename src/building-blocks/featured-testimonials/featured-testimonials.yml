@@ -1,10 +1,10 @@
 name: 'Featured Testimonials'
 tags:
   - testimonial
-  - container
+  - containers
   - responsive
   - quote
-category: container
+category: containers
 description: A Responsive container for multiple testimonials and quotes from individuals or companies.
 versions:
   - 6.3.1
