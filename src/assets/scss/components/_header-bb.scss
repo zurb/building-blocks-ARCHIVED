@@ -48,6 +48,7 @@
 
   @include breakpoint(small only) {
     padding-right: rem-calc(50);
+    display: block;
   }
 }
 
