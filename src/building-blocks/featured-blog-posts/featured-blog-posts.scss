@@ -8,7 +8,7 @@ $panel-container-radius: $global-radius !default;
 
 /// Default bottom border width of the panel's header
 /// @type Number
-$panel-header-border-bottom-width: rem-calc(1) !default;
+$panel-header-border-bottom-width: rem-calc(4) !default;
 
 /// Default bottom border color of the panel's header
 /// @type Color
@@ -16,11 +16,19 @@ $panel-header-border-bottom-color: $light-gray !default;
 
 /// Default font color of the panel's title
 /// @type Color
-$panel-header-color: $primary-color;
+$panel-header-color: $dark-gray;
 
 /// Default font size of the panel's title
 /// @type Number
-$panel-header-font-size: rem-calc(24);
+$panel-header-font-size: rem-calc(26) !default;
+
+/// Default bottom border color of the post
+/// @type Color
+$post-item-border-bottom-color: $light-gray !default;
+
+/// Default bottom border width of the post
+/// @type Number
+$post-item-border-bottom-width: rem-calc(1) !default;
 
 
 .posts-panel{
@@ -35,25 +43,88 @@ $panel-header-font-size: rem-calc(24);
 
         .panel-title{
             margin: 0;
-            padding: rem-calc(5 0);
+            padding: rem-calc(15 0);
             color: $panel-header-color;
             font-size: $panel-header-font-size;
         }
     }
     .panel-content{
-        @include grid-col-row(); 
-        .pinned-post{
-
+        padding: rem-calc(15 0);
+        
+        .pinned-post, .posts-list{
+            @include grid-col-row($gutters: 0); 
         }
 
         .posts-list{
-
+            .post-item:not(:last-child){
+                border-bottom: $post-item-border-bottom-width solid $post-item-border-bottom-color;
+            }
         }
 
-        .post-item{
 
+        .post-item{
+            @include grid-row();
+            padding: rem-calc(15 0);
+
+            .post-thumbnail{
+                display: block;
+                @include grid-column($columns: 4);
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .post-text{
+                @include grid-column($columns: 8);
+            }
+
+            .post-title{
+                font-size: rem-calc(26);
+            }
+
+            .post-meta{
+                color: $dark-gray;
+                font-size: rem-calc(14);
+            }
+
+            .meta{
+                display: inline-block;
+                margin-#{$global-right}: rem-calc(15);
+
+            }
+            .meta-icon, .meta-text{
+                display: inline-block;
+                padding-#{$global-right}: rem-calc(5);
+            }
+            .read-more{
+                display: block;
+                font-size: rem-calc(14);
+                .fa{
+                    padding: rem-calc(0 5)
+                }
+            }
+        }
+
+        .pinned-post{
+            .post-item{
+                //margin-bottom: rem-calc(20);
+                border-bottom: $post-item-border-bottom-width solid $post-item-border-bottom-color;
+            }
+            .post-thumbnail{
+                display: block;
+                @include grid-col-row();
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .post-text{
+                @include grid-col-row();
+                margin-top: rem-calc(15);
+            }
         }
     }
     
-
 }
