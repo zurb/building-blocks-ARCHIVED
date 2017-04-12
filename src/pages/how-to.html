@@ -10,13 +10,14 @@ filter-dropdowns: false
 layout: static
 ---
 
+<!--sticky menu-->
 <div class="row">
 
   <div class="column medium-3 large-3" data-sticky-container>
     <div class="sticky" data-sticky data-margin-top='2' data-top-anchor="hero-bb:bottom" data-btm-anchor="footer:top">
       <aside>
-        <ul class="sidenav-bb" data-magellan data-bar-offset="-25">
-          <li><a href="#what-is">What is a Building Block?</a></li>
+        <ul class="sidenav-bb" data-magellan data-bar-offset="50">
+          <li><a class="how-to-menu-item" href="#what-is">What is a Building Block?</a></li>
           <li><a href="#use">How to use a Building Block
 </a></li>
           <!-- <li><a href="#need">What Do I Need to Submit a Building Block?</a></li> -->
@@ -32,51 +33,55 @@ layout: static
     </div>
   </div>
 
+<!--what is a building block-->
   <div class="column medium-9 large-7">
 
-    <h2 id="what-is" data-magellan-target="what-is">What is a Building Block?</h2>
+    <h2 id="what-is" data-magellan-target="what-is" class="how-to-header">What is a Building Block?</h2>
 
-    <p>Building Blocks are coded UI components designed to be dropped into Foundation projects. Many Building Blocks are based on tried and true patterns that we’ve used in our client projects over the last five years at ZURB using Foundation. We also have  community Building Blocks too!</p>
+    <p class="how-to-paragraph">Building Blocks are coded UI components designed to be dropped into Foundation projects. Many Building Blocks are based on tried and true patterns that we’ve used in our client projects over the last five years at ZURB using Foundation. We also have  community Building Blocks too!</p>
 
-    <h4><strong>Building Blocks are:</strong></h4>
-    <ul>
+    <p class="how-to-small-title">Building Blocks are:</p>
+    <ul class="how-to-paragraph">
       <li>HTML, CSS, and JS snippets that work in any standard Foundation project</li>
       <li>Lightly styled components</li>
       <li>Easy to extend or customize</li>
       <li>Common solutions to layout or component challenges that are not core to the Framework</li>
     </ul>
 
-    <h4><strong>Building Blocks are NOT:</strong></h4>
-    <ul>
+    <p class="how-to-small-title">Building Blocks are NOT:</p>
+    <ul class="how-to-paragraph">
       <li>Templates</li>
       <li>Themes</li>
       <li>Overly stylized</li>
       <li>Code that does not integrate with Foundation</li>
     </ul>
 
-    <p class="lead">In short: The intent of Building Blocks are to solve common patterns, scaffold faster, and integrate with your existing styles right out of the box.</p>
+    <p class="how-to-lead">In short: The intent of Building Blocks are to solve common patterns, scaffold faster, and integrate with your existing styles right out of the box.</p>
 
-    <h2 id="use" data-magellan-target="use">How To Use a Building Block</h2>
+    <hr class="how-to-line">
 
-    <p>Building Blocks are easy to use in your projects whether you’re using a CSS version or the powerful ZURB Stack. Below, we’ve outlined how to get a Building Block into your project in a snap and build faster.</p>
+<!--how to use--> 
+    <h2 id="use" data-magellan-target="use" class="how-to-header">How To Use a Building Block</h2>
 
-    <h4 id="cli" data-magellan-target="cli"><strong>Foundation CLI Install</strong></h4>
+    <p class="how-to-paragraph">Building Blocks are easy to use in your projects whether you’re using a CSS version or the powerful ZURB Stack. Below, we’ve outlined how to get a Building Block into your project in a snap and build faster.</p>
 
-    <p>This is where a powerful workflow like the ZURB Stack really ups your game. You want to add a Building Block to your project to show an interaction or build a page in record time. Imagine if you could add a Building Block or even an entire kit of Building Blocks to your site with a single command. You don’t have to imagine because an update to the Foundation CLI allows you to do just that.</p>
+    <h4 id="cli" data-magellan-target="cli" class="how-to-subheader">(Option 1) Foundation CLI Install</h4>
 
-    <p>Foundation’s CLI install will:</p>
-    <ul>
+    <p class="how-to-paragraph">This is where a powerful workflow like the ZURB Stack really ups your game. You want to add a Building Block to your project to show an interaction or build a page in record time. Imagine if you could add a Building Block or even an entire kit of Building Blocks to your site with a single command. You don’t have to imagine because an update to the Foundation CLI allows you to do just that.</p>
+
+    <p class="how-to-small-title">Foundation’s CLI install will:</p>
+    <ul class="how-to-paragraph">
       <li>Create you a Panini HTML partial with the Building Block’s HTML</li>
       <li>Create you a SCSS partial with the Building Block’s SCSS and also add the @import for you in your app.scss file.</li>
       <li>Create a JS file with the Building Block’s JS and link it up in the config.yml</li>
     </ul>
 
-    <p>Bam! Add your Panini partial in your page or layout and now you’re cookin’.</p>
+    <p class="how-to-paragraph">Bam! Add your Panini partial in your page or layout and now you’re cookin’.</p>
 
-    <p>In your terminal, make sure you’re in you ZURB Stack project and have the Foundation CLI installed.</p>
+    <p class="how-to-paragraph">In your terminal, make sure you’re in you ZURB Stack project and have the Foundation CLI installed.</p>
 
-    <p>The available commands are:</p>
-    <ul>
+    <p class="how-to-small-title">The available commands are:</p>
+    <ul class="how-to-paragraph">
       <li><code>foundation blocks list</code> - List out the names of all the available Building Blocks. It’s a lot!</li>
       <li><code>foundation blocks install [blockname]</code> - installs an individual Building Block</li>
       <li><code>foundation kits list</code> -  List out the names of all the available Building Block kits.</li>
@@ -134,95 +139,95 @@ layout: static
       </li>
     </ul>
 
-    <h4 id="copy" data-magellan-target="copy"><strong>Copy it</strong></h4>
+    <h4 id="copy" data-magellan-target="copy" class="how-to-subheader">(Option 2) Copy it</h4>
 
-    <p>Like a Building Block? You can copy the HTML and CSS/SCSS and JS (if applicable) from the Building Block detail page. You’ll see a responsive preview and description at the top of the page. Below the preview you’ll find the code for the component.</p>
+    <p class="how-to-paragraph">Like a Building Block? You can copy the HTML and CSS/SCSS and JS (if applicable) from the Building Block detail page. You’ll see a responsive preview and description at the top of the page. Below the preview you’ll find the code for the component.</p>
 
-    <p>The HTML, CSS, and JS toggles let you focus on one section at a time if you’d like.</p>
+    <p class="how-to-paragraph">The HTML, CSS, and JS toggles let you focus on one section at a time if you’d like.</p>
 
     <p><img src="{{root}}assets/img/images/top-section.png" class="" height="" width="" alt=""></p>
 
-    <p>You can copy the the code from each code container using the handy copy button.</p>
+    <p class="how-to-paragraph">You can copy the the code from each code container using the handy copy button.</p>
 
     <p><img src="{{root}}assets/img/images/copy-section.png" class="" height="" width="" alt=""></p>
 
-    <p>If you are using CSS vs SCSS, you can toggle to the compiled CSS using this handy toggle:</p>
+    <p class="how-to-paragraph">If you are using CSS vs SCSS, you can toggle to the compiled CSS using this handy toggle:</p>
 
     <p><img src="{{root}}assets/img/images/css-section.png" class="" height="" width="" alt=""></p>
 
-    <p>If you’re using the CSS version of Foundation, it’s best to add the CSS to your app.css file that is included with the downloaded Foundation CSS project. You can make any style overrides from there.</p>
+    <p class="how-to-paragraph">If you’re using the CSS version of Foundation, it’s best to add the CSS to your app.css file that is included with the downloaded Foundation CSS project. You can make any style overrides from there.</p>
 
-    <p>If you’re using the ZURB Stack Sass version, a custom SCSS partial is the best place to add the Building Block’s SCSS. The JS can be added to app.js. But if you’re a fan of optimization, we suggest you use the Foundation CLI install to do all this automatically for you. It’s rad!</p>
+    <p class="how-to-paragraph">If you’re using the ZURB Stack Sass version, a custom SCSS partial is the best place to add the Building Block’s SCSS. The JS can be added to app.js. But if you’re a fan of optimization, we suggest you use the Foundation CLI install to do all this automatically for you. It’s rad!</p>
 
-    <h4 id="download-individual" data-magellan-target="download-individual">Download an individual Building Block</h4>
+    <h4 class="how-to-subheader" id="download-individual" data-magellan-target="download-individual">(Option 3) Download an individual Building Block</h4>
 
-    <p>You can can download the files needed for the Building Block. Click the download button and you’ll get:</p>
+    <p class="how-to-paragraph">You can can download the files needed for the Building Block. Click the download button and you’ll get:</p>
 
-    <ul>
+    <ul class="how-to-paragraph">
       <li>Individual HTML files</li>
       <li>Individual CSS files for each</li>
       <li>Individual SCSS files in case you want to manually add them to a Sass project</li>
       <li>Individual JS files (if applicable)</li>
     </ul>
 
-    <h4 id="download-kit" data-magellan-target="download-kit">Download a Building Block Kit</h4>
+    <h4 class="how-to-subheader" id="download-kit" data-magellan-target="download-kit">(Option 4) Download a Building Block Kit</h4>
 
-    <p>Looking to start with a Building Block kit? Kits are large collections of Building Blocks that are matched to each other for a specific type of Site, App, or use case. To save you time over the copy/paste method of individual Building Blocks, you can download a zip file of the kit. For each Building Block, it will come with:</p>
+    <p class="how-to-paragraph">Looking to start with a Building Block kit? Kits are large collections of Building Blocks that are matched to each other for a specific type of Site, App, or use case. To save you time over the copy/paste method of individual Building Blocks, you can download a zip file of the kit. For each Building Block, it will come with:</p>
 
-    <ul>
+    <ul class="how-to-paragraph">
       <li>Individual HTML files</li>
       <li>Individual CSS files for each</li>
       <li>Individual SCSS files in case you want to manually add them to a Sass project</li>
       <li>Individual JS files (if applicable)</li>
     </ul>
 
-    <p>Again, if you’re using the ZURB Stack, the Foundation CLI can do this for you.</p>
+    <p class="how-to-paragraph">Again, if you’re using the ZURB Stack, the Foundation CLI can do this for you.</p>
 
-    <h4 id="dependencies" data-magellan-target="dependencies">Dependencies</h4>
+    <h4 class="how-to-subheader" id="dependencies" data-magellan-target="dependencies">Dependencies</h4>
 
-    <p>Building Blocks are made to drop into any Foundation project and work. Therefore Foundation is a dependency (needs it to work as expected).</p>
+    <p class="how-to-paragraph">Building Blocks are made to drop into any Foundation project and work. Therefore Foundation is a dependency (needs it to work as expected).</p>
 
-    <p>Since Foundation’s interactive components are build using jQuery, jQuery is a dependency. Every Foundation download or Install comes with this. jQuery is not required for CSS/SCSS only components or non-js components in Foundation.</p>
+    <p class="how-to-paragraph">Since Foundation’s interactive components are build using jQuery, jQuery is a dependency. Every Foundation download or Install comes with this. jQuery is not required for CSS/SCSS only components or non-js components in Foundation.</p>
 
-    <p>Some Building Blocks use icon fonts to make them look nicer or convey intention. You can use the same icon fonts by adding them to your project.</p>
+    <p class="how-to-paragraph">Some Building Blocks use icon fonts to make them look nicer or convey intention. You can use the same icon fonts by adding them to your project.</p>
 
-    <p>You can download FontAwesome icons here:<br>
+    <p class="how-to-small-title">You can download FontAwesome icons here:<br>
     <a href="http://fontawesome.io/" target="_blank">http://fontawesome.io/</a></p>
 
-    <p>Or add this CDN to the head of your pages or layout:</p>
+    <p class="how-to-small-title">Or add this CDN to the head of your pages or layout:</p>
 
     <pre><code>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"&gt;</code></pre>
 
-    <hr>
+    <hr class="how-to-line">
+<!--submitting-->
+    <h2 id="submit" data-magellan-target="submit" class="how-to-header">How do I submit a building block?</h2>
 
-    <h4 id="submit" data-magellan-target="submit">What Do I Need to Submit A Building Block?</h4>
+    <p class="how-to-paragraph">So you want to build a Building Block? Well fear not! You can get in on the action too and get your work featured! We’ve put together a simple guide to submitting a Building Block. Once it’s submitted, we’ll promote your awesomeness to the greater Foundation community because you rock!</p>
 
-    <p>So you want to build a Building Block? Well fear not! You can get in on the action too and get your work featured! We’ve put together a simple guide to submitting a Building Block. Once it’s submitted, we’ll promote your awesomeness to the greater Foundation community because you rock!</p>
+    <p class="how-to-paragraph">The Building Blocks site is open source just like Foundation, meaning anyone can contribute to it. It’s built on the same Node based build system the ZURB Stack is built on. Submissions are made through GitHub, with pull requests.</p>
 
-    <p>The Building Blocks site is open source just like Foundation, meaning anyone can contribute to it. It’s built on the same Node based build system the ZURB Stack is built on. Submissions are made through GitHub, with pull requests.</p>
+    <p class="how-to-small-title">You’ll need:</p>
 
-    <p>You’ll need:</p>
-
-    <ul>
+    <ul class="how-to-paragraph">
       <li>A sweet Building Block idea</li>
       <li>A GitHub account</li>
     </ul>
 
-    <p>Your computer needs:</p>
+    <p class="how-to-small-title">Your computer needs:</p>
 
-    <ul>
+    <ul class="how-to-paragraph">
       <li>NodeJS (6.10.1)</li>
       <li>Clone or download the repo from here: https://github.com/zurb/building-blocks</li>
     </ul>
 
 
-    <p>Using your terminal, change directory into the <code>building-blocks</code> project and run:</p>
+    <p class="how-to-paragraph">Using your terminal, change directory into the <code>building-blocks</code> project and run:</p>
 
     <div class="docs-code">
       <pre><code class="bash">cd building-blocks</code></pre>
     </div>
 
-    <p>Then,</p>
+    <p class="how-to-paragraph">Then,</p>
 
     <div class="docs-code">
       <pre><code class="bash">npm install</code></pre>
@@ -232,13 +237,13 @@ layout: static
       <pre><code class="bash">bower install</code></pre>
     </div>
 
-    <p>Once the install is complete, in the project directory, you can start the project and have it watch for changes. Run:</p>
+    <p class="how-to-paragraph">Once the install is complete, in the project directory, you can start the project and have it watch for changes. Run:</p>
 
     <div class="docs-code">
       <pre><code class="bash">npm start</code></pre>
     </div>
 
-    <p>This will start the build system and watch for changes. When you save a change, the browser preview will refresh automatically. That’s it for setup!</p>
+    <p class="how-to-paragraph">This will start the build system and watch for changes. When you save a change, the browser preview will refresh automatically. That’s it for setup!</p>
 
   </div>
 </div>
