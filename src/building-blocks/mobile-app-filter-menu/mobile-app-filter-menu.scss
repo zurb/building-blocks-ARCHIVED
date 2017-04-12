@@ -7,6 +7,8 @@ $mobile-app-filter-menu-height: rem-calc(45);
   margin: 0;
   height: $mobile-app-filter-menu-height;
   align-items: center;
+  border-top: 1px solid $medium-gray;
+  border-bottom: 1px solid $medium-gray;
 
   li {
     a {
