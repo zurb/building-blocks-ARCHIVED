@@ -1,0 +1,18 @@
+$translucent-form-overlay-max-width: 500px;
+
+.translucent-form-overlay {
+  max-width: $translucent-form-overlay-max-width;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: $white;
+  h3, label {
+    color: $white;
+  }
+  input, select {
+    color: $dark-gray;
+  }
+  input::placeholder {
+    color: $dark-gray;
+  }
+}
