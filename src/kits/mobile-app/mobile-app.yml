@@ -1,5 +1,6 @@
 name: Mobile App
-description: A Foundation Building Block Kit filled with components for creating a mobile app
+short_description: Provide an engaging experience for your users no matter what device they’re using
+description: In 2016, mobile internet usage surpassed the desktop, and it’s still growing. A well designed mobile experience is essential as more people move away from bigger screens. The Mobile App Kit includes a mobile top navigation bar, footer, block list, action sheet, modal, and filter menu so you’ll have all the elements you need to provide a smooth mobile first experience.
 blocks:
   - block-list
   - mobile-nav-bar
