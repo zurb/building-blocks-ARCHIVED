@@ -8,4 +8,5 @@ blocks:
   - clipped-circle-graph
   - input-number-group
   - searchbar-expand-on-click
+  - todo-list-card
   - bar-graph
