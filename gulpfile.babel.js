@@ -166,20 +166,15 @@ function buildingBlockBaseStyles() {
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/**/*.scss'])
     .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
-    .pipe(stripCssComments())
     .pipe($.sass({
       includePaths: PATHS.sass,
       outputStyle: 'expanded'
-    })
-      .on('error', $.sass.logError))
+    }).on('error', $.sass.logError))
+    .pipe(stripCssComments())
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
-    // Comment in the pipe below to run UnCSS in production
-    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
-    .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"))
-    .pipe(browser.reload({ stream: true }));
 }
 
 // Moves JS from the Building Blocks into the dist
