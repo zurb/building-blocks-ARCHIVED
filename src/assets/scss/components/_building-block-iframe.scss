@@ -1,8 +1,11 @@
 .building-block-iframe {
+  position: absolute;
   display: block;
   width: 100%;
+  min-height: 100%;
 }
 
 .building-block-iframe-wrapper {
+  position: relative;
   min-height: 480px;
 }
