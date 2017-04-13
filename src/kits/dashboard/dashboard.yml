@@ -17,6 +17,7 @@ blocks:
   - searchbar-expand-on-click
   - todo-list-card
   - bar-graph
+  - card-tabs
   - switch-toggle-all
   - alert-callout-subtle
   - alert-callout-border
