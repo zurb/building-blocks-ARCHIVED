@@ -6,6 +6,9 @@ images:
   'hero': 'e-commerce-kit.jpg'
   'card': 'e-commerce-kit.jpg'
 blocks:
+  - ecommerce-promo-hero
+  - ecommerce-header
+  - ecommerce-hero-slider-small
   - multi-step-checkout
   - ecommerce-product-card
   - product-feature-section
@@ -13,5 +16,9 @@ blocks:
   - button-add-cart
   - button-hover-addcart
   - shopping-cart-button
+  - ecommerce-footer
+  - ecommerce-product-details
+  - ecommerce-product-filters
+  - ecommerce-product-slider
   - checkout-summary
   - promotion-hero-links

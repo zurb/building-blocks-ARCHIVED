@@ -9,6 +9,7 @@ blocks:
   - app-dashboard-layout
   - multilevel-accordion-menu
   - dashboard-number-card
+  - dashboard-nav-card
   - dashboard-table
   - circle-graph
   - clipped-circle-graph
@@ -16,3 +17,4 @@ blocks:
   - searchbar-expand-on-click
   - todo-list-card
   - bar-graph
+  - switch-toggle-all
