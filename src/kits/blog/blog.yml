@@ -3,3 +3,4 @@ description: A Foundation Building Block Kit filled with components for creating
 blocks:
   - responsive-blog-post
   - responsive-blog-footer
+  - tag-cloud

@@ -1,0 +1,48 @@
+$tag-color: #505760;
+$type-color: #ebebeb;
+$border-color: #adadad;
+$background-color: #2b2b2b;
+
+.tag-section {
+  background: $background-color;
+  padding: 4rem;
+}
+
+.tag-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $type-color;
+  border-bottom: 1px solid $border-color;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.tag-cloud {
+  margin: 1rem;
+  text-align: center;
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .individual-tag {
+    @include label;
+    border-radius: 5000px;
+    background: $tag-color;
+    display: inline-block;
+    color: $type-color;
+    margin: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    .fa-times-circle {
+      margin-left: 7px;
+      color: $type-color;
+    }
+
+    &:hover {
+      background: darken($tag-color, 25%);
+      transition: background-color .2s ease-in;
+    }
+  }
+}
