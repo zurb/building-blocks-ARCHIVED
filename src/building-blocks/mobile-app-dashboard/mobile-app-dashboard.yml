@@ -1,12 +1,13 @@
-name: "Mobile App Toggle"
+name: "Mobile App Dashboard"
 tags:
   - button
   - mobile
-  - toggle
-  - button group
+  - dashboard
+  - icons
   - flexbox
+  - header
 category: control
-description: A mobile app toggle button style.
+description: A mobile app dashboard with large easy to click buttons.
 versions:
   - 6.3.0
   - 6.3.1
