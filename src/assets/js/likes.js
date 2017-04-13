@@ -135,7 +135,7 @@
 
   Likes.getAndCacheLikes = function getAndCacheLikes(callback) {
     $.getJSON(LIKES_URL, function(array) {
-      var data = Likes.structureData(data)
+      var data = Likes.structureData(array)
       Storage.set(LIKES_CACHE_KEY, data);
       callback(data);
     });
