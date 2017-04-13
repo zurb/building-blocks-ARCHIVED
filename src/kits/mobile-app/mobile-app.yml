@@ -20,4 +20,4 @@ blocks:
   - alerts-fancy
   - show-password
   - switch-toggle-all
-
+  - progress-indicator
