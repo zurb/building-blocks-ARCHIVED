@@ -88,6 +88,14 @@ layout: static
       <li><code>foundation kits install [kitname]</code> - installs all the Building Blocks in the kit</li>
     </ul>
 
+    <p class="hot-to-lead">You'll need the latest version of the FOundation CLI (Foundation CLI version 2.2.0) to access these commands. See updrade instructions in the accordion below.</p>
+
+    <p class="how-to-paragraph">Not sure what version Foundation CLI you have? Run:</p>
+
+    <div class="docs-code">
+      <pre><code class="bash">foundation -v</code></pre>
+    </div>
+
     <ul class="accordion" data-accordion data-allow-all-closed="true">
       <li class="accordion-item" data-accordion-item>
         <a href="#" class="accordion-title">Installing the Foundation CLI</a>
@@ -118,7 +126,7 @@ layout: static
           </div>
           <p><strong>Step two:</strong> Install the new Foundation CLI.</p>
           <div class="docs-code">
-            <pre><code class="bash">npm install -g https://github.com/zurb/foundation-cli#installable-building-blocks</code></pre>
+            <pre><code class="bash">npm install -g foundation-cli</code></pre>
           </div>
 
           <p>That's it!</p>
@@ -267,7 +275,9 @@ layout: static
 
     <code>git checkout -b your-branch-name</code>
 
-    <h4 id="cli" data-magellan-target="cli" class="how-to-subheader">Step 2 Create a New, Unique Folder:</h4>
+    <br><br>
+
+    <h4 id="cli" data-magellan-target="cli" class="how-to-subheader">(Step 2) Create a New, Unique Folder:</h4>
 
     <p class="how-to-paragraph">Create a new folder in the Building Blocks folder. Name it the name of your Building Block.</p>
 
@@ -288,68 +298,96 @@ layout: static
       </ul>
     </ul>
 
-Step 3 Add your Block:
-In your Building Block component folder, create your `.html`, `.scss`, `.js` and `.yml` pages.
-Create a HTML file
-Example: article-card.html
-Paste in your HTML
-Save
-Create an SCSS file
-Example: article-card.scss
-Paste in your SCSS or CSS
-Save
-Create an JS file (if applicable)
-Example: article-card.js
-Paste in your JS
-Save
-Create an YML file
-Example: article-card.yml
-Paste in your JS
-Save
+    <h4 id="add" data-magellan-target="add" class="how-to-subheader">(Step 3) Add your Block:</h4>
 
-  Here is a .yml file template you can use:
+    <p class="how-to-paragraph">In your Building Block component folder, create your <code>.html</code>, <code>.scss</code>, <code>.js</code> and <code>.yml</code> pages.</p>
 
-  ```
-  name: 'Short title description'
+    <ol class="how-to-paragraph">
+      <li>Create a HTML file</li>
+        <ul>
+          <li>Example: article-card.html</li>
+          <li>Paste in your HTML</li>
+          <li>Save</li>
+        </ul>
+      </li>
+      <li>Create a SCSS file</li>
+        <ul>
+          <li>Example: article-card.scss</li>
+          <li>Paste in your SCSS or CSS</li>
+          <li>Save</li>
+        </ul>
+      </li>
+      <li>Create an JS file (if applicable)</li>
+        <ul>
+          <li>Example: article-card.js</li>
+          <li>Paste in your JS</li>
+          <li>Save</li>
+        </ul>
+      </li>
+      <li>Create an YML file</li>
+        <ul>
+          <li>Example: article-card.yml</li>
+          <li>Fill out your yml data</li>
+          <li>Save</li>
+        </ul>
+      </li>
+
+    </ol>
+
+    <p class="how-to-paragraph">Here is a .yml file template you can use:</p>
+
+<pre><code>
+name: 'Short title description'
 tags:
   - media
   - blog
   - card
   - animation
 category: container
-description: Longer description about Building Block, settings, use cases, classes to modify or additional important info.
+description: Longer description about
+Building Block settings, use cases,
+classes to modify or additional important
+info.
 versions:
   - 6.3.1
   - 6.3.0
 author:
   name: Your name
-containerClass: container-padded row medium-5 large-3 column
-```
-Add your image to your component’s folder
-Example: article-card.png
-Add the image to the `article-card` folder for this example
+containerClass: row medium-5 large-3 column
+</code></pre>
 
-That’s it!
+    <p class="how-to-paragraph">Add your image to your component’s folder</p>
 
-You can preview your new Building Block on the homepage or go directly to it.
-Example URL: http://localhost:8000/building-block/article-card/article-card.html
+    <p class="how-to-paragraph">Example: article-card.png</p>
+    <p class="how-to-paragraph">Add the image to the <code>article-card</code> folder for this example.</p>
 
-Looking good?
-Step 4 Submit It!:
-Now it’s time to submit your Building Block. Make sure to add and commit your work. The submit your Pull Request.
+    <p class="how-to-paragraph">That’s it!</p>
 
-Review Process
-Once you submit your Building Block pull request, a member of the Foundation team will review it to add it in.
+    <p class="how-to-paragraph">You can preview your new Building Block on the homepage or go directly to it.</p>
 
-Things we’ll be looking for:
-An image
-The Building Block meets class naming guidelines
-The Building Block is responsive
-The `.yml` file has the proper tags and description.
+    <p class="how-to-paragraph">Example URL: http://localhost:8000/building-block/article-card/article-card.html<p class="how-to-paragraph">
 
+    <p class="how-to-paragraph">Looking good?</p>
 
+    <h4 id="submit" data-magellan-target="submit" class="how-to-subheader">(Step 4) Submit It!:
 
+    <p class="how-to-paragraph">Now it’s time to submit your Building Block. Make sure to add and commit your work. Then submit your Pull Request.</p>
 
+    <h4 id="review" data-magellan-target="review" class="how-to-subheader">Review Process</h4>
 
+    <p class="how-to-paragraph">Once you submit your Building Block pull request, a member of the Foundation team will review it to add it in.</p>
+
+    <p class="how-to-paragraph">Things we’ll be looking for:</p>
+
+    <ul>
+      <li>An image</li>
+      <li>The Building Block meets class naming guidelines</li>
+      <li>The Building Block is responsive</li>
+      <li>The <code>.yml</code> file has the proper tags and description.</li>
+    </ul>
+
+    <p class="how-to-paragraph">Lastly, we merge in your Pull Request and you become a legend!
   </div>
+
+  <br><br>
 </div>
