@@ -12,3 +12,4 @@ blocks:
   - searchbar-expand-on-click
   - todo-list-card
   - bar-graph
+  - card-tabs
