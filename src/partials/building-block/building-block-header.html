@@ -2,7 +2,13 @@
   <div class="row">
     <div class="column">
       <h1 class="building-block-title">{{block.name}}</h1>
-      <h3 class="building-block-author">By {{block.author.name}}</h3>
+      <h3 class="building-block-author">By 
+        {{#if block.author.foundation-forum}}
+          <a href="http://foundation.zurb.com/forum/{{block.author.foundation-forum}}">{{block.author.name}}</a>
+        {{ else }}
+          {{block.author.name}}
+        {{/if}}
+      </h3>
       <div class="header-icon-row">
         {{#each block.major-versions}}
         <span class="version-badge">F{{this.major}}</span>
@@ -25,15 +31,15 @@
         </div>
       </div>
     </div>
-    <div class="column shrink align-self-top hide-for-small-only">
-      <div class="flex-container align-right">
-        <a data-like="{{block.datakey}}"><img src="{{root}}assets/img/icons/bb-like.svg" alt="" class="inject-me bb-like-button"></a>
-        <a href="#"><img src="{{root}}assets/img/icons/bb-share.svg" alt="" class="inject-me bb-header-social"></a>
+    <div class="column shrink bb-actions">
+      <div class="bb-action-icons">
+        <a class='bb-action-icon' data-like="{{block.datakey}}"><img src="{{root}}assets/img/icons/like.svg" alt="" class="inject-me bb-like-button"></a>
+        <a class="bb-action-icon float-right" data-toggle="share-dropdown"> <img src="{{root}}assets/img/icons/share.svg" alt="" class="inject-me bb-share-button"></a>
+        {{> block-share-dropdown block}}
       </div>
-      <div class="flex-container align-right">
-        <span class="bb-media-stats"><!-- 6 Views	&#8226; --><span data-likes="{{block.datakey}}"></span> Likes</span>
-      </div>
+      <button class="kit-card-primary blue float-right" type="button" data-toggle="example-dropdown">Download<div class="arrow-down white"></div></button>
+        {{>block-dropdown block}}
+        <a class="bb-help-link" href="#">How do I use This?</a>
     </div>
   </div>
-  <a href="#"><img src="{{root}}assets/img/icons/bb-like.svg" alt="" class="inject-me bb-like-button show-for-small-only"></a>
 </div>

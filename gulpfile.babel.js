@@ -104,12 +104,12 @@ function copyData() {
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copyBBImages() {
-  return gulp.src('src/building-blocks/**/*.png')
+  return gulp.src('src/building-blocks/**/*.{png,jpg}')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
   }
 
 function copyKitImages() {
-  return gulp.src('src/kits/**/*.png')
+  return gulp.src('src/kits/**/*.{png,jpg}')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/kits/'));
 }
 
@@ -121,7 +121,7 @@ function copyBBFiles() {
 
 // Copy page templates into finished HTML files
 function kitIndex() {
-  return gulp.src('src/pages/kits.html')
+  return gulp.src(['src/pages/kits.html', 'src/pages/how-to.html'])
     .pipe(getNewPanini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
@@ -166,20 +166,15 @@ function buildingBlockBaseStyles() {
 function buildingBlockSass() {
   return gulp.src(['src/building-blocks/**/*.scss'])
     .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
-    .pipe(stripCssComments())
     .pipe($.sass({
       includePaths: PATHS.sass,
       outputStyle: 'expanded'
-    })
-      .on('error', $.sass.logError))
+    }).on('error', $.sass.logError))
+    .pipe(stripCssComments())
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
-    // Comment in the pipe below to run UnCSS in production
-    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
-    .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"))
-    .pipe(browser.reload({ stream: true }));
 }
 
 // Moves JS from the Building Blocks into the dist
@@ -269,7 +264,7 @@ function watch() {
   gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
   gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
   gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
-  gulp.watch('src/building-blocks/**/*.png').on('all', gulp.series('copy', reload));
+  gulp.watch(['src/building-blocks/**/*.png', 'src/kits/**/*.png']).on('all', gulp.series('copy', reload));
   gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
   gulp.watch('src/kits/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, reload));

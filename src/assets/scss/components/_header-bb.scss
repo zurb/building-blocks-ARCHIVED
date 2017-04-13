@@ -48,6 +48,7 @@
 
   @include breakpoint(small only) {
     padding-right: rem-calc(50);
+    display: block;
   }
 }
 
@@ -57,6 +58,9 @@
   font-size: rem-calc(15);
   margin-left: 0.5rem;
   text-transform: none;
+  a {
+    color: $dark-gray;
+  }
 
   @include breakpoint(small only) {
     display: block;
@@ -86,26 +90,12 @@
   }
 }
 
-.bb-like-button {
-  @include breakpoint(small only) {
-    position: absolute;
-    right: 0.625rem;
-    top: 0;
-  }
-}
-.liked .bb-like-button path {
-  fill: $primary-color;
+.bb-help-link {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: right;
 }
 
-.bb-media-stats {
-  color: $dark-gray;
-  font-size: rem-calc(16);
-  font-weight: $global-weight-semibold;
-
-  @include breakpoint(small only) {
-    display: none;
-  }
-}
 
 .bb-header-social {
   margin-left: 1rem;
@@ -113,4 +103,37 @@
   @include breakpoint(small only) {
     display: none;
   }
+}
+
+.bb-actions {
+  .bb-action-icons {
+    display: inline-block;
+  }
+  .bb-action-icon {
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    top: 5px;
+  }
+}
+
+@include breakpoint(small only) {
+  
+  .bb-actions {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bb-action-icons {
+    order: 3;
+  }
+
+  .bb-help-link {
+    text-align: center;
+  }
+}
+.bb-share-dropdown-pane {
+  width: 78px;
 }
