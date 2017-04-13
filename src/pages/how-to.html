@@ -60,7 +60,7 @@ layout: static
 
     <hr class="how-to-line">
 
-<!--how to use--> 
+<!--how to use-->
     <h2 id="use" data-magellan-target="use" class="how-to-header">How To Use a Building Block</h2>
 
     <p class="how-to-paragraph">Building Blocks are easy to use in your projects whether you’re using a CSS version or the powerful ZURB Stack. Below, we’ve outlined how to get a Building Block into your project in a snap and build faster.</p>
@@ -71,9 +71,9 @@ layout: static
 
     <p class="how-to-small-title">Foundation’s CLI install will:</p>
     <ul class="how-to-paragraph">
-      <li>Create you a Panini HTML partial with the Building Block’s HTML</li>
-      <li>Create you a SCSS partial with the Building Block’s SCSS and also add the @import for you in your app.scss file.</li>
-      <li>Create a JS file with the Building Block’s JS and link it up in the config.yml</li>
+      <li><strong>Create you a Panini HTML partial</strong> with the Building Block’s HTML</li>
+      <li><strong>Create you a SCSS partial</strong> with the Building Block’s SCSS and also add the @import for you in your app.scss file.</li>
+      <li><strong>Create a JS file</strong> with the Building Block’s JS and link it up in the config.yml</li>
     </ul>
 
     <p class="how-to-paragraph">Bam! Add your Panini partial in your page or layout and now you’re cookin’.</p>
@@ -95,15 +95,15 @@ layout: static
           <p class="lead">Need help installing the Foundation CLI? We've put together some tutorials to get you going.</p>
           <a class="feature-block-link" href="https://youtu.be/rQguHjGzFEw?list=PLJVWPVPk_D_0-LDRu8k29w-7ktRk_dJ5n" target="_blank">
             <img class="feature-block-link-img" src="{{root}}assets/img/images/cli-lesson-thumb.png" class="" height="" width="" alt="">
-            <h5 class="feature-block-link-title">Installing the Foundation CLI to Automate Sass Projects</h5>
+            <h5 class="how-to-small-title">Installing the Foundation CLI to Automate Sass Projects</h5>
           </a>
           <a class="feature-block-link" href="http://foundation.zurb.com/learn/install-foundation-6-sass-on-windows.html" target="_blank">
             <img class="feature-block-link-img" src="http://foundation.zurb.com/assets/img/develop/tuts-sass-windows-jamesstone.png" class="" height="" width="" alt="">
-            <h5 class="feature-block-link-title">Installing Foundation CLI on Windows</h5>
+            <h5 class="how-to-small-title">Installing Foundation CLI on Windows</h5>
           </a>
           <a class="feature-block-link" href="http://foundation.zurb.com/sites/docs/installation.html" target="_blank">
             <img class="feature-block-link-img" src="{{root}}assets/img/images/docs-thumb.png" class="" height="" width="" alt="">
-            <h5 class="feature-block-link-title">Foundation Docs: CLI Installation</h5>
+            <h5 class="how-to-small-title">Foundation Docs: CLI Installation</h5>
           </a>
         </div>
       </li>
@@ -129,11 +129,11 @@ layout: static
         <div class="accordion-content" data-tab-content>
           <a class="feature-block-link" href="https://youtu.be/t_ekdBMj4cc?list=PLJVWPVPk_D_3A4OBvLtsrcjL7gs1QEWLW" target="_blank">
             <img class="feature-block-link-img" src="{{root}}assets/img/images/panini-lesson-thumb.png" class="" height="" width="" alt="">
-            <h5 class="feature-block-link-title">Intro to Foundation’s Panini Handlebars Templating Engine</h5>
+            <h5 class="how-to-small-title">Intro to Foundation’s Panini Handlebars Templating Engine</h5>
           </a>
           <a class="feature-block-link" href="https://youtu.be/3Uj74uJ3GSQ?list=PLJVWPVPk_D_0-LDRu8k29w-7ktRk_dJ5n" target="_blank">
             <img class="feature-block-link-img" src="{{root}}assets/img/images/zurbstack-lesson-thumb.png" class="" height="" width="" alt="">
-            <h5 class="feature-block-link-title">Foundation Starter Projects - ZURB Stack</h5>
+            <h5 class="how-to-small-title">Foundation Starter Projects - ZURB Stack</h5>
           </a>
         </div>
       </li>
@@ -244,6 +244,112 @@ layout: static
     </div>
 
     <p class="how-to-paragraph">This will start the build system and watch for changes. When you save a change, the browser preview will refresh automatically. That’s it for setup!</p>
+
+    <h4 id="files" data-magellan-target="files" class="how-to-subheader">Submitting your Building Block</h4>
+
+    <p class="how-to-paragraph">There are just a few simple files needed to submit your Building Block.</p>
+
+    <ul class="how-to-paragraph">
+      <li><strong>HTML:</strong> Every Building Block will need an HTML file to demonstrate the uniqueness of the component or layout.</li>
+      <li><strong>SCSS:</strong> You’ll add your custom styles in a SCSS file. You only need your additional styles as Foundation is already being imported for you. SCSS files accept CSS or SCSS so you can format it either way.</li>
+      <li><strong>JS:</strong> If your component uses custom JavaScript/jQuery you’ll create a JS file and add it there. Again, Foundation JS and jQuery are already included, so only your custom JS is needed if you used any.</li>
+      <li><strong>Image:</strong> A preview image of your Building Block. This will give people context on what the building block is! See suggestions for great preview images. The thumbnail should be in a <code>.png</code> format.</li>
+      <li><strong>YML:</strong> You’ll want to describe your Building Block and submit your name. A Yaml file uses a <code>.yml</code> file extension and is where the Building Block name, description, tags and more are stored.</li>
+    </ul>
+
+    <p class="how-to-paragraph">You’ll find the <code>building-blocks</code> folder in the root directory of the Building Blocks project. This is where all the Building Blocks that get displayed on the site live.</p>
+
+    <h4 id="banch" data-magellan-target="branch" class="how-to-subheader">(Step 1) Create a New Branch:</h4>
+
+    <p class="how-to-paragraph">Create a branch from which to submit your Building Block from. This will allow you to submit a Pull Request when you’re done so that the Foundation team can review it, offer suggestions and merge it in.</p>
+
+    <p class="how-to-paragraph">In your terminal, checkout a new branch</p>
+
+    <code>git checkout -b your-branch-name</code>
+
+    <h4 id="cli" data-magellan-target="cli" class="how-to-subheader">Step 2 Create a New, Unique Folder:</h4>
+
+    <p class="how-to-paragraph">Create a new folder in the Building Blocks folder. Name it the name of your Building Block.</p>
+
+    <p class="how-to-paragraph">The name should contain the component or type of component it is. For example a card should have Card in the name or a sidebar layout should have Sidebar in the name.</p>
+
+    <p class="how-to-paragraph">Example: article-card</p>
+
+    <p class="how-to-paragraph">All your files in the folder will have the same root name</p>
+
+    <ul class="how-to-paragraph">
+      <li>article-card</li>
+      <ul>
+        <li>article-card.html</li>
+        <li>article-card.scss</li>
+        <li>article-card.js</li>
+        <li>article-card.png</li>
+        <li>article-card.yml</li>
+      </ul>
+    </ul>
+
+Step 3 Add your Block:
+In your Building Block component folder, create your `.html`, `.scss`, `.js` and `.yml` pages.
+Create a HTML file
+Example: article-card.html
+Paste in your HTML
+Save
+Create an SCSS file
+Example: article-card.scss
+Paste in your SCSS or CSS
+Save
+Create an JS file (if applicable)
+Example: article-card.js
+Paste in your JS
+Save
+Create an YML file
+Example: article-card.yml
+Paste in your JS
+Save
+
+  Here is a .yml file template you can use:
+
+  ```
+  name: 'Short title description'
+tags:
+  - media
+  - blog
+  - card
+  - animation
+category: container
+description: Longer description about Building Block, settings, use cases, classes to modify or additional important info.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  name: Your name
+containerClass: container-padded row medium-5 large-3 column
+```
+Add your image to your component’s folder
+Example: article-card.png
+Add the image to the `article-card` folder for this example
+
+That’s it!
+
+You can preview your new Building Block on the homepage or go directly to it.
+Example URL: http://localhost:8000/building-block/article-card/article-card.html
+
+Looking good?
+Step 4 Submit It!:
+Now it’s time to submit your Building Block. Make sure to add and commit your work. The submit your Pull Request.
+
+Review Process
+Once you submit your Building Block pull request, a member of the Foundation team will review it to add it in.
+
+Things we’ll be looking for:
+An image
+The Building Block meets class naming guidelines
+The Building Block is responsive
+The `.yml` file has the proper tags and description.
+
+
+
+
 
   </div>
 </div>
