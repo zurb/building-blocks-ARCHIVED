@@ -26,7 +26,7 @@
       {{/if}}
       <!--fixed backround with image-->
       <div class="kit-header"style="{{#if kit.images.hero}}background-image: url('{{@root.root}}assets/img/kits/{{kit.datakey}}/{{kit.images.hero}}');{{/if}}{{#if kit.background}}background-color: {{kit.background}};{{/if}}">
-      </div> 
+      </div>
       <div class="page-container">
         {{#if filter-nav}}
           {{> filter-nav}}
@@ -34,12 +34,12 @@
         {{#if filter-dropdowns}}
           {{> filter-dropdowns}}
         {{/if}}
-        {{> kit-description kit}}   
+        {{> kit-description kit}}
         <!--kit building blocks-->
         <div class="page-background-alt building-block-related kit-building-blocks">
           <div class="row kit-details-header">
           <div class="columns kit-details-header-text">
-            <h2 class="kit-details-header-text-heading">Building Blocks In The Kit</h2>
+            <h2 class="kit-details-header-text-heading">Building Blocks In This Kit</h2>
           </div>
           <div class="columns shrink kit-details-action">
             <a class="kit-details-search" data-toggle="bb-search-bar">

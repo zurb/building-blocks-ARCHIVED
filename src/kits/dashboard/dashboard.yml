@@ -9,3 +9,4 @@ blocks:
   - input-number-group
   - searchbar-expand-on-click
   - bar-graph
+  - switch-toggle-all
