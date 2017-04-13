@@ -1,0 +1,36 @@
+$closebutton-color: white;
+
+.full-screen {
+  @include off-canvas-base($background: #000, $transition: 0.3s ease-in-out);
+  @include off-canvas-position($position: left, $size: 100%);
+}
+
+.off-canvas-inner {
+  padding: 1rem;
+  text-align: center;
+}
+
+.off-canvas-menu {
+  @include menu-base;
+
+  li {
+    display: block;
+  }
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.off-canvas-close {
+  color: #fff;
+  font-size: 5rem;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
