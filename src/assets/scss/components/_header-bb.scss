@@ -62,6 +62,10 @@
     color: $dark-gray;
   }
 
+  img {
+    margin-right: 10px;
+  }
+
   @include breakpoint(small only) {
     display: block;
     margin-left: 0;
