@@ -16,5 +16,6 @@ versions:
   - 6.2.0
 author:
   github: brettsmason
+  'foundation-forum': 4753
   name: Brett Mason
 containerClass: none
