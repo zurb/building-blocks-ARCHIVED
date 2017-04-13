@@ -10,4 +10,8 @@
 .building-block-iframe-wrapper {
   position: relative; /* To fix iframe's hight in Edge */
   min-height: 480px;
+
+  /* To fix iframe scrolling on ios */
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
 }
