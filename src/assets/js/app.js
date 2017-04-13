@@ -142,8 +142,11 @@ toggleSCSS.click(function(e) {
   e.preventDefault();
 });
 
+var socialName = $('meta[name="og:title"]').prop('content');
+var socialImage = $('meta[name="og:image"]').prop('content');
 $('#bb-social').jsSocials({
   showLabel: false,
   showCount: false,
-  shares: ["twitter", "facebook", "pinterest"]
+  text: "Download this " + socialName + " from Foundation Building Blocks",
+  shares: [ { share: "twitter", via: "ZURBFoundation" }, "facebook", {share: "pinterest", media: socialImage, text: socialName + " from Foundation Building Blocks"}]
 });
