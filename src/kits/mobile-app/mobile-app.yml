@@ -7,3 +7,12 @@ blocks:
   - mobile-action-sheet
   - mobile-ios-modal
   - mobile-app-filter-menu
+  - mobile-app-dashboard
+  - mobile-app-icon-bar
+  - mobile-app-message-bar
+  - mobile-app-toggle
+  - input-number-group
+  - alerts-fancy
+  - show-password
+  - switch-toggle-all
+
