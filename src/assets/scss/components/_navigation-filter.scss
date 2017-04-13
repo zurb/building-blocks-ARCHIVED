@@ -121,6 +121,10 @@
   }
 }
 
+.bb-search-results {
+  background: $pale-blue;
+}
+
 .filter-nav-dropdown {
   position: relative;
   z-index: 81; // Above the card hover state
