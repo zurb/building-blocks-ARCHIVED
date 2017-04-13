@@ -5,6 +5,20 @@
   background: $dark-gray;
   position: relative;
   color: white;
+
+  .button.white-hollow {
+    border: 1px solid $white;
+    color: $white;
+    background-color: transparent;
+    transition: border 0.5s ease;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid darken($white, 30%);
+      transition: border 0.5s ease;
+    }
+  }
 }
 
 .promo-hero-content {
@@ -25,19 +39,6 @@
   margin-bottom: 1rem;
 }
 
-.button.white-hollow {
-  border: 1px solid $white;
-  color: $white;
-  background-color: transparent;
-  transition: border 0.5s ease;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border: 1px solid darken($white, 30%);
-    transition: border 0.5s ease;
-  }
-}
 
 .promo-hero-bg-image {
   overflow: hidden;

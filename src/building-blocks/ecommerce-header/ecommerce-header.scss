@@ -1,4 +1,4 @@
-.main-nav {
+.ecommerce-header {
   width: 100%;
   background-color: $white;
   padding: 1rem 1rem 0;
@@ -43,53 +43,50 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+
+  .button.search-button {
+    width: 39px;
+    height: 39px;
+    background-size: 20px 20px;
+    background-image: url("http://placehold.it/20x20");
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0px;
+  }
+
+  .menu > .main-nav-link > a {
+    padding: 1.5em 0.85em 1.9em 0.85em;
+  }
 }
 
-.button.search-button {
-  width: 39px;
-  height: 39px;
-  background-size: 20px 20px;
-  background-image: url("http://placehold.it/20x20");
-  background-repeat: no-repeat;
-  background-position: center center;
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: 0px;
-}
 
-.top-bar input {
-  
-}
-
-.menu > .main-nav-link > a {
-  padding: 1.5em 0.85em 1.9em 0.85em;
-}
-
-.topbar {
+.ecommerce-header-mobile {
   width: 100%;
   background-color: darken($dark-gray,20%);
   height: 40px;
   padding: 8px 20px 10px 20px;
 }
 
-.topbar-message {
+.ecommerce-header-mobile-message {
   color: lighten($dark-gray, 100%);
   float: left;
 }
 
-.topbar-links {
+.ecommerce-header-mobile-links {
   color: lighten($dark-gray, 100%);
-  
+
   ul li {
     display: inline;
     padding-left: 20px;
   }
-  
+
   a {
     color: lighten($dark-gray, 50%);
     transition: color 0.5s ease;
   }
-  
+
   a:hover {
     color: lighten($dark-gray, 100%);
     transition: color 0.5s ease;
