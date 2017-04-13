@@ -5,7 +5,7 @@
       <h2 class="kit-card-header">{{#if name}}{{name}}{{else}}E-Commerce Kit{{/if}}</h2>
       <p class="kit-card-sub-header">{{#if short_description}}{{short_description}}{{else}}{{description}}{{/if}}</p>
 
-      <button class="kit-card-primary" type="button" data-toggle="example-dropdown">Download <div class="arrow-down"></div></button>
+      <button class="kit-card-primary" type="button" data-toggle="{{datakey}}-dropdown">Download <div class="arrow-down"></div></button>
       {{> kit-dropdown}}
       <a data-kit-link class="kit-card-secondary" href="{{href}}">See Details</a>
       <div class="kit-card-link">
