@@ -10,7 +10,7 @@ $(".filter-simple-button").click(function() {
 });
 
 // changes active class on filter buttons
-$('.filter-simple-button').click(function () {
+$('.mobile-app-toggle').click(function () {
   $(this).siblings().removeClass('is-active');
   $(this).addClass('is-active');
 });
