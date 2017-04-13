@@ -39,11 +39,29 @@
 }
 
 .kit-details-action {
-  @include breakpoint(small only) {
-    width: 100%;
+  .kit-action-icon {
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    top: 5px;
   }
-
 }
+@include breakpoint(small only) {
+  .kit-details-action {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .kit-action-icon {
+      order: 3;
+      display: inline;
+    }
+    .kit-card-link, .kit-card-link-text {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .kit-details-header {
   margin-bottom: 5rem;
   position: relative;
@@ -84,7 +102,9 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem 1.5rem;
-
+  @include breakpoint(small only) {
+    display: none;
+  }
 }
 
 .kit-details-search-text {

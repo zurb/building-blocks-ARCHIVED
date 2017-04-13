@@ -5,6 +5,7 @@
   height: $card-height;
   margin-bottom: $page-spacing;
   overflow: hidden;
+  position: relative;
   
 
   @include breakpoint(medium down) {
@@ -185,9 +186,21 @@
   }
 }
 
+.kit-card-mobile-link {
+  display: none;
+}
 @include breakpoint(850 down) {
   .kit-card-primary,
   .kit-card-secondary {
     width: 100%;
+  }
+  .kit-card-mobile-link {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
   }
 }

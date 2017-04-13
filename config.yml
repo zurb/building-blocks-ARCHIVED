@@ -29,6 +29,7 @@ PATHS:
     - "node_modules/highlight.js/"
     - "bower_components/foundation-sites/scss"
     - "bower_components/motion-ui/src"
+    - "bower_components/jssocials/dist/"
   # Paths to JavaScript libraries, which are combined into one file
   javascript:
     # Libraries required by Foundation
@@ -59,6 +60,7 @@ PATHS:
     - "bower_components/foundation-sites/js/foundation.toggler.js"
     - "bower_components/foundation-sites/js/foundation.tooltip.js"
     - "bower_components/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js"
+    - "bower_components/jssocials/dist/jssocials.min.js"
     - "node_modules/svg-injector/svg-injector.js"
     - "node_modules/clipboard/dist/clipboard.js"
     - "node_modules/handlebars/dist/handlebars.min.js"
