@@ -1,8 +1,9 @@
-name: 'Tag Cloud'
+name: 'Blog Tag Cloud'
 tags:
   - tags
   - blog
-category: containers
+  - label
+category: status
 description: A tag cloud section that wraps accordingly to it's container and content.
 versions:
   - 6.3.1
