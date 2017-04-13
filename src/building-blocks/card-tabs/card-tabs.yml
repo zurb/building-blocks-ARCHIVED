@@ -1,0 +1,14 @@
+name: "Card Tabs"
+tags:
+  - card
+  - links
+  - content
+category: containers
+description: A simple card with a Title and Tabs in the header
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: James Stone
+grid: float
+containerClass: container-padded row column medium-6 large-4
