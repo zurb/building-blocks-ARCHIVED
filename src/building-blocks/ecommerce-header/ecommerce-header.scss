@@ -2,30 +2,30 @@
   width: 100%;
   background-color: $white;
   padding: 1rem 1rem 0;
-  
+
   .logo {
     height: 50px;
     width: 160px;
   }
-  
+
   ul {
     background-color: $white;
   }
-  
+
   li {
     display: inline-block;
   }
-  
+
   .nav-links {
     margin-left: 15px;
   }
-  
+
   a {
     color: $dark-gray;
     transition: color 0.5s ease;
     display: block;
   }
-  
+
   a:hover {
     color: darken($dark-gray, 50%);
     transition: color 0.5s ease;
@@ -33,12 +33,12 @@
 
   input {
     margin-right: 0px;
-    
+
     @include breakpoint(large down) {
       width: 150px;
     }
   }
-  
+
   &.top-bar {
     padding-top: 0;
     padding-bottom: 0;
@@ -62,19 +62,24 @@
 }
 
 
-.ecommerce-header-mobile {
+.ecommerce-header-top {
   width: 100%;
   background-color: darken($dark-gray,20%);
   height: 40px;
   padding: 8px 20px 10px 20px;
+
+  .fa {
+    color: $white;
+    font-size: 1.5rem;
+  }
 }
 
-.ecommerce-header-mobile-message {
+.ecommerce-header-top-message {
   color: lighten($dark-gray, 100%);
   float: left;
 }
 
-.ecommerce-header-mobile-links {
+.ecommerce-header-top-links {
   color: lighten($dark-gray, 100%);
 
   ul li {
@@ -91,5 +96,83 @@
     color: lighten($dark-gray, 100%);
     transition: color 0.5s ease;
   }
+}
+
+.ecommerce-header-off-canvas {
+  background-color: darken($dark-gray,20%);
+
+  .menu {
+    padding: 1rem 0;
+  }
+
+  .menu a {
+    color: $dark-gray;
+  }
+}
+
+.ecommerce-header-mobile {
+  background-color: darken($dark-gray,20%);
+  display: flex;
+  padding: rem-calc(10) rem-calc(20);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ecommerce-header-mobile-left,
+.ecommerce-header-mobile-right,
+.ecommerce-header-mobile-center {
+  flex: 1 0 0;
+}
+
+.ecommerce-header-mobile-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ecommerce-header-mobile-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecommerce-header-mobile-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .fa {
+    color: $white;
+    font-size: 1.5rem;
+  }
+}
+
+.search-exandable input[type=search] {
+  margin: 0 1rem;
+  background: $light-gray url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  border: solid 1px $medium-gray;
+  padding: 9px 10px 9px 26px;
+  width: 35px;
+  border-radius: 5000px;
+  transition: all 0.5s;
+}
+
+.search-exandable input[type=search]:focus {
+  width: 120px;
+  background-color: $white;
+  border-color: $primary-color;
+  box-shadow: 0 0 5px rgba($primary-color, 0.5);
+}
+
+.search-exandable input:-moz-placeholder {
+  color: $dark-gray;
+}
+
+.search-exandable input::-webkit-input-placeholder {
+  color: $dark-gray;
+}
+
+.search-exandable input[type=search]:hover {
+  background-color: $white;
 }
 
