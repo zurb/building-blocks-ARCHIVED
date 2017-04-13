@@ -142,3 +142,8 @@ toggleSCSS.click(function(e) {
   e.preventDefault();
 });
 
+$('#bb-social').jsSocials({
+  showLabel: false,
+  showCount: false,
+  shares: ["twitter", "facebook", "pinterest"]
+});
