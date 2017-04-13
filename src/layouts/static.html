@@ -12,7 +12,7 @@
     <meta name="bbfile" content="{{root}}data/building-blocks.json">
     <meta name="kitfile" content="{{root}}data/kits.json">
   </head>
-  <body class="{{#ifpage 'index'}} page-background-alt {{/ifpage}}">
+  <body class="{{#ifpage 'index' 'kits'}} background-alt {{/ifpage}}">
 
     <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
       {{> offcanvas-menulists}}

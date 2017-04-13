@@ -22,7 +22,7 @@ Storage.clear = function(key) {
 
 Storage.set = function set(key, value, timeout) {
   var time = new Date().getTime();
-  timeout = timeout || 3600 * 1000; // default to 1 hour.
+  timeout = timeout || 300 * 1000; // default to 5 min.
   var data = {data: value, expires: time + timeout};
   localStorage.setItem(key, JSON.stringify(data));
 };

@@ -104,12 +104,12 @@ function copyData() {
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copyBBImages() {
-  return gulp.src('src/building-blocks/**/*.png')
+  return gulp.src('src/building-blocks/**/*.{png,jpg}')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/building-block/'));
   }
 
 function copyKitImages() {
-  return gulp.src('src/kits/**/*.png')
+  return gulp.src('src/kits/**/*.{png,jpg}')
     .pipe(gulp.dest(PATHS.dist + '/assets/img/kits/'));
 }
 

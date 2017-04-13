@@ -7,7 +7,7 @@
   const MY_LIKES_URL = LIKES_URL + '/me';
   const INCREMENT_LIKES_URL = LIKES_URL + '/increment';
   const DECREMENT_LIKES_URL = LIKES_URL + '/decrement';
-  const LIKES_CACHE_KEY = "bb-likes";
+  const LIKES_CACHE_KEY = "bb-likes-2";
   const MY_LIKES_CACHE_KEY = "bb-my-likes";
 
   Likes.prototype.getLikes = function getLikes(callback) {
@@ -135,7 +135,7 @@
 
   Likes.getAndCacheLikes = function getAndCacheLikes(callback) {
     $.getJSON(LIKES_URL, function(array) {
-      var data = Likes.structureData(data)
+      var data = Likes.structureData(array)
       Storage.set(LIKES_CACHE_KEY, data);
       callback(data);
     });

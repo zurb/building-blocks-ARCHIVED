@@ -12,4 +12,4 @@ versions:
 author:
   github: kwhchu
   name: Kevin
-containerClass: row small-up-3 medium-up-4 large-up-5 align-center
+containerClass: row small-up-2 medium-up-4 large-up-5 align-center
