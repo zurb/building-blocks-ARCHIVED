@@ -1,9 +1,16 @@
 name: Ecommerce
 description: A Foundation Building Block Kit filled with components for creating an ecommerce site
 blocks:
+  - ecommerce-promo-hero
+  - ecommerce-header
+  - ecommerce-hero-slider-small
   - ecommerce-product-card
   - product-feature-section
   - pricing-table
   - button-add-cart
   - button-hover-addcart
   - shopping-cart-button
+  - ecommerce-footer
+  - ecommerce-product-details
+  - ecommerce-product-filters
+  - ecommerce-product-slider
