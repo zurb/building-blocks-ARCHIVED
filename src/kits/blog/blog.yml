@@ -8,6 +8,7 @@ images:
 blocks:
   - responsive-blog-post
   - responsive-blog-footer
+  - tag-cloud
   - responsive-nav-social
   - pagination-pointed
   - pagination-responsive-numbers
