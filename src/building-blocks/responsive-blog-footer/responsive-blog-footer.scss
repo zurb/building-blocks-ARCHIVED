@@ -1,11 +1,7 @@
-$gray: #808080;
-$highlight: #4ec6cd;
-$nav-text-color: $gray;
-$vert-seperate: 4rem;
+$highlight: $primary-color;
 
-
-.top-footer {
-  background: darken($gray, 25%);
+.responsive-blog-footer {
+  background: darken($dark-gray, 25%);
   padding: 3rem 3rem;
   color: white;
 
@@ -16,7 +12,7 @@ $vert-seperate: 4rem;
   }
 
   p {
-    color: $gray;
+    color: $dark-gray;
   }
 
   .mailing-list {
@@ -45,10 +41,10 @@ $vert-seperate: 4rem;
 
   .fa-chevron-circle-up {
     font-size: 3rem;
-    color: $gray;
+    color: $dark-gray;
 
      &:hover {
-     color: lighten($gray, 15%);
+     color: lighten($dark-gray, 15%);
      transition: color 0.3s ease-in;
     }
   }

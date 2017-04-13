@@ -23,18 +23,14 @@ button {
 // Styles for the copy button shown on every code sample
 .docs-code-copy {
   background: transparent;
-  border-radius: 0.1875rem;
   border: 2px solid $dark-blue;
+  border-radius: 0.1875rem;
   box-shadow: none;
   color: $dark-blue;
   font-size: 1rem;
-  margin: 0;
+  margin: auto 0 0 0;
   padding: 0.875rem 2.5rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 1;
-  
+
   &:focus {
     background: transparent;
     color: $dark-blue;
@@ -47,4 +43,7 @@ button {
     color: $white;
   }
 
+  @include breakpoint(small only) {
+    display: none;
+  }
 }
