@@ -92,7 +92,9 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem 1.5rem;
-
+  @include breakpoint(small only) {
+    display: none;
+  }
 }
 
 .kit-details-search-text {
