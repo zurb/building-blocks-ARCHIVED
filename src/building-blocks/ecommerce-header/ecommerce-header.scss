@@ -1,111 +1,98 @@
-.footer {
+.main-nav {
+  width: 100%;
   background-color: $white;
-  padding: 70px 20px 40px 20px;
-}
-
-.footer-links {
+  padding: 1rem 1rem 0;
   
-  h5 {
-    color: $black;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  
-  .menu > li > a {
-    line-height: 1.5em;
-    padding: 0.5rem 0rem;   
-  }
-  
-  a {
-    color: lighten($black, 40%);
-    font-size: 1rem;
-    transition: all 0.5s ease;
-  }
-  
-  a:hover {
-    color: $black;
-    transition: all 0.5s ease;
-  }
-  
-  .more-categories {
-    margin-top: 2rem;
-    
-    @include breakpoint(small down) {
-      margin-top: 2rem;
-    }
-  }
-  
-  .footer-links-block {
-    
-    @include breakpoint(medium down) {
-      margin-bottom: 3rem;
-    }
-  }
-}
-
-.footer-bottom-bar {
-  border-top: 1px solid $light-gray;
-  margin-top: 40px;
-  padding-bottom: 80px;
-  padding-top: 30px;
-  
-  .menu > li > a {
-    line-height: 1.2em;
-    padding: 10px 0;
-  }
-  
-  a {
-    color: $dark-gray;
-    font-size: 0.9rem;
-    transition: all 0.5s ease;
-  }
-  
-  a:hover {
-    color: $black;
-    transition: all 0.5s ease;
+  .logo {
+    height: 50px;
+    width: 160px;
   }
   
   ul {
-    @include breakpoint(small down) {
-      text-align: center;
-    }
+    background-color: $white;
   }
   
   li {
-    display: inline;
+    display: inline-block;
   }
   
-  .bottom-links {
-    margin-top: 0.65rem;
-    margin-left: 0;
+  .nav-links {
+    margin-left: 15px;
   }
   
-  .bottom-links li {
-    padding-right: 2rem;
-    
-    @include breakpoint(small down) {
-      text-align: center;
-    }
-  }
-  
-  .footer-logomark {
-    text-align: center;
-    
-    @include breakpoint(small down) {
-      padding-top: 1rem;
-      margin-bottom: 1rem;
-    }
-  }
-  
-  .bottom-copyright {
+  a {
     color: $dark-gray;
-    font-size: 0.9rem;
-    line-height: 1.2em; 
-    padding-top: 1rem;
-    text-align: right;
+    transition: color 0.5s ease;
+    display: block;
+  }
+  
+  a:hover {
+    color: darken($dark-gray, 50%);
+    transition: color 0.5s ease;
+  }
+
+  input {
+    margin-right: 0px;
     
-    @include breakpoint(small down) {
-      text-align: center; 
+    @include breakpoint(large down) {
+      width: 150px;
     }
+  }
+  
+  &.top-bar {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
+
+.button.search-button {
+  width: 39px;
+  height: 39px;
+  background-size: 20px 20px;
+  background-image: url("http://placehold.it/20x20");
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0px;
+}
+
+.top-bar input {
+  
+}
+
+.menu > .main-nav-link > a {
+  padding: 1.5em 0.85em 1.9em 0.85em;
+}
+
+.topbar {
+  width: 100%;
+  background-color: darken($dark-gray,20%);
+  height: 40px;
+  padding: 8px 20px 10px 20px;
+}
+
+.topbar-message {
+  color: lighten($dark-gray, 100%);
+  float: left;
+}
+
+.topbar-links {
+  color: lighten($dark-gray, 100%);
+  
+  ul li {
+    display: inline;
+    padding-left: 20px;
+  }
+  
+  a {
+    color: lighten($dark-gray, 50%);
+    transition: color 0.5s ease;
+  }
+  
+  a:hover {
+    color: lighten($dark-gray, 100%);
+    transition: color 0.5s ease;
+  }
+}
+

@@ -1,12 +1,13 @@
-name: "Product Footer"
+name: "Product Header"
 tags:
   - ecommerce
-  - footer
-  - product
+  - header
+  - search
   - categories
-  - expanded
+  - navigation
+  - drop down
 category: navigation
-description: Expanded Footer for an eCommerce site that surface links to product categories, account information, shipping and return information, and social accounts.
+description: Header for an eCommerce site that shows main and secondary navigation, including search and product category drop down.
 versions:
   - 6.3.1
   - 6.3.0
