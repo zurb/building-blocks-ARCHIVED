@@ -7,7 +7,7 @@
 
       <button class="kit-card-primary" type="button" data-toggle="example-dropdown">Download <div class="arrow-down"></div></button>
       {{> kit-dropdown}}
-      <a class="kit-card-secondary" href="{{href}}">See Details</a>
+      <a data-kit-link class="kit-card-secondary" href="{{href}}">See Details</a>
       <div class="kit-card-link">
         <a class="kit-card-link-text" target="_blank" href="{{@root.root}}/how-to.html#use">How do I use this?</a>
       </div>
@@ -16,7 +16,8 @@
 
     <!--kit card visual and hover effect-->
     <div class="kit-card-visual column small-12 medium-6">
-      <img class="kit-card-visual-img" src="{{@root.root}}assets/img/{{#if images.card}}kits/{{datakey}}/{{images.card}}{{else}}images/kit-background-ex.png{{/if}}" alt="kit building blocks image">
+      <a href="{{href}}"><img class="kit-card-visual-img" src="{{@root.root}}assets/img/{{#if images.card}}kits/{{datakey}}/{{images.card}}{{else}}images/kit-background-ex.png{{/if}}" alt="kit building blocks image"></a>
     </div>
   </div>
+  <a class="kit-card-mobile-link" href="{{href}}"></a>
 </div>

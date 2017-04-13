@@ -4,6 +4,7 @@ $mobile-ios-modal-radius: rem-calc(12);
 .mobile-ios-modal {
   width: $mobile-ios-modal-width;
   min-height: 160px;
+  height: auto;
   margin: 0;
   padding: 0;
   border-radius: $mobile-ios-modal-radius;
