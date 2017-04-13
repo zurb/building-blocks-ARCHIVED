@@ -7,7 +7,7 @@
   const MY_LIKES_URL = LIKES_URL + '/me';
   const INCREMENT_LIKES_URL = LIKES_URL + '/increment';
   const DECREMENT_LIKES_URL = LIKES_URL + '/decrement';
-  const LIKES_CACHE_KEY = "bb-likes";
+  const LIKES_CACHE_KEY = "bb-likes-2";
   const MY_LIKES_CACHE_KEY = "bb-my-likes";
 
   Likes.prototype.getLikes = function getLikes(callback) {
