@@ -1,0 +1,75 @@
+$flyout-nav-bg: $white;
+$flyout-nav-shadow: 5px 2px 7px rgba($black, 0.15);
+$flyout-nav-font-size: rem-calc(14);
+$flyout-nav-item-padding: 1rem;
+$flyout-nav-font-hover-color: $primary-color;
+$flyout-nav-item-hover-bg: $light-gray;
+$flyout-nav-item-border-width: 4px;
+
+
+.flyout-nav {
+  box-shadow: $flyout-nav-shadow;
+  background: $flyout-nav-bg;
+
+   // ceates arrow style
+  > li::after {
+    content: '»';
+  }
+}
+
+// flayout nav arrow - overrides default arrow
+.flyout-nav.menu.vertical li.opens-right > a::after {
+  content: '»';
+  @include vertical-center;
+  padding-right: 10px;
+  border-color: transparent transparent transparent transparent;
+}
+
+.flyout-nav li {
+  font-size: $flyout-nav-font-size;
+  padding: $flyout-nav-item-padding;
+  cursor: pointer;
+  font-weight: bold;
+  border-bottom: 1px solid $light-gray;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    padding: 0;
+    color: $body-font-color;
+  }
+}
+
+.flyout-nav li:hover {
+  background: $flyout-nav-item-hover-bg;
+  color: $flyout-nav-font-hover-color;
+
+  > a {
+    color: $flyout-nav-font-hover-color;
+  }
+}
+
+.flyout-nav > li:nth-child(-n+3){
+  border-left: $flyout-nav-item-border-width solid $primary-color;
+}
+
+.flyout-nav > li:nth-child(-n+3):hover{
+  border-left: $flyout-nav-item-border-width solid lighten($primary-color, 20%);
+}
+
+.flyout-nav > li:nth-child(n+4){
+  border-left: $flyout-nav-item-border-width solid $success-color;
+}
+
+.flyout-nav > li:nth-child(n+4):hover{
+  border-left: $flyout-nav-item-border-width solid lighten($success-color, 20%);
+}
+
+.flyout-nav > li:nth-child(n+7) {
+  border-left: $flyout-nav-item-border-width solid $warning-color;
+}
+
+.flyout-nav > li:nth-child(n+7):hover {
+  border-left: $flyout-nav-item-border-width solid lighten($warning-color, 20%);
+}
+

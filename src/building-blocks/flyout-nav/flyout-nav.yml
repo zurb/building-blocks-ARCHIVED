@@ -1,0 +1,19 @@
+name: 'Flyout Side Nav'
+tags:
+  - navigation
+  - nav
+  - sidebar
+  - menu
+  - flexbox
+  - flyout
+  - blog
+category: navigation
+description: A vertical sidebar navigation with flyout dropdowns.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  github: rafibomb
+  'foundation-forum': 10
+  name: Rafi
+containerClass: none
