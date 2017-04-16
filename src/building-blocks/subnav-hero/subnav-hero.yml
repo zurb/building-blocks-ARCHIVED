@@ -4,6 +4,8 @@ tags:
   - nav
   - menu
   - button
+  - hero
+  - links
 category: navigation
 description: A secondary navigation to switch between pages in a category.
 versions:
