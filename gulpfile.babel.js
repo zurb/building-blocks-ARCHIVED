@@ -129,6 +129,7 @@ function kitIndex() {
       data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
+    .pipe($.revTimestamp())
     .pipe(gulp.dest(PATHS.dist));
   }
 

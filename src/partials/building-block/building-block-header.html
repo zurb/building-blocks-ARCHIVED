@@ -1,14 +1,16 @@
 <div class="building-block-header">
   <div class="row">
     <div class="column">
-      <h1 class="building-block-title">{{block.name}}</h1>
-      <h3 class="building-block-author">By 
-        {{#if block.author.foundation-forum}}
-          <a href="http://foundation.zurb.com/forum/{{block.author.foundation-forum}}">{{block.author.name}}</a>
-        {{ else }}
-          {{block.author.name}}
-        {{/if}}
-      </h3>
+      <div class="building-block-header-name-section">
+        <h1 class="building-block-title">{{block.name}}</h1>
+        <h3 class="building-block-author">{{#if block.author.github}}<img src="https://github.com/{{block.author.github}}.png?size=30" class="avatar content-right" height="" width="" alt="">{{/if}}By
+          {{#if block.author.foundation-forum}}
+            <a href="http://foundation.zurb.com/forum/{{block.author.foundation-forum}}">{{block.author.name}}</a>
+          {{ else }}
+            {{block.author.name}}
+          {{/if}}
+        </h3>
+      </div>
       <div class="header-icon-row">
         {{#each block.major-versions}}
         <span class="version-badge">F{{this.major}}</span>

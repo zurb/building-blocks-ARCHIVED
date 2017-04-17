@@ -23,7 +23,7 @@
         <button class="button docs-code-copy" data-clipboard>Copy</button>
       </div>
       <div class="code-box-script">
-        
+
 {{#code "html"}}
 {{{bb-html page}}}
 {{/code}}
@@ -51,8 +51,10 @@
     </div>
     <!--JS-->
     <div id="codeBoxJS" class="column code-box">
-      <button class="button docs-code-copy" data-clipboard-target="#copyJS">Copy</button>
-      <div class="code-toggler inactive">JS</div>
+      <div class="code-box-header">
+        <div class="code-toggler inactive">JS</div>
+        <button class="button docs-code-copy" data-clipboard>Copy</button>
+      </div>
       <div class="code-box-script">
 {{#code "js"}}
 {{{bb-js page}}}

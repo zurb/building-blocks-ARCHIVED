@@ -1,13 +1,13 @@
-name: 'Top Bar with Animation'
+name: 'Hero Subnav'
 tags:
   - navigation
   - nav
   - menu
-  - top bar
-  - flexbox
-  - animation
+  - button
+  - hero
+  - links
 category: navigation
-description: A slick looking Top Bar navigation with animation options for the mobile dropdown.
+description: A secondary navigation to switch between pages in a category.
 versions:
   - 6.3.1
   - 6.3.0
