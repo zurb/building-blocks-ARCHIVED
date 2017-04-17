@@ -1,7 +1,7 @@
 $global-radius: 5px;
-$subscription-form-bg: #0d3d5d;
-$subscription-form-color: #fff;
-$subscription-form-padding: 32px;
+$subscription-form-bg: darken($primary-color, 20%);
+$subscription-form-color: $white;
+$subscription-form-padding: rem-calc(32);
 
 
 .simple-subscription-form {
