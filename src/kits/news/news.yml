@@ -1,0 +1,9 @@
+name: News
+short_description: Everything you'll need to build a dynamic and engaging news site.
+description: News sites are always looking to stay ahead of the trend. This kit includes various highly customizable building blocks to make your content stand out.
+background: '#84366A'
+images:
+  'hero': 'news-kit.jpg'
+  'card': 'news-kit.jpg'
+blocks:
+  - featured-blog-posts-panel
