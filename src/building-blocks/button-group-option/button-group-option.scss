@@ -1,0 +1,27 @@
+$button-group-option-font-size: 1rem; // controls size of circle and text of option
+$button-group-option-button-gap: 0.35rem;
+
+.button-group-option {
+  position: relative;
+  align-items: center;
+  width: 100%;
+  @include button-group-expand('.button');
+
+  &:before {
+    content: attr(data-grouptype);
+    z-index: 1;
+    color: $dark-gray;
+    display: inline-block;
+    font-size: $button-group-option-font-size;
+    padding: 0.25em;
+    border-radius: 5000px;
+    background: $white;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .button + .button {
+    margin-left: $button-group-option-button-gap;
+  }
+}
