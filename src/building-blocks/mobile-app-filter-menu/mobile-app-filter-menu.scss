@@ -15,7 +15,7 @@ $mobile-app-filter-menu-height: rem-calc(45);
       color: $medium-gray;
     }
 
-    &.active {
+    &.is-active {
       a {
         color: $dark-gray;
       }
