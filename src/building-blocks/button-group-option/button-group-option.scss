@@ -5,6 +5,7 @@ $button-group-option-button-gap: 0.35rem;
   position: relative;
   align-items: center;
   width: 100%;
+  @include button-group;
   @include button-group-expand('.button');
 
   &:before {
