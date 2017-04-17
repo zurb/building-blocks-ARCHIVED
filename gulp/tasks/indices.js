@@ -62,6 +62,7 @@ function buildingBlocksCategoryPages() {
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
     }))
+    .pipe($.revTimestamp())
     .pipe(gulp.dest(PATHS.dist));
   }
 
