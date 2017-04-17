@@ -2,6 +2,8 @@ name: 'Full Screen Off Canvas'
 tags:
   - off-canvas
   - navigation
+  - nav
+  - menu
 category: navigation
 description: A full screen off canvas menu.
 versions:
