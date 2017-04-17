@@ -25,7 +25,7 @@ $label-background-hover: scale-color($label-background, $lightness: -15%);
 
 .news-card {
   background-color: $white;
-  font-family: Roboto;
+  font-family: $body-font-family;
   font-weight: 400;
   margin-bottom: 1.6rem;
   border-radius: 0.125rem;
