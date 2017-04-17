@@ -1,34 +1,35 @@
-.full-screen {
-  @include off-canvas-base($background: $black, $transition: 0.3s ease-in-out);
-  @include off-canvas-position($position: left, $size: 100%);
+$offcanvas-full-screen-bg: $black;
+$offcanvas-full-screen-side: left;
+$offcanvas-full-screen-closebutton-size: 5rem;
+
+.offcanvas-full-screen {
+  @include off-canvas-base($background: $offcanvas-full-screen-bg, $transition: 0.3s ease-in-out);
+  @include off-canvas-position($position: $offcanvas-full-screen-side, $size: 100%);
 }
 
-.off-canvas-inner {
+.offcanvas-full-screen-inner {
   padding: 1rem;
   text-align: center;
 }
 
-.off-canvas-menu {
+.offcanvas-full-screen-menu {
   @include menu-base;
-
-  li {
-    display: block;
-  }
+  @include menu-direction(vertical);
 
   a {
-    color: #fff;
+    color: $white;
 
     &:hover {
-      color: $primary-color;
+      color: darken($white, 30%);
     }
   }
 }
 
-.off-canvas-close {
+.offcanvas-full-screen-close {
   color: $white;
-  font-size: 5rem;
+  font-size: $offcanvas-full-screen-closebutton-size;
 
   &:hover {
-    color: $primary-color;
+    color: darken($white, 30%);
   }
 }
