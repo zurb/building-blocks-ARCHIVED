@@ -3,7 +3,7 @@ tags:
   - social-media
   - footer
   - buttons
-category: buttons
+category: control
 description: Social buttons with 9 social networking site's buttons added by default.
 versions:
   - 6.3.1
@@ -11,3 +11,4 @@ versions:
 author:
   github: IamManchanda
   name: Harry Manchanda
+  twitter: harmanmanchanda
