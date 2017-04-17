@@ -1,6 +1,7 @@
 'use strict';
 import gulp         from 'gulp';
 import plugins      from 'gulp-load-plugins';
+import yargs        from 'yargs';
 import fs           from 'fs';
 import panini       from 'panini';
 import yaml         from 'js-yaml';
@@ -11,6 +12,10 @@ import path         from 'path';
 const $ = plugins();
 
 const { COMPATIBILITY, PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
+
+// Check for --production flag
+const PRODUCTION = !!(yargs.argv.production);
+
 
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
@@ -87,7 +92,7 @@ function buildingBlockIframe() {
     .pipe($.rename(function (path) {
       path.basename += "-iframe";
     }))
-    .pipe($.revTimestamp())
+    .pipe($.if(PRODUCTION, $.revTimestamp()))
     .pipe(gulp.dest(PATHS.dist + "/blocks/"));
   }
 
@@ -101,7 +106,7 @@ function buildingBlockPage() {
       data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
-    .pipe($.revTimestamp())
+    .pipe($.if(PRODUCTION, $.revTimestamp()))
     .pipe(gulp.dest(PATHS.dist + "/blocks/"));
 }
 
@@ -120,7 +125,7 @@ function kitsPages() {
       data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
-    .pipe($.revTimestamp())
+    .pipe($.if(PRODUCTION, $.revTimestamp()))
     .pipe(gulp.dest(PATHS.dist + "/kits/"));
 }
 

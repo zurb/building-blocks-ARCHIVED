@@ -1,6 +1,7 @@
 'use strict';
 import gulp         from 'gulp';
 import plugins      from 'gulp-load-plugins';
+import yargs        from 'yargs';
 import _            from 'lodash';
 import fs           from 'fs';
 import yaml         from 'js-yaml';
@@ -13,6 +14,9 @@ const $ = plugins();
 const { COMPATIBILITY, PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
 const PAGE_SIZE = 12;
+
+// Check for --production flag
+const PRODUCTION = !!(yargs.argv.production);
 
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
@@ -62,7 +66,7 @@ function buildingBlocksCategoryPages() {
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
     }))
-    .pipe($.revTimestamp())
+    .pipe($.if(PRODUCTION, $.revTimestamp()))
     .pipe(gulp.dest(PATHS.dist));
   }
 
