@@ -8,7 +8,7 @@ module.exports = function(context, number, options) {
     var relatedBlocks = _.filter(context.categories[category].blocks, function(b) {
       return b.name !== currentBlock.name;
     });
-    var list = _.shuffle(relatedBlocks).slice(0, number - 1);
+    var list = _.shuffle(relatedBlocks).slice(0, number);
     for(var i = 0; i < list.length; i++) {
       ret = ret + options.fn({currentBlock: list[i]});
     }
