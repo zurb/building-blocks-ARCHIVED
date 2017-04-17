@@ -1,7 +1,5 @@
-$closebutton-color: white;
-
 .full-screen {
-  @include off-canvas-base($background: #000, $transition: 0.3s ease-in-out);
+  @include off-canvas-base($background: $black, $transition: 0.3s ease-in-out);
   @include off-canvas-position($position: left, $size: 100%);
 }
 
@@ -27,7 +25,7 @@ $closebutton-color: white;
 }
 
 .off-canvas-close {
-  color: #fff;
+  color: $white;
   font-size: 5rem;
 
   &:hover {
