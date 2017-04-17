@@ -1,6 +1,15 @@
 $global-radius: 5px;
+$subscription-form-bg: #0d3d5d;
+$subscription-form-color: #fff;
+$subscription-form-padding: 32px;
+
 
 .simple-subscription-form {
+    background: $subscription-form-bg;
+    color: $subscription-form-color;
+    padding: $subscription-form-padding;
+    border-radius: $global-radius;
+    
     .button {
         margin-bottom: 0;
         border-radius: 0 $global-radius $global-radius 0;
