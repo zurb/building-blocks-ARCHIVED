@@ -7,3 +7,7 @@ images:
   'card': 'news-kit.jpg'
 blocks:
   - featured-blog-posts-panel
+  - social-buttons
+  - polls
+  - news-card
+  - responsive-hidden-nav
