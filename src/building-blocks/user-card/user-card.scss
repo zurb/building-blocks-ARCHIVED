@@ -1,10 +1,45 @@
+$card-padding: $global-padding;
+
+.card {
+    p {
+        margin: 0;
+    }
+}
 .user-image {
+    display:block;
+    margin:auto;
     border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    &:hover {
+        -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    }
+}
+
+.social-section {
+    background: #f2f2f2;
+    padding: $card-padding;
 }
 .social {
     li{
         margin: 0 10px;
         font-size: 1.2em;
         cursor: pointer;
+        &:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
     }
 }
+
+.location{
+      display: inline-block;
+      margin: 0 rem-calc(15);
+      color: #8a8a8a;
+      font-size: rem-calc(14);
+    }
+    .location-icon, .location-text{
+      display: inline-block;
+      padding: 0 rem-calc(5);
+    }
