@@ -31,15 +31,15 @@ Like a Building Block? You can copy the HTML and CSS/SCSS and JS (if applicable)
 
 The HTML, CSS, and JS toggles let you focus on one section at a time if you’d like.
 
-![](https://drive.google.com/a/zurb.com/file/d/0B3omzFyAxfEAQTRyMzRFTnB4UFk/view?usp=drivesdk)
+![](https://i.imgur.com/R3as9Aq.png)
 
 You can copy the the code from each code container using the handy copy button.
 
-![](https://drive.google.com/a/zurb.com/file/d/0B3omzFyAxfEAQ1R1aXJtcGd3Nms/view?usp=drivesdk)
+![](https://i.imgur.com/9WOZUQp.png)
 
 If you are using CSS vs SCSS, you can toggle to the compiled CSS using this handy toggle:
 
-![](https://drive.google.com/a/zurb.com/file/d/0B3omzFyAxfEATnJJUWh1T2U5b0U/view?usp=drivesdk)
+![](https://i.imgur.com/nNjwiTm.png)
 
 If you’re using the CSS version of Foundation, it’s best to add the CSS to your app.css file that is included with the downloaded Foundation CSS project. You can make any style overrides from there.
 
