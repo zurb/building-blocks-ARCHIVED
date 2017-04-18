@@ -94,8 +94,8 @@ Or add this CDN to the head of your pages or layout:
 The Building Blocks site is open source just like Foundation, meaning anyone can contribute to it. It’s built on the same Node based build system the ZURB Stack is built on. Submissions are made through GitHub, with pull requests.
 
 ### You’ll need:
-A sweet Building Block
-A GitHub account
+- A sweet Building Block
+- A GitHub account
 
 ### Your computer needs:
 NodeJS (6.10.1)
@@ -133,11 +133,11 @@ The name should contain the component or type of component it is. For example a 
 Example: article-card
 All your files in the folder will have the same root name
 - article-card
-- - article-card.html
-- - article-card.scss
-- - article-card.js
-- - article-card.png
-- - article-card.yml
+  - article-card.html
+  - article-card.scss
+  - article-card.js
+  - article-card.png
+  - article-card.yml
 
 ### Step 3:
 In your Building Block component folder, create your `.html`, `.scss`, `.js` and `.yml` pages.
