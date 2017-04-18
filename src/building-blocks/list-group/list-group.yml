@@ -1,0 +1,13 @@
+name: 'List Group'
+tags:
+  - lists
+  - group
+category: lists
+description: List Group Component that helps you display a set of content with specific list items.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  github: IamManchanda
+  name: Harry Manchanda
+  twitter: harmanmanchanda
