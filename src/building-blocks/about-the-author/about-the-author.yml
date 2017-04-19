@@ -4,8 +4,9 @@ tags:
   - news
   - blog
   - about
-  - author
   - social
+  - icons
+  - profile
 category: media
 description: About the author of an article usually found at the bottom of a news article.
 versions:
