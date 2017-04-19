@@ -1,0 +1,17 @@
+name: 'Contact Section Footer'
+tags:
+  - contact
+  - footer
+  - links
+  - flexbox
+  - forms
+category: forms
+description: A responsive contact section with map and forms.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  github: rafibomb
+  'foundation-forum': 10
+  name: Rafi
+containerClass: none
