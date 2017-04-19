@@ -1,5 +1,17 @@
+/// Defaul card container bottom margin
+/// @type Number
 $card-user-container-margin-bottm: 1rem;
+
+/// Default radius of the panel
+/// @type List
+$card-user-container-radius: $global-radius !default;
+
+///Default card background color
+/// @type Color
 $card-user-container-background: $white;
+
+//// Default card cololr
+/// @type Color
 $card-user-container-color: $black;
 
 
@@ -13,6 +25,7 @@ $card-user-container-color: $black;
     color: $black;
     overflow: hidden;
     padding: 0 !important;
+    border-radius: $card-user-container-radius;
 }
 
 .card-user-avatar {
