@@ -5,7 +5,7 @@ $contact-us-section-bg: $body-background;
   padding: $contact-us-section-padding;
   background: $contact-us-section-bg;
 
-  .columns:first-child {
+  .contact-us-section-left {
     padding-right: $contact-us-section-padding;
     border-bottom: 2px solid $light-gray;
     padding-bottom: $contact-us-section-padding;
@@ -19,7 +19,7 @@ $contact-us-section-bg: $body-background;
     }
   }
 
-  .columns:last-child {
+  .contact-us-section-right {
     padding-left: $contact-us-section-padding;
 
     @include breakpoint(medium) {
