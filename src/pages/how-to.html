@@ -11,15 +11,14 @@ layout: static
 ---
 
 <!--sticky menu-->
-<div class="row">
+<div class="row medium-unstack">
 
   <div class="column medium-3 large-3" data-sticky-container>
     <div class="sticky" data-sticky data-margin-top='2' data-top-anchor="hero-bb:bottom" data-btm-anchor="footer:top">
       <aside>
         <ul class="sidenav-bb" data-magellan data-deep-linking="true" data-bar-offset="50">
           <li><a class="how-to-menu-item" href="#what-is">What is a Building Block?</a></li>
-          <li><a href="#use">How to use a Building Block
-</a></li>
+          <li><a href="#use">How to use a Building Block</a></li>
           <!-- <li><a href="#need">What Do I Need to Submit a Building Block?</a></li> -->
           <li><a href="#submit">Submitting your Building Block</a></li>
           <!-- <li><a href="#review">Review Process</a></li>
@@ -33,7 +32,7 @@ layout: static
     </div>
   </div>
 
-<!--what is a building block-->
+  <!--what is a building block-->
   <div class="column medium-9 large-7">
 
     <h2 id="what-is" data-magellan-target="what-is" class="how-to-header">What is a Building Block?</h2>
@@ -60,8 +59,12 @@ layout: static
 
     <hr class="how-to-line">
 
-<!--how to use-->
+    <!--how to use-->
     <h2 id="use" data-magellan-target="use" class="how-to-header">How To Use a Building Block</h2>
+
+    <div class="responsive-embed widescreen">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/N-odguqKk8w" frameborder="0" allowfullscreen></iframe>
+    </div>
 
     <p class="how-to-paragraph">Building Blocks are easy to use in your projects whether you’re using a CSS version or the powerful ZURB Stack. Below, we’ve outlined how to get a Building Block into your project in a snap and build faster.</p>
 
@@ -204,11 +207,18 @@ layout: static
 
     <p class="how-to-small-title">Or add this CDN to the head of your pages or layout:</p>
 
-    <pre><code>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"&gt;</code></pre>
+    <div class="code-scroller">
+      <pre><code>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"&gt;</code></pre>
+    </div>
 
     <hr class="how-to-line">
-<!--submitting-->
+    <!--submitting-->
+
     <h2 id="submit" data-magellan-target="submit" class="how-to-header">How do I submit a building block?</h2>
+
+    <div class="responsive-embed widescreen">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/v3nuYLpMtEY" frameborder="0" allowfullscreen></iframe>
+    </div>
 
     <p class="how-to-paragraph">So you want to build a Building Block? Well fear not! You can get in on the action too and get your work featured! We’ve put together a simple guide to submitting a Building Block. Once it’s submitted, we’ll promote your awesomeness to the greater Foundation community because you rock!</p>
 
@@ -334,27 +344,7 @@ layout: static
 
     </ol>
 
-    <p class="how-to-paragraph">Here is a .yml file template you can use:</p>
-
-<pre><code>
-name: 'Short title description'
-tags:
-  - media
-  - blog
-  - card
-  - animation
-category: container
-description: Longer description about
-Building Block settings, use cases,
-classes to modify or additional important
-info.
-versions:
-  - 6.3.1
-  - 6.3.0
-author:
-  name: Your name
-containerClass: row medium-5 large-3 column
-</code></pre>
+    <p class="how-to-paragraph">Here is a .yml file template you can use: <a href="#" target="_blank">Sample .yml file</a></p>
 
     <p class="how-to-paragraph">Add your image to your component’s folder</p>
 
