@@ -11,7 +11,7 @@ $contact-us-section-bg: $body-background;
     padding-bottom: $contact-us-section-padding;
     margin-bottom: $contact-us-section-padding;
 
-    @media screen and (min-width: 40em) {
+    @include breakpoint(medium) {
       border-right: 1px solid $light-gray;
       border-bottom: 0;
       padding-bottom: 0;
@@ -30,7 +30,7 @@ $contact-us-section-bg: $body-background;
   .contact-us-header {
     margin-bottom: $contact-us-section-padding;
 
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    @media screen and #{breakpoint(medium)} and #{breakpoint(large down)} {
       font-size: 32px;
     }
   }
