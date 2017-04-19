@@ -3,10 +3,10 @@ $social-brand-facebook: #3b5998;
 $social-brand-twitter: #55acee;
 $social-brand-linkedin: #007bb5;
 
-$author-title-transformation: uppercase;
+$about-the-author-text-transform: uppercase;
 
 .separator-left {
-  text-align: left; 
+  text-align: left;
   @include clearfix;
 
   &::after {
@@ -24,13 +24,13 @@ $author-title-transformation: uppercase;
   border: 1px solid $medium-gray;
 
   .author-title {
-    text-transform: $author-title-transformation;
+    text-transform: $about-the-author-text-transform;
   }
 
   .author-social {
     text-align: center;
-    margin-top: .7rem;
-    margin-bottom: .7rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
 
     .fa-stack {
       display: inline-block;
@@ -38,21 +38,26 @@ $author-title-transformation: uppercase;
       &.facebook {
         color: lighten($social-brand-facebook, 10%);
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: $social-brand-facebook;
         }
       }
+
       &.twitter {
         color: lighten($social-brand-twitter, 10%);
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: $social-brand-twitter;
         }
       }
+
       &.linkedin {
         color: lighten($social-brand-linkedin, 10%);
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: $social-brand-linkedin;
         }
       }
