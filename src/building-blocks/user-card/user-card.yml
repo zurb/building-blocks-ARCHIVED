@@ -1,14 +1,14 @@
-name: 'User-Card'
+name: 'User-Card-Info'
 tags:
   - content
   - card
   - blog
 category: container
-description: user card .
+description: The Building-block helps you to show users info in cards.
 versions:
   - 6.3.1
   - 6.3.0
 author:
   name: ibnHamdan
   github: ibnHamdan
-containerClass: row column medium-6 align-center
+ containerClass: row column align-center
