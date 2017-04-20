@@ -1,0 +1,103 @@
+$featured-article-text-color: #fff;
+$featured-article-border: 1px solid #fff;
+$featured-article-links-border: 1px solid lightgray;
+$featured-article-side-links-height: 450px;
+
+// big feature
+$featured-article-big-bg: url('http://placehold.it/350x450') no-repeat center center;
+$featured-article-title-size-big: 28px;
+$featured-article-author-size-big: 18px;
+
+// small feature
+$featured-article-small-bg: url('http://placehold.it/350x450') no-repeat center center;
+$featured-article-title-size-small: 16px;
+$featured-article-author-size-small: 12px;
+
+.featured-article-big {
+  background: $featured-article-big-bg;
+  background-size: cover;
+  height: $featured-article-side-links-height;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  border-right: $featured-article-border;
+
+  .featured-article-text {
+    .featured-article-title {
+      font-size: $featured-article-title-size-big;
+      font-weight: bold;
+      line-height: 30px;
+      .author {
+        font-size: $featured-article-author-size-big;
+      }
+    }
+    p {
+      color: $featured-article-text-color;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.featured-article-small-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: $featured-article-side-links-height;
+
+  :last-child .featured-article-small {
+    border-bottom: 0;
+  }
+}
+
+.featured-article-small {
+  background: $featured-article-small-bg;
+  height: $featured-article-side-links-height / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: $featured-article-border;
+
+  :last-child {
+    border-bottom: 0;
+  }
+
+  .featured-article-text {
+    .featured-article-title {
+      font-size: $featured-article-title-size-small;
+      font-weight: bold;
+      line-height: 15px;
+      max-height: 45px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    p {
+      color: $featured-article-text-color;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.featured-article-links-container {
+  border: $featured-article-links-border;
+  background-color: $white;
+  height: $featured-article-side-links-height;
+  overflow: scroll;
+}
+
+.featured-article-links,
+.featured-article-links-header {
+  padding: 10px;
+  border-bottom: $featured-article-links-border;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.featured-article-links-header {
+  font-weight: 600;
+  text-transform: uppercase;
+}
