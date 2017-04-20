@@ -100,24 +100,33 @@ $global-nav-hover-color: lighten($global-nav-bg, 10%);
 .global-nav-title {
   line-height: 0;
   padding-left: $global-padding;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
 
-  a {
-    align-items: center;
+  .zurb-logo {
     color: $white;
-    display: flex;
     font-family: "zurb-logo";
     font-size: 38px;
     font-weight: normal;
     opacity: 0.75;
     transition: $transition;
+    min-height: 46px;
+    height: 46px;
+    line-height: 46px !important;
+    @media all and (-ms-high-contrast:none) {
+      line-height: 26px !important; // stupid microsoft
+     }
+     @supports (-ms-ime-align:auto) {
+      line-height: 26px !important; // stupid microsoft
+    }
 
     strong {
       display: inline;
       font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 17px;
-      line-height: 45px;
-      margin-left: 7px;
-      margin-top: 1px;
+      line-height: 46px;
     }
 
     &:hover {
