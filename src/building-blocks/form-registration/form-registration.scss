@@ -15,17 +15,17 @@ $social-brand-facebook: #3b5998;
       width: 100%;
       bottom: 0;
       background: -webkit-gradient(
-          linear,
-          left bottom,
-          left top,
-          color-stop(1, rgba($white, 0.3)), /* Top */
-          color-stop(0, rgba($white, 1.0)) /* Bottom */
+        linear,
+        left bottom,
+        left top,
+        color-stop(1, rgba($white, 0.3)), /* Top */
+        color-stop(0, rgba($white, 1.0)) /* Bottom */
       );
     }
   }
 }
 
-.form-registration-form {
+.form-registration-group {
   padding: $global-padding;
 
   .form-registration-input {
