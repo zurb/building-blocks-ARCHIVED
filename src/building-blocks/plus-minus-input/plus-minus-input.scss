@@ -1,4 +1,10 @@
 .plus-minus-input {
+
+  .input-group-field[type=number]::-webkit-inner-spin-button,
+  .input-group-field[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+  }
+  
   .input-group-field {
     text-align: center;
   }
