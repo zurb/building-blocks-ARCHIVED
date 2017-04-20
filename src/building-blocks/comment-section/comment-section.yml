@@ -4,7 +4,6 @@ tags:
   - news
   - article
   - social
-  - community
   - flexbox
 category: containers
 description: A simple checkout summary with a preview of the items in your order.

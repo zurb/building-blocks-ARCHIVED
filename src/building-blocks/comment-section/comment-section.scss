@@ -25,9 +25,3 @@ $comment-section-padding: $global-padding;
   background-color: $comment-form-bg;
   padding: $global-padding;
 }
-
-.comment-section-form {
-  textarea {
-    height: rem-calc(200);
-  }
-}
