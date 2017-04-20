@@ -36,3 +36,12 @@
 .how-to-line {
   margin-bottom: 3rem;
 }
+
+.code-scroller {
+  position: relative;
+  overflow-x: scroll;
+
+  @include breakpoint(small only) {
+    max-width: 320px;
+  }
+}
