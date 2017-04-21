@@ -6,12 +6,21 @@ images:
   'hero': 'news-kit.jpg'
   'card': 'news-kit.jpg'
 blocks:
-  - featured-blog-posts-panel
-  - social-buttons
-  - polls
   - news-card
   - responsive-hidden-nav
   - topbar-responsive
   - comment-section
   - about-the-author
   - wide-article-link
+  - large-article-header
+  - simple-article-header
+  - blockquote
+  - flexible-article-images
+  - featured-article-side-links
+  - featured-blog-posts-panel
+  - sticky-social-bar
+  - ecommerce-footer
+  - pagination-circular
+  - tag-cloud
+  - social-buttons
+  - polls
