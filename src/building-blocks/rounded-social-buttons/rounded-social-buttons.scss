@@ -1,3 +1,5 @@
+$social-button-transition: 0.5s ease all;
+
 // Source: https://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
 $social-brand-facebook: #3b5998;
 $social-brand-twitter: #55acee;
@@ -42,7 +44,7 @@ $social-brand-tumblr: #32506d;
     font-weight: normal;
     line-height: 2em;
     border-radius: 1.6875rem;
-    transition: 0.5s ease all;
+    transition: $social-button-transition;
     margin-right: .25rem;
 
     &.facebook {
