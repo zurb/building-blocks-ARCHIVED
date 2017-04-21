@@ -1,0 +1,51 @@
+$large-article-header-bg: url('https://unsplash.it/1024/500/?blur');
+$large-article-header-color: white;
+$large-article-header-height: rem-calc(500);
+
+.large-article-header {
+  background: $large-article-header-bg no-repeat center;
+  background-size: cover;
+  height: $large-article-header-height;
+  position: relative;
+}
+
+.large-article-header-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: rem-calc(50);
+  left: 0;
+  right: 0;
+  .center-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .article-date {
+    color: $large-article-header-color;
+  }
+  .article-title {
+    p {
+      font-size: rem-calc(45);
+      line-height: rem-calc(50);
+      color: $large-article-header-color;
+      font-weight: 600;
+    }
+  }
+  .article-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .article-author {
+    display: flex;
+    align-items: center;
+    margin: $global-margin 0;
+    img {
+      border-radius: rem-calc(50);
+    }
+    a {
+      margin-left: $global-margin;
+    }
+  }
+}
