@@ -1,6 +1,7 @@
 $large-article-header-bg: url('https://unsplash.it/1024/500/?blur');
-$large-article-header-color: white;
+$large-article-header-color: $white;
 $large-article-header-height: rem-calc(500);
+$large-article-header-font-size: rem-calc(55);
 
 .large-article-header {
   background: $large-article-header-bg no-repeat center;
@@ -25,8 +26,8 @@ $large-article-header-height: rem-calc(500);
     color: $large-article-header-color;
   }
   .article-title {
-    p {
-      font-size: rem-calc(45);
+    h1 {
+      font-size: $large-article-header-font-size;
       line-height: rem-calc(50);
       color: $large-article-header-color;
       font-weight: 600;
@@ -36,6 +37,10 @@ $large-article-header-height: rem-calc(500);
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    a {
+      color: $large-article-header-color;
+    }
   }
   .article-author {
     display: flex;
