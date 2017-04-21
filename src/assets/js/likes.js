@@ -27,7 +27,7 @@
     } else {
       Likes.getMyLikes(function(likes) {
         this.myLikes = likes;
-        callback(this.likes);
+        callback(this.myLikes);
       }.bind(this));
     }
   };
