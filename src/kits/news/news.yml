@@ -12,3 +12,6 @@ blocks:
   - news-card
   - responsive-hidden-nav
   - topbar-responsive
+  - comment-section
+  - about-the-author
+  - wide-article-link
