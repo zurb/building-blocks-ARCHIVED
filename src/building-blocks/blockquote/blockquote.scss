@@ -1,8 +1,23 @@
 .blockquote-container {
-  .callout {    
+  &.blockquote-left {
+    float: left;
+    width: 35%;
+    margin-right: $global-margin;
+    @include breakpoint (small only) {
+      float: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+  &.blockquote-right {
+    float: right;
+    width: 35%;
+    margin-left: $global-margin;
+  }
+  .callout {
     .blockquote-title {
       margin-left: 1rem;
-    }    
+    }
     blockquote {
       quotes: "“""”""‘""’  ";
       border-left: none;
