@@ -1,6 +1,15 @@
 .sidenav-bb {
   @include menu-base;
   @include menu-direction(vertical);
+
+  @include breakpoint(small only) {
+    padding-bottom: 2rem;
+
+    li {
+      justify-content: center;
+      display: flex;
+    }
+  }
 }
 
 [data-magellan] a {

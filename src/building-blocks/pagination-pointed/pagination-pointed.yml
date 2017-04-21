@@ -1,9 +1,9 @@
-name: "Pagination with Pointed Previous/Next Buttons"
+name: "Pagination with Pointed Buttons"
 tags:
   - nav
   - navigation
   - pagination
-category: forms
+category: navigation
 description: Pagination with nice buttons for good touch target.
 versions:
   - 6.3.0

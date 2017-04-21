@@ -9,9 +9,9 @@
     <link rel="icon" href="{{root}}assets/img/favicon/foundation-favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     {{#ifequal block.grid 'float'}}
-      <link rel="stylesheet" href="{{root}}building-block/app-float.css">
+      <link rel="stylesheet" href="{{root}}building-block/app-float.css?rev=@@hash">
     {{else}}
-      <link rel="stylesheet" href="{{root}}building-block/app.css">
+      <link rel="stylesheet" href="{{root}}building-block/app.css?rev=@@hash">
     {{/ifequal}}
     <style>
       body {
@@ -32,12 +32,12 @@
       }
 
     </style>
-    <link rel="stylesheet" href="{{root}}building-block/{{page}}/layout.css">
-    <link rel="stylesheet" href="{{root}}building-block/{{page}}/{{page}}.css">
+    <link rel="stylesheet" href="{{root}}building-block/{{page}}/layout.css?rev=@@hash">
+    <link rel="stylesheet" href="{{root}}building-block/{{page}}/{{page}}.css?rev=@@hash">
   </head>
   <body>
     {{> body}}
-    <script src="{{root}}assets/js/app.js"></script>
+    <script src="{{root}}assets/js/app.js?rev=@@hash"></script>
 
     <script src="{{root}}building-block/{{page}}/{{page}}.js"></script>
   </body>
