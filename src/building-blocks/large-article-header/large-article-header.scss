@@ -7,6 +7,10 @@ $large-article-header-height: rem-calc(500);
   background-size: cover;
   height: $large-article-header-height;
   position: relative;
+
+  @include breakpoint(small only) {
+    height: ($large-article-header-height / 1.5);
+  }
 }
 
 .large-article-header-content {
@@ -16,6 +20,11 @@ $large-article-header-height: rem-calc(500);
   bottom: rem-calc(50);
   left: 0;
   right: 0;
+
+  @include breakpoint(small only) {
+    bottom: rem-calc(20);
+  }
+
   .center-container {
     width: 50%;
     margin: 0 auto;
