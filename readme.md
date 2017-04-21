@@ -31,15 +31,15 @@ Like a Building Block? You can copy the HTML and CSS/SCSS and JS (if applicable)
 
 The HTML, CSS, and JS toggles let you focus on one section at a time if you’d like.
 
-![](https://drive.google.com/a/zurb.com/file/d/0B3omzFyAxfEAQTRyMzRFTnB4UFk/view?usp=drivesdk)
+![](https://i.imgur.com/R3as9Aq.png)
 
 You can copy the the code from each code container using the handy copy button.
 
-![](https://drive.google.com/a/zurb.com/file/d/0B3omzFyAxfEAQ1R1aXJtcGd3Nms/view?usp=drivesdk)
+![](https://i.imgur.com/9WOZUQp.png)
 
 If you are using CSS vs SCSS, you can toggle to the compiled CSS using this handy toggle:
 
-![](https://drive.google.com/a/zurb.com/file/d/0B3omzFyAxfEATnJJUWh1T2U5b0U/view?usp=drivesdk)
+![](https://i.imgur.com/nNjwiTm.png)
 
 If you’re using the CSS version of Foundation, it’s best to add the CSS to your app.css file that is included with the downloaded Foundation CSS project. You can make any style overrides from there.
 
@@ -94,8 +94,8 @@ Or add this CDN to the head of your pages or layout:
 The Building Blocks site is open source just like Foundation, meaning anyone can contribute to it. It’s built on the same Node based build system the ZURB Stack is built on. Submissions are made through GitHub, with pull requests.
 
 ### You’ll need:
-A sweet Building Block
-A GitHub account
+- A sweet Building Block
+- A GitHub account
 
 ### Your computer needs:
 NodeJS (6.10.1)
@@ -133,11 +133,11 @@ The name should contain the component or type of component it is. For example a 
 Example: article-card
 All your files in the folder will have the same root name
 - article-card
-- - article-card.html
-- - article-card.scss
-- - article-card.js
-- - article-card.png
-- - article-card.yml
+  - article-card.html
+  - article-card.scss
+  - article-card.js
+  - article-card.png
+  - article-card.yml
 
 ### Step 3:
 In your Building Block component folder, create your `.html`, `.scss`, `.js` and `.yml` pages.

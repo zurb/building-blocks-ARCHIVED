@@ -9,7 +9,7 @@
     "bb": "gulp bb",
     "bb-i": "gulp bb-iframe",
     "static": "gulp static",
-    "deploy": "gulp deploy"
+    "deploy": "gulp deploy --production"
   },
   "author": "ZURB <foundation@zurb.com>",
   "license": "MIT",
