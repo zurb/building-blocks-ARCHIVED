@@ -1,0 +1,29 @@
+.blockquote-container {
+  .callout {    
+    .blockquote-title {
+      margin-left: 1rem;
+    }    
+    blockquote {
+      quotes: "“""”""‘""’  ";
+      border-left: none;
+      &:before {
+        content: open-quote;
+        color: $dark-gray;
+        font-size: 4em;
+        line-height: .1em;
+        vertical-align: -.4em;
+      }
+      &:after {
+        content: close-quote;
+        color: $dark-gray;
+        font-size: 4em;
+        line-height: .1em;
+        vertical-align: -.6em;
+      }
+      .blockquote-content {
+        display: inline;
+        color: $black;
+      }
+    }
+  }
+}
