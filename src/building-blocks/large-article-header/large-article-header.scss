@@ -1,7 +1,6 @@
 $large-article-header-bg: url('https://unsplash.it/1024/500/?blur');
 $large-article-header-color: $white;
 $large-article-header-height: rem-calc(500);
-$large-article-header-font-size: rem-calc(55);
 
 .large-article-header {
   background: $large-article-header-bg no-repeat center;
@@ -20,6 +19,11 @@ $large-article-header-font-size: rem-calc(55);
   .center-container {
     width: 50%;
     margin: 0 auto;
+
+    @include breakpoint(small only) {
+      width: 100%;
+      padding: 0 rem-calc(20);
+    }
   }
 
   .article-date {
@@ -27,10 +31,13 @@ $large-article-header-font-size: rem-calc(55);
   }
   .article-title {
     h1 {
-      font-size: $large-article-header-font-size;
       line-height: rem-calc(50);
       color: $large-article-header-color;
       font-weight: 600;
+
+      @include breakpoint(small only) {
+        line-height: rem-calc(30);
+      }
     }
   }
   .article-details {
