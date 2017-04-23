@@ -53,6 +53,11 @@ $social-brand-google-plus: #dd4b39;
       margin-right: $social-button-margin;
       margin-bottom: $social-button-margin;
 
+      &:hover,
+      &:focus {
+        transform: rotate(360deg);
+      }
+
       &.facebook {
         @include social-button($social-brand-facebook, "\f09a")
       }
