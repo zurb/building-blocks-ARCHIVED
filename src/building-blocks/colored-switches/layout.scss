@@ -1,0 +1,11 @@
+body {
+  background-color: $white;
+}
+
+.demo-switch-inline {
+  text-align: center;
+  .switch {
+    display: inline-block;
+    margin-right: .5rem;
+  }
+}
