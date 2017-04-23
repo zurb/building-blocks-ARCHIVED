@@ -5,7 +5,7 @@ tags:
   - buttons
   - transition
 category: control
-description: Rounded Social buttons with css transition on hover.
+description: Rounded Social buttons with css transition and spin rotation on hover/focus.
 versions:
   - 6.3.1
   - 6.3.0
