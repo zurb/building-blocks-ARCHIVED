@@ -24,7 +24,6 @@ $card-user-container-color: $black;
 
   @mixin card-user-container(){
     margin-left: rem-calc(15);
-    margin-right: rem-calc(15);
     &:last-child {
       float: none !important;
     }
@@ -41,9 +40,14 @@ $card-user-container-color: $black;
     @include grid-column($columns : 4);
     @include card-user-container();
   }
-  @include breakpoint(large only){
+  @include breakpoint(large){
     @include grid-row();
     @include grid-column($columns : 3);
+    @include card-user-container();
+  }
+  @include breakpoint(xlarge){
+    @include grid-row();
+    @include grid-column($columns : 2);
     @include card-user-container();
   }
 
