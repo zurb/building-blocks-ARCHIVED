@@ -286,7 +286,7 @@ layout: static
         <li><strong>Image:</strong> A preview image of your Building Block. This will give people context on what the building block is! See suggestions for great preview images. The thumbnail should be in a <code>.png</code> format.</li>
         <li><strong>YML:</strong> You’ll want to describe your Building Block and submit your name. A Yaml file uses a <code>.yml</code> file extension and is where the Building Block name, description, tags and more are stored.</li>
         <hr>
-        <li><strong>Optional Layout HTML or SCSS:</strong> The Building Block should a stand-alone component that comes with no extra grid markup or containers. You can use an optional layout file to display the Blocks in a nicer way. See example below.</li>
+        <li><strong>Optional Layout HTML or SCSS:</strong> The Building Block should a stand-alone component that comes with no extra grid markup or containers. You can use an optional layout file to display the Blocks in a nicer way. <a href="#add-layout">See example below.</a></li>
       </ul>
 
       <p class="how-to-paragraph">You’ll find the <code>building-blocks</code> folder in the root directory of the Building Blocks project. This is where all the Building Blocks that get displayed on the site live.</p>
@@ -360,10 +360,15 @@ layout: static
           <ul>
             <li>Example: article-card.png</li>
             <li>Add the image to the <code>article-card</code> folder for this example.</li>
+            <li>Make sure to add meaningful tags. <a href="#tag-details">See tag details below</a>.</li>
           </ul>
         </li>
 
       </ol>
+
+      <p id="tag-details" class="how-to-paragraph">Tags are important for many reasons. They not only tell people about the Building Blocks, but they also help people find others like it. <!-- Additionally, the tags are used to match a Building Block to a corresponding docs page to show example of the component in use. --></p>
+
+      <p class="how-to-paragraph">To make it easy, we put together a list of tags to use. You'll find the tag list here: <a href="https://docs.google.com/spreadsheets/d/1O9l0PejBSVZypbdtXrzSjHuwn8JJPoQLHxmtlET-O6s/edit?usp=sharing" target="_blank">https://docs.google.com/spreadsheets/d/1O9l0PejBSVZypbdtXrzSjHuwn8JJPoQLHxmtlET-O6s/edit?usp=sharing</a></p>
 
       <p class="how-to-paragraph"><strong>That’s it!</strong></p>
 
@@ -371,7 +376,7 @@ layout: static
 
       <p class="how-to-paragraph">Example URL: http://localhost:8000/blocks/article-card.html</p>
 
-      <h4 class="how-to-subheader">Optional Layout HTML or SCSS files.</h4>
+      <h4 id="add-layout" class="how-to-subheader">Optional Layout HTML or SCSS files.</h4>
 
       <p class="how-to-paragraph">If needed, Building Blocks can have an optional layout file that helps you display your Building Blocks preview in a certain way, repeat the component, or inside a container. For example, our Article Card is one single card that fills the width of the container it's in. In order to keep it to a certain width and to repeat it several times without adding a ton of markup to the Article Card itself, we'll add a <code>layout.html</code> file.</p>
 

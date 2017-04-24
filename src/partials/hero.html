@@ -3,7 +3,7 @@
     <div class="column hero-content">
       <h1 class="hero-header">{{#if title}}{{title}}{{else}}{{get-nav-data page 'title' navigation}}{{/if}}</h1>
       <h2 class="hero-subheader">{{#if subtitle}}{{subtitle}}{{else}}{{get-nav-data page 'subtitle' navigation}}{{/if}}</h2>
-      <a href="how-to.html" target="_blank" class="hero-content-button">How to use or submit a Building Block <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+      {{#ifpage 'index'}}<a href="how-to.html" target="_blank" class="hero-content-button">How To Guide <i class="fa fa-caret-right" aria-hidden="true"></i></a>{{/ifpage}}
     </div>
     <div class="column hero-img">
       <img src="{{root}}assets/img/images/hero-yeti.png" alt="#">

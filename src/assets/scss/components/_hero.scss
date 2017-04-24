@@ -61,17 +61,12 @@
   transition: all 0.25s ease-out;
 
   .fa {
-    vertical-align: bottom;
+    vertical-align: middle;
   }
 
   &:hover {
     background: $white;
     color: $dark-blue;
     transition: all 0.25s ease-out;
-
-    .fa {
-      position: relative;
-      transform: translateX(3px);
-    }
   }
 }
