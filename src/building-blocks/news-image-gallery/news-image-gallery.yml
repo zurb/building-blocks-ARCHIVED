@@ -3,10 +3,12 @@ tags:
   - article
   - news
   - blog
-  - image-gallery
+  - gallery
+  - image
   - social
   - icons
-  - image-slider
+  - image slider
+  - carousel
   - orbit
 category: media
 description: News Image Gallery/Slider that includes a short description and social links.

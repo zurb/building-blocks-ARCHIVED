@@ -1,9 +1,12 @@
-name: 'Blockquote'
+name: 'Blockquote Styles'
 tags:
   - article
   - news
   - blog
   - blockquote
+  - testimonial
+  - quote
+  - typeography
 category: media
 description: Blockquote with variations for full width, left and right aligned within the body of text.
 versions:
