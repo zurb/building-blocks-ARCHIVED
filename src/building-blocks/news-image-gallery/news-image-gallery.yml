@@ -1,0 +1,19 @@
+name: 'News Image Gallery'
+tags:
+  - article
+  - news
+  - blog
+  - image-gallery
+  - social
+  - icons
+  - image-slider
+  - orbit
+category: media
+description: News Image Gallery/Slider that includes a short description and social links.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  name: Harry Manchanda
+  github: IamManchanda
+  twitter: harmanmanchanda
