@@ -1,4 +1,4 @@
-name: News
+name: News / Magazine
 short_description: Everything you'll need to build a dynamic and engaging news site.
 description: News sites are always looking to stay ahead of the trend. This kit includes various highly customizable building blocks to make your content stand out.
 background: '#207DAB'
@@ -21,6 +21,8 @@ blocks:
   - sticky-social-bar
   - ecommerce-footer
   - pagination-circular
+  - pagination-pointed
   - tag-cloud
   - social-buttons
   - polls
+  - news-image-gallery
