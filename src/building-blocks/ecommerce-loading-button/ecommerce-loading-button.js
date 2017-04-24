@@ -1,4 +1,4 @@
-$('.button').on('click', function() {
-  var $this = $(this);
-  $this.button('loading');
+$('[data-loading-start]').click(function() {
+  $(this).addClass('hide')
+  $('[data-loading-end]').removeClass('hide')
 });
