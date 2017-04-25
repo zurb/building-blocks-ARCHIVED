@@ -1,37 +1,39 @@
-ul.stats-list {
+.stats-list {
   list-style-type: none;
-  clear:left;
-  margin:0;
-  padding:0;
-  text-align:center;
-  margin-bottom:30px;
-  
+  clear: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 30px;
+
   .stats-list-positive {
     color: $success-color;
   }
+
   .stats-list-negative {
     color: $alert-color;
   }
 
-  &>li {
-    display:inline-block;
-    margin: 0 10px 0 0;
-    padding: 0 10px 0 0;
-    border-right: 1px solid #ccc;
+  & > li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid $medium-gray;
     text-align: center;
     font-size: 1.1em;
     font-weight: bold;
+
     &:last-child {
       border: none;
-      margin:0;
-      padding:0; 
+      margin: 0;
+      padding: 0;
     }
-    
+
     .stats-list-label {
       display: block;
       margin-top: 2px;
-      font-size: .9em;
+      font-size: 0.9em;
       font-weight: normal;
-    }  
+    }
   }
 }
