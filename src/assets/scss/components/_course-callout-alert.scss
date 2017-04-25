@@ -6,7 +6,7 @@
   border: 0;
   height: 153px;
   width: 362px;
-  position: absolute;
+  position: fixed;
   bottom: 2.5rem;
   right: 2.2rem;
   z-index: 100;
@@ -37,11 +37,11 @@
     transition: $transition-slow;
 
     img {
-      height: 30px;
-      width: 30px;
+      transform: scale(0.3);
       position: absolute;
-      left: 5px;
-      bottom: 5px;
+      left: -1.4rem;
+      bottom: -1rem;
+      transition: $transition-fast;
     }
 
     .course-callout-alert-content {
