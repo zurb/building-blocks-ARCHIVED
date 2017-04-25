@@ -1,10 +1,10 @@
 $social-button-size: 3.125rem;
-$social-button-border-width: .125rem;
+$social-button-border-width: 0.125rem;
 $social-button-font-size: 1.5625rem;
 $social-button-line-height: 2em;
 $social-button-border-radius: 1.6875rem;
-$social-button-transition: 0.5s ease all;
-$social-button-margin: .25rem;
+$social-button-transition: all 0.5s ease;
+$social-button-margin: 0.25rem;
 
 // Source: https://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
 $social-brand-facebook: #3b5998;
@@ -62,27 +62,35 @@ $social-brand-tumblr: #32506d;
     &.facebook {
       @include social-button($social-brand-facebook, "\f09a")
     }
+
     &.twitter {
       @include social-button($social-brand-twitter, "\f099")
     }
+
     &.linkedin {
       @include social-button($social-brand-linkedin, "\f0e1")
     }
+
     &.youtube {
       @include social-button($social-brand-youtube, "\f167")
     }
+
     &.instagram {
       @include social-button($social-brand-instagram, "\f16d")
     }
+
     &.pinterest {
       @include social-button($social-brand-pinterest, "\f231")
     }
+
     &.google-plus {
       @include social-button($social-brand-google-plus, "\f0d5")
     }
+
     &.github {
       @include social-button($social-brand-github, "\f09b")
     }
+
     &.tumblr {
       @include social-button($social-brand-tumblr, "\f173")
     }
