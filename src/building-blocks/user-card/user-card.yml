@@ -1,14 +1,15 @@
-name: 'User-Card-Info'
+name: 'User Info Card'
 tags:
   - content
+  - profile
   - card
   - blog
-category: container
-description: The Building-block helps you to show users info in cards.
+category: containers
+description: This handy card dsisplays a user profile image, name, details and social links. Great for blogs, articles, or dashboards. You can rearrange the individual sections to get different results as needed.
 versions:
   - 6.3.1
   - 6.3.0
 author:
   name: ibnHamdan
   github: ibnHamdan
-  containerClass: none
+containerClass: none

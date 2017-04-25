@@ -1,61 +1,15 @@
-/// Defaul card container bottom margin
-/// @type Number
 $card-user-container-margin-bottom: 1rem;
-
-/// Default radius of the card
-/// @type List
 $card-user-container-radius: $global-radius;
-
-///Default card background color
-/// @type Color
 $card-user-container-background: $white;
-
-//// Default card color
-/// @type Color
 $card-user-container-color: $black;
+$card-user-container-image-size: rem-calc(190);
 
 .card-user-container {
-  /// style for card inside nested grid ..
-  .columns > &, .column > & {
-    @include grid-column-row();
-    float: none !important;
-
-  }
-
-  @mixin card-user-container(){
-    margin-left: rem-calc(15);
-    &:last-child {
-      float: none !important;
-    }
-  }
-
-  /// style for card that not inside nested grid
-  @include breakpoint(small only){
-    @include grid-row();
-    @include grid-column($columns : 6);
-    @include card-user-container();
-  }
-  @include breakpoint(medium only){
-    @include grid-row();
-    @include grid-column($columns : 4);
-    @include card-user-container();
-  }
-  @include breakpoint(large){
-    @include grid-row();
-    @include grid-column($columns : 3);
-    @include card-user-container();
-  }
-  @include breakpoint(xlarge){
-    @include grid-row();
-    @include grid-column($columns : 2);
-    @include card-user-container();
-  }
-
   margin-bottom: $card-user-container-margin-bottom;
   background-color: $card-user-container-background;
   color: $black;
   overflow: hidden;
-  padding: 0 !important;
+  padding: 0;
   border-radius: $card-user-container-radius;
 
   .card-user-avatar {
@@ -63,12 +17,11 @@ $card-user-container-color: $black;
       display: block;
       margin: auto;
       border-radius: 50%;
-      width: rem-calc(190);
-      height: rem-calc(190);
+      width: $card-user-container-image-size;
+      height: $card-user-container-image-size;
       padding: rem-calc(15);
 
       &:hover {
-        -webkit-transform: scale(1.1);
         transform: scale(1.1);
       }
     }
@@ -81,18 +34,19 @@ $card-user-container-color: $black;
     .location {
       display: inline-block;
       margin: 0 rem-calc(15);
-      color: #8a8a8a;
+      color: $secondary-color;
       font-size: rem-calc(14);
     }
 
-    .location-icon, .location-text {
+    .location-icon,
+    .location-text {
       display: inline-block;
       padding: 0 rem-calc(5);
     }
   }
 
   .card-user-social {
-    background: #f2f2f2;
+    background: $light-gray;
     padding: 1rem;
     text-align: center;
 
@@ -105,7 +59,6 @@ $card-user-container-color: $black;
         cursor: pointer;
 
         &:hover {
-          -webkit-transform: scale(1.1);
           transform: scale(1.1);
         }
       }
