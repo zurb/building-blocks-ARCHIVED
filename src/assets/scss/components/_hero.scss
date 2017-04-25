@@ -49,4 +49,20 @@
 
 .hero-subheader {
   font-size: rem-calc(18);
+  margin-bottom: 1.5rem;
+}
+
+.hero-content-button {
+  @include button;
+  @include button-hollow;
+  border: 1px solid $white;
+  font-weight: 600;
+  font-size: rem-calc(17);
+  transition: all 0.25s ease-out;
+
+  &:hover {
+    background: $white;
+    color: $dark-blue;
+    transition: all 0.25s ease-out;
+  }
 }
