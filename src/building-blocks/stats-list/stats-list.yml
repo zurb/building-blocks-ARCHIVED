@@ -2,9 +2,10 @@ name: "Stats List"
 tags:
   - stat
   - typography
+  - admin
   - dashboard
 category: status
-description: A simple formatted list for displaying numerical statistics
+description: A formatted list for displaying numerical statistics. Great for a dashboard or admin panel.
 versions:
   - 6.3.0
   - 6.3.1
@@ -12,4 +13,4 @@ author:
   name: Brent Swisher
   github: brentswisher
   twitter:
-containerClass: row column medium-4 align-center
+containerClass: row column medium-5 large-4 align-center
