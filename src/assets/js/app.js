@@ -87,7 +87,7 @@ if($searchInput.is('*')) {
   });
 }
 
-function getParams() { 
+function getParams() {
   var search = location.search.substring(1);
   return search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
                    function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
@@ -149,4 +149,8 @@ $('#bb-social').jsSocials({
   showCount: false,
   text: "Download this " + socialName + " from Foundation Building Blocks",
   shares: [ { share: "twitter", via: "ZURBFoundation" }, "facebook", {share: "pinterest", media: socialImage, text: socialName + " from Foundation Building Blocks"}]
+});
+
+$('[data-toggle-callout]').click(function() {
+  $('.course-callout-alert').toggleClass('is-moved-over');
 });
