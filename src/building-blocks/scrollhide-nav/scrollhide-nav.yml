@@ -1,13 +1,13 @@
-name: 'Top Bar with Animation'
+name: 'Scroll Hiding Nav'
 tags:
   - navigation
   - nav
   - menu
   - top bar
-  - flexbox
-  - animation
+  - show hide
+  - js
 category: navigation
-description: A slick looking Top Bar navigation with animation options for the mobile dropdown.
+description: Hiding the navigation on scroll for more room to see the page content. Scrolling back up will reveal nav again.
 versions:
   - 6.3.1
   - 6.3.0
