@@ -2,9 +2,9 @@ name: 'Colored Switches'
 tags:
   - switch
   - control
-  - colors
+  - mixin
 category: control
-description: Colored Switches helps you add coloring to switches when active.
+description: This Colored Switches Sass mixin will help you add state coloring to switches when active. Using this CSS will give you the ability to add coloring classes from the Foundation color pallette.
 versions:
   - 6.3.1
   - 6.3.0

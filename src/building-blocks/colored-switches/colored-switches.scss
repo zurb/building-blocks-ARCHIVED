@@ -6,18 +6,23 @@
 
 .switch {
   &,
+
   &.primary {
     @include colored-switches($primary-color)
   }
+
   &.secondary {
     @include colored-switches($secondary-color)
   }
+
   &.success {
     @include colored-switches($success-color)
   }
+
   &.alert {
     @include colored-switches($alert-color)
   }
+
   &.warning {
     @include colored-switches($warning-color)
   }
