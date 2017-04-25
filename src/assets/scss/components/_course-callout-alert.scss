@@ -24,7 +24,7 @@
   }
 
   .open-button {
-    display: none;
+    opacity: 0;
     color: $dark-gray;
 
     &:hover {
@@ -49,7 +49,7 @@
     }
 
     .open-button {
-      display: block;
+      opacity: 1;
       position: absolute;
       left: 15px;
       top: 15px;
