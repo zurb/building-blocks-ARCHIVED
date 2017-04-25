@@ -80,7 +80,7 @@
 
 .bb-search-bar-container {
   @include vertical-center;
-
+  left: 0;
   background-color: white;
   border-bottom: 2px solid $dark-blue;
   display: none;
@@ -91,13 +91,11 @@
 
   .close-button {
     @include vertical-center;
-
     color: $medium-blue;
   }
 
   .bb-search-bar {
     @include vertical-center;
-
     background-color: $white;
     border: 0;
     box-shadow: none;
@@ -169,7 +167,6 @@
 
   .dropdown.menu .is-dropdown-submenu-parent > a:after {
     @include css-triangle(6px, $dark-blue, down);
-
     content: '';
     right: 1rem;
     top: 60%;

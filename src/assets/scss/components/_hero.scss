@@ -14,11 +14,12 @@
 .hero-flex {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .hero-content {
   align-self: center;
-  flex: 4;
+  flex: 4 1 0%;
   text-align: left;
 
   @include breakpoint(medium down) {
@@ -27,7 +28,7 @@
 }
 
 .hero-img {
-  flex: 3;
+  flex: 3 1 0%;
   padding-left: 100px;
 
   @include breakpoint(medium down) {
@@ -48,4 +49,20 @@
 
 .hero-subheader {
   font-size: rem-calc(18);
+  margin-bottom: 1.5rem;
+}
+
+.hero-content-button {
+  @include button;
+  @include button-hollow;
+  border: 1px solid $white;
+  font-weight: 600;
+  font-size: rem-calc(17);
+  transition: all 0.25s ease-out;
+
+  &:hover {
+    background: $white;
+    color: $dark-blue;
+    transition: all 0.25s ease-out;
+  }
 }
