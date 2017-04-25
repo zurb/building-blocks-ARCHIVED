@@ -154,3 +154,17 @@ $('#bb-social').jsSocials({
 $('[data-toggle-callout]').click(function() {
   $('.course-callout-alert').toggleClass('is-moved-over');
 });
+
+$(window).on("load scroll", function() {
+    var footerOffset = $('#footer').offset().top;
+    var myScrollPosition = $(this).scrollTop();
+    var windowHeight = $(window).height();
+    var footerHeight = $('#footer').outerHeight();
+
+    if ((myScrollPosition + windowHeight - footerHeight) > footerOffset) {
+      $('.course-callout-alert').addClass('absolute');
+    } else {
+      $('.course-callout-alert').removeClass('absolute');
+    }
+});
+
