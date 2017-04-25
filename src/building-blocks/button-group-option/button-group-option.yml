@@ -14,4 +14,4 @@ author:
   'foundation-forum': 10
   name: Rafi
 grid: flexbox
-containerClass: row align-center medium-8 column
+containerClass: row align-center medium-6 large-5 column
