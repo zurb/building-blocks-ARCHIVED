@@ -1,18 +1,20 @@
+$card-reveal-transition-speed: 0.6s;
+
 .card-reveal-wrapper {
   position: relative;
-	
+
   .open-button,
   .close-button {
     cursor: pointer;
     float: right;
-    font-size: 14px;
-    padding: 0 0 0 .5rem;
+    font-size: rem-calc(14);
+    padding-left: 0.5rem;
     text-align: right;
     width: 100%;
   }
-	
+
   .card-reveal {
-    background: white;
+    background: $white;
     bottom: 0;
     display: block;
     left: 0;
@@ -21,7 +23,7 @@
     position: absolute;
     right: 0;
     top: 100%;
-    transition: all 0.6s ease;
+    transition: top $card-reveal-transition-speed ease-in-out;
   }
 
   .card-reveal.open {
