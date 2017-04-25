@@ -1,0 +1,11 @@
+name: "Stats List"
+tags:
+  - statistics
+  - dashboard
+category: status
+description: A simple formatted list for displaying numerical statistics
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  name: Brent Swisher
