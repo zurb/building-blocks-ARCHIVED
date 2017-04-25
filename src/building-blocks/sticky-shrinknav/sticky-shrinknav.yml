@@ -7,7 +7,7 @@ tags:
   - flexbox
   - animation
 category: navigation
-description:
+description: A hero that shrinks away on scroll allowing the navigation to be sticky.
 versions:
   - 6.3.1
   - 6.3.0
