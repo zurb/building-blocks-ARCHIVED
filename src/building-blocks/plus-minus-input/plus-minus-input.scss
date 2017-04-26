@@ -1,0 +1,23 @@
+.plus-minus-input {
+  .input-group-button {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+
+  .input-group-field {
+    text-align: center;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    padding: 1rem;
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      appearance: none;
+    }
+  }
+
+  .input-group-button {
+    .circle {
+      border-radius: 50%;
+    }
+  }
+}
