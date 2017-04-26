@@ -32,6 +32,14 @@
 .kit-details {
   background: $white;
   padding-bottom: $page-spacing;
+
+  .kit-card-header {
+
+    @include breakpoint(small only) {
+      font-size: 2.25rem;
+      text-align: left;
+    }
+  }
 }
 
 .kit-details-summary {
@@ -39,6 +47,8 @@
 }
 
 .kit-details-action {
+  display: flex;
+
   .kit-action-icon {
     display: inline-block;
     padding: 10px;
@@ -46,18 +56,26 @@
     top: 5px;
   }
 }
+
 @include breakpoint(small only) {
   .kit-details-action {
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+
     .kit-action-icon {
-      order: 3;
-      display: inline;
+      order: 2;
+      top: 0;
     }
-    .kit-card-link, .kit-card-link-text {
-      margin-bottom: 0;
+
+    .kit-card-link,
+    .kit-card-link-text {
+      margin: 0;
+    }
+
+    .kit-card-link-text {
+      padding: 10px 10px 10px 0;
     }
   }
 }
@@ -76,6 +94,10 @@
       top: 50%;
     }
   }
+
+  @include breakpoint(small only) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .kit-details-header-text {
@@ -86,7 +108,7 @@
     justify-content: center;
     margin-bottom: 1rem;
   }
-  
+
   .kit-details-header-text-heading {
   color: $dark-blue;
   font-size: rem-calc(23);
