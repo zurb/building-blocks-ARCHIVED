@@ -1,8 +1,8 @@
-var $container = $('#subscription-container');
-var $window = $(window);
-var $footer = $('#email-subscription-footer');
-
-$(window).on("load scroll", function() {
+(function() {
+  var $container = $('#subscription-container');
+  var $window = $(window);
+  var $footer = $('#email-subscription-footer');
+  $(window).on("load scroll", function() {
     var footerOffset = $container.offset().top;
     var myScrollPosition = $window.scrollTop();
     var windowHeight = $window.height();
@@ -13,4 +13,5 @@ $(window).on("load scroll", function() {
     } else {
       $footer.removeClass('is-in-page');
     }
-});
+  });
+})();
