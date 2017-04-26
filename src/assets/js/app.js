@@ -35,7 +35,6 @@ if($('#yeti-callout-card').is('*')) {
 
   _kmq.push(function() {
     var type = KM.ab("BB Ad Unit", ["yeti-callout-card", "yeti-callout-alert"]);
-    var type = 'yeti-callout-card';
     if(type === 'yeti-callout-card') {
       $('#yeti-callout-card').removeClass('is-hidden');
     } else {
