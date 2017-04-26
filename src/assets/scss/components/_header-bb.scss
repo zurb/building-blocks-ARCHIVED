@@ -60,13 +60,15 @@
     margin-bottom: 0;
   }
 
-  @include breakpoint(small only) {
+  @include breakpoint(medium down) {
     display: block;
 
     .building-block-title,
     .building-block-author {
+      margin-left: 0;
       margin-bottom: 0.5rem;
       padding: 0;
+      display: block;
     }
   }
 }
@@ -108,11 +110,11 @@
 .header-icon-row {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 0.4rem;
 
-  @include breakpoint(small only) {
-    flex-wrap: nowrap;
+  @include breakpoint(medium down) {
+    margin-top: 0;
   }
 }
 
@@ -136,6 +138,11 @@
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   max-width: 80vw;
+
+  @include breakpoint(medium) {
+    overflow-x: initial;
+    white-space: normal;
+  }
 }
 
 
@@ -173,14 +180,16 @@
   .bb-help-link {
     padding: 10px 10px 10px 0;
     flex: 1 0 0;
+    order: 1;
 
-    @include breakpoint(small only) {
-      order: 1;
+    @include breakpoint(medium) {
+      display: block;
     }
   }
 
-  @include breakpoint(small only) {
-
+  @include breakpoint(medium) {
+    align-items: flex-start;
+    justify-content: flex-end;
   }
 }
 
