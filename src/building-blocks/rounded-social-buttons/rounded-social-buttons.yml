@@ -5,6 +5,11 @@ tags:
   - button
   - icons
   - transition
+  - social
+  - mixin
+  - button
+  - icons
+  - transition
 category: control
 description: A sweet Sass mixin to create Rounded Social buttons with CSS transition and spin rotation on hover/focus.
 versions:
