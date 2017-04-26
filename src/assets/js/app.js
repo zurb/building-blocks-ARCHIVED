@@ -14,6 +14,37 @@ _gaq.push(
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 
+!function() {
+
+var _kmq = _kmq || [];
+var _kmk = _kmk || "d945f04ff5e68057c85f5323b46f185efb3826b3";
+function _kms(u){
+  setTimeout(function(){
+    var d = document, f = d.getElementsByTagName('script')[0],
+    s = d.createElement('script');
+    s.type = 'text/javascript'; s.async = true; s.src = u;
+    f.parentNode.insertBefore(s, f);
+  }, 1);
+}
+_kms('//i.kissmetrics.com/i.js');
+_kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+
+if($('#yeti-callout-card').is('*')) {
+
+  _kmq.push(function() {
+    var type = KM.ab("BB Ad Unit", ["yeti-callout-card", "yeti-callout-alert"]);
+    var type = 'yeti-callout-card';
+    if(type === 'yeti-callout-card') {
+      $('#yeti-callout-card').removeClass('is-hidden');
+    } else {
+      $('#yeti-callout-alert').removeClass('is-hidden');
+    }
+  });
+
+}
+
+}();
+
 var mySVGsToInject = document.querySelectorAll('img.inject-me');
 
 var likes = new window.Likes();
@@ -87,7 +118,7 @@ if($searchInput.is('*')) {
   });
 }
 
-function getParams() { 
+function getParams() {
   var search = location.search.substring(1);
   return search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
                    function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
@@ -150,3 +181,25 @@ $('#bb-social').jsSocials({
   text: "Download this " + socialName + " from Foundation Building Blocks",
   shares: [ { share: "twitter", via: "ZURBFoundation" }, "facebook", {share: "pinterest", media: socialImage, text: socialName + " from Foundation Building Blocks"}]
 });
+
+$('[data-toggle-callout]').click(function() {
+  $('.course-callout-alert').toggleClass('is-moved-over');
+});
+
+var $footer = $('#footer');
+var $window = $(window);
+var $callout = $('.course-callout-alert');
+
+$(window).on("load scroll", function() {
+    var footerOffset = $footer.offset().top;
+    var myScrollPosition = $(this).scrollTop();
+    var windowHeight = $window.height();
+    var footerHeight = $footer.outerHeight();
+
+    if ((myScrollPosition + windowHeight - footerHeight) > footerOffset) {
+      $callout.addClass('absolute');
+    } else {
+      $callout.removeClass('absolute');
+    }
+});
+
