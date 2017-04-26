@@ -13,7 +13,7 @@ _gaq.push(
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-
+var _kmq = _kmq || [];
 !function() {
 
 var _kmq = _kmq || [];
@@ -29,6 +29,8 @@ function _kms(u){
 _kms('//i.kissmetrics.com/i.js');
 _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
 
+}();
+
 if($('#yeti-callout-card').is('*')) {
 
   _kmq.push(function() {
@@ -43,7 +45,6 @@ if($('#yeti-callout-card').is('*')) {
 
 }
 
-}();
 
 var mySVGsToInject = document.querySelectorAll('img.inject-me');
 
