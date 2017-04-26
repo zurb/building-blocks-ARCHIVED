@@ -27,9 +27,8 @@ $quote-inline-width: 350px;
   .quote-inline-person {
     margin-bottom: 25px;
 
-    .quote-inline-photo {
-      background-color: $medium-gray;
-      border-radius: 100px;
+    .quote-inline-photo img {
+      border-radius: 50%;
       width: 70px;
       height: 70px;
       float: left;
