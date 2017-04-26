@@ -1,6 +1,6 @@
 <div class="building-block-header">
-  <div class="row">
-    <div class="column">
+  <div class="row align-top align-justify">
+    <div class="small-12 medium-7 large-8 columns">
       <div class="building-block-header-name-section">
         <h1 class="building-block-title">{{block.name}}</h1>
         <h3 class="building-block-author">{{#if block.author.github}}<img src="https://github.com/{{block.author.github}}.png?size=30" class="avatar content-right" height="" width="" alt="">{{/if}}By
@@ -29,19 +29,20 @@
           {{#tag-links block.tags}}
           <a href="{{../root}}?q={{this.name}}" class="building-block-tag">{{this.name}}</a>
           {{/tag-links}}
-
         </div>
       </div>
     </div>
-    <div class="column shrink bb-actions">
+    <div class="column small-12 medium-5 large-4 bb-actions">
       <div class="bb-action-icons">
-        <a class='bb-action-icon' data-like="{{block.datakey}}"><img src="{{root}}assets/img/icons/like.svg" alt="" class="inject-me bb-like-button"></a>
+        <a class="bb-action-icon" data-like="{{block.datakey}}"><img src="{{root}}assets/img/icons/like.svg" alt="" class="inject-me bb-like-button"></a>
         <a class="bb-action-icon float-right" data-toggle="share-dropdown"> <img src="{{root}}assets/img/icons/share.svg" alt="" class="inject-me bb-share-button"></a>
         {{> block-share-dropdown block}}
       </div>
-      <button class="kit-card-primary blue float-right" type="button" data-toggle="example-dropdown">Download<div class="arrow-down white"></div></button>
-        {{>block-dropdown block}}
+      <div>
+        <button class="kit-card-primary blue float-right hide-for-small-only" type="button" data-toggle="example-dropdown">Download<div class="arrow-down white"></div></button>
+        {{> block-dropdown block}}
         <a class="bb-help-link" href="{{root}}how-to.html#use">How do I use This?</a>
+      </div>
     </div>
   </div>
 </div>

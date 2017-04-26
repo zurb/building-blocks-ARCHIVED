@@ -32,6 +32,13 @@
 .kit-details {
   background: $white;
   padding-bottom: $page-spacing;
+
+  .kit-card-header {
+    @include breakpoint(small only) {
+      font-size: 2.25rem;
+      text-align: left;
+    }
+  }
 }
 
 .kit-details-summary {
@@ -39,6 +46,8 @@
 }
 
 .kit-details-action {
+  display: flex;
+
   .kit-action-icon {
     display: inline-block;
     padding: 10px;
@@ -46,18 +55,26 @@
     top: 5px;
   }
 }
+
 @include breakpoint(small only) {
   .kit-details-action {
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+
     .kit-action-icon {
-      order: 3;
-      display: inline;
+      order: 2;
+      top: 0;
     }
-    .kit-card-link, .kit-card-link-text {
-      margin-bottom: 0;
+
+    .kit-card-link,
+    .kit-card-link-text {
+      margin: 0;
+    }
+
+    .kit-card-link-text {
+      padding: 10px 10px 10px 0;
     }
   }
 }
@@ -65,16 +82,22 @@
 .kit-details-header {
   margin-bottom: 5rem;
   position: relative;
+
   .bb-search-bar-container {
     height: 100px;
     margin-left: 15px;
     margin-right: 15px;
     width: calc(100% - 15px);
     background-color: $pale-blue;
+
     .bb-search-bar {
       background-color: $pale-blue;
       top: 50%;
     }
+  }
+
+  @include breakpoint(small only) {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -86,12 +109,12 @@
     justify-content: center;
     margin-bottom: 1rem;
   }
-  
+
   .kit-details-header-text-heading {
-  color: $dark-blue;
-  font-size: rem-calc(23);
-  font-weight: $global-weight-bold;
-  margin-bottom: 0;
+    color: $dark-blue;
+    font-size: rem-calc(23);
+    font-weight: $global-weight-bold;
+    margin-bottom: 0;
   }
 }
 
@@ -102,6 +125,7 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem 1.5rem;
+
   @include breakpoint(small only) {
     display: none;
   }
@@ -118,6 +142,5 @@
   * {
     fill: $dark-blue;
   }
-
 }
 

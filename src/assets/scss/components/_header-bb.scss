@@ -6,6 +6,10 @@
     cursor: pointer;
     height: rem-calc(26);
     width: rem-calc(26);
+
+    @include breakpoint(small only) {
+      display: none;
+    }
   }
 
   .version-badge,
@@ -37,6 +41,10 @@
       color: $dark-gray;
     }
   }
+
+  @include breakpoint(small only) {
+    margin-bottom: 6px;
+  }
 }
 
 .building-block-header-name-section {
@@ -51,6 +59,18 @@
   .building-block-author {
     margin-bottom: 0;
   }
+
+  @include breakpoint(medium down) {
+    display: block;
+
+    .building-block-title,
+    .building-block-author {
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+      padding: 0;
+      display: block;
+    }
+  }
 }
 
 .building-block-title {
@@ -63,6 +83,7 @@
   @include breakpoint(small only) {
     padding-right: rem-calc(50);
     display: block;
+    font-size: 1.5rem;
   }
 }
 
@@ -89,8 +110,12 @@
 .header-icon-row {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 0.4rem;
+
+  @include breakpoint(medium down) {
+    margin-top: 0;
+  }
 }
 
 .building-block-tag {
@@ -99,7 +124,7 @@
 
   &:last-child {
     &::after {
-      content: ' ';
+      content: '';
     }
   }
 
@@ -108,10 +133,16 @@
   }
 }
 
-.bb-help-link {
-  display: block;
-  margin-top: 0.5rem;
-  text-align: right;
+.building-block-tag-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 80vw;
+
+  @include breakpoint(medium) {
+    overflow-x: initial;
+    white-space: normal;
+  }
 }
 
 
@@ -124,34 +155,44 @@
 }
 
 .bb-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
   .bb-action-icons {
-    display: inline-block;
+    @include breakpoint(small only) {
+      order: 2;
+    }
   }
+
   .bb-action-icon {
     display: inline-block;
     padding: 10px;
     position: relative;
-    top: 5px;
-  }
-}
+    top: 3px;
 
-@include breakpoint(small only) {
-
-  .bb-actions {
-    width: 100%;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .bb-action-icons {
-    order: 3;
+    @include breakpoint(small only) {
+      order: 3;
+    }
   }
 
   .bb-help-link {
-    text-align: center;
+    padding: 10px 10px 10px 0;
+    flex: 1 0 0;
+    order: 1;
+
+    @include breakpoint(medium) {
+      display: block;
+    }
+  }
+
+  @include breakpoint(medium) {
+    align-items: flex-start;
+    justify-content: flex-end;
   }
 }
+
 .bb-share-dropdown-pane {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   width: 78px;

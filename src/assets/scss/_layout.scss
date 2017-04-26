@@ -1,8 +1,12 @@
 $page-spacing: 2rem;
 
 .page-container {
-  padding-top: $page-spacing;
+  padding-top: $page-spacing/2;
   position: relative;
+
+  @include breakpoint(medium) {
+    padding-top: $page-spacing;
+  }
 }
 
 
