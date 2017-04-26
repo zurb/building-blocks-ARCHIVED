@@ -55,7 +55,7 @@ $nav-bg-color: lighten($nav-text-color, 30%);
      }
   }
 
-  @media screen and (max-width: 39.9375em) {
+  @include breakpoint (small only) {
     .menu li a {
        font-size: 1.5rem;
        padding: 1.5rem;
