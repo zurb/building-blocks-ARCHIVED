@@ -190,16 +190,17 @@ var $footer = $('#footer');
 var $window = $(window);
 var $callout = $('.course-callout-alert');
 
-$(window).on("load scroll", function() {
-    var footerOffset = $footer.offset().top;
-    var myScrollPosition = $(this).scrollTop();
-    var windowHeight = $window.height();
-    var footerHeight = $footer.outerHeight();
+if($callout.is('*')) {
+  $(window).on("load scroll", function() {
+      var footerOffset = $footer.offset().top;
+      var myScrollPosition = $(this).scrollTop();
+      var windowHeight = $window.height();
+      var footerHeight = $footer.outerHeight();
 
-    if ((myScrollPosition + windowHeight - footerHeight) > footerOffset) {
-      $callout.addClass('absolute');
-    } else {
-      $callout.removeClass('absolute');
-    }
-});
-
+      if ((myScrollPosition + windowHeight - footerHeight) > footerOffset) {
+        $callout.addClass('absolute');
+      } else {
+        $callout.removeClass('absolute');
+      }
+  });
+}
