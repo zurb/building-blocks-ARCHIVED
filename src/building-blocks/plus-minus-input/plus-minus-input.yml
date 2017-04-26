@@ -1,9 +1,9 @@
-name: 'Plus Minus Buttons with Input Group'
+name: 'Plus Minus Buttons'
 tags:
   - counter
   - forms
-  - input
-  - controls
+  - control
+  - input group
 category: forms
 description: A Counter with plus minus buttons for changing Input(Number) field.
 versions:
