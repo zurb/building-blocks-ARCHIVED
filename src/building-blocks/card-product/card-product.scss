@@ -1,0 +1,58 @@
+$primary-color: #008cba;
+
+.card-product {
+  &:hover {
+    .card-product-img-wrapper {
+
+      img {
+        filter: grayscale(0);
+      }
+
+      .button {
+        transform: translateY(-50px);
+      }
+    }
+  }
+}
+
+.card-product-img-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+
+  .button {
+    transition: all 0.2s ease;
+    background-color: $secondary-color;
+    padding: 16px 8px;
+    bottom: -50px;
+    transform: translateY(50px);
+    position: absolute;
+    z-index: 2;
+    color: $white;
+    margin-bottom: 0;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+
+  img {
+    transition: all 0.2s ease;
+    filter: grayscale(1);
+    width: 100%;
+  }
+
+  .card-product-name {
+    font-size: 22px;
+  }
+
+  .card-product-price {
+    font-weight: bold;
+  }
+
+  .card-product-description {
+    color: $dark-gray;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+}
