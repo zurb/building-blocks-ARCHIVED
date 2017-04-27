@@ -1,0 +1,19 @@
+name: Neat Article container
+description: A neat Article Container that includes Header, Image and Content Element. 
+category: media
+tags:
+  - article
+  - news
+  - blog
+  - social
+  - icons
+  - content
+  - container
+versions:
+  - 6.3.0
+  - 6.3.1
+containerClass: none
+author:
+  name: Harry Manchanda
+  github: IamManchanda
+  twitter: harmanmanchanda
