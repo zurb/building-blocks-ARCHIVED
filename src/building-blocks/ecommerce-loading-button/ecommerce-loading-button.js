@@ -1,4 +1,4 @@
 $('[data-loading-start]').click(function() {
-  $(this).addClass('hide')
-  $('[data-loading-end]').removeClass('hide')
+  $(this).addClass('hide');
+  $(this).parent().find('[data-loading-end]').removeClass('hide');
 });
