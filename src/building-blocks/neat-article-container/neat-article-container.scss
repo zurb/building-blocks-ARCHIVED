@@ -18,6 +18,7 @@ $social-brand-google-plus: #dd4b39;
     font-family: "FontAwesome";
     content: $brand-icon;
   }
+
   &:hover,
   &:focus {
     color: $brand-color;
@@ -27,18 +28,20 @@ $social-brand-google-plus: #dd4b39;
 }
 
 
-.neat-article-container { 
+.neat-article-container {
   margin-top: 1.5rem;
 
   .neat-article-header {
+    width: 100%;
+    display: flex;
 
     .article-header-avatar {
-      padding-right: .5rem;
-      padding-left: .5rem;
-      
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+
       .header-avatar {
-        width: rem-calc(60px);
-        height: rem-calc(60px); 
+        width: rem-calc(60);
+        height: rem-calc(60);
         border-radius: 50%;
       }
     }
@@ -48,6 +51,7 @@ $social-brand-google-plus: #dd4b39;
         color: $black;
         margin-bottom: 0;
       }
+
       .author-description,
       .article-date-read {
         color: $dark-gray;
@@ -59,6 +63,7 @@ $social-brand-google-plus: #dd4b39;
 
   .neat-article-title {
     margin-top: 1rem;
+
     .article-title {
       color: $black;
       font-weight: 600;

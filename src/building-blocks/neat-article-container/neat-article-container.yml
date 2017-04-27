@@ -1,8 +1,11 @@
 name: Neat Article container
-description: A neat Article Container that includes Header, Image and Content Element. 
+description: A neat Article Container that includes header, social sharing, image and content area.
 category: media
 tags:
   - article
+  - sticky
+  - hero
+  - header
   - news
   - blog
   - social
