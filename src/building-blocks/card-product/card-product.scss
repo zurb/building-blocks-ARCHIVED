@@ -9,14 +9,14 @@ $card-product-hover-transition: all 0.2s ease;
       }
 
       .button {
-        transform: translateY(-3.5rem);
+        transform: translateY(-3rem);
       }
     }
   }
 }
 
 .card-product-img-wrapper {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.375rem;
   position: relative;
   overflow: hidden;
 
@@ -24,8 +24,8 @@ $card-product-hover-transition: all 0.2s ease;
     transition: $card-product-hover-transition;
     background-color: $secondary-color;
     padding: 1rem 0.5rem;
-    bottom: -3.5rem;
-    transform: translateY(3.5rem);
+    bottom: -3rem;
+    transform: translateY(3rem);
     position: absolute;
     z-index: 2;
     color: $white;
@@ -43,7 +43,7 @@ $card-product-hover-transition: all 0.2s ease;
   }
 
   .card-product-name {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 
   .card-product-price {
