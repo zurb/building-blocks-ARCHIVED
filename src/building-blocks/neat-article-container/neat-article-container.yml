@@ -12,6 +12,7 @@ tags:
   - icons
   - content
   - container
+  - flexbox
 versions:
   - 6.3.0
   - 6.3.1
