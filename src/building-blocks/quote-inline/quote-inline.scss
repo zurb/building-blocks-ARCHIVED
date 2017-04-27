@@ -1,4 +1,4 @@
-$quote-inline-width: 350px;
+$quote-inline-width: rem-calc(350);
 
 .quote-inline-wrap-article-content {
   max-width: 100%;
@@ -11,9 +11,9 @@ $quote-inline-width: 350px;
   padding: 0 1rem 1rem 0;
 
   .quote-inline-marks {
-    font-size: 100px;
+    font-size: rem-calc(100);
     color: $dark-gray;
-    line-height: 16px;
+    line-height: 1rem;
   }
 
   .quote-inline-testimonial {
@@ -25,14 +25,14 @@ $quote-inline-width: 350px;
   }
 
   .quote-inline-person {
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
 
     .quote-inline-photo img {
       border-radius: 50%;
-      width: 70px;
-      height: 70px;
+      width: rem-calc(70);
+      height: rem-calc(70);
       float: left;
-      margin-right: 15px;
+      margin-right: 1rem;
     }
 
     p {
@@ -40,13 +40,13 @@ $quote-inline-width: 350px;
       top: 5px;
 
       &:nth-child(2) {
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
         margin-bottom: 0;
       }
 
       &:nth-child(3) {
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 400;
         color: $dark-gray;
       }
