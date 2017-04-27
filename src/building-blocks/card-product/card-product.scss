@@ -1,4 +1,4 @@
-$primary-color: #008cba;
+$card-product-hover-transition: all 0.2s ease;
 
 .card-product {
   &:hover {
@@ -9,23 +9,23 @@ $primary-color: #008cba;
       }
 
       .button {
-        transform: translateY(-50px);
+        transform: translateY(-3.5rem);
       }
     }
   }
 }
 
 .card-product-img-wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   position: relative;
   overflow: hidden;
 
   .button {
-    transition: all 0.2s ease;
+    transition: $card-product-hover-transition;
     background-color: $secondary-color;
-    padding: 16px 8px;
-    bottom: -50px;
-    transform: translateY(50px);
+    padding: 1rem 0.5rem;
+    bottom: -3.5rem;
+    transform: translateY(3.5rem);
     position: absolute;
     z-index: 2;
     color: $white;
@@ -37,13 +37,13 @@ $primary-color: #008cba;
   }
 
   img {
-    transition: all 0.2s ease;
+    transition: $card-product-hover-transition;
     filter: grayscale(1);
     width: 100%;
   }
 
   .card-product-name {
-    font-size: 22px;
+    font-size: 1.5rem;
   }
 
   .card-product-price {
@@ -52,7 +52,7 @@ $primary-color: #008cba;
 
   .card-product-description {
     color: $dark-gray;
-    font-size: 13px;
+    font-size: 0.875rem;
     margin-bottom: 0;
   }
 }
