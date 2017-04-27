@@ -79,6 +79,14 @@ $social-brand-google-plus: #dd4b39;
     .article-image {
       width: 100%;
       height: 100vh;
+
+      @include breakpoint(medium only) {
+        height: 65vh;
+      }
+
+      @include breakpoint(small only) {
+        height: 45vh;
+      }
     }
   }
 
