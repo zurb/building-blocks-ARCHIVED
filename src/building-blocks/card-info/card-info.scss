@@ -2,7 +2,7 @@ $card-info-bg: $white;
 $card-info-font-color: $body-font-color;
 $card-info-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 $card-info-info-color: lighten($primary-color, 15%);
-$card-info-border-radius: 0.6rem;
+$card-info-border-radius: $global-radius;
 
 .card-info {
   background: $card-info-bg;
@@ -10,6 +10,7 @@ $card-info-border-radius: 0.6rem;
   box-shadow: $card-info-shadow;
   margin: 1rem 0;
   overflow: hidden;
+  border-radius: $card-info-border-radius;
 
   .card-info-label {
     border-color: transparent $dark-gray transparent transparent;
@@ -72,7 +73,7 @@ $card-info-border-radius: 0.6rem;
 
   .card-info-label {
     border-style: solid;
-    border-width: 0 70px 40px 0;
+    border-width: 0 rem-calc(70) rem-calc(40) 0;
     float: right;
     height: 0px;
     width: 0px;
@@ -83,16 +84,12 @@ $card-info-border-radius: 0.6rem;
     padding: 0.5rem 1.5rem 0.875rem;
   }
 
-  &.radius {
-    border-radius: $card-info-border-radius;
-  }
-
   .card-info-label-text {
     color: $white;
     font-size: 0.75rem;
     font-weight: bold;
     position: relative;
-    right: -40px;
+    right: rem-calc(-40);
     top: 2px;
     white-space: nowrap;
     transform: rotate(30deg);
