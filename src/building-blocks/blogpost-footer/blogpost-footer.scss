@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 29px;
+  font-size: rem-calc(29);
   border-bottom: 1px solid $medium-gray;
   padding: 1rem;
 
