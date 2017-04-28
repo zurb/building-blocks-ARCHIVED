@@ -7,6 +7,7 @@ tags:
   - alert
   - interaction
   - icons
+  - callout
 category: media
 description: An eCommerce loading button with submit and process order functionality. This includes variants of loading icons on order process.
 versions:
