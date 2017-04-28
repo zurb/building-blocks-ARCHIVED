@@ -1,0 +1,16 @@
+name: "Profile Stats"
+tags:
+  - content
+  - js
+  - show hide
+  - interaction
+category: containers
+description: A profile stats container that shows and hide addition bio information.
+versions:
+  - 6.3.0
+  - 6.3.1
+author:
+  github: bryananthonylewis
+  name: Bryan Lewis
+  twitter: bryanlewis
+containerClass: none
