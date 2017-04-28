@@ -23,3 +23,5 @@ blocks:
   - checkout-summary
   - promotion-hero-links
   - button-group-option
+  - card-product
+  - plus-minus-input
