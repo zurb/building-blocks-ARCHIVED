@@ -7,7 +7,7 @@
   @include flex-grid-column(12);
 
   @include breakpoint(medium) {
-    @include flex-grid-column(9);
+    @include flex-grid-column(10);
   }
 }
 
