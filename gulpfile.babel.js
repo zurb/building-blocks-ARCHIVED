@@ -165,8 +165,21 @@ function buildingBlockBaseStyles() {
 }
 // Compiles the Sass for the building blocks
 function buildingBlockSass() {
+  var blocks = JSON.parse(fs.readFileSync(PATHS.build + '/data/building-blocks.json', 'utf8'));
   return gulp.src(['src/building-blocks/**/*.scss'])
-    .pipe($.insert.prepend("@import 'settings';\n@import 'foundation';\n"))
+    .pipe($.insert.transform(function(contents, file){
+      var pieces = file.path.split('/');
+      var bbName = pieces[pieces.length - 2];
+      if(blocks[bbName]) {
+        if(blocks.grid !== 'float') {
+          return "@import 'settings';\n$global-flexbox:true;\n@import 'foundation';\n" + contents;
+        } else {
+          return "@import 'settings';\n@import 'foundation';\n" + contents;
+        }
+      } else {
+        return contents;
+      }
+    }))
     .pipe($.sass({
       includePaths: PATHS.sass,
       outputStyle: 'expanded'

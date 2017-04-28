@@ -21,3 +21,4 @@ blocks:
   - switch-toggle-all
   - alert-callout-subtle
   - alert-callout-border
+  - stats-list

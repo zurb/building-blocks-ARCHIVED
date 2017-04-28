@@ -6,7 +6,6 @@
   margin-bottom: $page-spacing;
   overflow: hidden;
   position: relative;
-  
 
   @include breakpoint(medium down) {
     margin-bottom: 1rem;
@@ -35,7 +34,7 @@
   font-weight: $global-weight-bold;
   margin-right: 1rem;
   padding: 1rem 2rem;
-  
+
   &.blue {
     background: $primary-color;
     color: $white;
@@ -74,10 +73,10 @@
 
 .kit-card-link {
   margin-top: 1rem;
-  margin-bottom: 1rem; 
-  
+  margin-bottom: 1rem;
+
   &.blue {
-    text-align: right;  
+    text-align: right;
   }
 }
 
@@ -91,7 +90,7 @@
   &.blue {
     color: $primary-color;
     margin-bottom: $page-spacing;
-    
+
     &:hover, &:focus {
       color: $primary-color;
     }
@@ -139,7 +138,7 @@
 
     * {
       fill: $dark-blue;
-    } 
+    }
   }
 }
 
@@ -148,7 +147,7 @@
   list-style-type: none;
   margin: 0;
   vertical-align: top;
-  
+
   &.blue {
     color: $dark-blue;
   }
@@ -170,13 +169,13 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-  } 
+  }
 
   .kit-card-header,
   .kit-card-sub-header {
     text-align: center;
   }
-  
+
   .kit-card-summary {
     padding: 2rem 2rem 0 2rem;
   }
