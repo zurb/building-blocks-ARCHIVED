@@ -5,11 +5,11 @@ $flip-card-transition-speed: 0.6s;
   perspective: 1000;
   border: 0;
   background: transparent;
-}
 
-.flip-card:hover .flip-card-inner,
-.flip-card.hover .flip-card-inner {
-  transform: rotateY(180deg);
+  &:hover .flip-card-inner,
+  &.hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .flip-card,
