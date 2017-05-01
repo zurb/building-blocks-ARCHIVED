@@ -1,0 +1,60 @@
+$menu-hover-lines-transition: all 0.35s ease;
+$menu-hover-lines-border-width: 3px;
+
+.menu-hover-lines {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: $menu-hover-lines-transition;
+}
+
+.menu-hover-lines li a {
+  padding: 0.75rem 0;
+  color: rgba($body-font-color, 0.5);
+  position: relative;
+}
+
+.menu-hover-lines li a {
+  margin-left: 1rem;
+}
+
+.menu-hover-lines li:first-child a {
+  margin-left: 0;
+}
+
+.menu-hover-lines li.active > a{
+  background-color: transparent;
+}
+
+.menu-hover-lines a:before,
+.menu-hover-lines a:after {
+  height: $menu-hover-lines-border-width;
+  position: absolute;
+  content: '';
+  transition: $menu-hover-lines-transition;
+  background-color: $primary-color;
+  width: 0;
+}
+
+.menu-hover-lines a:before {
+  top: 0;
+  left: 0;
+}
+
+.menu-hover-lines a:after {
+  bottom: 0;
+  right: 0;
+}
+
+.menu-hover-lines a:hover,
+.menu-hover-lines li.active > a {
+  color: $body-font-color;
+  transition: $menu-hover-lines-transition;
+}
+.menu-hover-lines a:hover:before,
+.menu-hover-lines .active a:before,
+.menu-hover-lines a:hover:after,
+.menu-hover-lines .active a:after {
+  width: 100%;
+}
