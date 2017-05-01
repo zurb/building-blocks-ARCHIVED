@@ -25,7 +25,7 @@ In short: The intent of Building Blocks are to solve common patterns, scaffold f
 
 Building Blocks are easy to use in your projects whether you’re using a CSS version or the powerful ZURB Stack. Below, we’ve outlined how to get a Building Block into your project in a snap and build faster.
 
-![](http://www.awesomescreenshot.com/image/2429087/10ea9f2cef6db513cc053717fcfc9fea)
+![https://youtu.be/adLpmsU9v2g](https://cdn.zurb.com/attachments/store/11e99b9568281106bc575e6cfc6d3cb0fd7ffd009452652c67e1cf77755c/Screen%2520Shot%25202017-05-01%2520at%25203.21.26%2520PM.png)
 [Link to video](https://youtu.be/adLpmsU9v2g)
 
 ## (Option 1) Foundation CLI Install
@@ -133,7 +133,7 @@ Or add this CDN to the head of your pages or layout:
 
 # How do I submit a building block?
 
-![](http://www.awesomescreenshot.com/image/2429087/10ea9f2cef6db513cc053717fcfc9fea)
+![https://youtu.be/adLpmsU9v2g](https://cdn.zurb.com/attachments/store/89eb381b2fc3927263455e5f8893f65b7d8e6ed8dc4da37df0f7fb7806f0/Screen%2520Shot%25202017-05-01%2520at%25203.23.02%2520PM.png)
 [Link to video](https://youtu.be/adLpmsU9v2g)
 
 So you want to build a Building Block? Well fear not! You can get in on the action too and get your work featured! We’ve put together a simple guide to submitting a Building Block. Once it’s submitted, we’ll promote your awesomeness to the greater Foundation community because you rock!
