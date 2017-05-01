@@ -4,6 +4,9 @@ tags:
   - js
   - show hide
   - interaction
+  - card
+  - profile
+  - dashboard
 category: containers
 description: A card profile stats container that shows and hide addition bio information.
 versions:
