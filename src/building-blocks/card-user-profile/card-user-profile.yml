@@ -1,11 +1,13 @@
 name: 'Info Card With Labels'
 tags:
   - content
-  - label
-  - callout
+  - button
   - card
+  - profile
+  - product
+  - social
 category: containers
-description: Cards good for a callout, offer, warning or other info.
+description: A fancy card great for a user profile, social media, or even a product. It has a skew effect and a place for an avatar image. This also used the Foundation Card component through Sass mixins.
 versions:
   - 6.3.1
   - 6.3.0
