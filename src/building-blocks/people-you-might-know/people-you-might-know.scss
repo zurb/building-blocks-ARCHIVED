@@ -2,11 +2,11 @@
   background-color: $white;
   padding: 1rem 0 0;
   border: 1px solid $medium-gray;
-  box-shadow: 0 .0625rem .1875rem rgba(0,0,0, 0.18), 0 .125rem 2px rgba(0,0,0, 0.36);
+  box-shadow: 0 0 rem-calc(50) rgba(0,0,0, 0.18);
 
   .add-people-header {
-    padding: 0 .9375rem;
-    border-bottom: .0625rem solid $medium-gray;
+    padding: 0 0.9375rem;
+    border-bottom: 0.0625rem solid $medium-gray;
 
     .header-title {
       font-weight: bold;
@@ -16,7 +16,7 @@
   .add-people-section {
     margin: 1rem 0 0;
     padding-bottom: 1rem;
-    border-bottom: .0625rem solid $medium-gray;
+    border-bottom: 0.0625rem solid $medium-gray;
 
     .about-people {
       display: flex;
@@ -30,7 +30,7 @@
           width: rem-calc(80);
           height: rem-calc(80);
           border-radius: 50%;
-          border: .0625rem solid $medium-gray;
+          border: 0.0625rem solid $medium-gray;
         }
       }
 
@@ -39,7 +39,7 @@
 
         .author-name {
           color: $black;
-          margin: .375rem 0 0;
+          margin: 0.375rem 0 0;
         }
 
         .author-location,
@@ -59,9 +59,9 @@
       @include breakpoint(small only) {
         justify-content: flex-start;
       }
-      
+
       .add-friend-action {
-        margin-top: .7rem;
+        margin-top: 0.7rem;
       }
     }
   }
@@ -72,11 +72,12 @@
     .view-more-text {
       margin-bottom: 0;
       text-align: center;
-    
+
       .view-more-link {
         color: $primary-color;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           text-decoration: underline;
         }
       }
