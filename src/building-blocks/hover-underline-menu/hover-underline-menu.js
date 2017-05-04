@@ -1,1 +1,1 @@
-$(".menu-centered a").addClass("underline_from_center");
+$(".menu-centered a").addClass("underline-from-center");
