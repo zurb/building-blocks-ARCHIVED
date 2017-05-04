@@ -1,0 +1,13 @@
+name: "Hover-underline menu item"
+tags:
+  - hover-effect
+  - menu
+  - underline
+category: navigation
+description: Underline menu items
+versions:
+  - 6.3.1
+author:
+  github: vallyol
+  name: Val Ery
+containerClass: row small-12 columns
