@@ -1,0 +1,27 @@
+$outer-space: #2C3840;
+.menu-centered {
+  background-color: $outer-space;
+  .menu {
+    a {
+      color: $white;
+      padding: 1.2rem 1.5rem;
+    }
+    .underline-from-center {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc( 100% - .125rem );
+        border-bottom: .125rem solid $white;
+        left: 50%;
+        right: 50%;
+        transition: all .5s ease;
+      }
+      &:hover::after {
+        left: 0;
+        right: 0;
+        transition: all .5s ease;
+      }
+    }
+  }
+}
