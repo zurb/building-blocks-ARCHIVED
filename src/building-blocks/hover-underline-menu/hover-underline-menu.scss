@@ -12,7 +12,7 @@ $outer-space: #2C3840;
         content: "";
         position: absolute;
         top: calc( 100% - .125rem );
-        border-bottom: .125rem solid #fefefe;
+        border-bottom: .125rem solid $white;
         left: 50%;
         right: 50%;
         transition: all .5s ease;
