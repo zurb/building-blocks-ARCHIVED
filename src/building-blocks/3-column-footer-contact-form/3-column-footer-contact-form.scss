@@ -4,24 +4,24 @@
   margin: 0 auto;
   margin-top: rem-calc(0);
   background-color: $dark-gray;
-
+  
   .three-column-footer-contact-form { 
     @include grid-row();
     color:$light-gray;
-	  padding: rem-calc(60) 0;
-	  a {color:$light-gray !important;
-	  }
-	
+    padding: rem-calc(60) 0;
+    a {color:$light-gray !important;
+  }
+
     .footer-left {
-	  	@include breakpoint(small) {
+      @include breakpoint(small) {
        display: table;
        @include grid-column(12);	 
-		  }
+      }
       @include breakpoint(large) { 
        @include grid-column(3);
       }
       .baseline {
-  		  display: table-cell;
+        display: table-cell;
         vertical-align: bottom
       }
       .contact-details {
@@ -37,17 +37,17 @@
         }
       }
     }
-  	
+
     .footer-center {
       text-align: left;
       @include breakpoint(small) {
         @include grid-column(12); 
         display: table;
-		  }
+      }
       @include breakpoint(large) {
        @include grid-column(4);
        @include grid-column-position(1);
-	    }
+      }
       .baseline {
         display: table-cell;
         vertical-align: bottom;
@@ -74,12 +74,12 @@
       }
       @include breakpoint(large) {
         @include grid-column(3);
-	    }
+      }
       .baseline {
         display: table-cell;
         vertical-align: bottom;
       }
-	  
+
       h2 {
         color: $white;
       }
