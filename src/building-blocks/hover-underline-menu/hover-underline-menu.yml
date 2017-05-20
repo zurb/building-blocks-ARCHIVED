@@ -1,8 +1,10 @@
-name: "Hover-underline menu item"
+name: "Hover Underline Menu"
 tags:
-  - hover-effect
+  - hover
   - menu
-  - underline
+  - navigation
+  - nav
+  - animation
 category: navigation
 description: Underline menu items
 versions:
@@ -11,4 +13,4 @@ author:
   github: vallyol
   name: Val Ery
   'foundation-forum': 16627
-containerClass: row small-12 columns
+containerClass: row columns
