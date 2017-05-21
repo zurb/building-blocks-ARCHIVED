@@ -21,9 +21,33 @@ PATHS:
   dist: "dist"
   build: "_build"
   # Paths to static assets that aren't images, CSS, or JavaScript
+  # DON'T ADD TO
   assets:
     - "src/assets/**/*"
     - "!src/assets/{img,js,scss}/**/*"
+  # Paths to building-block source files
+  bb:
+   sass: 'src/building-blocks/**/*.scss'
+   js: 'src/building-blocks/**/*.js'
+   html: 'src/building-blocks/**/*.html'
+   png: 'src/building-blocks/**/*.png'
+   yaml: 'src/building-blocks/**/*.yml'
+  # Paths to kit source files
+  kit:
+   png: 'src/kits/**/*.png'
+   yaml: 'src/kits/**/*.yml'
+   img: 'src/kits/**/*.{png,jpg}'
+  # pages
+  pages:
+    dir: 'src/pages/'
+    html: 'src/pages/**/*.html'
+    markup: 'src/pages/**/*.{html,hbs,handlebars}'
+  # layouts
+  layouts:
+    dir: 'src/layouts/'
+  # partials
+  partials:
+    dir: 'src/partials/'
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "node_modules/highlight.js/"
