@@ -38,7 +38,6 @@
 
   &.is-moved-over {
     right: -322px;
-    transition: $transition-slow;
 
     img {
       transform: scale(0.3);
@@ -59,6 +58,14 @@
       top: 15px;
     }
   }
+
+  &.no-animate {
+    transition: none;
+    img {
+      transition: none;
+    }
+  }
+
 
   @include breakpoint(small only) {
     display: none;
