@@ -109,7 +109,7 @@ function copyBBImages() {
   }
 
 function copyKitImages() {
-  return gulp.src('src/kits/**/*.{png,jpg}')
+  return gulp.src(PATHS.kit.img)
     .pipe(gulp.dest(PATHS.dist + '/assets/img/kits/'));
 }
 
@@ -123,9 +123,9 @@ function copyBBFiles() {
 function kitIndex() {
   return gulp.src(['src/pages/kits.html', 'src/pages/how-to.html'])
     .pipe(getNewPanini({
-      root: 'src/pages/',
-      layouts: 'src/layouts/',
-      partials: 'src/partials/',
+      root: PATHS.pages.dir,
+      layouts: PATHS.layouts.dir,
+      partials: PATHS.partials.dir,
       data: ['src/data/', PATHS.build + '/data'],
       helpers: 'src/panini-helpers/'
     }))
@@ -137,11 +137,11 @@ gulp.task('kit-index', kitIndex)
 
 // Copy page templates into finished HTML files
 function pages() {
-  return gulp.src('src/pages/**/*.{html,hbs,handlebars}')
+  return gulp.src(PATHS.pages.markup)
     .pipe(getNewPanini({
-      root: 'src/pages/',
-      layouts: 'src/layouts/',
-      partials: 'src/partials/',
+      root: PATHS.pages.dir,
+      layouts: PATHS.layouts.dir,
+      partials: PATHS.layouts.partials,
       data: 'src/data/',
       helpers: 'src/panini-helpers/'
     }))
@@ -166,7 +166,7 @@ function buildingBlockBaseStyles() {
 // Compiles the Sass for the building blocks
 function buildingBlockSass() {
   var blocks = JSON.parse(fs.readFileSync(PATHS.build + '/data/building-blocks.json', 'utf8'));
-  return gulp.src(['src/building-blocks/**/*.scss'])
+  return gulp.src([PATHS.bb.sass])
     .pipe($.insert.transform(function(contents, file){
       var pieces = file.path.split('/');
       var bbName = pieces[pieces.length - 2];
@@ -193,7 +193,7 @@ function buildingBlockSass() {
 
 // Moves JS from the Building Blocks into the dist
 function buildingBlockJS() {
-  return gulp.src('src/building-blocks/**/*.js')
+  return gulp.src(PATHS.bb.js)
     .pipe(gulp.dest(PATHS.dist + "/building-block/"));
 }
 
@@ -271,14 +271,14 @@ function reload() {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, gulp.series('copy', reload));
-  gulp.watch('src/pages/**/*.html').on('all', gulp.series(kitIndex, reload));
+  gulp.watch(PATHS.pages.html).on('all', gulp.series(kitIndex, reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(kitIndex, 'dynamic-pages',  reload));
-  gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
-  gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
-  gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
-  gulp.watch(['src/building-blocks/**/*.png', 'src/kits/**/*.png']).on('all', gulp.series('copy', reload));
-  gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
-  gulp.watch('src/kits/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
+  gulp.watch(PATHS.bb.html).on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
+  gulp.watch(PATHS.bb.sass).on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
+  gulp.watch(PATHS.bb.js).on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
+  gulp.watch([PATHS.bb.png, PATHS.kit.png]).on('all', gulp.series('copy', reload));
+  gulp.watch(PATHS.bb.yaml).on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
+  gulp.watch(PATHS.kit.yaml).on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, buildingBlockSass, reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload));
@@ -287,7 +287,7 @@ function watch() {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watchStatic() {
   gulp.watch(PATHS.assets, gulp.series('copy', reload));
-  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, reload));
+  gulp.watch(PATHS.pages.html).on('all', gulp.series(pages, reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(pages, reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, reload));
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload));
