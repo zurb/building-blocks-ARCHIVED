@@ -256,15 +256,17 @@ function images() {
 }
 
 // Start a server with BrowserSync to preview the site in
-function server() {
-  return browser.init({
+function server(done) {
+  browser.init({
     server: PATHS.dist, port: PORT
   });
+  done();
 }
 
 // Reload the browser with BrowserSync
-function reload() {
-  return browser.reload(['**/*', '!**/*-iframe.html']);
+function reload(done) {
+  browser.reload(['**/*', '!**/*-iframe.html']);
+  done();
 }
 
 
