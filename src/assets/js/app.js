@@ -31,20 +31,6 @@ _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
 
 }();
 
-if($('#yeti-callout-card').is('*')) {
-
-  _kmq.push(function() {
-    var type = KM.ab("BB Ad Unit", ["yeti-callout-card", "yeti-callout-alert"]);
-    if(type === 'yeti-callout-card') {
-      $('#yeti-callout-card').removeClass('is-hidden');
-    } else {
-      $('#yeti-callout-alert').removeClass('is-hidden');
-    }
-  });
-
-}
-
-
 var mySVGsToInject = document.querySelectorAll('img.inject-me');
 
 var likes = new window.Likes();
@@ -182,9 +168,21 @@ $('#bb-social').jsSocials({
   shares: [ { share: "twitter", via: "ZURBFoundation" }, "facebook", {share: "pinterest", media: socialImage, text: socialName + " from Foundation Building Blocks"}]
 });
 
+var setCalloutPosition = function(moveOver) {
+  localStorage.setItem('course-callout-shrunk', '' + moveOver);
+  $('.course-callout-alert').toggleClass('is-moved-over', moveOver);
+}
+
 $('[data-toggle-callout]').click(function() {
-  $('.course-callout-alert').toggleClass('is-moved-over');
+  setCalloutPosition(!$('.course-callout-alert').hasClass('is-moved-over'));
 });
+
+if(localStorage.getItem('course-callout-shrunk') === 'true') {
+  $('.course-callout-alert').addClass('is-moved-over no-animate');
+  setTimeout(function() {
+    $('.course-callout-alert').removeClass('no-animate');
+  }, 1);
+}
 
 var $footer = $('#footer');
 var $window = $(window);
