@@ -5,6 +5,8 @@ tags:
   - callout
   - notification
   - alert
+  - interaction
+  - toggler
 category: status
 description: These alerts are great to grab attention when something needs to be addressed on your page or view.
 versions:
