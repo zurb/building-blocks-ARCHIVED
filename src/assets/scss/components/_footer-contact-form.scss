@@ -72,7 +72,7 @@
     background-color: darken($white, 8%);
     border: 1px solid darken($white, 15%);
     border-radius: 5px;
-    color: darken($dark-blue, 25%);
+    color: darken($dark-blue, 45%);
     height: 2.55rem;
     padding-left: 1rem;
     transition: background-color 0.3s ease;
@@ -149,11 +149,6 @@
   font-family: 'Proxima Nova Bold', Helvetica, san-serif;
   background: $white;
   color: $dark-blue;
-
-  &:hover {
-    background: darken($white, 20%);
-    color: darken($dark-blue, 20%);
-  }
 }
 
 // Responsive newsletter callout above the footer.
