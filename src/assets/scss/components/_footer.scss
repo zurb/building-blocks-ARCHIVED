@@ -1,635 +1,152 @@
-.newsletter-signup {
-  background: #085a78;
-  padding: 1rem 0;
+.footer-nav {
+  @include flex-grid-row;
+  align-items: center;
+  background-color: $topbar-bg;
+  padding: 2rem;
+  width: 100%;
 
-  &.layout-emails {
-    background: #2a2f58;
+  @include breakpoint(medium only) {
+    justify-content: center;
   }
 
-  h5 {
-    color: $white;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 0;
+  @include breakpoint(small only) {
+    flex-direction: column;
   }
+}
 
-  p {
-    clear: both;
-    color: $white;
-    font-size: 13px;
-    margin-bottom: 0;
-  }
+.footer-nav-left,
+.footer-nav-right {
+  @include flex-grid-column(shrink);
+  color: $white;
 
   a {
     color: $white;
-  }
 
-  .button {
-    background: $primary-color;
+    &:hover,
+    &:focus {
+      color: darken($white, 10%);
+    }
 
-    &:hover {
-      background: scale-color($primary-color, $lightness: -14%);
+    @include breakpoint(small only) {
+      font-size: 1rem;
     }
   }
 
-  .row.collapse form {
-    input[type="text"] {
-      border: 0;
-      color: #999;
-      font-size: 17px;
-      font-weight: 200;
-      position: relative;
-    }
+  @include breakpoint(small only) {
+    @include flex-grid-column(expand);
+  }
+}
 
-    .button {
-      background: #257696;
-      border: 0;
-      box-shadow: none;
-      margin: 0;
+.footer-nav-left {
+  @include breakpoint(medium only) {
+    order: 3;
+    display: flex;
+    margin-left: 1rem;
+  }
 
-      &:hover {
-        background: #1b566d;
-      }
+  @include breakpoint(small only) {
+    order: 3;
+  }
+}
+
+.footer-nav-right {
+  @include breakpoint(medium only) {
+    order: 2;
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  @include breakpoint(small only) {
+    margin-bottom: 1rem;
+  }
+}
+
+.footer-copyright {
+  color: darken($white, 20%);
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.footer-nav-center {
+  @include flex-grid-column;
+
+  @include breakpoint(medium only) {
+    display: flex;
+    flex: 1 0 auto;
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.footer-nav-menu {
+  list-style: none;
+  margin-bottom: 0;
+  text-align: center;
+
+  @include breakpoint(small only) {
+    margin-left: 0;
+  }
+}
+
+.footer-nav-menu-icons {
+  list-style: none;
+  margin-bottom: 0;
+  text-align: center;
+
+  @include breakpoint(small only) {
+    margin-left: 0;
+    display: flex;
+    margin-top: 1rem;
+
+    .footer-nav-menu-item {
+      margin-right: 2.5rem;
     }
   }
 }
 
-#subForm {
-  margin-top: 1rem;
-}
+.footer-nav-menu-item {
+  display: inline-block;
+  margin-right: 2.5rem;
+  font-size: 1.25rem;
+  padding: 0.4rem 0;
 
-// The ZURB footer.
+  a {
+    color: $white;
+    transition: color 0.3s ease;
 
-.zurb-footer-top {
-  color: $white;
-  padding: 40px 0;
-
-  .row {
-    .columns {
-      @include clearfix;
+    &:hover,
+    &:focus {
+      color: darken($white, 0%);
+      transition: color 0.3s ease;
     }
   }
 
-  &.zurb {
-    background-position: 10px 7px;
+  &:last-of-type {
+    margin-right: 0;
   }
 
-  .property {
-    text-align: center;
-
-    .property-info {
-      padding-top: 37px;
-    }
-
-    h2 {
-      margin: 0;
-      padding: 0 !important;
-
-      a {
-        font-family: 'zurb-logo';
-        font-size: em-calc(18px);
-        font-weight: normal;
-        padding: 0;
-        transition: $transition;
-
-        &:hover {
-          opacity: 0.8;
-        }
-
-        &.services {
-          width: 190px;
-        }
-
-        span {
-          display: none;
-        }
-
-        strong {
-          font-size: 17px;
-          margin-left: -7px;
-        }
-      }
-    }
-
-    h3 {
-      color: $white;
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    h4 {
-      color: $white;
-      font-size: 1.1rem;
-      font-weight: 200;
-      margin-bottom: 10px;
-      text-transform: none;
-    }
-
-    p,
-    li,
-    a {
-      color: $white;
-      font-size: 13px;
-      line-height: 21px;
-    }
-
-    a {
-      color: $white;
-      font-weight: bold;
-    }
-  }
-
-  .learn-links,
-  .support-links,
-  .connect-links {
-    background: url('../img/icons/footer-top-icons.png') no-repeat center 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    height: 220px;
-    margin-bottom: 30px;
-    padding: 50px 0 0;
-
-    ul {
-      list-style: none;
-      //TODO: see if the important is needed
-      margin-left: 0 !important;
-    }
-
-    li {
-      line-height: 20px;
-    }
-  }
-
-  .learn-links {
-    background-position: center -325px;
-  }
-
-  .support-links {
-    background-position: center -635px;
-  }
-
-  .connect-links {
-    background-position: center -9px;
-    padding: 50px 20px 0;
-
-    //TODO: Is the important needed?
-    .button {
-      background: rgba(0, 0, 0, 0.1);
-      border: none;
-      box-shadow: none;
-      color: $white !important;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 6px 16px;
-      text-shadow: none;
-    }
-  }
-
-  .global {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-
-    .footer-link-block {
-      display: block;
-      font-weight: normal;
-      margin: 30px 0 0;
-
-      &.services {
-        background: url('../img/icons/footer-studios.png') left top no-repeat;
-      }
-
-      &.foundation {
-        background: url('../img/icons/footer-foundation.png') left top no-repeat;
-      }
-
-      &.apps {
-        background: url('../img/icons/footer-products.png') left top no-repeat;
-      }
-
-      &.expo {
-        background: url('../img/icons/footer-expo.png') left top no-repeat;
-      }
-
-      span {
-        color: $white;
-        display: block;
-        font-size: 0.75rem;
-        line-height: 18px;
-        padding-left: 40px;
-
-        &.title {
-          font-size: 1rem;
-          margin-bottom: 5px;
-        }
-      }
-    }
-  }
-}
-
-.zurb-footer-bottom {
-  background: $topbar-bg;
-  padding: 24px 0 10px;
-
-  .design-border {
-    border-bottom: 1px solid #484848;
-    margin-bottom: 25px;
-    padding-bottom: 5px;
-  }
-
-  // TODO: See if important is needed
-  .zurb-logo {
-    background: url('../img/icons/footer-icons.png') no-repeat 0 3px;
-    color: #858585;
-    display: inline-block;
-    font-size: em-calc(16px);
-    font-weight: normal;
-    padding: 23px 0 0 !important;
-    width: 90px;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
-  .zurb-links {
-    display: inline-block;
-    margin: 0;
-    padding-bottom: 0;
-
-    li {
-      display: block;
-      float: left;
-      font-size: 0.75rem;
-      font-weight: 700;
-      margin-left: 6px;
-      text-transform: uppercase;
-    }
-
-    a {
-      color: #666;
-      padding: 3px 6px;
-
-      &:hover {
-        color: #777;
-      }
-    }
-  }
-
-  .copyright {
-    color: #666;
-    font-size: 0.75rem;
-    margin: 6px 0 0;
-  }
-
-  .home-social {
+  @include breakpoint(small only) {
     display: block;
-    float: right;
-    margin-bottom: 8px;
+    font-size: 1rem;
+    margin: 0;
 
-    li {
-      display: block;
-      float: left;
-      list-style: none;
-      margin-left: 10px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-
-    a {
-      background: url('../img/icons/social.png') no-repeat center 0;
-      display: block;
-      height: 50px;
-      width: 50px;
-
-      &:hover {
-        opacity: 0.8;
-      }
-
-      &.youtube {
-        background: url('../img/icons/youtube.png') no-repeat center 0;
-      }
-
-      &.twitter {
-        background-position: center 0;
-      }
-
-      &.facebook {
-        background-position: center -200px;
-      }
-
-      &.mail {
-        background-position: center -400px;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .zurb-footer-top {
-    .property {
-      padding-top: 0;
-
-      .learn-links,
-      .support-links,
-      .connect-links {
-        height: 240px;
-        padding: 50px 10px 0;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .zurb-footer-top {
-    .property {
-      .property-info {
-        padding-top: 0;
-      }
-
-      .learn-links,
-      .support-links,
-      .connect-links {
-        border: 0;
-        border-top: 1px dotted rgba(255, 255, 255, 0.2);
-        height: auto;
-        margin: 4px 0 0;
-        padding: 80px 20px 0;
-
-        li a {
-          font-size: 15px;
-          line-height: 2;
-        }
-
-        p,
-        a {
-          font-size: 16px;
-        }
-      }
-
-      .learn-links {
-        background-position: center -300px;
-        padding-top: 76px 20px 0;
-      }
-
-      .support-links {
-        background-position: center -618px;
-        padding: 76px 20px 0;
-      }
-
-      .connect-links {
-        background-position: center 10px;
-        padding: 76px 20px 14px;
-      }
-    }
-
-    .global {
-      border: 0;
-    }
-
-    // TODO: See if Important is needed
-    .footer-link-block {
-      &.services {
-        background-position: center 10px !important;
-        border-top: 1px dotted rgba(255, 255, 255, 0.2);
-        margin-top: 0;
-        padding-top: 40px;
-      }
-
-      span {
-        font-size: em-calc(11px);
-        line-height: 16px;
-      }
-    }
-  }
-
-  .zurb-footer-bottom {
-    text-align: center;
-
-    .columns {
-      padding: 0;
-    }
-
-    .zurb-logo {
-      display: block;
-      margin: 0 auto;
-    }
-
-    .zurb-links {
-      margin: 16px 0 10px;
-    }
-
-    .home-social {
+    &.social {
       display: inline-block;
-      float: none;
-      height: 44px;
-      margin: 0 0 20px;
-      text-align: center;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    &.cow-palace-menu {
+      margin: 0 auto;
+      top: -2px;
     }
   }
 }
 
-// Reformating pillars
-@media only screen and (max-width: 767px) {
-  .zurb-footer-top {
-    .property {
-      .connect-links {
-        border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  .zurb-footer-top .global {
-    .footer-link-block {
-      clear: both;
-      margin: 0 !important;
-      padding-top: 50px;
-      text-align: center;
-
-      span {
-        padding-left: 0;
-      }
-
-      &.services {
-        background-position: center 15px !important;
-        border-top: 0;
-      }
-
-      &.foundation {
-        background-position: center 15px !important;
-      }
-
-      &.apps {
-        background-position: center 45px !important;
-        padding-top: 80px;
-      }
-
-      &.expo {
-        background-position: center 45px !important;
-        padding-top: 80px;
-      }
-    }
-  }
-
-  .zurb-footer-top .property .learn-links {
-    background: none;
-    border: 0;
-    margin: 0;
-    padding-top: 0;
-  }
-}
-
-// Retina images
-@media only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2 / 1),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2) {
-  .zurb-footer-top .info-padding {
-    background-image: url("../img/icons/footer-large-icon-retina.png");
-    background-size: 100px 400px;
-  }
-  .zurb-footer-bottom ul.home-social li a {
-    background-image: url("../img/icons/social-retina.png");
-    background-size: 50px 600px;
-  }
-  .zurb-footer-top .global .footer-link-block {
-    display: block;
-    font-weight: normal;
-    margin: 30px 0 0 0;
-
-    &.services {
-      background: url("../img/icons/footer-studios-retina.png") left top no-repeat;
-    }
-
-    &.foundation {
-      background-image: url("../img/icons/footer-foundation-retina.png") left top no-repeat;
-    }
-
-    &.apps {
-      background-image: url("../img/icons/footer-products-retina.png") left top no-repeat;
-    }
-
-    &.expo {
-      background-image: url("../img/icons/footer-expo-retina.png") left top no-repeat;
-    }
-  }
-
-  .zurb-footer-bottom a.zurb-logo {
-    background-image: url("../img/icons/footer-icons-retina.png");
-    background-size: 100px 1400px;
-  }
-
-  .zurb-footer-top .property .learn-links,
-  .zurb-footer-top .property .support-links,
-  .zurb-footer-top .property .connect-links {
-    background-image: url("../img/icons/footer-top-icons-retina.png") no-repeat;
-    background-size: 100px 1400px;
-  }
-}
-
-@media only screen and (max-width: 320px),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2 / 1),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2) {
-  .zurb-footer-top .info-padding {
-    background-image: url("../img/icons/footer-large-icon-retina.png");
-    background-size: 100px 400px;
-  }
-
-  .zurb-footer-bottom ul.home-social li a {
-    background-image: url("../img/icons/social-retina.png");
-    background-size: 50px 600px;
-  }
-
-  .zurb-footer-top .global .footer-link-block {
-    display: block;
-    font-weight: normal;
-    margin: 30px 0 0 0;
-
-    &.services {
-      background: url("../img/icons/footer-studios-retina.png") left top no-repeat;
-      background-size: 30px;
-    }
-
-    &.foundation {
-      background: url("../img/icons/footer-foundation-retina.png") left top no-repeat;
-      background-size: 30px;
-    }
-
-    &.apps {
-      background: url("../img/icons/footer-products-retina.png") left top no-repeat;
-      background-size: 30px;
-    }
-
-    &.expo {
-      background: url("../img/icons/footer-expo-retina.png") left top no-repeat;
-      background-size: 30px;
-    }
-  }
-
-  .zurb-footer-bottom .zurb-logo {
-    background-image: url("../img/icons/footer-icons-retina.png");
-    background-size: 100px 1400px;
-  }
-
-  .zurb-footer-top .property .support-links,
-  .zurb-footer-top .property .connect-links {
-    background-image: url("../img/icons/footer-top-icons-retina.png") no-repeat;
-    background-size: 100px 1400px;
-  }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .zurb-footer-top .property .learn-links {
-    background: none;
-  }
-}
-
-.zurb-footer-top {
-  &.bg-blue {
-    background: #2DAEBF;
-  }
-
-  &.bg-fblue {
-    background: #074e68;
-  }
-
-  &.bg-green {
-    background: #B8D30B;
-  }
-
-  &.bg-dgreen {
-    background: #afc908;
-  }
-
-  &.bg-magenta {
-    background: #A9014B;
-  }
-
-  &.bg-orange {
-    background: #FF5C00;
-  }
-
-  &.bg-lorange {
-    background: #FF6908;
-  }
-
-  &.bg-oyellow {
-    background: #FC9200;
-  }
-
-  &.bg-loyellow {
-    background: #FFB515;
-  }
-
-  &.bg-navy {
-    background: #074e68;
-  }
-
-  &.layout-emails {
-    background: #1C1F3A;
-  }
+.footer-social-icon {
+  height: 1.25rem;
+  margin: 0;
+  width: 1.25rem;
 }
