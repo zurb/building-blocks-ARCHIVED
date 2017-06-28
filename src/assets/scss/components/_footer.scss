@@ -4,10 +4,7 @@
   background-color: $topbar-bg;
   padding: 2rem;
   width: 100%;
-
-  @include breakpoint(medium only) {
-    justify-content: center;
-  }
+  justify-content: center;
 
   @include breakpoint(small only) {
     flex-direction: column;
@@ -38,7 +35,7 @@
 }
 
 .footer-nav-left {
-  @include breakpoint(medium only) {
+  @media screen and (min-width: 40em) and (max-width: 75.125em) {
     order: 3;
     display: flex;
     margin-left: 1rem;
@@ -50,7 +47,7 @@
 }
 
 .footer-nav-right {
-  @include breakpoint(medium only) {
+  @media screen and (min-width: 40em) and (max-width: 75.125em) {
     order: 2;
     display: flex;
     margin-right: 1rem;
@@ -70,7 +67,13 @@
 .footer-nav-center {
   @include flex-grid-column;
 
-  @include breakpoint(medium only) {
+  .footer-nav-menu-item {
+    @media screen and (min-width: 40em) and (max-width: 46.25em) {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media screen and (min-width: 40em) and (max-width: 75.125em) {
     display: flex;
     flex: 1 0 auto;
     order: 1;

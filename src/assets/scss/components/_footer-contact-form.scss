@@ -1,13 +1,9 @@
 .footer-contact {
   background-color: $dark-blue;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: contain;
   color: $white;
   padding: 5rem 0 8rem;
 
   @include breakpoint(small only) {
-    background-image: none;
     padding: 4rem 0;
   }
 }
@@ -74,6 +70,7 @@
     border-radius: 5px;
     color: darken($dark-blue, 45%);
     height: 2.55rem;
+    font-weight: normal;
     padding-left: 1rem;
     transition: background-color 0.3s ease;
     opacity: 0.5;
