@@ -12,6 +12,6 @@ versions:
   - 6.4.0
 author:
   github: eli-townsend
-  'foundation-issue': 205
+  twitter: Townsend1992
   name: Elijah Townsend
 containerClass: md-tabs
