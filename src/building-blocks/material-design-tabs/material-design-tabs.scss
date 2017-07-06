@@ -45,7 +45,8 @@
   font-size: 16px;
 }
 
-.md-tabs>.tabs>.tabs-title>a:hover {
+.md-tabs>.tabs>.tabs-title>a:hover,
+.md-tabs>.tabs>.tabs-title>a:focus {
   background: transparent;
 }
 
