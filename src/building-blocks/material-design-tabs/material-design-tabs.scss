@@ -8,8 +8,12 @@
   background-color: #1779ba;
   margin-bottom: 15px;
 }
+<<<<<<< HEAD
 
 .md-tabs > .mobile-nav-bar .title-bar-text {
+=======
+.md-tabs > .mobile-nav-bar .title-bar-text{
+>>>>>>> 233ce27ad56150992f30ec7c6ece3a601a2dda1a
   font-size: 26px;
 }
 
@@ -25,6 +29,7 @@
   display: table;
   width: 100%;
 }
+<<<<<<< HEAD
 
 .md-tabs > .tabs > .tabs-title {
   display: table-cell;
@@ -37,10 +42,21 @@
 }
 
 .md-tabs > .tabs > .tabs-title.is-active > a {
+=======
+.md-tabs > .tabs > .tabs-title{
+  display: table-cell;
+  width: 25%;
+  text-align: center;
+}
+.md-tabs > .tabs > .tabs-title{
+  display: inline-block;}
+.md-tabs > .tabs > .tabs-title.is-active > a{
+>>>>>>> 233ce27ad56150992f30ec7c6ece3a601a2dda1a
   color: #3adb76;
   background-color: transparent;
   outline: none;
 }
+<<<<<<< HEAD
 
 .md-tabs > .tabs > .tabs-title > a {
   color: #fff;
@@ -48,6 +64,13 @@
 }
 
 .md-tabs > .tabs > .tabs-title > a:hover {
+=======
+.md-tabs > .tabs > .tabs-title > a{
+  color: #fff;
+  font-size: 16px;
+}
+.md-tabs > .tabs > .tabs-title > a:hover{
+>>>>>>> 233ce27ad56150992f30ec7c6ece3a601a2dda1a
   background: transparent;
 }
 
@@ -75,6 +98,7 @@
   left: 0;
   top: 52px;
   transition: left 0.3s ease-out;
+<<<<<<< HEAD
 }
 @media (max-width:640px) {
   .slide {
@@ -117,4 +141,6 @@
     background-color: #fefefe;
     color: #0a0a0a;
   }
+=======
+>>>>>>> 233ce27ad56150992f30ec7c6ece3a601a2dda1a
 }
