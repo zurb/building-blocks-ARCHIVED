@@ -14,8 +14,9 @@ author:
   name: Rafi
   twitter: thefakerafi
 containerClass: row medium-6 columns align-center
-
-
+requirements:
+  - flexbox
+  - fontawesome
 
 # Best Practices (Delete these when copying into new Building Block)
 
@@ -32,3 +33,5 @@ containerClass: row medium-6 columns align-center
 # author describes yourself. Your GitHub username goes here, twitter handle so we can give you a shoutout and of-course your name.
 
 # containerClass can be used to inject a wrapper for your Building Block to present it better. The example here will center the Building Block and keep the width to 6 columns wide.
+
+# requirements for the component to work as expected, see https://github.com/zurb/building-blocks/issues/211
