@@ -1,6 +1,5 @@
 .table-expand {
   margin-top: 5rem;
-  border-radius: 5px;
 
   td {
     color: $dark-gray;
@@ -28,6 +27,7 @@
   }
 }
 
+// this is where the magic happens
 .table-expand-row-content {
   display: none;
 }

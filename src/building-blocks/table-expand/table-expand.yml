@@ -3,8 +3,7 @@ tags:
   - table
   - interaction
   - javascript
-  - show
-  - hide
+  - show hide
 category: containers
 description: Table that features smooth expanding rows to show and hide further information.
 versions:
