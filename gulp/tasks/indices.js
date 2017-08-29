@@ -23,7 +23,7 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
-// From http://stackoverflow.com/questions/23230569/how-do-you-create-a-file-from-a-string-in-gulp
+// From https://stackoverflow.com/questions/23230569/how-do-you-create-a-file-from-a-string-in-gulp
 function categoryYaml(categories, prefix, datafile, cb) {
   async.eachOf(categories, (category, name, callback) => {
     var numPages = Math.ceil((category.total + 1) / PAGE_SIZE);

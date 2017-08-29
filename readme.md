@@ -38,7 +38,7 @@ Foundation’s CLI install will:
   <li><strong>Create you a SCSS partial</strong> with the Building Block’s SCSS and also add the @import for you in your app.scss file.</li>
   <li><strong>Create a JS file</strong> with the Building Block’s JS and link it up in the config.yml</li>
 </ul>
-      
+
 Bam! Add your Panini partial in your page or layout and now you’re cookin’.
 
 In your terminal, make sure you’re in you ZURB Stack project and have the Foundation CLI installed.
@@ -63,9 +63,9 @@ Need help installing the Foundation CLI? We've put together some tutorials to ge
 
 [Installing the Foundation CLI to Automate Sass Projects](https://youtu.be/rQguHjGzFEw?list=PLJVWPVPk_D_0-LDRu8k29w-7ktRk_dJ5n)
 
-[Installing Foundation CLI on Windows](http://foundation.zurb.com/learn/install-foundation-6-sass-on-windows.html)
+[Installing Foundation CLI on Windows](https://foundation.zurb.com/learn/install-foundation-6-sass-on-windows.html)
 
-[Foundation Docs: CLI Installation](http://foundation.zurb.com/sites/docs/installation.html)
+[Foundation Docs: CLI Installation](https://foundation.zurb.com/sites/docs/installation.html)
 
 #### How to update the Foundation CLI
 
@@ -87,15 +87,15 @@ Like a Building Block? You can copy the HTML and CSS/SCSS and JS (if applicable)
 
 The HTML, CSS, and JS toggles let you focus on one section at a time if you’d like.
 
-![](http://foundation.zurb.com/building-blocks/assets/img/images/top-section.png)
+![](https://foundation.zurb.com/building-blocks/assets/img/images/top-section.png)
 
 You can copy the the code from each code container using the handy copy button.
 
-![](http://foundation.zurb.com/building-blocks/assets/img/images/copy-section.png)
+![](https://foundation.zurb.com/building-blocks/assets/img/images/copy-section.png)
 
 If you are using CSS vs SCSS, you can toggle to the compiled CSS using this handy toggle:
 
-![](http://foundation.zurb.com/building-blocks/assets/img/images/css-section.png)
+![](https://foundation.zurb.com/building-blocks/assets/img/images/css-section.png)
 
 If you’re using the CSS version of Foundation, it’s best to add the CSS to your app.css file that is included with the downloaded Foundation CSS project. You can make any style overrides from there.
 
@@ -117,7 +117,7 @@ Looking to start with a Building Block kit? Kits are large collections of Buildi
 
 Again, if you’re using the ZURB Stack, the Foundation CLI can do this for you.
 
-## Dependencies 
+## Dependencies
 
 Building Blocks are made to drop into any Foundation project and work. Therefore Foundation is a dependency (needs it to work as expected).
 
@@ -205,14 +205,14 @@ In your Building Block component folder, create your `.html`, `.scss`, `.js` and
 - Example: article-card.js
 - Paste in your JS
 - Save
-4. Create an YML file 
+4. Create an YML file
 - Example: article-card.yml
 - Add in your Building Block information
 - Save
 5. Add your preview image
 - Example: article-card.png
 - Add the image to the `article-card` folder for this example
-	
+
 Here is a .yml file template you can use: [Sample .yml file](https://github.com/zurb/building-blocks/blob/master/building-block-sample.yml)
 
 **That’s it!**
@@ -227,18 +227,18 @@ If needed, Building Blocks can have an optional layout file that helps you displ
 Create a `layout.html` file inside your Building Blocks folder. So for our example, it will go in the `article-card` folder.
 
 Example:
-![](http://foundation.zurb.com/building-blocks/assets/img/images/howto-layouthtml.png)
+![](https://foundation.zurb.com/building-blocks/assets/img/images/howto-layouthtml.png)
 
 Here we used a Block Grid and included our Building Block 3 times, one for each column. You can use the Panini handlebars include like this or paste the HTML in.
 
 You may need some CSS to ensure your Building Block demo looks as good as possible. In that case you may create a `layout.scss` file to add custom styles.
 
 Example:
-![](http://foundation.zurb.com/building-blocks/assets/img/images/howto-layoutscss.png)
+![](https://foundation.zurb.com/building-blocks/assets/img/images/howto-layoutscss.png)
 
 Note: adding a `layout.html` file will override the `containerClass` variable in your `.yml` file.
 
-Looking good? 
+Looking good?
 
 ## (Step 4) Submit It!:
 Now it’s time to submit your Building Block. Make sure to add and commit your work. Then submit your Pull Request.
@@ -257,7 +257,7 @@ Lastly, we merge in your Pull Request and you become a legend!
 ## Container Classes
 In order to make sure the Building Block preview is presented well, you can specify container classes to align the content. Here is breakdown of these classes:
 
-### Helper classes: 
+### Helper classes:
 - container-padded: adds 1rem top-padding above your Building Block to space it down from the top of the container. Most components will use this. You may leave it out for a component that should be flush with the top like a navigation.
 - align-center: this will align a Building Block or columns horizontally in the center of the page.
 - text-center: This is useful to align buttons horizontally in the center.
@@ -286,7 +286,7 @@ Some simple rules to follow:
 
 **Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
 
-This is the official ZURB Template for use with [Foundation for Sites](http://foundation.zurb.com/sites). We use this template at ZURB to deliver static code to our clients. It has a Gulp-powered build system with these features:
+This is the official ZURB Template for use with [Foundation for Sites](https://foundation.zurb.com/sites). We use this template at ZURB to deliver static code to our clients. It has a Gulp-powered build system with these features:
 
 - Handlebars HTML templates with Panini
 - Sass compilation and prefixing
