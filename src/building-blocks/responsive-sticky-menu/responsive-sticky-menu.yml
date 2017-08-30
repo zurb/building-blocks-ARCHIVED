@@ -1,8 +1,10 @@
 name: "Responsive Sticky Menu"
 tags:
+  - navigation
+  - nav
   - menu
+  - top bar
   - sticky
-  - top-bar
 category: navigation
 description: A menu component which is sticky (medium and up screen sizes by default) and responsive. FOUC prevention included. The whole bunch of demo content is to there just to show the sticky effect.
 versions:
