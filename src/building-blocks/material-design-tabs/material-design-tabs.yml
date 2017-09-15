@@ -1,13 +1,12 @@
 name: 'Material Design CSS Only Tabs'
 tags:
-  - layout
   - navigation
+  - nav
   - tabs
   - material-design
   - header
-  - full-width
 category: navigation
-description: Material Design CSS Only Tabs using Kevin Ball's Mobile Nav Bar
+description: Material Design CSS Only Tabs using Mobile Nav Bar
 versions:
   - 6.4.0
 author:

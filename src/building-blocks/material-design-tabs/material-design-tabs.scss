@@ -1,20 +1,23 @@
-$white: #FFF;
 $primary-blue: #1779BA;
 $accent-green: #3ADB76;
 
 .md-tabs {
   background-color: $primary-blue;
+
   > {
     .mobile-nav-bar {
       background-color: $primary-blue;
       margin-bottom: 15px;
+
       .title-bar-text {
         font-size: 26px;
       }
+
       a {
         color: $white;
       }
     }
+
     .tabs {
       margin: 0;
       border: 0;
@@ -22,34 +25,43 @@ $accent-green: #3ADB76;
       list-style-type: none;
       display: table;
       width: 100%;
+
       > .tabs-title {
         display: table-cell;
         width: 25%;
         text-align: center;
         display: inline-block;
+
         &.is-active {
           > a {
             color: $accent-green;
             background-color: transparent;
             outline: none;
           }
+
           &:nth-of-type(1) ~ .slide {
             left: calc((100% / 4) * 0);
           }
+
           &:nth-of-type(2) ~ .slide {
             left: calc((100% / 4) * 1);
           }
+
           &:nth-of-type(3) ~ .slide {
             left: calc((100% / 4) * 2);
           }
+
           &:nth-of-type(4) ~ .slide {
             left: calc((100% / 4) * 3);
           }
         }
+
         > a {
           color: $white;
           font-size: 16px;
-          &:hover, &:focus {
+
+          &:hover,
+          &:focus {
             background: transparent;
           }
         }
@@ -73,10 +85,12 @@ $accent-green: #3ADB76;
     width: 0;
     height: 0;
   }
+
   .md-tabs {
     > .accordion {
       margin-left: 0;
       list-style-type: none;
+
       > .accordion-item > .accordion-title {
         position: relative;
         display: block;
@@ -86,6 +100,7 @@ $accent-green: #3ADB76;
         line-height: 1;
         background: $primary-blue;
         color: $white;
+
         &:hover {
           background-color: $primary-blue;
           color: $accent-green;
@@ -93,11 +108,13 @@ $accent-green: #3ADB76;
         }
       }
     }
+
     > .accordion > {
       .is-active.accordion-item > a.accordion-title {
         border-bottom: 4px solid $accent-green;
         color: $accent-green;
       }
+
       .accordion-item > .accordion-content {
         display: none;
         padding: 1rem;
@@ -108,6 +125,7 @@ $accent-green: #3ADB76;
       }
     }
   }
+
   > .accordion > .accordion-item > .accordion-title:focus {
     background-color: $primary-blue;
     color: $accent-green;
