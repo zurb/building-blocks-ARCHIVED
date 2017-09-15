@@ -4,6 +4,10 @@ $(function() {
   $('.search')
     .bind('click', function(event) {
       $(".search-field").toggleClass("expand-search");
-      $(".search-field").focus();
+
+      // if the search field is expanded, focus on it
+      if ($(".search-field").hasClass("expand-search")) {
+        $(".search-field").focus();
+      }
     })
 });
