@@ -47,8 +47,3 @@ filter-nav:
     page: 'control'
     alt: control icon
     classes:
-
-global-nav-links:
-  -
-    url:
-    page-name: 'control'

@@ -3,7 +3,7 @@ tags:
   - responsive
   - content
 category: media
-description: A responsive timeline that can house images in each timeline item. Works with SVG's or images. Change the $timeline-item-card to true to add a background to each timeline content item.
+description: A responsive timeline that can house images in each timeline item. Works with SVG's or images. Change the $timeline-item-card variable to true to add a background to each timeline content item.
 versions:
   - 6.4.3
   - 6.4.2
