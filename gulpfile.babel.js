@@ -72,7 +72,7 @@ gulp.task('rsync', function() {
     .pipe($.prompt.confirm('Make sure everything looks right before you deploy.'))
     .pipe($.rsync({
       root: './dist',
-      hostname: 'deployer@72.32.134.77',
+      hostname: 'deployer@72.32.134.72',
       destination: '/home/deployer/sites/building-blocks'
     }));
 });
