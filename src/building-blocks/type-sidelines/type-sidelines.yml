@@ -1,4 +1,4 @@
-name: "Sidleines Text Divider"
+name: "Sidelines Text Divider"
 tags:
   - article
   - blog
@@ -15,6 +15,6 @@ versions:
 author:
   github: rafibomb
   twitter: thefakerafi
-  'foundation-forum': 10
+  "foundation-forum": 10
   name: Rafi
 containerClass: none
